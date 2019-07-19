@@ -1,0 +1,145 @@
+<resources>
+    <string name="app_name">BST Eltromat</string>
+    <string name="action_settings">Settings</string>
+    <string name="tag_prompt1">Choose a Tag</string>
+
+
+    <string name="city">com.mind.bst.city</string>
+    <string name="name">com.mind.bst.name</string>
+    <string name="client">com.mind.bst.client</string>
+    <string name="add">com.mind.bst.add</string>
+    <string name="cont">com.mind.bst.cont</string>
+    <string name="email">com.mind.bst.email</string>
+    <string name="date">com.mind.bst.date</string>
+    <string name="time">com.mind.bst.time</string>
+
+    <string name="pserial">com.mind.bst.pserial</string>
+    <string name="nature">com.mind.bst.nature</string>
+    <string name="details">com.mind.bst.details</string>
+    <string name="spinner">com.mind.bst.spinner</string>
+    <string name="spinner1">com.mind.bst.spinner1</string>
+    <string name="observation">com.mind.bst.observation</string>
+    <string name="remark">com.mind.bst.remark</string>
+    <string name="image">com.mind.bst.image</string>
+    <string name="payment">com.mind.bst.payment</string>
+
+
+    <string-array name="tag_arrays1">
+        <item>Select</item>
+        <item>Printer</item>
+        <item>Xerox machine</item>
+        <item>CPU</item>
+        <item>Motherboard</item>
+
+
+    </string-array>
+
+
+    <string-array name="Member_names">
+        <item>Pavan Patil</item>
+        <item>Sagar Satpute</item>
+        <item>Rishikesh Manjrekar</item>
+        <item>Ravi jadhav</item>
+        <item>Ramesh More</item>
+        <item>Nikhil kamble</item>
+        <item>Ajit singh</item>
+
+        <item>Pravin Patel</item>
+        <item>Nimesh Hazare</item>
+        <item>Mayank agarwal</item>
+        <item>Bhavesh triphati</item>
+        <item>Sandesh Kamble</item>
+        <item>Ajay makrande</item>
+        <item>Vijay patil</item>
+
+
+    </string-array>
+
+    <array name="profile_pics">
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+        <item>@drawable/loginicon</item>
+    </array>
+
+    <string-array name="statues">
+        <item>At work</item>
+        <item>Available</item>
+        <item>Busy</item>
+        <item>In a meeting</item>
+        <item>At work</item>
+        <item>At gym</item>
+        <item>At work</item>
+
+        <item>Work</item>
+        <item>Available</item>
+        <item>Unavailable</item>
+        <item>Busy</item>
+        <item>At college</item>
+        <item>Online</item>
+        <item>Offline</item>
+    </string-array>
+
+    <string-array name="contactType">
+        <item>Mobile</item>
+        <item>Work</item>
+        <item>Home</item>
+        <item>office</item>
+        <item>Work</item>
+        <item>Home</item>
+        <item>Mobile</item>
+        <item>Mobile</item>
+        <item>Work</item>
+        <item>Home</item>
+        <item>Home</item>
+        <item>Office</item>
+        <item>Work</item>
+        <item>Mobile</item>
+    </string-array>
+
+
+    <string name="tag_prompt2">Choose a Tag</string>
+
+    <string-array name="tag_arrays2">
+        <item>Select</item>
+        <item>Completed</item>
+        <item>Needs to be visited again</item>
+        <item>Under-Repaired</item>
+        <item>Spare part Required</item>
+        <item>System sent to factory for repair</item>
+        <item>Other</item>
+
+
+    </string-array>
+
+
+    <string name="tag_prompt3">Choose a Tag</string>
+
+    <string-array name="tag_arrays3">
+        <item>Select</item>
+        <item>Cash Payment</item>
+        <item>Cheque Payment</item>
+        <item>Bank Transfer:NEFT,RTGS,IMPS</item>
+
+        <item>Other/FOC Specify</item>
+
+
+    </string-array>
+
+
+    <string name="tv_recycler_item_1">Swipe down to refresh</string>
+    <string name="tv_recycler_item_2">Swipe left</string>
+    <string name="tv_recycler_item_3">Drag up or down to move it</string>
+
+</resources>

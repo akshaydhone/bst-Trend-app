@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GeneratedList">
+
+    <TextView
+        android:id="@+id/region"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:padding="10dp"
+        android:text="Region:" />
+
+    <TextView
+        android:id="@+id/textRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:layout_toRightOf="@+id/region"
+        android:padding="10dp"
+        android:text="Mumbai" />
+
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_below="@+id/region"
+        android:padding="10dp"
+        android:textColor="@color/colorPurple"
+        android:text="Client Name:" />
+
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_toRightOf="@+id/name"
+        android:layout_below="@id/textRegion"
+        android:text="Akshay Dhone" />
+
+
+
+
+    <TextView
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textName"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Client Address:" />
+
+    <TextView
+        android:id="@+id/textAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_toRightOf="@+id/add"
+        android:layout_below="@id/textName"
+
+        android:text="Andheri" />
+
+
+
+
+    <TextView
+        android:id="@+id/cont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textAdd"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Client Contact No:" />
+
+
+    <TextView
+        android:id="@+id/textCont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/cont"
+        android:layout_below="@id/textAdd"
+        android:textColor="#000"
+        android:text="9098987890" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textCont"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Client Email Id:" />
+
+    <TextView
+        android:id="@+id/textEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textCont"
+        android:layout_toRightOf="@+id/email"
+        android:text="akshay@gmail.com" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/clientimgurl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textEmail"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Client Img:" />
+
+
+    <ImageView
+        android:id="@+id/textclientimgurl"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:padding="10dp"
+        android:layout_below="@id/clientimgurl"
+
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/clientremark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textclientimgurl"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Client Remark:" />
+
+
+    <TextView
+        android:id="@+id/textclientremark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textclientimgurl"
+        android:layout_toRightOf="@+id/clientremark"
+        android:text="Average" />
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/clientdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textclientremark"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Date:" />
+
+
+    <TextView
+        android:id="@+id/textclientdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textclientremark"
+        android:layout_toRightOf="@+id/clientdate"
+        android:text="13/7/2019" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/detailofcomplaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textclientdate"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Detail of complaint:" />
+
+
+
+
+    <TextView
+        android:id="@+id/textdetailofcomplaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textclientdate"
+        android:layout_toRightOf="@+id/detailofcomplaint"
+        android:textColor="#000"
+        android:text="Need to send factory" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/enggname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textdetailofcomplaint"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Engineer Name:" />
+
+
+
+    <TextView
+        android:id="@+id/textenggname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textdetailofcomplaint"
+        android:layout_toRightOf="@+id/enggname"
+        android:text="Shakti khanna" />
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/enggobservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:layout_below="@id/textenggname"
+        android:text="Engineer Observation:" />
+
+
+
+
+    <TextView
+        android:id="@+id/textenggobservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textenggname"
+        android:layout_toRightOf="@+id/enggobservation"
+        android:text="Good" />
+
+
+
+
+    <TextView
+        android:id="@+id/natureofcomplaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textenggobservation"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Nature of complaint:" />
+
+
+
+
+    <TextView
+        android:id="@+id/textnatureofcomplaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textenggobservation"
+        android:layout_toRightOf="@+id/natureofcomplaint"
+        android:text="Nice" />
+
+
+
+
+    <TextView
+        android:id="@+id/paymentvia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textnatureofcomplaint"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Payment Via:" />
+
+
+
+    <TextView
+        android:id="@+id/textpaymentvia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/paymentvia"
+        android:layout_below="@id/textnatureofcomplaint"
+        android:textColor="#000"
+        android:text="cheque" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/productname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textpaymentvia"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Product Name:" />
+
+
+    <TextView
+        android:id="@+id/textproductname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textpaymentvia"
+        android:layout_toRightOf="@+id/productname"
+        android:text="Printer" />
+
+
+    <TextView
+        android:id="@+id/serialno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/textproductname"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Product Serial no:" />
+
+    <TextView
+        android:id="@+id/productserialno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/textproductname"
+        android:layout_toRightOf="@+id/serialno"
+        android:text="98562547" />
+
+
+
+
+    <TextView
+        android:id="@+id/complaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/productserialno"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="Status of Complaint:" />
+
+    <TextView
+        android:id="@+id/statusofcomplaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/productserialno"
+        android:layout_toRightOf="@+id/complaint"
+        android:text="under-repaired" />
+
+
+
+
+    <TextView
+        android:id="@+id/intime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/statusofcomplaint"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:text="In-Time:" />
+
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/statusofcomplaint"
+        android:layout_toRightOf="@+id/intime"
+        android:text="8:40" />
+
+
+
+</RelativeLayout>

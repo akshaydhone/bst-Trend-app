@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mind.bst">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".sampleAct">
+
+
+        </activity>
+        <activity
+            android:name=".ActualPrevCall"
+            android:parentActivityName=".PrevActual" />
+        <activity android:name=".ViewClientCallsImg" />
+        <activity
+            android:name=".PrevActual"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".PrevImg"
+            android:windowSoftInputMode="adjustPan" >
+
+        </activity>
+        <activity
+            android:name=".ViewProfile"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".GenAct"
+            android:parentActivityName=".GeneratedCalls" />
+        <activity android:name=".GeneratedList" />
+        <activity android:name=".RetrieveImg" />
+        <activity
+            android:name=".GeneratedCalls"
+            android:parentActivityName=".AdminActivity" />
+        <activity android:name=".ViewCalls" />
+        <activity android:name=".SuccessActivity" />
+        <activity android:name=".OpenCamera" />
+        <activity android:name=".CameraFragment" />
+        <activity android:name=".CameraActivity" />
+        <activity
+            android:name=".HiddenActivity"
+            android:parentActivityName=".AdminActivity" />
+        <activity android:name=".EngineerList" />
+        <activity
+            android:name=".ViewEngineers"
+            android:parentActivityName=".AdminActivity" />
+        <activity android:name=".ClientList" />
+        <activity
+            android:name=".ViewClients"
+            android:parentActivityName=".AdminActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".Main2Activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NewCallGen"
+            android:parentActivityName=".Main2Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".NewCall1"
+            android:parentActivityName=".NewCallGen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".NewCall2"
+            android:parentActivityName=".NewCall1"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".NewCall3"
+            android:parentActivityName=".NewCall2"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".NewCall4"
+            android:parentActivityName=".NewCall3"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".PreviousCallGen"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".PendingCall"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".NotificationActivity"
+            android:parentActivityName=".Main2Activity" />
+
+        <receiver
+            android:name=".NotificationReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".AdminActivity" />
+        <activity
+            android:name=".AddClient"
+            android:parentActivityName=".AdminActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddEngg"
+            android:parentActivityName=".AdminActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".TestPhp"
+            android:parentActivityName=".AdminActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Demo"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Web"
+            android:parentActivityName=".AdminActivity" />
+        <activity
+            android:name=".MainChatActivity"
+            android:parentActivityName=".AdminActivity" />
+        <activity android:name=".CallList" />
+    </application>
+
+</manifest>
