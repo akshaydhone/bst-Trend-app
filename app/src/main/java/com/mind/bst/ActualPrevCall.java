@@ -1,5 +1,6 @@
 package com.mind.bst;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -25,9 +26,11 @@ import java.util.List;
 
 public class ActualPrevCall extends AppCompatActivity {
    //ListView listViewClients;
+   private Activity context;
     List<Total> clients;
     FirebaseUser user;
    // TextView t1;
+    ImageView t2;
     String key;
 
     DatabaseReference databaseClients;
@@ -56,6 +59,7 @@ public class ActualPrevCall extends AppCompatActivity {
      // listViewClients = (ListView) findViewById(R.id.listViewClients);
      // t1=(TextView)findViewById(R.id.textView);
         //t1.setText(intent.getStringExtra(Retrievedatasample.Region));
+        t2=(ImageView)findViewById(R.id.textclientimgurl);
 
 
 
@@ -119,7 +123,7 @@ public class ActualPrevCall extends AppCompatActivity {
         textViewPayment.setText(intent.getStringExtra(Retrievedatasample.payment));
         textViewEnggName.setText(intent.getStringExtra(Retrievedatasample.enggname));
         // textViewUrl.setText(data.getClient_image_url());
-        //Picasso.with(context).load(data.getClient_image_url().toString()).into(textViewUrl);
+        Picasso.with(context).load(intent.getStringExtra(Retrievedatasample.clienturl).toString()).into(t2);
 
 
 
