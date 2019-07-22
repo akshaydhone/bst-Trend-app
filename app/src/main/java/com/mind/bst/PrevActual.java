@@ -30,6 +30,9 @@ public class PrevActual extends AppCompatActivity {
     DatabaseReference databaseClients;
     FirebaseUser user;
     String uid;
+    public static String key;
+    // FirebaseDatabase mDatabase;
+//String key = mDatabase.child("Calls Generated").push().getKey();
 
 
     public static final String Region = "com.mind.bst.region";
@@ -71,7 +74,7 @@ public class PrevActual extends AppCompatActivity {
         user= FirebaseAuth.getInstance().getCurrentUser();
         uid=user.getUid();
 
-
+      key = databaseClients.child("Calls Generated").push().getKey();
 //storing clients in array list
         clients = new ArrayList<>();
 

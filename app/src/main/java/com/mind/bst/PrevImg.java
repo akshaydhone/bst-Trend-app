@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,7 +22,14 @@ import java.util.List;
 public class PrevImg extends ArrayAdapter<Total> {
     private Activity context;
     List<Total> clients;
+    FirebaseUser user;
+    DatabaseReference databaseClients;
+    String uid;
+
     private FirebaseAuth mAuth;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    // FirebaseDatabase mDatabase;
+//String key = mDatabase.child("Calls Generated").push().getKey();
 
     public PrevImg(Activity context, List<Total> clients) {
         super(context, R.layout.activity_prev_img, clients);
@@ -76,18 +85,24 @@ public class PrevImg extends ArrayAdapter<Total> {
         //Again check if the user is Already Logged in or Not
 
 
-
+        user=FirebaseAuth.getInstance().getCurrentUser();
+        uid=user.getUid();
 
         Total data = clients.get(position);
-        FirebaseUser user = mAuth.getCurrentUser();
-        Log.d("LOGGED", "FirebaseUser: " + user);
 
+      //FirebaseUser user = mAuth.getCurrentUser();
+        //Log.d("LOGGED", "FirebaseUser: " + user);
+//        String key = databaseClients.child("Calls Generated").push().getKey();
+
+
+
+
+        textViewCont.setText(data.getClient_cont());
+        textViewEmail.setText(data.getClient_email());
         textViewRegion.setText(data.getCity());
 
         textViewName.setText(data.getClient());
         textViewAdd.setText(data.getClient_add());
-        textViewCont.setText(data.getClient_cont());
-        textViewEmail.setText(data.getClient_email());
 //        textViewDate.setText(data.getDate());
         textViewTime.setText(data.getTime());
         textViewProductSrNo.setText(data.getProduct_serial_no());

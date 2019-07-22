@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,13 +19,24 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneratedCalls extends AppCompatActivity {
+public class Retrievedatasample extends AppCompatActivity {
+
+    public static final String CLIENT_NAME = "com.mind.bst.clientname";
+    public static final String CLIENT_ID = "com.mind.bst.clientid";
     ListView listViewClients;
 
+    //here data is a java class name
     List<Total> clients;
-    //List<Total> clients1;
     //selecting a database ref
     DatabaseReference databaseClients;
+    FirebaseUser user;
+    private FirebaseAuth mAuth;
+    String uid;
+    TextView t1;
+    public static String key;
+    // FirebaseDatabase mDatabase;
+//String key = mDatabase.child("Calls Generated").push().getKey();
+
 
     public static final String Region = "com.mind.bst.region";
     public static final String clientname = "com.mind.bst.clientname";
@@ -52,29 +66,44 @@ public class GeneratedCalls extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_generated_calls);
-
-        getSupportActionBar().setTitle("Calls generated");
+        setContentView(R.layout.activity_retrievedatasample);
+        getSupportActionBar().setTitle("Client Visits");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        t1=(TextView)findViewById(R.id.textView);
+        //String key = databaseClients.child("Calls Generated").push().getKey();
 
 
+       /* mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String UserID=user.getEmail().replace("@","").replace(".","");
+        DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+
+        DatabaseReference ref1= mRootRef.child("Calls Generated").child(UserID);*/
+
+        //getting the root name database table
         databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated");
+        //listViewClients = (ListView) findViewById(R.id.listViewClients);
         listViewClients=(ListView)findViewById(R.id.listViewClients);
-        // listViewClients1=(ListView)findViewById(R.id.listViewClients);
+        user= FirebaseAuth.getInstance().getCurrentUser();
+        uid=user.getUid();
 
+        key = databaseClients.child("Calls Generated").push().getKey();
+        //t1.setText(uid);
+//storing clients in array list
         clients = new ArrayList<>();
-        //clients1 = new ArrayList<>();
-
 
 
         listViewClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Total data = clients.get(i);
+
+
+
+                Total data = clients.get(position);
 
                 //creating an intent
-                Intent intent = new Intent(getApplicationContext(), GenAct.class);
+                Intent intent = new Intent(getApplicationContext(), ActualPrevCall.class);
 
                 //putting artist name and id to intent
                 intent.putExtra(Region, data.getCity());
@@ -114,13 +143,12 @@ public class GeneratedCalls extends AppCompatActivity {
 
 
 
-    }
 
+    }
 
 
     @Override
     protected void onStart() {
-
         super.onStart();
         //attaching value event listener
         databaseClients.addValueEventListener(new ValueEventListener() {
@@ -143,17 +171,9 @@ public class GeneratedCalls extends AppCompatActivity {
                 }
 
                 //creating adapter
-                ViewCalls artistAdapter = new ViewCalls(GeneratedCalls.this, clients);
-                //GeneratedList artistAdapter1 = new GeneratedList(GeneratedCalls.this, clients);
+                SampleImg artistAdapter = new SampleImg(Retrievedatasample.this, clients);
                 //attaching adapter to the listview
                 listViewClients.setAdapter(artistAdapter);
-
-
-                //  GeneratedList artistAdapter1 = new GeneratedList(GeneratedCalls.this, clients);
-                //GeneratedList artistAdapter1 = new GeneratedList(GeneratedCalls.this, clients);
-                //attaching adapter to the listview
-                // listViewClients.setAdapter(artistAdapter1);
-                //listViewClients1.setAdapter(artistAdapter1);
             }
 
 

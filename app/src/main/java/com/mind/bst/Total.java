@@ -1,9 +1,5 @@
 package com.mind.bst;
 
-import android.graphics.Bitmap;
-import android.media.Image;
-import android.widget.ImageView;
-
 public class Total {
 
 
@@ -152,7 +148,74 @@ public class Total {
 
     }
 
-   /* public String getImage() {
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setEngineer(String engineer) {
+        this.engineer = engineer;
+    }
+
+    public void setClient(String client) {
+        this.client = client;
+    }
+
+    public void setClient_add(String client_add) {
+        this.client_add = client_add;
+    }
+
+    public void setClient_cont(String client_cont) {
+        this.client_cont = client_cont;
+    }
+
+    public void setClient_email(String client_email) {
+        this.client_email = client_email;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setProduct_serial_no(String product_serial_no) {
+        this.product_serial_no = product_serial_no;
+    }
+
+    public void setNature_of_complaint(String nature_of_complaint) {
+        this.nature_of_complaint = nature_of_complaint;
+    }
+
+    public void setDetails_of_complaint(String details_of_complaint) {
+        this.details_of_complaint = details_of_complaint;
+    }
+
+    public void setEngineer_observation(String engineer_observation) {
+        this.engineer_observation = engineer_observation;
+    }
+
+    public void setClient_remark(String client_remark) {
+        this.client_remark = client_remark;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public void setStatus_of_complaint(String status_of_complaint) {
+        this.status_of_complaint = status_of_complaint;
+    }
+
+    public void setPayment_via(String payment_via) {
+        this.payment_via = payment_via;
+    }
+
+    public void setClient_image_url(String client_image_url) {
+        this.client_image_url = client_image_url;
+    }
+/* public String getImage() {
         return Image;
     }
 

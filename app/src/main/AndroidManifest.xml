@@ -20,10 +20,11 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sampleAct">
-
+        <activity android:name=".SampleImg"></activity>
+        <activity android:name=".Retrievedatasample">
 
         </activity>
+        <activity android:name=".sampleAct" />
         <activity
             android:name=".ActualPrevCall"
             android:parentActivityName=".PrevActual" />
@@ -31,10 +32,9 @@
         <activity
             android:name=".PrevActual"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".PrevImg"
-            android:windowSoftInputMode="adjustPan" >
-
-        </activity>
+        <activity
+            android:name=".PrevImg"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ViewProfile"
             android:parentActivityName=".HomeActivity" />
