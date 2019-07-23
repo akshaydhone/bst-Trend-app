@@ -5,13 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewProfile">
+   <!-- <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Client Visits"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />-->
+
 
 
     <ListView
         android:id="@+id/listViewClients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"></ListView>
+        android:layout_below="@+id/textView"></ListView>
 
 
 </RelativeLayout>

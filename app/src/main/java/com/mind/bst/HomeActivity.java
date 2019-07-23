@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,11 +16,22 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.onesignal.OneSignal;
 
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity {
 CardView b1,b2,b3,b4;
 LinearLayout ll;
 TextView username;
+    List<UserInformation> clients;
     private FirebaseAuth mAuth;
+
+
+    public static final String Region = "com.mind.bst.region";
+    public static final String Name = "com.mind.bst.name";
+    public static final String Address = "com.mind.bst.address";
+    public static final String Contact = "com.mind.bst.contact";
+    public static final String Email = "com.mind.bst.email";
+    public static final String Image_Url = "com.mind.bst.image_url";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +49,11 @@ TextView username;
 
         mAuth = FirebaseAuth.getInstance(); // important Call
         //Again check if the user is Already Logged in or Not
+
+
+
+
+
 
         if(mAuth.getCurrentUser() == null)
         {
@@ -93,15 +110,22 @@ TextView username;
             }
         });
 
-        b4.setOnClickListener(new View.OnClickListener() {
+    b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //For getting the next activity
-                Intent i=new Intent(HomeActivity.this,ViewProfile.class);
-                startActivity(i);
+            Intent i=new Intent(HomeActivity.this,ViewProfile.class);
+            startActivity(i);
+
+                //UserInformation data = clients.get(position);
+
+
+
+
             }
         });
+
 
 //initializing the onesignal for notification
         OneSignal.startInit(this)

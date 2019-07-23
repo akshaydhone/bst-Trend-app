@@ -1,11 +1,23 @@
 package com.mind.bst;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -13,6 +25,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -23,9 +36,16 @@ public class PrevActual extends AppCompatActivity {
     public static final String CLIENT_NAME = "com.mind.bst.clientname";
     public static final String CLIENT_ID = "com.mind.bst.clientid";
     ListView listViewClients;
+    private ArrayAdapter mAdapter;
+
+    Intent intent = getIntent();
+  //Toolbar mToolbar;
 
     //here data is a java class name
     List<Total> clients;
+   // ArrayAdapter<Total> artistAdapter;
+    TextView mEmptyView;
+
     //selecting a database ref
     DatabaseReference databaseClients;
     FirebaseUser user;
@@ -68,9 +88,13 @@ public class PrevActual extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //getting the root name database table
+        mEmptyView = (TextView) findViewById(R.id.emptyView);
         databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated");
         //listViewClients = (ListView) findViewById(R.id.listViewClients);
         listViewClients=(ListView)findViewById(R.id.listViewClients);
+
+       // mToolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(mToolbar);
         user= FirebaseAuth.getInstance().getCurrentUser();
         uid=user.getUid();
 
@@ -132,9 +156,15 @@ public class PrevActual extends AppCompatActivity {
 
     }
 
+   /* private void firebaseSearch(String searchText){
+        Query firebaseSearchQuery =databaseClients.orderByChild("client").startAt(searchText).endAt(searchText + "\uf8ff");
+        FirebaseRecyclerAdapter
+    }*/
+
 
     @Override
     protected void onStart() {
+
         super.onStart();
         //attaching value event listener
         databaseClients.addValueEventListener(new ValueEventListener() {
@@ -156,10 +186,19 @@ public class PrevActual extends AppCompatActivity {
 
                 }
 
+
+
                 //creating adapter
-              ViewClientCallsImg artistAdapter = new ViewClientCallsImg(PrevActual.this, clients);
+
+         ViewClientCallsImg artistAdapter = new ViewClientCallsImg(PrevActual.this, clients);
                 //attaching adapter to the listview
-                listViewClients.setAdapter(artistAdapter);
+
+                //adapter = new ArrayAdapter(this, R.layout.activity_prev_actual);
+
+              // mAdapter = new ArrayAdapter<Total>(PrevActual.this,android.R.layout.simple_list_item_1);
+                    mAdapter=artistAdapter;
+                listViewClients.setAdapter(mAdapter);
+
             }
 
 
@@ -169,6 +208,202 @@ public class PrevActual extends AppCompatActivity {
 
             }
         });
+
+        listViewClients.setEmptyView(mEmptyView);
     }
 
+  @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+      MenuInflater inflater=getMenuInflater();
+      inflater.inflate(R.menu.searchmenu,menu);
+      final MenuItem searchItem =menu.findItem(R.id.action_search);
+      SearchView searchView=(SearchView)searchItem.getActionView();
+      searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+      searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+          @Override
+          public boolean onQueryTextSubmit(String s) {
+
+             // databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated").child("client");
+              Query queryfilter = FirebaseDatabase.getInstance()
+                      .getReference("Calls Generated")
+                      .child("client").startAt(s).endAt(s+"\uf8ff");
+
+
+
+
+
+
+
+              return false;
+          }
+
+          @Override
+          public boolean onQueryTextChange(String s) {
+//databaseClients=FirebaseDatabase.getInstance().getReference("");
+
+              mAdapter.getFilter().filter(s);
+
+              return false;
+          }
+      });
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*@Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.searchmenu,menu);
+       // MenuItem searchItem =menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+     //MenuItem menuItem =menu.findItem(R.id.action_search);
+        //searchView.setOnQueryTextListener(this);
+
+
+
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+          mAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
+    }*/
+
+
+
+   /* @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+
+             Toast.makeText(getApplicationContext(), "Search....", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }*/
+
+
+
+
+
+
+
+
+
+    /*@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.searchmenu, menu);
+
+        MenuItem mSearch = menu.findItem(R.id.action_search);
+
+        SearchView mSearchView = (SearchView) mSearch.getActionView();
+        mSearchView.setQueryHint("Search");
+
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }*/
+
+
+
+
+
+   /* @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.searchmenu, menu);
+
+        MenuItem mSearch = menu.findItem(R.id.action_search);
+
+        SearchView mSearchView = (SearchView) mSearch.getActionView();
+//        mSearchView.setQueryHint("Search");
+
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                artistAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }*/
+/*public void updateList(List<Total>newList){
+    clients=new ArrayList<>();
+    clients.addAll(newList);
+    notifyDatasetChanged();
+
 }
+
+    private void notifyDatasetChanged() {
+    }
+
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+
+    String userInput=s.toLowerCase();
+    List<Total>newList=new ArrayList<>();
+
+  for(Total client:clients){
+
+
+
+  }
+
+        return false;
+    }*/
+}
+
+
+

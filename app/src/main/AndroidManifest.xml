@@ -20,10 +20,16 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SampleImg"></activity>
-        <activity android:name=".Retrievedatasample">
+        <activity android:name=".SearchBase">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
+        <activity android:name=".SampleImg" />
+        <activity android:name=".Retrievedatasample"></activity>
         <activity android:name=".sampleAct" />
         <activity
             android:name=".ActualPrevCall"
@@ -67,11 +73,6 @@
             android:parentActivityName=".AdminActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".splashscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".RegisterActivity" />

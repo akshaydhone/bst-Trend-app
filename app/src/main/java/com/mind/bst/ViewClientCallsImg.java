@@ -79,7 +79,7 @@ public class ViewClientCallsImg extends ArrayAdapter<Total> {
 
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position , View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.activity_view_client_calls_img, null, true);
 
@@ -167,7 +167,8 @@ public class ViewClientCallsImg extends ArrayAdapter<Total> {
 //        TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
 
 
-        Total data = clients.get(position);
+        Total data = clients.get(position );
+
         //UserInformation data1=clients1.get(position);
         textViewName.setText(data.getClient());
         // textViewAdd.setText(data.getAddress());
