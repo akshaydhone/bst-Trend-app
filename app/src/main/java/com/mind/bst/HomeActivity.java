@@ -105,8 +105,9 @@ TextView username;
             public void onClick(View v) {
 
                 //For getting the next activity
-                //Intent i=new Intent(HomeActivity.this,PendingCall.class);
-                //startActivity(i);
+               //Intent i=new Intent(HomeActivity.this,PendingCall.class);
+                Intent i=new Intent(HomeActivity.this,SearchBase.class);
+                startActivity(i);
             }
         });
 

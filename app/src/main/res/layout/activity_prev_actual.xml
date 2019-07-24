@@ -6,7 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".PrevActual">
 
-    <TextView
+ <!--<SearchView
+        android:layout_width="match_parent"
+        android:id="@+id/searchView"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="10dp"
+        app:queryHint="Search"
+        android:layout_margin="5dp"></SearchView>-->
+
+
+  <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +30,7 @@
         android:id="@+id/listViewClients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_below="@+id/textView"></ListView>
 
 

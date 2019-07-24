@@ -1,5 +1,6 @@
 package com.mind.bst;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -21,10 +22,13 @@ public class SearchBase extends AppCompatActivity {
     RecyclerView recyclerView;
     SearchView searchView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_base);
+        getSupportActionBar().setTitle("RecyclerView");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ref= FirebaseDatabase.getInstance().getReference().child("Calls Generated");
         recyclerView=findViewById(R.id.rv);

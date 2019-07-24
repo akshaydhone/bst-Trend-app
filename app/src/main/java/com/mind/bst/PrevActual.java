@@ -36,14 +36,14 @@ public class PrevActual extends AppCompatActivity {
     public static final String CLIENT_NAME = "com.mind.bst.clientname";
     public static final String CLIENT_ID = "com.mind.bst.clientid";
     ListView listViewClients;
-    private ArrayAdapter mAdapter;
+public ArrayAdapter mAdapter;
 
     Intent intent = getIntent();
-  //Toolbar mToolbar;
+    //Toolbar mToolbar;
 
     //here data is a java class name
     List<Total> clients;
-   // ArrayAdapter<Total> artistAdapter;
+    // ArrayAdapter<Total> artistAdapter;
     TextView mEmptyView;
 
     //selecting a database ref
@@ -93,12 +93,12 @@ public class PrevActual extends AppCompatActivity {
         //listViewClients = (ListView) findViewById(R.id.listViewClients);
         listViewClients=(ListView)findViewById(R.id.listViewClients);
 
-       // mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        // mToolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(mToolbar);
         user= FirebaseAuth.getInstance().getCurrentUser();
         uid=user.getUid();
 
-      key = databaseClients.child("Calls Generated").push().getKey();
+        key = databaseClients.child("Calls Generated").push().getKey();
 //storing clients in array list
         clients = new ArrayList<>();
 
@@ -149,7 +149,8 @@ public class PrevActual extends AppCompatActivity {
 
 
             }
-        });
+        }
+        );
 
 
 
@@ -190,13 +191,13 @@ public class PrevActual extends AppCompatActivity {
 
                 //creating adapter
 
-         ViewClientCallsImg artistAdapter = new ViewClientCallsImg(PrevActual.this, clients);
+                ViewClientCallsImg artistAdapter = new ViewClientCallsImg(PrevActual.this, clients);
                 //attaching adapter to the listview
 
                 //adapter = new ArrayAdapter(this, R.layout.activity_prev_actual);
 
-              // mAdapter = new ArrayAdapter<Total>(PrevActual.this,android.R.layout.simple_list_item_1);
-                    mAdapter=artistAdapter;
+                // mAdapter = new ArrayAdapter<Total>(PrevActual.this,android.R.layout.simple_list_item_1);
+                mAdapter=artistAdapter;
                 listViewClients.setAdapter(mAdapter);
 
             }
@@ -212,45 +213,67 @@ public class PrevActual extends AppCompatActivity {
         listViewClients.setEmptyView(mEmptyView);
     }
 
-  @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-      MenuInflater inflater=getMenuInflater();
-      inflater.inflate(R.menu.searchmenu,menu);
-      final MenuItem searchItem =menu.findItem(R.id.action_search);
-      SearchView searchView=(SearchView)searchItem.getActionView();
-      searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-      searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-          @Override
-          public boolean onQueryTextSubmit(String s) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.searchmenu,menu);
+        final MenuItem searchItem =menu.findItem(R.id.action_search);
+        SearchView searchView=(SearchView)searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
 
-             // databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated").child("client");
-              Query queryfilter = FirebaseDatabase.getInstance()
-                      .getReference("Calls Generated")
-                      .child("client").startAt(s).endAt(s+"\uf8ff");
-
-
+                // databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated").child("client");
+                //Query queryfilter = FirebaseDatabase.getInstance()
+                        //.getReference("Calls Generated")
+                        //.child("client").startAt(s).endAt(s+"\uf8ff");
 
 
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String s) {
+          //databaseClients=FirebaseDatabase.getInstance().getReference("");
 
+               /*mAdapter.getFilter().filter(s);
+                mAdapter.notifyDataSetChanged();*/
+                search(s);
 
-              return false;
-          }
-
-          @Override
-          public boolean onQueryTextChange(String s) {
-//databaseClients=FirebaseDatabase.getInstance().getReference("");
-
-              mAdapter.getFilter().filter(s);
-
-              return false;
-          }
-      });
+                return true;
+            }
+        });
         return true;
     }
 
 
+    public void search(String str){
+        List<Total> myclients=new ArrayList<>();
+        for(Total object:clients)
+        {
+            if(object.getClient().toLowerCase().contains(str.toLowerCase()))
 
+            {
+                myclients.add(object);
+
+            }
+        }
+
+
+
+
+
+        ViewClientCallsImg artistAdapter = new ViewClientCallsImg(PrevActual.this, myclients);
+        //attaching adapter to the listview
+
+        //adapter = new ArrayAdapter(this, R.layout.activity_prev_actual);
+
+        // mAdapter = new ArrayAdapter<Total>(PrevActual.this,android.R.layout.simple_list_item_1);
+        mAdapter=artistAdapter;
+        listViewClients.setAdapter(mAdapter);
+
+    }
 
 
 
