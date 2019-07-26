@@ -116,8 +116,8 @@ TextView username;
             public void onClick(View v) {
 
                 //For getting the next activity
-            Intent i=new Intent(HomeActivity.this,ViewProfile.class);
-            startActivity(i);
+           // Intent i=new Intent(HomeActivity.this,ViewProfile.class);
+           // startActivity(i);
 
                 //UserInformation data = clients.get(position);
 
@@ -146,6 +146,7 @@ TextView username;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id=item.getItemId();
+       // int profile=item.getItemId();
 
 
         //signout function
@@ -155,7 +156,20 @@ TextView username;
                 mAuth.signOut();
                 finish();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+            case R.id.myprofile:
+                Intent i=new Intent(HomeActivity.this,ViewProfile.class);
+                startActivity(i);
         }
+
+
+
         return true;
+
+
+
+
+
+
     }
 }

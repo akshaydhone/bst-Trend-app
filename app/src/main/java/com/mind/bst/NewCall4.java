@@ -496,8 +496,13 @@ public class NewCall4 extends AppCompatActivity {
         String e3Text=NewCallGen.e3.getText().toString();
         String e4Text=NewCallGen.e4.getText().toString();
 
-          String e5Text=NewCall1.e1.getText().toString();
-          String e6Text=NewCall1.e2.getText().toString();
+
+        String e18Text=NewCallGen.e6.getText().toString();
+        String e19Text=NewCallGen.e7.getText().toString();
+        String e20Text=NewCallGen.e8.getText().toString();
+
+          //String e5Text=NewCall1.e1.getText().toString();
+         // String e6Text=NewCall1.e2.getText().toString();
           String e7Text=NewCall1.mDisplayDate.getText().toString();
           String e8Text=NewCall1.mDisplayTime.getText().toString();
 
@@ -521,9 +526,9 @@ public class NewCall4 extends AppCompatActivity {
 
         String id=databaseReference.push().getKey();
 
-        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text)) &&(!TextUtils.isEmpty(e5Text))&& (!TextUtils.isEmpty(e6Text)) &&(!TextUtils.isEmpty(e7Text))&& (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))&& (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))&& (!TextUtils.isEmpty(e14Text))  && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)))
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text))&& (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))&& (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))&& (!TextUtils.isEmpty(e14Text))  && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text)))
         {
-           Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e5Text,e6Text,e7Text,e8Text,e9Text,e10Text,e11Text,e12Text,e13Text,e14Text,e15Text,e16Text,e17Text);
+           Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e8Text,e9Text,e10Text,e11Text,e12Text,e13Text,e14Text,e15Text,e16Text,e17Text,e18Text,e19Text,e20Text);
             databaseReference.child(id).setValue(data);
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 

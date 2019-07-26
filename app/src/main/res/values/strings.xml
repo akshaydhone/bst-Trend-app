@@ -23,6 +23,15 @@
     <string name="image">com.mind.bst.image</string>
     <string name="payment">com.mind.bst.payment</string>
 
+    <string name="service">com.mind.bst.service</string>
+    <string name="repair">com.mind.bst.repair</string>
+    <string name="installation">com.mind.bst.installation</string>
+
+    <string name="cust_name">com.mind.bst.custname</string>
+    <string name="cust_cont">com.mind.bst.custcont</string>
+    <string name="cust_email">com.mind.bst.custemail</string>
+
+
 
     <string-array name="tag_arrays1">
         <item>Select</item>

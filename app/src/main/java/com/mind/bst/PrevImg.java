@@ -97,8 +97,8 @@ public class PrevImg extends ArrayAdapter<Total> {
 
 
 
-        textViewCont.setText(data.getClient_cont());
-        textViewEmail.setText(data.getClient_email());
+        textViewCont.setText(data.getCust_cont());
+        textViewEmail.setText(data.getCust_email());
         textViewRegion.setText(data.getCity());
 
         textViewName.setText(data.getClient());

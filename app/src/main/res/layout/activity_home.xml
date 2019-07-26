@@ -81,14 +81,14 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundpink"
-                    app:srcCompat="@drawable/visits"
+                    app:srcCompat="@drawable/ic_check_circle_black_24dp"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Client Visits"/>
+                    android:text="Calls Completed"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -158,13 +158,13 @@
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundyello"
                     android:padding="10dp"
-                    app:srcCompat="@drawable/profile" />
+                    app:srcCompat="@drawable/future" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="My Profile"
+                    android:text="Future Calls"
                     android:textStyle="bold" />
 
                 <View

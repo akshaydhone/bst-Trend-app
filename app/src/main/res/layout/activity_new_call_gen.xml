@@ -45,6 +45,49 @@
                     android:focusableInTouchMode="true">
                     <requestFocus />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Type of service Call"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Service"
+                        android:id="@+id/c1"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Repair"
+                        android:id="@+id/c2"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Installation and Commissioning"
+                        android:textColor="#000"
+                        android:id="@+id/c3"
+                        android:textSize="14sp"
+                        />
 
 
                     <TextView
@@ -65,6 +108,27 @@
                         android:inputType="text"
                         />
 
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Region of Service Engineer"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e5"
+                        android:inputType="text"
+                        />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -81,6 +145,30 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:id="@+id/e1"
+                        android:inputType="text"
+
+                        />
+
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Customer Name"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e6"
                         android:inputType="text"
 
                         />
@@ -125,6 +213,41 @@
                          />
 
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Client's Contact No"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e7"
+
+                        android:inputType="phone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Client's Email-ID"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e8"
+
+                        android:inputType="textEmailAddress" />
 
 
 
@@ -164,14 +287,14 @@
 
     </ScrollView>
 
-    <android.support.design.widget.BottomNavigationView
+  <!--  <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_nav"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu"
 
-       />
+       />-->
 
 
 

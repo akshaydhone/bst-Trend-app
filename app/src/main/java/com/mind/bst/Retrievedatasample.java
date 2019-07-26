@@ -41,8 +41,8 @@ public class Retrievedatasample extends AppCompatActivity {
     public static final String Region = "com.mind.bst.region";
     public static final String clientname = "com.mind.bst.clientname";
     public static final String clientaddress = "com.mind.bst.address";
-    public static final String clientcontact = "com.mind.bst.contact";
-    public static final String clientemail = "com.mind.bst.email";
+    public static final String custcont = "com.mind.bst.contact";
+    public static final String custemail = "com.mind.bst.email";
     public static final String clienturl = "com.mind.bst.url";
     public static final String clientremark = "com.mind.bst.remark";
     public static final String date = "com.mind.bst.date";
@@ -109,8 +109,8 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(Region, data.getCity());
                 intent.putExtra(clientname, data.getClient());
                 intent.putExtra(clientaddress, data.getClient_add());
-                intent.putExtra(clientcontact, data.getClient_cont());
-                intent.putExtra(clientemail, data.getClient_email());
+                intent.putExtra(custcont, data.getCust_cont());
+                intent.putExtra(custemail, data.getCust_email());
 
 
 

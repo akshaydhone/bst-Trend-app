@@ -105,8 +105,8 @@ public class ActualPrevCall extends AppCompatActivity {
 
 
 
-        textViewCont.setText(intent.getStringExtra(Retrievedatasample.clientcontact));
-        textViewEmail.setText(intent.getStringExtra(Retrievedatasample.clientemail));
+        textViewCont.setText(intent.getStringExtra(Retrievedatasample.custcont));
+        textViewEmail.setText(intent.getStringExtra(Retrievedatasample.custemail));
         textViewRegion.setText(intent.getStringExtra(Retrievedatasample.Region));
 
         textViewName.setText(intent.getStringExtra(Retrievedatasample.clientname));

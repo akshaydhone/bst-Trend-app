@@ -13,8 +13,8 @@ public class Total {
     String engineer;
     String client;
     String client_add;
-    String client_cont;
-    String client_email;
+   // String client_cont;
+    //String client_email;
     String date;
     String time;
     String product_serial_no;
@@ -26,6 +26,9 @@ public class Total {
     String status_of_complaint;
     String payment_via;
  String client_image_url;
+ String cust_name;
+ String cust_cont;
+ String cust_email;
 
  //private String Image;
 
@@ -49,6 +52,30 @@ public class Total {
         return city;
     }
 
+    public String getCust_name() {
+        return cust_name;
+    }
+
+    public void setCust_name(String cust_name) {
+        this.cust_name = cust_name;
+    }
+
+    public String getCust_cont() {
+        return cust_cont;
+    }
+
+    public void setCust_cont(String cust_cont) {
+        this.cust_cont = cust_cont;
+    }
+
+    public String getCust_email() {
+        return cust_email;
+    }
+
+    public void setCust_email(String cust_email) {
+        this.cust_email = cust_email;
+    }
+
     public String getEngineer() {
         return engineer;
     }
@@ -66,14 +93,6 @@ public class Total {
     }
 
 
-    public String getClient_cont() {
-        return client_cont;
-    }
-
-
-    public String getClient_email() {
-        return client_email;
-    }
 
 
     public String getDate() {
@@ -123,15 +142,14 @@ public class Total {
 
 
 
-    public Total(String data, String city,String engineer,String client,String client_add,String client_cont,String client_email,String date,String time,String product_serial_no,String nature_of_complaint,String details_of_complaint,String engineer_observation,String client_remark,String product_name,String status_of_complaint,String payment_via,String client_image_url) {
+    public Total(String data, String city,String engineer,String client,String client_add,String date,String time,String product_serial_no,String nature_of_complaint,String details_of_complaint,String engineer_observation,String client_remark,String product_name,String status_of_complaint,String payment_via,String client_image_url,String cust_name,String cust_cont,String cust_email) {
         //this.data = data;
 
         this.city = city;
         this.engineer=engineer;
         this.client = client;
         this.client_add=client_add;
-        this.client_cont=client_cont;
-        this.client_email=client_email;
+
         this.date=date;
         this.time=time;
         this.product_serial_no=product_serial_no;
@@ -143,6 +161,9 @@ public class Total {
        this.status_of_complaint=status_of_complaint;
        this.payment_via=payment_via;
        this.client_image_url=client_image_url;
+       this.cust_name=cust_name;
+       this.cust_cont=cust_cont;
+       this.cust_email=cust_email;
    // Image=Iamge;
    // this.client_image=client_image;
 
@@ -164,13 +185,6 @@ public class Total {
         this.client_add = client_add;
     }
 
-    public void setClient_cont(String client_cont) {
-        this.client_cont = client_cont;
-    }
-
-    public void setClient_email(String client_email) {
-        this.client_email = client_email;
-    }
 
     public void setDate(String date) {
         this.date = date;

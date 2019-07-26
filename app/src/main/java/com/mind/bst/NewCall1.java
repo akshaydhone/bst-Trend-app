@@ -43,7 +43,7 @@ public class NewCall1 extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
 
     //private static final String TAG = "SecondActivity";
-   public static EditText e1, e2;
+   //public static EditText e1, e2;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
@@ -71,8 +71,8 @@ public static TextView mDisplayTime;
 
         getSupportActionBar().setTitle("New  Call Generation");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        e1 = (EditText) findViewById(R.id.e1);
-        e2 = (EditText) findViewById(R.id.e2);
+      //  e1 = (EditText) findViewById(R.id.e1);
+       // e2 = (EditText) findViewById(R.id.e2);
         mDisplayDate = (TextView) findViewById(R.id.e3);
         mDisplayTime = (TextView) findViewById(R.id.e4);
 
@@ -107,7 +107,7 @@ public static TextView mDisplayTime;
             public void onClick(View v) {
 
 
-                if (e1.getText().toString().trim().length() == 0) {
+               /* if (e1.getText().toString().trim().length() == 0) {
                     e1.setError("Contact not entered");
                     e1.requestFocus();
                 }
@@ -118,7 +118,7 @@ public static TextView mDisplayTime;
                 }
 
 
-               /* else if (date.isEmpty() ) {
+                else if (date.isEmpty() ) {
                     mDisplayDate.setError("Set date");
                     valid = false;
                 }
@@ -130,7 +130,7 @@ public static TextView mDisplayTime;
                 }*/
 
 
-                else {
+
 
 
                     //sendData();
@@ -141,15 +141,15 @@ public static TextView mDisplayTime;
 
                             "");*/
                     //save contact
-                    String cont = e1.getText().toString();
-                    mEditor.putString(getString(R.string.cont), cont);
-                    mEditor.commit();
+                    //String cont = e1.getText().toString();
+                    //mEditor.putString(getString(R.string.cont), cont);
+                   // mEditor.commit();
 
 
                     //save email
-                    String email = e2.getText().toString();
-                    mEditor.putString(getString(R.string.email), email);
-                    mEditor.commit();
+                   // String email = e2.getText().toString();
+                   // mEditor.putString(getString(R.string.email), email);
+                   // mEditor.commit();
 
                     //save date
                     String date = mDisplayDate.getText().toString();
@@ -167,7 +167,7 @@ public static TextView mDisplayTime;
                     Intent i = new Intent(NewCall1.this, NewCall2.class);
                     startActivity(i);
 
-                }
+
             }
         });
 
@@ -246,16 +246,16 @@ public static TextView mDisplayTime;
 
 
 
-        e1.setText(cont);
-        e2.setText(email);
+       // e1.setText(cont);
+       // e2.setText(email);
         mDisplayDate.setText(date);
         mDisplayTime.setText(time);
     }
 
 
-    public void sendData(){
-        String e5Text=e1.getText().toString();
-        String e6Text=e2.getText().toString();
+   /* public void sendData(){
+        //String e5Text=e1.getText().toString();
+       // String e6Text=e2.getText().toString();
 
 
 
@@ -270,7 +270,7 @@ public static TextView mDisplayTime;
         }
 
 
-    }
+    }*/
 
 
 }

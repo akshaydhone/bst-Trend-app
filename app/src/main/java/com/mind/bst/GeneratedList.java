@@ -84,8 +84,8 @@ public class GeneratedList extends ArrayAdapter<Total> {
         textViewEnggName.setText(data.getEngineer());
         textViewName.setText(data.getClient());
         textViewAdd.setText(data.getClient_add());
-        textViewCont.setText(data.getClient_cont());
-        textViewEmail.setText(data.getClient_email());
+        textViewCont.setText(data.getCust_cont());
+        textViewEmail.setText(data.getCust_email());
         textViewDate.setText(data.getDate());
         textViewTime.setText(data.getTime());
         textViewProductSrNo.setText(data.getProduct_serial_no());

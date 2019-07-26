@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 
@@ -65,9 +66,11 @@ public class NewCallGen extends AppCompatActivity {
 
 
     Button b1;
-  public static TextView e2;
+  public static TextView e2,e5;
 
-   public static EditText e1,e3,e4;
+   public static EditText e1,e3,e4,e6,e7,e8;
+
+   public static CheckBox c1,c2,c3;
 
     private FirebaseAuth mAuth;
     static String LoggedIn_User_Email;
@@ -116,6 +119,16 @@ public static String abc;
         e2 = (TextView) findViewById(R.id.e2);
         e3 = (EditText) findViewById(R.id.e3);
          e4 = (EditText) findViewById(R.id.e4);
+         c1=(CheckBox)findViewById(R.id.c1);
+         c2=(CheckBox)findViewById(R.id.c2);
+         c3=(CheckBox)findViewById(R.id.c3);
+         e5=(TextView)findViewById(R.id.e5);
+
+         e6=(EditText)findViewById(R.id.e6);
+         e7=(EditText)findViewById(R.id.e7);
+         e8=(EditText)findViewById(R.id.e8);
+
+
         mAuth = FirebaseAuth.getInstance(); // important Call
         if(mAuth.getCurrentUser() == null)
         {
@@ -282,7 +295,9 @@ public static String abc;
                 if (e1.getText().toString().trim().length() == 0) {
                     e1.setError("City not entered");
                     e1.requestFocus();
-                } else if (e2.getText().toString().trim().length() == 0) {
+                }
+
+                else if (e2.getText().toString().trim().length() == 0) {
                     e2.setError("Name not entered");
                     e2.requestFocus();
                 } else if (e3.getText().toString().trim().length() == 0) {
@@ -291,7 +306,32 @@ public static String abc;
                 } else if (e4.getText().toString().trim().length() == 0) {
                     e4.setError("Address not entered");
                     e4.requestFocus();
-                } else {
+                }
+
+
+
+
+                else if (e6.getText().toString().trim().length() == 0) {
+                    e6.setError("Customer Name not entered");
+                    e6.requestFocus();
+                } else if (e7.getText().toString().trim().length() == 0) {
+                    e7.setError("Client's Contact No not entered");
+                    e7.requestFocus();
+                } else if (e8.getText().toString().trim().length() == 0) {
+                    e8.setError("Client's Email not entered");
+                    e8.requestFocus();
+                }
+
+
+
+
+
+
+
+
+
+
+                else {
                     //sendData();
                     //displayNotification();
                     //Save the edit text
@@ -315,6 +355,41 @@ public static String abc;
                     String add = e4.getText().toString();
                     mEditor.putString(getString(R.string.add), add);
                     mEditor.commit();
+
+
+
+                    String cust_name = e6.getText().toString();
+                    mEditor.putString(getString(R.string.cust_name), cust_name);
+                    mEditor.commit();
+
+
+
+                    String cust_cont = e7.getText().toString();
+                    mEditor.putString(getString(R.string.cust_cont), cust_cont);
+                    mEditor.commit();
+
+
+
+                    String cust_email = e8.getText().toString();
+                    mEditor.putString(getString(R.string.cust_email), cust_email);
+                    mEditor.commit();
+
+
+
+
+                    String service = c1.getText().toString();
+                    mEditor.putString(getString(R.string.service), service);
+                    mEditor.commit();
+
+                    String repair = c2.getText().toString();
+                    mEditor.putString(getString(R.string.repair), repair);
+                    mEditor.commit();
+
+
+                    String installation = c3.getText().toString();
+                    mEditor.putString(getString(R.string.installation), installation);
+                    mEditor.commit();
+
 
 
                     Intent i=new Intent(NewCallGen.this,NewCall1.class);
@@ -344,12 +419,26 @@ public static String abc;
         String client = mPreferences.getString(getString(R.string.client), "");
         String add = mPreferences.getString(getString(R.string.add), "");
 
+        String service = mPreferences.getString(getString(R.string.service), "");
+        String repair = mPreferences.getString(getString(R.string.repair), "");
+        String installation = mPreferences.getString(getString(R.string.installation), "");
+
+        String cust_name = mPreferences.getString(getString(R.string.cust_name), "");
+        String cust_cont = mPreferences.getString(getString(R.string.cust_cont), "");
+        String cust_email = mPreferences.getString(getString(R.string.cust_email), "");
+
         FirebaseUser user = mAuth.getCurrentUser();
         Log.d("LOGGED", "FirebaseUser: " + user);
         e1.setText(city);
         e2.setText(user.getDisplayName());
         e3.setText(client);
         e4.setText(add);
+        e6.setText(cust_name);
+        e7.setText(cust_cont);
+        e8.setText(cust_email);
+        c1.setChecked(Boolean.parseBoolean(service.toString()));
+        c2.setChecked(Boolean.parseBoolean(repair.toString()));
+        c3.setChecked(Boolean.parseBoolean(installation.toString()));
     }
 
 

@@ -33,6 +33,12 @@ public class GeneratedCalls extends AppCompatActivity {
     public static final String clientremark = "com.mind.bst.remark";
     public static final String date = "com.mind.bst.date";
 
+   // public static final String custname = "com.mind.bst.custname";
+    public static final String custcont = "com.mind.bst.custcont";
+    public static final String custemail = "com.mind.bst.custemail";
+
+
+
 
     public static final String detailofcomplaint = "com.mind.bst.detailofcomplaint";
     public static final String enggname = "com.mind.bst.enggname";
@@ -80,9 +86,11 @@ public class GeneratedCalls extends AppCompatActivity {
                 intent.putExtra(Region, data.getCity());
                 intent.putExtra(clientname, data.getClient());
                 intent.putExtra(clientaddress, data.getClient_add());
-                intent.putExtra(clientcontact, data.getClient_cont());
-                intent.putExtra(clientemail, data.getClient_email());
+                //intent.putExtra(clientcontact, data.getClient_cont());
+                //intent.putExtra(clientemail, data.getClient_email());
 
+                intent.putExtra(custcont, data.getCust_cont());
+                intent.putExtra(custemail, data.getCust_email());
 
 
                 intent.putExtra(clienturl, data.getClient_image_url());
