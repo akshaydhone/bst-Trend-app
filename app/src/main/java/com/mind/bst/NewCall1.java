@@ -100,11 +100,11 @@ public static TextView mDisplayTime;
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences( getBaseContext());
                 SharedPreferences.Editor prefEditor = prefs.edit();
-                prefEditor.putString("spinner",s1.getSelectedItem().toString());
+                prefEditor.putString("spinnerpro",s1.getSelectedItem().toString());
 
                 String spinner=PreferenceManager
                         .getDefaultSharedPreferences(getApplicationContext())
-                        .getString("spinner","");
+                        .getString("spinnerpro","");
 
 
                 for(int i=0;i<5;i++)
@@ -197,11 +197,11 @@ public static TextView mDisplayTime;
                 SharedPreferences prefs;
                 prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor prefEditor = prefs.edit();
-                prefEditor.putString("spinner",s1.getSelectedItem().toString());
+                prefEditor.putString("spinnerpro",s1.getSelectedItem().toString());
                 prefEditor.commit();
 
 
-                
+
 
 
 

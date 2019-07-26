@@ -529,9 +529,11 @@ public class NewCall4 extends AppCompatActivity {
 
 
 
-        FirebaseUser user = mAuth.getCurrentUser();
-        Log.d("LOGGED", "FirebaseUser: " + user);
-        String id=user.getDisplayName();
+       // FirebaseUser user = mAuth.getCurrentUser();
+        //Log.d("LOGGED", "FirebaseUser: " + user);
+       // String id=user.getDisplayName();
+        String id=databaseReference.push().getKey();
+
 
         if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text))&& (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))&& (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))&& (!TextUtils.isEmpty(e14Text))  && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text)))
         {
