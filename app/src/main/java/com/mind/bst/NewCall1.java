@@ -15,6 +15,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -55,7 +57,7 @@ public class NewCall1 extends AppCompatActivity {
 
 
     Button b1;
-    Spinner s1;
+    public static Spinner s1;
     TimePickerDialog picker;
 
   public static TextView mDisplayDate;
@@ -79,11 +81,41 @@ public static TextView mDisplayTime;
         s1 = (Spinner) findViewById(R.id.s1);
         b1 = (Button) findViewById(R.id.b1);
 
+
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.tag_arraysup1, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s1.setAdapter(adapter);
+
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         //mPreferences = getSharedPreferences("tabian.com.sharedpreferencestest", Context.MODE_PRIVATE);
         mEditor = mPreferences.edit();
 
         checkSharedPreferences();
+
+
+
+        s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences( getBaseContext());
+                SharedPreferences.Editor prefEditor = prefs.edit();
+                prefEditor.putString("spinner",s1.getSelectedItem().toString());
+
+                String spinner=PreferenceManager
+                        .getDefaultSharedPreferences(getApplicationContext())
+                        .getString("spinner","");
+
+
+                for(int i=0;i<5;i++)
+                    if(spinner.equals(s1.getItemAtPosition(i).toString())){
+                        s1.setSelection(i);
+                        break;
+                    }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent){}
+        });
 
 
         SharedPreferences mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -162,9 +194,20 @@ public static TextView mDisplayTime;
                     mEditor.commit();
 
 
+                SharedPreferences prefs;
+                prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor prefEditor = prefs.edit();
+                prefEditor.putString("spinner",s1.getSelectedItem().toString());
+                prefEditor.commit();
 
 
-                    Intent i = new Intent(NewCall1.this, NewCall2.class);
+                
+
+
+
+
+
+                Intent i = new Intent(NewCall1.this, NewCall2.class);
                     startActivity(i);
 
 
@@ -239,6 +282,7 @@ public static TextView mDisplayTime;
 
         String date = mPreferences.getString(getString(R.string.date), "");
         String time = mPreferences.getString(getString(R.string.time), "");
+        String spinner = mPreferences.getString(getString(R.string.spinner), "");
 
 
 

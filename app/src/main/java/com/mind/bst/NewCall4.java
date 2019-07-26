@@ -212,6 +212,8 @@ public class NewCall4 extends AppCompatActivity {
                     if(savedValue.equals(s1.getItemAtPosition(i).toString())){
                         s1.setSelection(i);
                         break;
+
+
                     }
             }
             @Override
@@ -501,6 +503,9 @@ public class NewCall4 extends AppCompatActivity {
         String e19Text=NewCallGen.e7.getText().toString();
         String e20Text=NewCallGen.e8.getText().toString();
 
+
+        String e21Text=NewCall1.s1.getSelectedItem().toString();
+
           //String e5Text=NewCall1.e1.getText().toString();
          // String e6Text=NewCall1.e2.getText().toString();
           String e7Text=NewCall1.mDisplayDate.getText().toString();
@@ -520,15 +525,17 @@ public class NewCall4 extends AppCompatActivity {
         String e15Text=NewCall3.s1.getSelectedItem().toString();
         String e16Text=NewCall4.s1.getSelectedItem().toString();
         String e17Text=NewCall4.url.getText().toString();
+       // String e14Text=NewCall2.s1.getSelectedItem().toString();
 
 
 
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
+        String id=user.getDisplayName();
 
-        String id=databaseReference.push().getKey();
-
-        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text))&& (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))&& (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))&& (!TextUtils.isEmpty(e14Text))  && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text)))
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text))&& (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))&& (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))&& (!TextUtils.isEmpty(e14Text))  && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text)))
         {
-           Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e8Text,e9Text,e10Text,e11Text,e12Text,e13Text,e14Text,e15Text,e16Text,e17Text,e18Text,e19Text,e20Text);
+           Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e8Text,e9Text,e10Text,e11Text,e12Text,e13Text,e14Text,e15Text,e16Text,e17Text,e18Text,e19Text,e20Text,e21Text);
             databaseReference.child(id).setValue(data);
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 

@@ -41,6 +41,24 @@
         <item>Motherboard</item>
 
 
+
+
+
+    </string-array>
+
+
+
+    <string-array name="tag_arraysup1">
+        <item>Select</item>
+        <item>Printer</item>
+        <item>Xerox machine</item>
+        <item>CPU</item>
+        <item>Motherboard</item>
+
+
+
+
+
     </string-array>
 
 

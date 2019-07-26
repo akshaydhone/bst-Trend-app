@@ -29,6 +29,7 @@ public class Total {
  String cust_name;
  String cust_cont;
  String cust_email;
+ String pro_name;
 
  //private String Image;
 
@@ -47,6 +48,14 @@ public class Total {
    /*public String getData() {
         return data;
     }*/
+
+    public String getPro_name() {
+        return pro_name;
+    }
+
+    public void setPro_name(String pro_name) {
+        this.pro_name = pro_name;
+    }
 
     public String getCity() {
         return city;
@@ -142,7 +151,7 @@ public class Total {
 
 
 
-    public Total(String data, String city,String engineer,String client,String client_add,String date,String time,String product_serial_no,String nature_of_complaint,String details_of_complaint,String engineer_observation,String client_remark,String product_name,String status_of_complaint,String payment_via,String client_image_url,String cust_name,String cust_cont,String cust_email) {
+    public Total(String data, String city,String engineer,String client,String client_add,String date,String time,String product_serial_no,String nature_of_complaint,String details_of_complaint,String engineer_observation,String client_remark,String product_name,String status_of_complaint,String payment_via,String client_image_url,String cust_name,String cust_cont,String cust_email,String pro_name) {
         //this.data = data;
 
         this.city = city;
@@ -164,6 +173,7 @@ public class Total {
        this.cust_name=cust_name;
        this.cust_cont=cust_cont;
        this.cust_email=cust_email;
+       this.pro_name=pro_name;
    // Image=Iamge;
    // this.client_image=client_image;
 
