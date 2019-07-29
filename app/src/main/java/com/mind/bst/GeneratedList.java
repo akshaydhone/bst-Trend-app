@@ -87,15 +87,15 @@ public class GeneratedList extends ArrayAdapter<Total> {
         textViewCont.setText(data.getCust_cont());
         textViewEmail.setText(data.getCust_email());
         textViewDate.setText(data.getDate());
-        textViewTime.setText(data.getTime());
+       // textViewTime.setText(data.getTime());
         textViewProductSrNo.setText(data.getProduct_serial_no());
-        textViewNatureOfComp.setText(data.getNature_of_complaint());
-        textViewComplaint.setText(data.getDetails_of_complaint());
+        //textViewNatureOfComp.setText(data.getNature_of_complaint());
+        //textViewComplaint.setText(data.getDetails_of_complaint());
         textViewEnggObs.setText(data.getEngineer_observation());
         textViewRemark.setText(data.getClient_remark());
-        textViewProductName.setText(data.getProduct_name());
-        textViewStatus.setText(data.getStatus_of_complaint());
-        textViewPayment.setText(data.getPayment_via());
+        //textViewProductName.setText(data.getProduct_name());
+       // textViewStatus.setText(data.getStatus_of_complaint());
+        //textViewPayment.setText(data.getPayment_via());
        // textViewUrl.setText(data.getClient_image_url());
         Picasso.with(context).load(data.getClient_image_url().toString()).into(textViewUrl);
 

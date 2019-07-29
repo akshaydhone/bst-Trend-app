@@ -11,6 +11,7 @@
     <string name="cont">com.mind.bst.cont</string>
     <string name="email">com.mind.bst.email</string>
     <string name="date">com.mind.bst.date</string>
+    <string name="attenddate">com.mind.bst.attenddate</string>
     <string name="time">com.mind.bst.time</string>
 
     <string name="pserial">com.mind.bst.pserial</string>
@@ -33,7 +34,6 @@
     <string name="cust_email">com.mind.bst.custemail</string>
 
 
-
     <string-array name="tag_arrays1">
         <item>Select</item>
         <item>Printer</item>
@@ -42,11 +42,7 @@
         <item>Motherboard</item>
 
 
-
-
-
     </string-array>
-
 
 
     <string-array name="tag_arraysup1">
@@ -55,9 +51,6 @@
         <item>Xerox machine</item>
         <item>CPU</item>
         <item>Motherboard</item>
-
-
-
 
 
     </string-array>

@@ -112,25 +112,23 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(custcont, data.getCust_cont());
                 intent.putExtra(custemail, data.getCust_email());
 
-
-
                 intent.putExtra(clienturl, data.getClient_image_url());
                 intent.putExtra(clientremark, data.getClient_remark());
                 intent.putExtra(date, data.getDate());
-                intent.putExtra(detailofcomplaint, data.getDetails_of_complaint());
+                //intent.putExtra(detailofcomplaint, data.getDetails_of_complaint());
 
 
                 intent.putExtra(enggname, data.getEngineer());
                 intent.putExtra(enggobs, data.getEngineer_observation());
-                intent.putExtra(natureofcomplaint, data.getNature_of_complaint());
-                intent.putExtra(payment, data.getPayment_via());
-                intent.putExtra(proname, data.getProduct_name());
+                //intent.putExtra(natureofcomplaint, data.getNature_of_complaint());
+               // intent.putExtra(payment, data.getPayment_via());
+                //intent.putExtra(proname, data.getProduct_name());
 
 
-                intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
+              //  intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
 
                 intent.putExtra(prosrno, data.getProduct_serial_no());
-                intent.putExtra(time, data.getTime());
+               // intent.putExtra(time, data.getTime());
 
 
 

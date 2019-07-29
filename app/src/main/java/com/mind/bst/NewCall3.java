@@ -3,8 +3,11 @@ package com.mind.bst;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,9 +19,9 @@ public class NewCall3 extends AppCompatActivity {
     private static final String TAG = "NewCall3";
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
-   public static EditText e1,e2;
+   public static EditText e1,e2,e3,e4;
     Button b1;
-    public static Spinner s1;
+   // public static Spinner s1;
 
 
     @Override
@@ -26,22 +29,50 @@ public class NewCall3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_call3);
 
-       getSupportActionBar().setTitle("Status and observation");
+       getSupportActionBar().setTitle("Identify Problem and solution");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         e1=(EditText)findViewById(R.id.e1);
         e2=(EditText)findViewById(R.id.e2);
 
+        e3=(EditText)findViewById(R.id.e3);
+        e4=(EditText)findViewById(R.id.e4);
+
 
 
         b1=(Button)findViewById(R.id.b1);
- s1 = (Spinner) findViewById(R.id.s1);
 
 
 
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+
+        BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch(menuItem.getItemId())
+                {
+                    case R.id.home:
+                        Intent i=new Intent(getApplicationContext(),HomeActivity.class);
+                        startActivity(i);
+                        break;
+
+
+                    case R.id.visits:
+                        Intent j=new Intent(getApplicationContext(),ViewProfile.class);
+                        startActivity(j);
+                        break;
+                }
+                return true;
+            }
+        });
+ //s1 = (Spinner) findViewById(R.id.s1);
+
+
+
+       /* final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.tag_arrays2, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s1.setAdapter(adapter);
+        s1.setAdapter(adapter);*/
 
 
 
@@ -54,7 +85,7 @@ public class NewCall3 extends AppCompatActivity {
         checkSharedPreferences();
 
 
-        s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences( getBaseContext());
@@ -74,7 +105,7 @@ public class NewCall3 extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent){}
-        });
+        });*/
 
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +128,23 @@ public class NewCall3 extends AppCompatActivity {
 
 
 
+               else if(e3.getText().toString().trim().length()==0)
+                {
+                    e3.setError("Please fill the details");
+                    e3.requestFocus();
+                }
+
+
+                else if(e4.getText().toString().trim().length()==0)
+                {
+                    e4.setError("Please fill the details");
+                    e4.requestFocus();
+                }
+
+
+
+
+
 
                 else{
 
@@ -111,11 +159,25 @@ public class NewCall3 extends AppCompatActivity {
                     mEditor.putString(getString(R.string.remark), remark);
                     mEditor.commit();
 
-                    SharedPreferences prefs;
+
+
+
+
+                    String nature = e3.getText().toString();
+                    mEditor.putString(getString(R.string.nature), nature);
+                    mEditor.commit();
+
+
+
+                    String details = e4.getText().toString();
+                    mEditor.putString(getString(R.string.details), details);
+                    mEditor.commit();
+
+                   /* SharedPreferences prefs;
                     prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                     SharedPreferences.Editor prefEditor = prefs.edit();
                     prefEditor.putString("spinner1",s1.getSelectedItem().toString());
-                    prefEditor.commit();
+                    prefEditor.commit();*/
 
 
 
@@ -134,9 +196,14 @@ public class NewCall3 extends AppCompatActivity {
         String observation = mPreferences.getString(getString(R.string.observation), "");
         String remark = mPreferences.getString(getString(R.string.remark), "");
 
+        String nature = mPreferences.getString(getString(R.string.nature), "");
+        String details = mPreferences.getString(getString(R.string.details), "");
+
 
 
         e1.setText(observation);
         e2.setText(remark);
+        e3.setText(nature);
+        e4.setText(details);
     }
 }

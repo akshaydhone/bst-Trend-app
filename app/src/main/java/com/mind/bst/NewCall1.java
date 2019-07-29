@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -63,20 +65,48 @@ public class NewCall1 extends AppCompatActivity {
   public static TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
-public static TextView mDisplayTime;
-    private TimePickerDialog.OnTimeSetListener mTimeSetListener;
+//public static TextView mDisplayTime;
+    //private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_call1);
 
-        getSupportActionBar().setTitle("New  Call Generation");
+        getSupportActionBar().setTitle("Call Assigned");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
       //  e1 = (EditText) findViewById(R.id.e1);
        // e2 = (EditText) findViewById(R.id.e2);
         mDisplayDate = (TextView) findViewById(R.id.e3);
-        mDisplayTime = (TextView) findViewById(R.id.e4);
+       // mDisplayTime = (TextView) findViewById(R.id.e4);
+
+
+
+
+
+
+
+        BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch(menuItem.getItemId())
+                {
+                    case R.id.home:
+                        Intent i=new Intent(getApplicationContext(),HomeActivity.class);
+                        startActivity(i);
+                        break;
+
+
+                    case R.id.visits:
+                        Intent j=new Intent(getApplicationContext(),ViewProfile.class);
+                        startActivity(j);
+                        break;
+                }
+                return true;
+            }
+        });
 
         s1 = (Spinner) findViewById(R.id.s1);
         b1 = (Button) findViewById(R.id.b1);
@@ -127,7 +157,7 @@ public static TextView mDisplayTime;
         String client = mPreferences.getString(getString(R.string.client), "");
         String add = mPreferences.getString(getString(R.string.add), "");
         final String date = mDisplayDate.getText().toString();
-        final String time = mDisplayTime.getText().toString();
+        //final String time = mDisplayTime.getText().toString();
 
 
 
@@ -189,9 +219,9 @@ public static TextView mDisplayTime;
                     mEditor.commit();
 
                     //save time
-                    String time =mDisplayTime.getText().toString();
-                    mEditor.putString(getString(R.string.time), time);
-                    mEditor.commit();
+                    //String time =mDisplayTime.getText().toString();
+                   // mEditor.putString(getString(R.string.time), time);
+                    //mEditor.commit();
 
 
                 SharedPreferences prefs;
@@ -246,7 +276,7 @@ public static TextView mDisplayTime;
         };
 
 
-            mDisplayTime.setOnClickListener(new View.OnClickListener() {
+           /* mDisplayTime.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Calendar cal = Calendar.getInstance();
@@ -268,7 +298,7 @@ public static TextView mDisplayTime;
 
                 }
 
-            });
+            });*/
 
 
     }
@@ -293,7 +323,7 @@ public static TextView mDisplayTime;
        // e1.setText(cont);
        // e2.setText(email);
         mDisplayDate.setText(date);
-        mDisplayTime.setText(time);
+       // mDisplayTime.setText(time);
     }
 
 

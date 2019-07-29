@@ -44,7 +44,7 @@
                     android:focusableInTouchMode="true">
                     <requestFocus />
 
-                    <TextView
+                   <!-- <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -65,7 +65,41 @@
                         android:ems="10"
                         android:entries="@array/tag_arrays2"
 
-                        android:prompt="@string/tag_prompt2" />
+                        android:prompt="@string/tag_prompt2" />-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Nature of Complaint"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e3"
+                        android:inputType="text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Details of Complaint"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e4"
+                        android:inputType="text" />
 
 
                     <TextView
@@ -133,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_ui"
-                    android:text="Continue"
+                    android:text="Save"
                     android:textAllCaps="false"
                     android:id="@+id/b1"
                     android:textColor="@color/colorWhite" />
@@ -145,6 +179,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_nav"
+        app:itemBackground="@color/colorBlue"
+        app:itemTextColor="#000"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu"/>
 

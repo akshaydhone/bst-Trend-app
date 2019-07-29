@@ -22,6 +22,7 @@ import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -29,6 +30,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -71,10 +73,13 @@ public class NewCall4 extends AppCompatActivity {
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
     Button select_image,b1,b2;
-    ImageView user_image;
+    ImageView user_image,user_image1,user_image2;
     public static TextView url;
     public static final int READ_EXTERNAL_STORAGE = 0;
     private static final int GALLERY_INTENT = 2;
+    private static final int GALLERY_INTENT1 = 3;
+    private static final int GALLERY_INTENT2 = 4;
+
     private ProgressDialog progressDialog;
     //private Firebase mRoofRef;
     private StorageReference mStorage;
@@ -85,7 +90,7 @@ public class NewCall4 extends AppCompatActivity {
     private static final String TAG = "NewCall4";
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
-    public static Spinner s1;
+   // public static Spinner s1;
 
 
 
@@ -126,13 +131,40 @@ public class NewCall4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_call4);
-        getSupportActionBar().setTitle("Payment Details");
+        getSupportActionBar().setTitle("Product Photo");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         select_image = (Button)findViewById(R.id.select_image);
         user_image = (ImageView) findViewById(R.id.user_image);
+        user_image1 = (ImageView) findViewById(R.id.user_image1);
+        user_image2 = (ImageView) findViewById(R.id.user_image2);
         b1=(Button)findViewById(R.id.b1);
         b2=(Button)findViewById(R.id.b2);
         url=(TextView)findViewById(R.id.url) ;
+
+
+
+        BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch(menuItem.getItemId())
+                {
+                    case R.id.home:
+                        Intent i=new Intent(getApplicationContext(),HomeActivity.class);
+                        startActivity(i);
+                        break;
+
+
+                    case R.id.visits:
+                        Intent j=new Intent(getApplicationContext(),ViewProfile.class);
+                        startActivity(j);
+                        break;
+                }
+                return true;
+            }
+        });
+
 
 
         mAuth = FirebaseAuth.getInstance(); // important Call
@@ -153,14 +185,14 @@ public class NewCall4 extends AppCompatActivity {
         EnableRuntimePermission();
 
 
-    s1 = (Spinner) findViewById(R.id.s1);
+   // s1 = (Spinner) findViewById(R.id.s1);
 
 
 
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+        /*final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.tag_arrays3, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s1.setAdapter(adapter);
+        s1.setAdapter(adapter);*/
 
 
 
@@ -196,7 +228,7 @@ public class NewCall4 extends AppCompatActivity {
 
 
 
-        s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences( getBaseContext());
@@ -221,7 +253,7 @@ public class NewCall4 extends AppCompatActivity {
 
 
             }
-        });
+        });*/
 
 
 
@@ -258,13 +290,19 @@ public class NewCall4 extends AppCompatActivity {
                 SharedPreferences prefs;
                 prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor prefEditor = prefs.edit();
-                prefEditor.putString("payment",s1.getSelectedItem().toString());
+               // prefEditor.putString("payment",s1.getSelectedItem().toString());
                 prefEditor.commit();
+
+
+
+
+                Intent i=new Intent(NewCall4.this,NewCall5.class);
+                startActivity(i);
             }
         });
 
 
-        b2.setOnClickListener(new View.OnClickListener() {
+       /* b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -285,11 +323,11 @@ public class NewCall4 extends AppCompatActivity {
 
 
             }
-        });
+        });*/
 
 
 
-        select_image.setOnClickListener(new View.OnClickListener() {
+      /*  select_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
@@ -344,6 +382,231 @@ public class NewCall4 extends AppCompatActivity {
                                         intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 
                                         startActivityForResult(intent, 7);
+
+                                    }
+                                });
+
+                // Create the Alert dialog
+                AlertDialog alertDialog = builder.create();
+
+                // Show the Alert Dialog box
+                alertDialog.show();
+
+            }
+        });*/
+
+
+
+
+
+
+
+
+
+        user_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                //builder.setMessage("Select Photo");
+                builder.setTitle("Select From");
+
+                builder.setCancelable(true);
+
+                builder.setPositiveButton("Gallery", new DialogInterface
+                        .OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which)
+                    {
+
+                        // When the user click yes button
+                        // then app will close
+                        //Check for Runtime Permission
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                                != PackageManager.PERMISSION_GRANTED)
+                        {
+                            Toast.makeText(getApplicationContext(), "Call for Permission", Toast.LENGTH_SHORT).show();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                            {
+                                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE);
+                            }
+                        }
+                        else
+                        {
+                            callgalary();
+                        }
+
+                    }
+                });
+
+
+
+                builder
+                        .setNegativeButton(
+                                "Camera",
+                                new DialogInterface
+                                        .OnClickListener() {
+
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which)
+                                    {
+
+                                        // If user click no
+                                        // then dialog box is canceled.
+                                        intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+                                        startActivityForResult(intent, 7);
+
+                                    }
+                                });
+
+                // Create the Alert dialog
+                AlertDialog alertDialog = builder.create();
+
+                // Show the Alert Dialog box
+                alertDialog.show();
+
+            }
+        });
+
+
+
+
+
+
+        user_image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                //builder.setMessage("Select Photo");
+                builder.setTitle("Select From");
+
+                builder.setCancelable(true);
+
+                builder.setPositiveButton("Gallery", new DialogInterface
+                        .OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which)
+                    {
+
+                        // When the user click yes button
+                        // then app will close
+                        //Check for Runtime Permission
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                                != PackageManager.PERMISSION_GRANTED)
+                        {
+                            Toast.makeText(getApplicationContext(), "Call for Permission", Toast.LENGTH_SHORT).show();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                            {
+                                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE);
+                            }
+                        }
+                        else
+                        {
+                            callgalaryu1();
+                        }
+
+                    }
+                });
+
+
+
+                builder
+                        .setNegativeButton(
+                                "Camera",
+                                new DialogInterface
+                                        .OnClickListener() {
+
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which)
+                                    {
+
+                                        // If user click no
+                                        // then dialog box is canceled.
+                                        intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+                                        startActivityForResult(intent, 8);
+
+                                    }
+                                });
+
+                // Create the Alert dialog
+                AlertDialog alertDialog = builder.create();
+
+                // Show the Alert Dialog box
+                alertDialog.show();
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+        user_image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                //builder.setMessage("Select Photo");
+                builder.setTitle("Select From");
+
+                builder.setCancelable(true);
+
+                builder.setPositiveButton("Gallery", new DialogInterface
+                        .OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which)
+                    {
+
+                        // When the user click yes button
+                        // then app will close
+                        //Check for Runtime Permission
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                                != PackageManager.PERMISSION_GRANTED)
+                        {
+                            Toast.makeText(getApplicationContext(), "Call for Permission", Toast.LENGTH_SHORT).show();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                            {
+                                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE);
+                            }
+                        }
+                        else
+                        {
+                            callgalaryu2();
+                        }
+
+                    }
+                });
+
+
+
+                builder
+                        .setNegativeButton(
+                                "Camera",
+                                new DialogInterface
+                                        .OnClickListener() {
+
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which)
+                                    {
+
+                                        // If user click no
+                                        // then dialog box is canceled.
+                                        intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+                                        startActivityForResult(intent, 9);
 
                                     }
                                 });
@@ -509,21 +772,21 @@ public class NewCall4 extends AppCompatActivity {
           //String e5Text=NewCall1.e1.getText().toString();
          // String e6Text=NewCall1.e2.getText().toString();
           String e7Text=NewCall1.mDisplayDate.getText().toString();
-          String e8Text=NewCall1.mDisplayTime.getText().toString();
+         // String e8Text=NewCall1.mDisplayTime.getText().toString();
 
 
         String e9Text=NewCall2.e1.getText().toString();
-        String e10Text=NewCall2.e2.getText().toString();
-        String e11Text=NewCall2.e3.getText().toString();
+       // String e10Text=NewCall2.e2.getText().toString();
+        //String e11Text=NewCall2.e3.getText().toString();
 
 
         String e12Text=NewCall3.e1.getText().toString();
         String e13Text=NewCall3.e2.getText().toString();
 
-        String e14Text=NewCall2.s1.getSelectedItem().toString();
+        String e14Text=NewCall3.e3.getText().toString();
 
-        String e15Text=NewCall3.s1.getSelectedItem().toString();
-        String e16Text=NewCall4.s1.getSelectedItem().toString();
+        String e15Text=NewCall3.e4.getText().toString();
+       // String e16Text=NewCall4.s1.getSelectedItem().toString();
         String e17Text=NewCall4.url.getText().toString();
        // String e14Text=NewCall2.s1.getSelectedItem().toString();
 
@@ -535,9 +798,9 @@ public class NewCall4 extends AppCompatActivity {
         String id=databaseReference.push().getKey();
 
 
-        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text))&& (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))&& (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))&& (!TextUtils.isEmpty(e14Text))  && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text)))
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text)))
         {
-           Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e8Text,e9Text,e10Text,e11Text,e12Text,e13Text,e14Text,e15Text,e16Text,e17Text,e18Text,e19Text,e20Text,e21Text);
+           Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text);
             databaseReference.child(id).setValue(data);
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 
@@ -553,6 +816,24 @@ public class NewCall4 extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent, GALLERY_INTENT);
+
+
+
+    }
+    private void callgalaryu1() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, GALLERY_INTENT1);
+
+
+
+    }
+
+
+    private void callgalaryu2() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, GALLERY_INTENT2);
 
 
 
@@ -615,7 +896,8 @@ public class NewCall4 extends AppCompatActivity {
                     url.setText(abc);
 
                 }
-            });
+            }
+            );
 
 
             /*url.setOnClickListener(new View.OnClickListener() {
@@ -630,6 +912,112 @@ public class NewCall4 extends AppCompatActivity {
         }
 
 
+
+
+
+
+
+        if (requestCode == GALLERY_INTENT1 && resultCode == RESULT_OK) {
+
+            final Uri mImageUri = data.getData();
+            user_image1.setImageURI(mImageUri);
+            final StorageReference filePath = mStorage.child("User_Images").child(mImageUri.getLastPathSegment());
+
+            progressDialog.setMessage("Uploading Image....");
+            progressDialog.show();
+
+
+            filePath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                                                 @Override
+                                                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                                                                     Uri downloadUri = taskSnapshot.getDownloadUrl();  //Ignore This error
+
+                                                                     //mRoofRef.child("Image_URL").setValue(downloadUri.toString());
+
+                                                                     Glide.with(getApplicationContext())
+                                                                             .load(downloadUri)
+                                                                             .crossFade()
+                                                                             .placeholder(R.drawable.loading)
+                                                                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                                                                             .into(user_image1);
+
+                                                                     Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
+                                                                     progressDialog.dismiss();
+                                                                     String abc= taskSnapshot.getDownloadUrl().toString();
+                                                                     //url.setText(abc);
+
+                                                                 }
+                                                             }
+            );
+
+
+            /*url.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Toast.makeText(NewCall4.this, "download " +filePath.getDownloadUrl(), Toast.LENGTH_SHORT).show();
+                    //filePath.getDownloadUrl();
+                   // mStorage.getDownloadUrl();
+                }
+            });*/
+        }
+
+
+
+
+
+
+
+
+
+
+        if (requestCode == GALLERY_INTENT2 && resultCode == RESULT_OK) {
+
+            final Uri mImageUri = data.getData();
+            user_image2.setImageURI(mImageUri);
+            final StorageReference filePath = mStorage.child("User_Images").child(mImageUri.getLastPathSegment());
+
+            progressDialog.setMessage("Uploading Image....");
+            progressDialog.show();
+
+
+            filePath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                                                 @Override
+                                                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                                                                     Uri downloadUri = taskSnapshot.getDownloadUrl();  //Ignore This error
+
+                                                                     //mRoofRef.child("Image_URL").setValue(downloadUri.toString());
+
+                                                                     Glide.with(getApplicationContext())
+                                                                             .load(downloadUri)
+                                                                             .crossFade()
+                                                                             .placeholder(R.drawable.loading)
+                                                                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                                                                             .into(user_image2);
+
+                                                                     Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
+                                                                     progressDialog.dismiss();
+                                                                     String abc= taskSnapshot.getDownloadUrl().toString();
+                                                                     //url.setText(abc);
+
+                                                                 }
+                                                             }
+            );
+
+
+            /*url.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Toast.makeText(NewCall4.this, "download " +filePath.getDownloadUrl(), Toast.LENGTH_SHORT).show();
+                    //filePath.getDownloadUrl();
+                   // mStorage.getDownloadUrl();
+                }
+            });*/
+        }
+
         if (requestCode == 7 && resultCode == RESULT_OK) {
 
             //Uri mImageUri = data.getData();
@@ -641,6 +1029,39 @@ public class NewCall4 extends AppCompatActivity {
             //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
 
         }
+
+
+
+
+
+        if (requestCode == 8 && resultCode == RESULT_OK) {
+
+            //Uri mImageUri = data.getData();
+            //user_image.setImageURI(mImageUri);
+
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+
+            user_image1.setImageBitmap(bitmap);
+            //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
+
+        }
+
+
+
+
+
+        if (requestCode == 9 && resultCode == RESULT_OK) {
+
+            //Uri mImageUri = data.getData();
+            //user_image.setImageURI(mImageUri);
+
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+
+            user_image2.setImageBitmap(bitmap);
+            //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
+
+        }
+
 
 
         /*if (requestCode == 7 && resultCode == RESULT_OK) {

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".NewCall5">
 
-    tools:context=".NewCall1">
 
 
     <android.support.v7.widget.Toolbar
@@ -53,7 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Select Product"
+                        android:text="Status of Complaint"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -66,15 +66,15 @@
                         android:id="@+id/s1"
                         android:drawablePadding="5dp"
                         android:ems="10"
-                        android:entries="@array/tag_arrays1"
-                        android:prompt="@string/tag_prompt1" />
+                        android:entries="@array/tag_arrays2"
+                        android:prompt="@string/tag_prompt2" />
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Call Scheduled Date"
+                        android:text="Invoice No of BST ELtromat"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -86,45 +86,96 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/e3"
                         android:textSize="15sp"
-                        android:hint="Select Date" />
+                        android:hint="R3567Y890" />
 
-                 <!--   <TextView
+                    <!--   <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="10dp"
+                           android:text="Engineer's In-Time"
+                           android:textColor="@color/colorPurple"
+                           android:textSize="14sp"
+                           android:textStyle="bold" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           android:id="@+id/e4"
+                           android:textSize="15sp"
+                           android:hint="Select Time"
+
+                          />-->
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Engineer's In-Time"
+                        android:text="Applicable Charges"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:id="@+id/e4"
-                        android:textSize="15sp"
-                        android:hint="Select Time"
 
-                       />-->
+
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Service Charge"
+                        android:id="@+id/c1"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Expense Charge"
+                        android:id="@+id/c2"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="FOC"
+                        android:textColor="#000"
+                        android:id="@+id/c3"
+                        android:textSize="14sp"
+                        />
+
+
+
+
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Call Assigned to"
+                        android:text="Mode of Payment"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/e5"
-                        android:textSize="15sp"
-                        android:hint="Engg name and admin"></TextView>
+                        android:id="@+id/s2"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:entries="@array/tag_arrays3"
+                        android:prompt="@string/tag_prompt3" />
+
 
 
 
@@ -159,16 +210,13 @@
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
-
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_nav"
-        android:layout_alignParentBottom="true"
         app:itemBackground="@color/colorBlue"
         app:itemTextColor="#000"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu"/>
-
-
 
 </RelativeLayout>
