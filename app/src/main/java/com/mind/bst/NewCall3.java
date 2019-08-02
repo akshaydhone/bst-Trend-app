@@ -199,8 +199,6 @@ public class NewCall3 extends AppCompatActivity {
         String nature = mPreferences.getString(getString(R.string.nature), "");
         String details = mPreferences.getString(getString(R.string.details), "");
 
-
-
         e1.setText(observation);
         e2.setText(remark);
         e3.setText(nature);

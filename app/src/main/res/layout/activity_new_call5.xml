@@ -215,7 +215,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/bottom_nav"
         app:itemBackground="@color/colorBlue"
-        app:itemTextColor="#000"
+        app:itemTextColor="#fff"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu"/>
 

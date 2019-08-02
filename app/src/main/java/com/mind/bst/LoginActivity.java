@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().setTitle("Login Page");
+        getSupportActionBar().hide();
         OneSignal.startInit(this).init();
         mAuth = FirebaseAuth.getInstance(); // important Call
 

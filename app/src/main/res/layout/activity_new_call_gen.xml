@@ -281,7 +281,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/colorBlue"
-        app:itemTextColor="#000"
+        app:itemTextColor="#fff"
+
 
         app:menu="@menu/bottom_nav_menu"
         />

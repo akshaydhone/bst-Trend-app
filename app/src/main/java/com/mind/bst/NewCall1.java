@@ -27,6 +27,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -48,9 +50,11 @@ public class NewCall1 extends AppCompatActivity {
 
     //private static final String TAG = "SecondActivity";
    //public static EditText e1, e2;
+    public static TextView e5;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
 
     //String URL= "http://192.168.0.27/callgen/index.php";
 
@@ -79,6 +83,7 @@ public class NewCall1 extends AppCompatActivity {
        // e2 = (EditText) findViewById(R.id.e2);
         mDisplayDate = (TextView) findViewById(R.id.e3);
        // mDisplayTime = (TextView) findViewById(R.id.e4);
+        e5=(TextView)findViewById(R.id.e5);
 
 
 
@@ -120,6 +125,15 @@ public class NewCall1 extends AppCompatActivity {
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         //mPreferences = getSharedPreferences("tabian.com.sharedpreferencestest", Context.MODE_PRIVATE);
         mEditor = mPreferences.edit();
+
+
+        mAuth = FirebaseAuth.getInstance(); // important Call
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
 
         checkSharedPreferences();
 
@@ -319,10 +333,13 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
        // e1.setText(cont);
        // e2.setText(email);
         mDisplayDate.setText(date);
+        e5.setText(user.getDisplayName());
+
        // mDisplayTime.setText(time);
     }
 

@@ -19,9 +19,9 @@ import com.onesignal.OneSignal;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
-CardView b1,b2,b3,b4;
-LinearLayout ll;
-TextView username;
+    CardView b1,b2,b3,b4;
+    LinearLayout ll;
+    TextView username;
     List<UserInformation> clients;
     private FirebaseAuth mAuth;
 
@@ -72,7 +72,7 @@ TextView username;
 
 
 
-    LoginActivity.LoggedIn_User_Email =user.getDisplayName();
+            LoginActivity.LoggedIn_User_Email =user.getDisplayName();
 
 
 
@@ -96,7 +96,7 @@ TextView username;
                 Intent i=new Intent(HomeActivity.this,PrevActual.class);
                 startActivity(i);
                 //starting the intent for next activity
-               // Intent i=new Intent(HomeActivity.this,PreviousCallGen.class);
+                // Intent i=new Intent(HomeActivity.this,PreviousCallGen.class);
                 //startActivity(i);
             }
         });
@@ -105,19 +105,19 @@ TextView username;
             public void onClick(View v) {
 
                 //For getting the next activity
-               //Intent i=new Intent(HomeActivity.this,PendingCall.class);
+                //Intent i=new Intent(HomeActivity.this,PendingCall.class);
                 //Intent i=new Intent(HomeActivity.this,SearchBase.class);
                 //startActivity(i);
             }
         });
 
-    b4.setOnClickListener(new View.OnClickListener() {
+        b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //For getting the next activity
-           // Intent i=new Intent(HomeActivity.this,ViewProfile.class);
-           // startActivity(i);
+                // Intent i=new Intent(HomeActivity.this,ViewProfile.class);
+                // startActivity(i);
 
                 //UserInformation data = clients.get(position);
 
@@ -147,7 +147,7 @@ TextView username;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id=item.getItemId();
-       // int profile=item.getItemId();
+        // int profile=item.getItemId();
 
 
         //signout function
@@ -158,9 +158,6 @@ TextView username;
                 finish();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
-            case R.id.myprofile:
-                Intent i=new Intent(HomeActivity.this,ViewProfile.class);
-                startActivity(i);
         }
 
 
