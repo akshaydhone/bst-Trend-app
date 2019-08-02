@@ -54,6 +54,7 @@
                         android:text="Type of service Call"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
 
@@ -66,6 +67,7 @@
                         android:layout_margin="10dp"
                         android:text="Service"
                         android:id="@+id/c1"
+                        android:fontFamily="@font/arial"
                         android:textColor="#000"
                         android:textSize="14sp"
                         />
@@ -78,6 +80,7 @@
                         android:layout_margin="10dp"
                         android:text="Repair"
                         android:id="@+id/c2"
+                        android:fontFamily="@font/arial"
                         android:textColor="#000"
                         android:textSize="14sp"
                         />
@@ -88,6 +91,7 @@
                         android:text="Installation and Commissioning"
                         android:textColor="#000"
                         android:id="@+id/c3"
+                        android:fontFamily="@font/arial"
                         android:textSize="14sp"
                         />
 
@@ -99,6 +103,7 @@
                         android:text="Name of Service Engineer"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <TextView
@@ -108,6 +113,7 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/e2"
                         android:inputType="text"
+                        android:fontFamily="@font/arial"
                         />
 
 
@@ -120,6 +126,7 @@
                         android:text="Region of Service Engineer"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <TextView
@@ -128,6 +135,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:id="@+id/e5"
+                        android:fontFamily="@font/arial"
                         android:inputType="text"
                         />
 
@@ -138,6 +146,7 @@
                         android:text="City of Service"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold"
                         />
 
@@ -163,6 +172,7 @@
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold"
+                        android:fontFamily="@font/arial"
                         />
 
                     <EditText
@@ -184,7 +194,8 @@
                         android:text="Customer Representative Name"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -202,7 +213,8 @@
                         android:text="Client's Address"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -222,7 +234,8 @@
                         android:text="Client's Contact No"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -240,7 +253,8 @@
                         android:text="Client's Email-ID"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
