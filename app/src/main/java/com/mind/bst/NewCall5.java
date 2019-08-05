@@ -7,10 +7,17 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class NewCall5 extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    TextView username;
 
 
 
@@ -20,6 +27,38 @@ public class NewCall5 extends AppCompatActivity {
         setContentView(R.layout.activity_new_call5);
         getSupportActionBar().setTitle("Status and Payment");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        username=(TextView)findViewById(R.id.username) ;
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
+
+
+        //Fetch the Display name of current User
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
+
+        if (user != null) {
+            username.setText("" + user.getDisplayName());
+
+
+
+            LoginActivity.LoggedIn_User_Email =user.getDisplayName();
+
+
+
+
+        }
+
+
 
         BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_nav);
 bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

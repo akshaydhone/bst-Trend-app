@@ -69,15 +69,18 @@ public class NewCallGen extends AppCompatActivity {
 
 
     Button b1;
+
   public static TextView e2,e5;
 
-   public static EditText e1,e3,e4,e6,e7,e8;
+   public static EditText e1;
+   public static AutoCompleteTextView e6,e3,e4,e7,e8;
 
    public static CheckBox c1,c2,c3;
 
-    private FirebaseAuth mAuth;
+private Long suggestion;
     static String LoggedIn_User_Email;
     TextView username;
+    private FirebaseAuth mAuth;
     public static String id;
 
 public static String abc;
@@ -120,18 +123,46 @@ public static String abc;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
        e1=(EditText) findViewById(R.id.e1);
         e2 = (TextView) findViewById(R.id.e2);
-        e3 = (EditText) findViewById(R.id.e3);
-         e4 = (EditText) findViewById(R.id.e4);
+        e3 = (AutoCompleteTextView)findViewById(R.id.e3);
+         e4 = (AutoCompleteTextView) findViewById(R.id.e4);
          c1=(CheckBox)findViewById(R.id.c1);
          c2=(CheckBox)findViewById(R.id.c2);
          c3=(CheckBox)findViewById(R.id.c3);
          e5=(TextView)findViewById(R.id.e5);
 
-         e6=(EditText)findViewById(R.id.e6);
-         e7=(EditText)findViewById(R.id.e7);
-         e8=(EditText)findViewById(R.id.e8);
+         e6=(AutoCompleteTextView) findViewById(R.id.e6);
+         e7=(AutoCompleteTextView) findViewById(R.id.e7);
+         e8=(AutoCompleteTextView) findViewById(R.id.e8);
 
 
+        username=(TextView)findViewById(R.id.username) ;
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
+
+
+        //Fetch the Display name of current User
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
+
+        if (user != null) {
+            username.setText("" + user.getDisplayName());
+
+
+
+            LoginActivity.LoggedIn_User_Email =user.getDisplayName();
+
+
+
+
+        }
 
 
 
@@ -330,7 +361,8 @@ public static String abc;
                 else if (e2.getText().toString().trim().length() == 0) {
                     e2.setError("Name not entered");
                     e2.requestFocus();
-                } else if (e3.getText().toString().trim().length() == 0) {
+                }
+                else if (e3.getText().toString().trim().length() == 0) {
                     e3.setError("Client's Name not entered");
                     e3.requestFocus();
                 } else if (e4.getText().toString().trim().length() == 0) {
@@ -436,7 +468,160 @@ public static String abc;
                 }
 
             }
-        });
+        }
+        );
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
+        final ArrayAdapter<String> autoComplete = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        //Child the root before all the push() keys are found and add a ValueEventListener()
+        database.child("Clients").addValueEventListener(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                    //Get the suggestion by childing the key of the string you want to get.
+                                                                    String suggestion = suggestionSnapshot.child("PartyName").getValue(String.class);
+                                                                    //Add the retrieved string to the list
+                                                                    autoComplete.add(suggestion);
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(DatabaseError databaseError) {
+
+                                                            }
+                                                        }
+        );
+        AutoCompleteTextView ACTV= (AutoCompleteTextView)findViewById(R.id.e6);
+        ACTV.setAdapter(autoComplete);
+
+
+
+
+
+
+
+        DatabaseReference database1 = FirebaseDatabase.getInstance().getReference();
+        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
+        final ArrayAdapter<String> autoComplete1 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        //Child the root before all the push() keys are found and add a ValueEventListener()
+        database1.child("Clients").addValueEventListener(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                    //Get the suggestion by childing the key of the string you want to get.
+                                                                    String suggestion = suggestionSnapshot.child("PersonName").getValue(String.class);
+                                                                    //Add the retrieved string to the list
+                                                                    autoComplete1.add(suggestion);
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(DatabaseError databaseError) {
+
+                                                            }
+                                                        }
+        );
+        AutoCompleteTextView ACTV1= (AutoCompleteTextView)findViewById(R.id.e3);
+        ACTV1.setAdapter(autoComplete1);
+
+
+
+
+
+
+
+
+        DatabaseReference database2 = FirebaseDatabase.getInstance().getReference();
+
+        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
+        final ArrayAdapter<String> autoComplete2 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        //Child the root before all the push() keys are found and add a ValueEventListener()
+        database2.child("Clients").addValueEventListener(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                    //Get the suggestion by childing the key of the string you want to get.
+                                                                    String suggestion = suggestionSnapshot.child("Address").getValue(String.class);
+                                                                    //Add the retrieved string to the list
+                                                                    autoComplete2.add(suggestion);
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(DatabaseError databaseError) {
+
+                                                            }
+                                                        }
+        );
+        AutoCompleteTextView ACTV2= (AutoCompleteTextView)findViewById(R.id.e4);
+        ACTV2.setAdapter(autoComplete2);
+
+
+
+
+
+
+   /* DatabaseReference database3 = FirebaseDatabase.getInstance().getReference();
+        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
+        final ArrayAdapter<String> autoComplete3 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        //Child the root before all the push() keys are found and add a ValueEventListener()
+        database.child("Clients").addValueEventListener(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                    //Get the suggestion by childing the key of the string you want to get.
+                                                             //String suggestion = suggestionSnapshot.child("MobNo").getValue(String.class);
+
+                                                                    String suggestion=suggestionSnapshot.child("MobNo").getValue(String.class);
+                                                                    //Add the retrieved string to the list
+                                                                    autoComplete3.add(suggestion);
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(DatabaseError databaseError) {
+
+                                                            }
+                                                        }
+        );
+        AutoCompleteTextView ACTV3= (AutoCompleteTextView)findViewById(R.id.e7);
+        ACTV3.setAdapter(autoComplete3);*/
+
+
+
+
+
+    DatabaseReference database4 = FirebaseDatabase.getInstance().getReference();
+        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
+        final ArrayAdapter<String> autoComplete4 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        //Child the root before all the push() keys are found and add a ValueEventListener()
+        database4.child("Clients").addValueEventListener(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                    //Get the suggestion by childing the key of the string you want to get.
+
+                                                             String suggestion = suggestionSnapshot.child("EmailID").getValue(String.class);
+                                                                    //Add the retrieved string to the list
+                                                                    autoComplete4.add(suggestion);
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(DatabaseError databaseError) {
+
+                                                            }
+                                                        }
+        );
+        AutoCompleteTextView ACTV4= (AutoCompleteTextView)findViewById(R.id.e8);
+        ACTV4.setAdapter(autoComplete4);
+
 
 
     }
@@ -578,6 +763,13 @@ public static String abc;
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 
         }
+
+
+
+
+
+
+
 
 
     }

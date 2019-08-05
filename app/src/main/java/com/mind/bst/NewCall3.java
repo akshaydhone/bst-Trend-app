@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class NewCall3 extends AppCompatActivity {
     private static final String TAG = "NewCall3";
@@ -21,6 +26,8 @@ public class NewCall3 extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
    public static EditText e1,e2,e3,e4;
     Button b1;
+    private FirebaseAuth mAuth;
+    TextView username;
    // public static Spinner s1;
 
 
@@ -40,6 +47,36 @@ public class NewCall3 extends AppCompatActivity {
 
 
         b1=(Button)findViewById(R.id.b1);
+
+        username=(TextView)findViewById(R.id.username) ;
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
+
+
+        //Fetch the Display name of current User
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
+
+        if (user != null) {
+            username.setText("" + user.getDisplayName());
+
+
+
+            LoginActivity.LoggedIn_User_Email =user.getDisplayName();
+
+
+
+
+        }
+
 
 
 

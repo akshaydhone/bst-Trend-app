@@ -23,6 +23,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.Calendar;
 
 
@@ -37,6 +41,8 @@ public class NewCall2 extends AppCompatActivity {
     //public static Spinner s1;
     Button b1;
     TimePickerDialog picker;
+    private FirebaseAuth mAuth;
+    TextView username;
 
     public static TextView mDisplayTime;
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
@@ -58,6 +64,36 @@ public class NewCall2 extends AppCompatActivity {
       getSupportActionBar().setTitle("Call Attend");
        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
+        username=(TextView)findViewById(R.id.username) ;
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
+
+
+        //Fetch the Display name of current User
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
+
+        if (user != null) {
+            username.setText("" + user.getDisplayName());
+
+
+
+            LoginActivity.LoggedIn_User_Email =user.getDisplayName();
+
+
+
+
+        }
 
 
 

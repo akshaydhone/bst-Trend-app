@@ -4,19 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:background="@drawable/newbst"
     tools:context=".NewCall1">
 
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/bgHeader"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="55dp"
 
         android:theme="@style/ToolbarTheme"
         android:elevation="5dp" />
 
 
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="23dp"
+        android:fontFamily="@font/arial"
+        android:gravity="end"
+        android:text="Welcome"
+        android:textColor="#8d7b76"
+        android:textStyle="bold" />
 
 
 
@@ -56,6 +67,7 @@
                         android:text="Select Product"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <Spinner
@@ -66,6 +78,7 @@
                         android:id="@+id/s1"
                         android:drawablePadding="5dp"
                         android:ems="10"
+                        android:fontFamily="@font/arial"
                         android:entries="@array/tag_arrays1"
                         android:prompt="@string/tag_prompt1" />
 
@@ -77,6 +90,7 @@
                         android:text="Call Scheduled Date"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <TextView
@@ -86,6 +100,7 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/e3"
                         android:textSize="15sp"
+                        android:fontFamily="@font/arial"
                         android:hint="Select Date" />
 
                  <!--   <TextView
@@ -115,6 +130,7 @@
                         android:text="Call Assigned to"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <TextView
@@ -124,6 +140,7 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/e5"
                         android:textSize="15sp"
+                        android:fontFamily="@font/arial"
                         android:hint="Engg name and admin"></TextView>
 
 
@@ -155,6 +172,7 @@
                     android:text="Save"
                     android:textAllCaps="false"
                     android:id="@+id/b1"
+                    android:fontFamily="@font/arial"
                     android:textColor="@color/colorWhite" />
             </RelativeLayout>
         </RelativeLayout>

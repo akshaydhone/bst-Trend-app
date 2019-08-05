@@ -55,6 +55,8 @@ public class NewCall1 extends AppCompatActivity {
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
+    TextView username;
+    //private FirebaseAuth mAuth;
 
     //String URL= "http://192.168.0.27/callgen/index.php";
 
@@ -85,7 +87,34 @@ public class NewCall1 extends AppCompatActivity {
        // mDisplayTime = (TextView) findViewById(R.id.e4);
         e5=(TextView)findViewById(R.id.e5);
 
+        username=(TextView)findViewById(R.id.username) ;
+        mAuth = FirebaseAuth.getInstance();
 
+
+
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
+
+
+        //Fetch the Display name of current User
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
+
+        if (user != null) {
+            username.setText("" + user.getDisplayName());
+
+
+
+            LoginActivity.LoggedIn_User_Email =user.getDisplayName();
+
+
+
+
+        }
 
 
 

@@ -4,16 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newbst"
     tools:context=".NewCall4">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/bgHeader"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="55dp"
 
         android:theme="@style/ToolbarTheme"
         android:elevation="5dp" />
 
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="23dp"
+        android:fontFamily="@font/arial"
+        android:gravity="end"
+        android:text="Welcome"
+        android:textColor="#8d7b76"
+        android:textStyle="bold" />
 
 
     <ScrollView
@@ -41,7 +53,6 @@
                     android:focusableInTouchMode="true"
                     android:orientation="vertical"
                     android:paddingBottom="50dp">
-
                     <requestFocus />
 
                     <TextView
@@ -51,6 +62,7 @@
                         android:text="Product's Photo"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <Button
@@ -68,7 +80,8 @@
                         android:layout_width="200dp"
                         android:layout_height="120dp"
                         android:layout_below="@+id/select_image"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="-23dp"
+
                         android:layout_marginRight="5dp"
                         app:srcCompat="@drawable/caml" />
 
@@ -78,8 +91,8 @@
                         android:layout_height="120dp"
                         android:layout_gravity="end"
                         android:layout_marginLeft="150dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="-120dp"
+                        android:layout_marginRight="-15dp"
 
                         app:srcCompat="@drawable/caml" />
 
@@ -88,9 +101,22 @@
                         android:id="@+id/user_image2"
                         android:layout_width="200dp"
                         android:layout_height="120dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="-23dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
+
+                        app:srcCompat="@drawable/caml" />
+
+
+
+                    <ImageView
+                        android:id="@+id/user_image3"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="150dp"
+                        android:layout_marginTop="-120dp"
+                        android:layout_marginRight="-15dp"
 
                         app:srcCompat="@drawable/caml" />
 
@@ -154,7 +180,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bg_ui"
                         android:text="Save"
-
+                        android:fontFamily="@font/arial"
                         android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
                         android:textStyle="bold" />

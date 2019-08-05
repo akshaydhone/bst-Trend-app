@@ -66,6 +66,7 @@ import static com.mind.bst.NewCallGen.e1;
 public class NewCall4 extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    TextView username;
     FirebaseUser user;
 
 
@@ -73,12 +74,13 @@ public class NewCall4 extends AppCompatActivity {
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
     Button select_image,b1,b2;
-    ImageView user_image,user_image1,user_image2;
+    ImageView user_image,user_image1,user_image2,user_image3;
     public static TextView url;
     public static final int READ_EXTERNAL_STORAGE = 0;
     private static final int GALLERY_INTENT = 2;
     private static final int GALLERY_INTENT1 = 3;
     private static final int GALLERY_INTENT2 = 4;
+    private static final int GALLERY_INTENT3 = 5;
 
     private ProgressDialog progressDialog;
     //private Firebase mRoofRef;
@@ -137,9 +139,39 @@ public class NewCall4 extends AppCompatActivity {
         user_image = (ImageView) findViewById(R.id.user_image);
         user_image1 = (ImageView) findViewById(R.id.user_image1);
         user_image2 = (ImageView) findViewById(R.id.user_image2);
+        user_image3 = (ImageView) findViewById(R.id.user_image3);
         b1=(Button)findViewById(R.id.b1);
         b2=(Button)findViewById(R.id.b2);
         url=(TextView)findViewById(R.id.url) ;
+
+        username=(TextView)findViewById(R.id.username) ;
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
+
+
+        //Fetch the Display name of current User
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.d("LOGGED", "FirebaseUser: " + user);
+
+        if (user != null) {
+            username.setText("" + user.getDisplayName());
+
+
+
+            LoginActivity.LoggedIn_User_Email =user.getDisplayName();
+
+
+
+
+        }
 
 
 
@@ -619,6 +651,82 @@ public class NewCall4 extends AppCompatActivity {
 
             }
         });
+
+
+
+
+
+
+
+
+
+        user_image3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                //builder.setMessage("Select Photo");
+                builder.setTitle("Select From");
+
+                builder.setCancelable(true);
+
+                builder.setPositiveButton("Gallery", new DialogInterface
+                        .OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which)
+                    {
+
+                        // When the user click yes button
+                        // then app will close
+                        //Check for Runtime Permission
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                                != PackageManager.PERMISSION_GRANTED)
+                        {
+                            Toast.makeText(getApplicationContext(), "Call for Permission", Toast.LENGTH_SHORT).show();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                            {
+                                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE);
+                            }
+                        }
+                        else
+                        {
+                            callgalaryu3();
+                        }
+
+                    }
+                });
+
+
+
+                builder
+                        .setNegativeButton(
+                                "Camera",
+                                new DialogInterface
+                                        .OnClickListener() {
+
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which)
+                                    {
+
+                                        // If user click no
+                                        // then dialog box is canceled.
+                                        intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+                                        startActivityForResult(intent, 10);
+
+                                    }
+                                });
+
+                // Create the Alert dialog
+                AlertDialog alertDialog = builder.create();
+
+                // Show the Alert Dialog box
+                alertDialog.show();
+
+            }
+        });
         mStorage = FirebaseStorage.getInstance().getReferenceFromUrl("gs://uidesignbsteltromat.appspot.com/");
 
 
@@ -840,6 +948,16 @@ public class NewCall4 extends AppCompatActivity {
     }
 
 
+    private void callgalaryu3() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, GALLERY_INTENT3);
+
+
+
+    }
+
+
 
 
 
@@ -892,8 +1010,8 @@ public class NewCall4 extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
-                    String abc= taskSnapshot.getDownloadUrl().toString();
-                    url.setText(abc);
+                    //String abc= taskSnapshot.getDownloadUrl().toString();
+                    //url.setText(abc);
 
                 }
             }
@@ -1018,6 +1136,56 @@ public class NewCall4 extends AppCompatActivity {
             });*/
         }
 
+
+
+
+
+
+        if (requestCode == GALLERY_INTENT3 && resultCode == RESULT_OK) {
+
+            final Uri mImageUri = data.getData();
+            user_image3.setImageURI(mImageUri);
+            final StorageReference filePath = mStorage.child("User_Images").child(mImageUri.getLastPathSegment());
+
+            progressDialog.setMessage("Uploading Image....");
+            progressDialog.show();
+
+
+            filePath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                                                 @Override
+                                                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                                                                     Uri downloadUri = taskSnapshot.getDownloadUrl();  //Ignore This error
+
+                                                                     //mRoofRef.child("Image_URL").setValue(downloadUri.toString());
+
+                                                                     Glide.with(getApplicationContext())
+                                                                             .load(downloadUri)
+                                                                             .crossFade()
+                                                                             .placeholder(R.drawable.loading)
+                                                                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                                                                             .into(user_image3);
+
+                                                                     Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
+                                                                     progressDialog.dismiss();
+                                                                     String abc= taskSnapshot.getDownloadUrl().toString();
+                                                                     //url.setText(abc);
+
+                                                                 }
+                                                             }
+            );
+
+
+            /*url.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Toast.makeText(NewCall4.this, "download " +filePath.getDownloadUrl(), Toast.LENGTH_SHORT).show();
+                    //filePath.getDownloadUrl();
+                   // mStorage.getDownloadUrl();
+                }
+            });*/
+        }
         if (requestCode == 7 && resultCode == RESULT_OK) {
 
             //Uri mImageUri = data.getData();
@@ -1058,6 +1226,22 @@ public class NewCall4 extends AppCompatActivity {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 
             user_image2.setImageBitmap(bitmap);
+            //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
+
+        }
+
+
+
+
+
+        if (requestCode == 10 && resultCode == RESULT_OK) {
+
+            //Uri mImageUri = data.getData();
+            //user_image.setImageURI(mImageUri);
+
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+
+            user_image3.setImageBitmap(bitmap);
             //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
 
         }

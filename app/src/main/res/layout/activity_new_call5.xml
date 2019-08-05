@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newbst"
     tools:context=".NewCall5">
 
 
@@ -11,13 +12,23 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/bgHeader"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-
+        android:layout_height="35dp"
         android:theme="@style/ToolbarTheme"
         android:elevation="5dp" />
 
 
 
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="23dp"
+        android:fontFamily="@font/arial"
+        android:gravity="end"
+        android:text="Welcome"
+        android:textColor="#8d7b76"
+        android:textStyle="bold" />
 
 
     <ScrollView
@@ -56,6 +67,7 @@
                         android:text="Status of Complaint"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <Spinner
@@ -77,6 +89,7 @@
                         android:text="Invoice No of BST ELtromat"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <TextView
@@ -85,6 +98,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:id="@+id/e3"
+                        android:fontFamily="@font/arial"
                         android:textSize="15sp"
                         android:hint="R3567Y890" />
 
@@ -115,6 +129,7 @@
                         android:text="Applicable Charges"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
 
@@ -126,6 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Service Charge"
+                        android:fontFamily="@font/arial"
                         android:id="@+id/c1"
                         android:textColor="#000"
                         android:textSize="14sp"
@@ -138,6 +154,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Expense Charge"
+                        android:fontFamily="@font/arial"
                         android:id="@+id/c2"
                         android:textColor="#000"
                         android:textSize="14sp"
@@ -147,6 +164,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="FOC"
+                        android:fontFamily="@font/arial"
                         android:textColor="#000"
                         android:id="@+id/c3"
                         android:textSize="14sp"
@@ -163,6 +181,7 @@
                         android:text="Mode of Payment"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <Spinner
@@ -173,12 +192,23 @@
                         android:id="@+id/s2"
                         android:drawablePadding="5dp"
                         android:ems="10"
+
                         android:entries="@array/tag_arrays3"
                         android:prompt="@string/tag_prompt3" />
 
 
 
-
+                    <Button
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ui"
+                        android:text="Save"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:id="@+id/b1"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/arial"
+                        android:textColor="@color/colorWhite" />
 
 
 
@@ -199,14 +229,7 @@
                 android:layout_marginRight="35dp"
                 android:elevation="10dp">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_ui"
-                    android:text="Save"
-                    android:textAllCaps="false"
-                    android:id="@+id/b1"
-                    android:textColor="@color/colorWhite" />
+
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
