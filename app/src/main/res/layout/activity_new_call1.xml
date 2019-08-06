@@ -70,6 +70,11 @@ android:background="@drawable/newbst"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
+
+
+
+
+
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -82,7 +87,8 @@ android:background="@drawable/newbst"
                          />
 
 
-
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -108,8 +114,8 @@ android:background="@drawable/newbst"
                         android:prompt="@string/tag_prompt4" />
 
 
-
-
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
 
 
                     <TextView
@@ -134,8 +140,8 @@ android:background="@drawable/newbst"
                        />
 
 
-
-
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -160,7 +166,8 @@ android:background="@drawable/newbst"
 
 
 
-
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
 
 
 
@@ -192,6 +199,12 @@ android:background="@drawable/newbst"
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
                         android:hint="Select Date" />
+
+
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
+
+
 
                  <!--   <TextView
                         android:layout_width="wrap_content"
@@ -233,7 +246,8 @@ android:background="@drawable/newbst"
                         android:fontFamily="@font/arial"
                         android:hint="Engg name and admin">
                     </TextView>
-
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -262,6 +276,19 @@ android:background="@drawable/newbst"
 
 
 
+               <!-- <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ui"
+                    android:layout_marginTop="10dp"
+                    android:text="Clear"
+                    android:layout_below="@+id/b1"
+                    android:textAllCaps="false"
+                    android:id="@+id/b2"
+                    android:fontFamily="@font/arial"
+                    android:textColor="@color/colorWhite" />-->
+
+
 
             </RelativeLayout>
         </RelativeLayout>
@@ -275,6 +302,10 @@ android:background="@drawable/newbst"
         app:itemBackground="@color/colorBlue"
         app:itemTextColor="#fff"
         app:menu="@menu/bottom_nav_menu"/>
+
+
+
+
 
 
 

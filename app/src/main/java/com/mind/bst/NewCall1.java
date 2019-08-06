@@ -49,7 +49,7 @@ public class NewCall1 extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
 
     //private static final String TAG = "SecondActivity";
-   //public static EditText e1, e2;
+    //public static EditText e1, e2;
     public static TextView e5;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
@@ -68,7 +68,7 @@ public class NewCall1 extends AppCompatActivity {
     public static Spinner s1,s2,s3,s4;
     TimePickerDialog picker;
 
-  public static TextView mDisplayDate;
+    public static TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
 //public static TextView mDisplayTime;
@@ -81,10 +81,10 @@ public class NewCall1 extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Call Assigned");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-      //  e1 = (EditText) findViewById(R.id.e1);
-       // e2 = (EditText) findViewById(R.id.e2);
+        //  e1 = (EditText) findViewById(R.id.e1);
+        // e2 = (EditText) findViewById(R.id.e2);
         mDisplayDate = (TextView) findViewById(R.id.e3);
-       // mDisplayTime = (TextView) findViewById(R.id.e4);
+        // mDisplayTime = (TextView) findViewById(R.id.e4);
         e5=(TextView)findViewById(R.id.e5);
 
         username=(TextView)findViewById(R.id.username) ;
@@ -166,7 +166,6 @@ public class NewCall1 extends AppCompatActivity {
                 this, R.array.print_inspection, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s2.setAdapter(adapter1);
-
 
 
 
@@ -307,6 +306,9 @@ public class NewCall1 extends AppCompatActivity {
         }
 
         checkSharedPreferences();
+
+
+
 
 
 
@@ -548,33 +550,33 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-                    //sendData();
+                //sendData();
                    /* AttemptLogin attemptLogin= new AttemptLogin();
                     attemptLogin.execute(
                             e1.getText().toString(),
                             e2.getText().toString(),
 
                             "");*/
-                    //save contact
-                    //String cont = e1.getText().toString();
-                    //mEditor.putString(getString(R.string.cont), cont);
-                   // mEditor.commit();
+                //save contact
+                //String cont = e1.getText().toString();
+                //mEditor.putString(getString(R.string.cont), cont);
+                // mEditor.commit();
 
 
-                    //save email
-                   // String email = e2.getText().toString();
-                   // mEditor.putString(getString(R.string.email), email);
-                   // mEditor.commit();
+                //save email
+                // String email = e2.getText().toString();
+                // mEditor.putString(getString(R.string.email), email);
+                // mEditor.commit();
 
-                    //save date
-                    String date = mDisplayDate.getText().toString();
-                    mEditor.putString(getString(R.string.date), date);
-                    mEditor.commit();
+                //save date
+                String date = mDisplayDate.getText().toString();
+                mEditor.putString(getString(R.string.date), date);
+                mEditor.commit();
 
-                    //save time
-                    //String time =mDisplayTime.getText().toString();
-                   // mEditor.putString(getString(R.string.time), time);
-                    //mEditor.commit();
+                //save time
+                //String time =mDisplayTime.getText().toString();
+                // mEditor.putString(getString(R.string.time), time);
+                //mEditor.commit();
 
 
                /* SharedPreferences prefs;
@@ -619,7 +621,7 @@ public class NewCall1 extends AppCompatActivity {
 
 
                 Intent i = new Intent(NewCall1.this, NewCall2.class);
-                    startActivity(i);
+                startActivity(i);
 
 
             }
@@ -702,8 +704,8 @@ public class NewCall1 extends AppCompatActivity {
 
         FirebaseUser user = mAuth.getCurrentUser();
         Log.d("LOGGED", "FirebaseUser: " + user);
-       // e1.setText(cont);
-       // e2.setText(email);
+        // e1.setText(cont);
+        // e2.setText(email);
         mDisplayDate.setText(date);
         e5.setText(user.getDisplayName());
 
@@ -711,7 +713,7 @@ public class NewCall1 extends AppCompatActivity {
         s2.setSelection(mPreferences.getInt("spinnerSelection1",0));
         s3.setSelection(mPreferences.getInt("spinnerSelection2",0));
         s4.setSelection(mPreferences.getInt("spinnerSelection3",0));
-       // mDisplayTime.setText(time);
+        // mDisplayTime.setText(time);
     }
 
 
