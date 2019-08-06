@@ -11,7 +11,7 @@ android:background="@drawable/newbst"
     <android.support.v7.widget.Toolbar
         android:id="@+id/bgHeader"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="35dp"
 
         android:theme="@style/ToolbarTheme"
         android:elevation="5dp" />
@@ -64,7 +64,7 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Select Product"
+                        android:text="Main Product Category"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -79,8 +79,90 @@ android:background="@drawable/newbst"
                         android:drawablePadding="5dp"
                         android:ems="10"
                         android:fontFamily="@font/arial"
-                        android:entries="@array/tag_arrays1"
-                        android:prompt="@string/tag_prompt1" />
+                         />
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Product Name"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
+
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/s2"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:fontFamily="@font/arial"
+                        android:entries="@array/print_inspection"
+                        android:prompt="@string/tag_prompt4" />
+
+
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Sub-Category"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/s3"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:fontFamily="@font/arial"
+                       />
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Product Name"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
+
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/s4"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:fontFamily="@font/arial"
+                       />
+
+
+
+
+
+
 
 
                     <TextView
@@ -92,6 +174,14 @@ android:background="@drawable/newbst"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
+
+
+
+
+
+
+
+
 
                     <TextView
                         android:layout_width="match_parent"
@@ -141,14 +231,8 @@ android:background="@drawable/newbst"
                         android:id="@+id/e5"
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
-                        android:hint="Engg name and admin"></TextView>
-
-
-
-
-
-
-
+                        android:hint="Engg name and admin">
+                    </TextView>
 
 
                 </LinearLayout>
@@ -165,6 +249,7 @@ android:background="@drawable/newbst"
                 android:layout_marginRight="35dp"
                 android:elevation="10dp">
 
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -174,6 +259,10 @@ android:background="@drawable/newbst"
                     android:id="@+id/b1"
                     android:fontFamily="@font/arial"
                     android:textColor="@color/colorWhite" />
+
+
+
+
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>

@@ -2,6 +2,7 @@
     <string name="app_name">BST Eltromat</string>
     <string name="action_settings">Settings</string>
     <string name="tag_prompt1">Choose a Tag</string>
+    <string name="tag_prompt4">Choose a Tag</string>
 
 
     <string name="city">com.mind.bst.city</string>
@@ -42,18 +43,444 @@
         <item>Motherboard</item>
 
 
+
     </string-array>
+
+
+
+
+    <string-array name="print_inspection">
+        <item>Select</item>
+        <item>EagleEye – 100% Web Viewing System </item>
+        <item>Inline color measurement</item>
+        <item>iPQ_Check - 100% Print Inspection System</item>
+        <item>iPQ_Check - 100% Surface Inspection System</item>
+        <item>iPQ_Check_ECO - 100% Print Inspection System</item>
+        <item>iPQ_View - Web Viewing System</item>
+        <item>iPQ_Workflow</item>
+        <item>iPQ_Workflow - Rewinder Control System</item>
+        <item>Premius</item>
+        <item>SHARK 4000</item>
+        <item>WebVideo_Star</item>
+
+
+    </string-array>
+
+
+
+
+    <string-array name="automation">
+        <item>Select</item>
+        <item>2 DRIVE SYSTEM</item>
+        <item>Adhesive Mixer </item>
+        <item>Adhesive Sensor</item>
+        <item>Automation</item>
+        <item>MDS for Solventless Lami.M/C with Integrated Adhesive System</item>
+        <item>RMC for Auto filling system for Alpha Mix</item>
+
+
+
+    </string-array>
+
+
+
+
+
+
+    <string-array name="defect_detection">
+        <item>Select</item>
+        <item>SHARK 4000 LEX - 100% Print Defect Detection System</item>
+        <item>TubeScan Digital Strobe- Print Inspection System </item>
+        <item>TubeScan Eagle View - Print Inspection System</item>
+
+
+
+    </string-array>
+
+
+
+
+
+    <string-array name="density_thickness">
+        <item>Select</item>
+        <item>BST ProControl Basis Weight Measurement System</item>
+
+
+
+
+    </string-array>
+
+
+
+
+
+    <string-array name="mirror_image">
+        <item>Select</item>
+        <item>Mirror Image Registration</item>
+
+    </string-array>
+
+
+    <string-array name="register_viscocity">
+        <item>Select</item>
+        <item>CRS10K "EYE TOUCH" - Register Control System</item>
+        <item>SELECUT 9000 - Cutoff Control System</item>
+        <item>SELECUT 9001 - Cutoff Control System</item>
+        <item>SELEVISCO 9000 - Viscosity Control System</item>
+
+    </string-array>
+
+
+
+
+
+    <string-array name="register_control">
+        <item>Select</item>
+        <item>AR 4000 - Register Control System</item>
+        <item>ARC_18 - Register Control System_ELS</item>
+        <item>ARC_18 - Register Control System_MLS</item>
+        <item>CIPCON Software   </item>
+        <item>Insetter Control</item>
+        <item>Regi_Star 20</item>
+        <item>Sincon_Star</item>
+
+    </string-array>
+
+
+
+
+    <string-array name="special_purpose">
+        <item>Select</item>
+        <item>Splice Master</item>
+        <item>SPM - Special Purpose Machinery</item>
+
+
+    </string-array>
+
+
+
+
+    <string-array name="surface_inspection">
+        <item>Select</item>
+        <item>WINTRISS - Web Ranger - Surface Inspection System</item>
+
+    </string-array>
+
+
+
+    <string-array name="web_guiding">
+        <item>Select</item>
+        <item>4 Roll Opto Electronic Web Guide Frame</item>
+
+        <item>DF Top and Bottom Frame Guide</item>
+        <item>Ink Temprature Stabiliser</item>
+        <item>Line/Edge Guide System</item>
+        <item>Line/Edge Web Guide Components  </item>
+        <item>Opto Electronic Cutter Guide System</item>
+        <item>Opto Electronic MASTER / SLAVE Guiding System</item>
+        <item>Opto Electronic Web Guide Components</item>
+        <item>Opto Electronic Web Guide System</item>
+
+
+    </string-array>
+
+
+
+
+
+
+    <string-array name="web_tension">
+        <item>Select</item>
+        <item>Digital Tension Controller</item>
+
+        <item>Dynaspede Tension Control System</item>
+        <item>ISOMATIC Seleten</item>
+        <item>Magnetic Brake</item>
+        <item>Powder Brake  </item>
+        <item>Renova Caliper Brake</item>
+        <item>Renova Turborex Brake</item>
+        <item>Roll Pusher</item>
+        <item>Safety Chuck</item>
+        <item>T One Controller  </item>
+        <item>Tension Control System</item>
+
+
+    </string-array>
+
+
+
+
+
+    <string-array name="web_video">
+        <item>Select</item>
+        <item>POWERScope 3000</item>
+
+        <item>POWERScope 4000</item>
+        <item>POWERScope 5000</item>
+        <item>SuperHandy Scan 4000</item>
+        <item>SuperHandy Scan 4100</item>
+
+
+
+    </string-array>
+
+
 
 
     <string-array name="tag_arraysup1">
         <item>Select</item>
-        <item>Printer</item>
-        <item>Xerox machine</item>
-        <item>CPU</item>
-        <item>Motherboard</item>
+        <item>100% Print Inspection</item>
+        <item>Automation</item>
+        <item>Defect Detection System</item>
+        <item>Density and thickness measurement </item>
+        <item>Mirror Image Registration </item>
+        <item>Register and Viscosity Control</item>
+        <item>Register Control (eltromat) </item>
+        <item>Special Purpose Machine </item>
+        <item>Surface Inspection</item>
+        <item>Web Guiding</item>
+        <item>Web Tension Control</item>
+        <item>Web Video Inspection</item>
 
 
     </string-array>
+
+
+    <string-array name="tag_arraysup2">
+        <item>Select</item>
+        <item>Default / Common</item>
+        <item>Register Control (eltromat)</item>
+        <item>Web Guiding</item>
+        <item>Web Tension Control </item>
+        <item>Web Video Inspection </item>
+    </string-array>
+
+
+
+
+    <string-array name="default_common">
+        <item>Select</item>
+
+
+        <item>Area-Scan Camera</item>
+        <item>Cable / Cork Tape / Timing Belt</item>
+        <item>Camera Lens Assembly</item>
+        <item>Control Panel </item>
+        <item>Drive</item>
+
+        <item>Encoder</item>
+        <item>Flash</item>
+        <item>HMI Monitor</item>
+        <item>Infrared Sensor </item>
+        <item>Keyboard / Keypad </item>
+
+
+        <item>LED / Lights / Illumination</item>
+        <item>Line-Scan Camera</item>
+        <item>MHRM Sensor</item>
+        <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
+        <item>Monitor (Touch Screen) </item>
+
+
+
+        <item>Motor / BLDC Motor</item>
+        <item>Mounting Bracket</item>
+        <item>Mouse / Joystick</item>
+        <item>Other Spare Parts </item>
+        <item>PCB Board </item>
+
+
+        <item>Power Supply</item>
+        <item>Register Mark Sensor       </item>
+        <item>Roller</item>
+        <item>Strobe / Halogen Bulb</item>
+        <item>Transformer</item>
+
+
+        <item>Traverse</item>
+        <item>Ultrasonic Sensor</item>
+        <item>X-Rite Sensor</item>
+    </string-array>
+
+
+
+
+
+
+
+
+    <string-array name="register_control_eltromat">
+        <item>Select</item>
+
+
+        <item>Control Panel for ARC_18     </item>
+        <item>DGC 650 / DGC 700 / Profinet Cable</item>
+
+    </string-array>
+
+
+
+
+
+    <string-array name="web_guiding_sub">
+        <item>Select</item>
+
+
+        <item>Accuweb Edge Guide Actuator</item>
+        <item>Accuweb Edge Guide Controller</item>
+        <item>Accuweb Edge Guide Sensor</item>
+        <item>BST Pro Touch</item>
+        <item>CCD</item>
+        <item>CCD Pro</item>
+
+
+
+        <item>CLS Pro600</item>
+        <item>COMMANDER For EKR 500 Plus</item>
+        <item>Compact Guide DF 2 x 60 x 200 x 200</item>
+        <item>Compact Guide DF 2 x 60 x 250 x 250</item>
+        <item>Compact Guide DF 2 x 60 x 500 x 300</item>
+        <item>ECO EMS 22B</item>
+
+
+
+        <item>EKR 1500</item>
+        <item>EKR 500 Plus- DIGITAL</item>
+        <item>ekr 500 Supremus</item>
+        <item>EKR CON100 </item>
+        <item>EKR Digicon</item>
+        <item>EKR PROCOM 40</item>
+
+
+
+        <item>EKR PROCOM 50</item>
+        <item>EKR PROCOM 60</item>
+        <item>EMS 10</item>
+        <item>EMS 16B </item>
+        <item>EMS 18</item>
+        <item>EMS 19B</item>
+
+
+
+        <item>EMS 21</item>
+        <item>EMS 22</item>
+        <item>EMS 23</item>
+        <item>EMS 5 </item>
+        <item>EMS CG/24</item>
+        <item>IR 2002/10      </item>
+
+
+
+
+        <item>IR 2005</item>
+        <item>IR 2005/30</item>
+        <item>IR 2011</item>
+        <item>IR 2011/40 </item>
+        <item>IR 2011/70</item>
+        <item>IR 2012</item>
+
+
+
+        <item>IR 2012/125</item>
+        <item>IR 2012/40</item>
+        <item>IR 2012/40 VERSION F</item>
+        <item>IR 2013B/50 </item>
+        <item>Slitting Blade</item>
+        <item>Turn Bar</item>
+
+
+
+        <item>US 2010</item>
+        <item>US 2010/40</item>
+        <item>US 2010/40_200 KHz, Sensing Range 8mm</item>
+        <item>US 2010/70</item>
+        <item>US 2013_40 KHz, Sensing Range 10mm</item>
+        <item>US 2013B/50</item>
+
+
+    </string-array>
+
+
+
+
+
+
+    <string-array name="web_tension_sub">
+        <item>Select</item>
+
+
+        <item>Brake Shoe/Pad</item>
+        <item>Fan for Brake</item>
+        <item>Renova Caliper Brake CX 250.2</item>
+        <item>Renova Caliper Brake CX 250.3 </item>
+        <item>Renova Caliper Brake CX 250.4</item>
+
+        <item>Renova Caliper Brake CX 250.5</item>
+        <item>Renova Caliper Brake CX 250.6</item>
+        <item>Renova Load Cell Sensorex CF 85.100.17</item>
+        <item>Renova Load Cell Sensorex CF 85.100.25</item>
+        <item>Renova Load Cell Sensorex CF 85.15.17</item>
+
+
+        <item>Renova Load Cell Sensorex CF 85.50.17</item>
+        <item>Renova Load Cell Sensorex CF 85.50.25</item>
+        <item>Renova Turborex Brake TS 170</item>
+        <item>Renova Turborex Brake TS 170 </item>
+        <item>Renova Turborex Brake TS 180 </item>
+
+
+
+        <item>Renova Turborex Brake TX 160.20K/STD00</item>
+        <item>Renova Turborex Brake TX180.150.C/STD01</item>
+        <item>Tension Control System (DTC + LC + E/P + CX BRAKE)</item>
+        <item>Tension Control System (DTC + LC + E/P + TS 170) </item>
+        <item>Tension Control System (DTC + LC + E/P + TS 180) </item>
+
+
+
+
+
+
+    </string-array>
+
+
+
+    <string-array name="web_video_sub">
+        <item>Select</item>
+
+
+        <item>Automatic Colour Monitoring for SHS</item>
+        <item>POWERScope 4000 Motorized</item>
+        <item>POWERScope 5000 Manual</item>
+        <item>POWERScope 5000 Manual with Touch Monitor </item>
+        <item>POWERScope 5000 Manual with Viewing Monitor</item>
+
+        <item>POWERScope 5000 Manual with Viewing Monitor and Commander</item>
+        <item>POWERScope 5000 Motorized with Touch Monitor</item>
+        <item>POWERScope 5000 Motorized with Viewing Monitor</item>
+        <item>Smart Register for SHS4000</item>
+        <item>Smart Register for SHS4100</item>
+
+
+        <item>SuperHandy Scan 4000 5x4</item>
+        <item>SuperHandy Scan 4000 9x7</item>
+        <item>SuperHandy Scan 4100 5x4</item>
+        <item>SuperHandy Scan 4100 9x7</item>
+        <item>SuperHandy Scan 4100_Dual Camera </item>
+
+
+
+    </string-array>
+
+
+
+
+
+
+
+
+
+
 
 
     <string-array name="Member_names">
@@ -128,7 +555,6 @@
         <item>Work</item>
         <item>Mobile</item>
     </string-array>
-
 
     <string name="tag_prompt2">Choose a Tag</string>
 
