@@ -30,6 +30,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -319,11 +320,11 @@ public class NewCall4 extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefs;
+               /* SharedPreferences prefs;
                 prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor prefEditor = prefs.edit();
-               // prefEditor.putString("payment",s1.getSelectedItem().toString());
-                prefEditor.commit();
+
+                prefEditor.commit();*/
 
 
 
@@ -1337,6 +1338,50 @@ public class NewCall4 extends AppCompatActivity {
 
 
         //Toast.makeText(getApplicationContext(), "...", Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        // int profile=item.getItemId();
+
+
+        //signout function
+        switch (id)
+        {
+            case R.id.signout:
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+        }
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+
+
+        return true;
+
+
+
+
+
+
     }
 
 

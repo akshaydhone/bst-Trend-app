@@ -86,4 +86,51 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
     }
 
+
+
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        // int profile=item.getItemId();
+
+
+        //signout function
+        switch (id)
+        {
+            case R.id.signout:
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+        }
+
+
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+
+
+        return true;
+
+
+
+
+
+
+    }
+
 }

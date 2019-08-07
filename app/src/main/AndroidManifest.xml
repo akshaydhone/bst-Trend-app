@@ -23,7 +23,8 @@
         <activity android:name=".FirebaseAutoComplete"></activity>
         <activity
             android:name=".NewCall5"
-            android:parentActivityName=".NewCall4" />
+            android:parentActivityName=".NewCall4"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".RecycleViewOnclick" />
         <activity
             android:name=".SearchBase"
@@ -73,11 +74,7 @@
             android:parentActivityName=".AdminActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".splashscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity
@@ -119,9 +116,20 @@
             android:exported="false" />
 
         <activity android:name=".LoginActivity"
-            android:windowSoftInputMode="adjustPan"
+            android:windowSoftInputMode="adjustPan">
 
-            />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+
+
         <activity android:name=".HomeActivity" />
         <activity android:name=".AdminActivity" />
         <activity
@@ -146,6 +154,7 @@
             android:name=".MainChatActivity"
             android:parentActivityName=".AdminActivity" />
         <activity android:name=".CallList" />
+
     </application>
 
 </manifest>

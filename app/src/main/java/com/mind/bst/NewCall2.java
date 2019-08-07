@@ -13,6 +13,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -199,11 +200,10 @@ public class NewCall2 extends AppCompatActivity {
                 else{
 
                       //save the pserial
-                    String pserial = e1.getText().toString();
+                    /*String pserial = e1.getText().toString();
                     mEditor.putString(getString(R.string.pserial), pserial);
                     mEditor.commit();
 
-                    //save the nature
 
 
 
@@ -218,20 +218,10 @@ public class NewCall2 extends AppCompatActivity {
 
                     String date = mDisplayDate.getText().toString();
                     mEditor.putString(getString(R.string.attenddate), date);
-                    mEditor.commit();
+                    mEditor.commit();*/
 
 
-                    //save the spinner...//step3
-                    //String spinner = s1.toString();
-                   // mEditor.putString(getString(R.string.spinner), spinner);
-                    //mEditor.commit();
 
-
-                    /*SharedPreferences prefs;
-                    prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    SharedPreferences.Editor prefEditor = prefs.edit();
-                    prefEditor.putString("spinner",s1.getSelectedItem().toString());
-                    prefEditor.commit();*/
 
 
 
@@ -329,6 +319,48 @@ public class NewCall2 extends AppCompatActivity {
    //s1.();
 
         e1.setText(pserial);
+
+
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        // int profile=item.getItemId();
+
+
+        //signout function
+        switch (id)
+        {
+            case R.id.signout:
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+        }
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+
+
+        return true;
+
+
+
+
 
 
     }

@@ -24,6 +24,7 @@
         android:layout_height="71dp"
         android:layout_gravity="right"
         android:layout_marginTop="23dp"
+        android:layout_marginRight="20dp"
         android:fontFamily="@font/arial"
         android:gravity="end"
         android:text="Welcome"
@@ -192,7 +193,6 @@
                         android:id="@+id/s2"
                         android:drawablePadding="5dp"
                         android:ems="10"
-
                         android:entries="@array/tag_arrays3"
                         android:prompt="@string/tag_prompt3" />
 

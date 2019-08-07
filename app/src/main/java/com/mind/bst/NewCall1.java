@@ -65,7 +65,7 @@ public class NewCall1 extends AppCompatActivity {
 
 
     Button b1;
-    public static Spinner s1,s2,s3,s4;
+    public static Spinner s1,s3,s4;
     TimePickerDialog picker;
 
     public static TextView mDisplayDate;
@@ -143,7 +143,7 @@ public class NewCall1 extends AppCompatActivity {
         });
 
         s1 = (Spinner) findViewById(R.id.s1);
-        s2 = (Spinner) findViewById(R.id.s2);
+        //s2 = (Spinner) findViewById(R.id.s2);
         s3 = (Spinner) findViewById(R.id.s3);
         s4 = (Spinner) findViewById(R.id.s4);
         b1 = (Button) findViewById(R.id.b1);
@@ -161,8 +161,127 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-
         final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
+                this, R.array.print_inspection_plus_default, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter1);
+
+
+
+        final ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+                this, R.array.automation_plus_default, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter2);
+
+
+        final ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(
+                this, R.array.defect_detection_plus_default, android.R.layout.simple_spinner_item);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter3);
+
+        final ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(
+                this, R.array.density_thickness_plus_default, android.R.layout.simple_spinner_item);
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter4);
+
+
+
+        final ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(
+                this, R.array.mirror_image_plus_default, android.R.layout.simple_spinner_item);
+        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter5);
+
+
+
+        final ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(
+                this, R.array.register_viscocity_plus_default, android.R.layout.simple_spinner_item);
+        adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter6);
+
+
+
+        final ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(
+                this, R.array.register_control_plus_default, android.R.layout.simple_spinner_item);
+        adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter7);
+
+
+
+        final ArrayAdapter<CharSequence> adapter8 = ArrayAdapter.createFromResource(
+                this, R.array.special_purpose_plus_default, android.R.layout.simple_spinner_item);
+        adapter8.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter8);
+
+
+
+
+        final ArrayAdapter<CharSequence> adapter9 = ArrayAdapter.createFromResource(
+                this, R.array.surface_inspection_plus_default, android.R.layout.simple_spinner_item);
+        adapter9.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter9);
+
+
+
+
+        final ArrayAdapter<CharSequence> adapter10 = ArrayAdapter.createFromResource(
+                this, R.array.web_guiding_plus_default, android.R.layout.simple_spinner_item);
+        adapter10.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter10);
+
+        final ArrayAdapter<CharSequence> adapter11 = ArrayAdapter.createFromResource(
+                this, R.array.web_tension_plus_default, android.R.layout.simple_spinner_item);
+        adapter11.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter11);
+
+
+
+        final ArrayAdapter<CharSequence> adapter12 = ArrayAdapter.createFromResource(
+                this, R.array.web_video_default, android.R.layout.simple_spinner_item);
+        adapter12.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter12);
+
+
+
+        final ArrayAdapter<CharSequence> adapter13 = ArrayAdapter.createFromResource(
+                this, R.array.register_control_plus_sub_default, android.R.layout.simple_spinner_item);
+        adapter13.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter13);
+
+
+
+        final ArrayAdapter<CharSequence> adapter14 = ArrayAdapter.createFromResource(
+                this, R.array.web_guiding_plus_sub_default, android.R.layout.simple_spinner_item);
+        adapter14.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter14);
+
+
+
+        final ArrayAdapter<CharSequence> adapter15 = ArrayAdapter.createFromResource(
+                this, R.array.web_tension_plus_sub_default, android.R.layout.simple_spinner_item);
+        adapter15.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter15);
+
+
+
+
+        final ArrayAdapter<CharSequence> adapter16 = ArrayAdapter.createFromResource(
+                this, R.array.web_video_sub_default, android.R.layout.simple_spinner_item);
+        adapter16.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter16);
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /* final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
                 this, R.array.print_inspection, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s2.setAdapter(adapter1);
@@ -283,7 +402,7 @@ public class NewCall1 extends AppCompatActivity {
         final ArrayAdapter<CharSequence> adaptersub5 = ArrayAdapter.createFromResource(
                 this, R.array.web_video_sub, android.R.layout.simple_spinner_item);
         adaptersub5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s4.setAdapter(adaptersub5);
+        s4.setAdapter(adaptersub5);*/
 
 
 
@@ -317,84 +436,118 @@ public class NewCall1 extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 String spinnerValue = s1.getSelectedItem().toString();
-                if (spinnerValue.equals("100% Print Inspection"))
+                String spinnerValue1 = s3.getSelectedItem().toString();
+
+                if (spinnerValue.equals("100% Print Inspection")&& spinnerValue1.equals("Default / Common"))
 
                 {
-                    s2.setAdapter(adapter1);
+                    s4.setAdapter(adapter1);
+
                 }
 
-                else if (spinnerValue.equals("Automation"))
+                else if (spinnerValue.equals("Automation")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter2);
-                }
+                    s4.setAdapter(adapter2);
 
-
-
-                else if (spinnerValue.equals("Defect Detection System"))
-                {
-                    s2.setAdapter(adapter3);
                 }
 
 
 
-                else if (spinnerValue.equals("Density and thickness measurement"))
+                else if (spinnerValue.equals("Defect Detection System")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter4);
+                    s4.setAdapter(adapter3);
+
                 }
 
 
 
-                else if (spinnerValue.equals("Mirror Image Registration"))
+                else if (spinnerValue.equals("Density and thickness measurement")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter5);
+                    s4.setAdapter(adapter4);
+                }
+
+
+
+                else if (spinnerValue.equals("Mirror Image Registration")&& spinnerValue1.equals("Default / Common"))
+                {
+                    s4.setAdapter(adapter5);
                 }
 
 
 
 
-                else if (spinnerValue.equals("Register and Viscosity Control"))
+                else if (spinnerValue.equals("Register and Viscosity Control")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter6);
+                    s4.setAdapter(adapter6);
                 }
 
 
 
-                else if (spinnerValue.equals("Register Control (eltromat)"))
+                else if (spinnerValue.equals("Register Control (eltromat)")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter7);
+                    s4.setAdapter(adapter7);
                 }
 
 
 
-                else if (spinnerValue.equals("Special Purpose Machine"))
+                else if (spinnerValue.equals("Special Purpose Machine")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter8);
+                    s4.setAdapter(adapter8);
                 }
 
 
-                else if (spinnerValue.equals("Surface Inspection"))
+                else if (spinnerValue.equals("Surface Inspection")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter9);
+                    s4.setAdapter(adapter9);
                 }
 
 
-                else if (spinnerValue.equals("Web Guiding"))
+                else if (spinnerValue.equals("Web Guiding")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter10);
+                    s4.setAdapter(adapter10);
                 }
 
 
 
-                else if (spinnerValue.equals("Web Tension Control"))
+                else if (spinnerValue.equals("Web Tension Control")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter11);
+                    s4.setAdapter(adapter11);
                 }
 
-                else if (spinnerValue.equals("Web Video Inspection"))
+                else if (spinnerValue.equals("Web Video Inspection")&& spinnerValue1.equals("Default / Common"))
                 {
-                    s2.setAdapter(adapter12);
+                    s4.setAdapter(adapter12);
                 }
 
+
+
+
+                else if (spinnerValue.equals("Register Control (eltromat)")&& spinnerValue1.equals("Register Control (eltromat)"))
+                {
+                    s4.setAdapter(adapter13);
+                }
+
+
+
+
+                else if (spinnerValue.equals("Web Guiding")&& spinnerValue1.equals("Web Guiding"))
+                {
+                    s4.setAdapter(adapter14);
+                }
+
+
+
+                else if (spinnerValue.equals("Web Tension Control")&& spinnerValue1.equals("Web Tension Control"))
+                {
+                    s4.setAdapter(adapter15);
+                }
+
+
+
+                else if (spinnerValue.equals("Web Video Inspection")&& spinnerValue1.equals("Web Video Inspection"))
+                {
+                    s4.setAdapter(adapter16);
+                }
                 /*for(int i=0;i<5;i++)
                     if(s1.equals(s1.getItemAtPosition(i).toString())){
                         s1.setSelection(i);
@@ -411,24 +564,7 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-        s2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-
-
-                String spinnerValue = s1.getSelectedItem().toString();
-                //String spinnerValue = s2.getSelectedItem().toString();
-
-          /*for(int i=0;i<5;i++)
-                    if(s2.equals(s2.getItemAtPosition(i).toString())){
-                        s2.setSelection(i);
-                        break;
-                    }*/
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent){}
-        });
 
 
 
@@ -455,7 +591,7 @@ public class NewCall1 extends AppCompatActivity {
         });
 
 
-        s3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*s3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -463,44 +599,40 @@ public class NewCall1 extends AppCompatActivity {
                 if (spinnerValue.equals("Default / Common"))
 
                 {
-                    s4.setAdapter(adaptersub1);
+
                 }
 
                 else if (spinnerValue.equals("Register Control (eltromat)"))
                 {
-                    s4.setAdapter(adaptersub2);
+
                 }
 
 
                 else if (spinnerValue.equals("Web Guiding"))
                 {
-                    s4.setAdapter(adaptersub3);
+
                 }
 
 
                 else if (spinnerValue.equals("Web Tension Control"))
                 {
-                    s4.setAdapter(adaptersub4);
+
                 }
 
 
 
                 else if (spinnerValue.equals("Web Video Inspection"))
                 {
-                    s4.setAdapter(adaptersub5);
+
                 }
 
 
 
-                /*for(int i=0;i<5;i++)
-                    if(s1.equals(s1.getItemAtPosition(i).toString())){
-                        s1.setSelection(i);
-                        break;
-                    }*/
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent){}
-        });
+        });*/
 
 
         SharedPreferences mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -573,19 +705,9 @@ public class NewCall1 extends AppCompatActivity {
                 mEditor.putString(getString(R.string.date), date);
                 mEditor.commit();
 
-                //save time
-                //String time =mDisplayTime.getText().toString();
-                // mEditor.putString(getString(R.string.time), time);
-                //mEditor.commit();
 
 
-               /* SharedPreferences prefs;
-                prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor prefEditor = prefs.edit();
-                prefEditor.putString("spinnerpro",s1.getSelectedItem().toString());
-                prefEditor.commit();*/
-
-                int selectedPosition = s1.getSelectedItemPosition();
+                /*int selectedPosition = s1.getSelectedItemPosition();
                 mEditor.putInt("spinnerSelection", selectedPosition);
                 mEditor.apply();
 
@@ -603,15 +725,12 @@ public class NewCall1 extends AppCompatActivity {
 
                 int selectedPosition3 = s4.getSelectedItemPosition();
                 mEditor.putInt("spinnerSelection3", selectedPosition3);
-                mEditor.apply();
+                mEditor.apply();*/
 
 
 
 
 
-                //String selectedString =s2.getSelectedItemPosition();
-                //mEditor.putString("spinnerSelection1", selectedString);
-                //mEditor.apply();
 
 
 
@@ -710,12 +829,53 @@ public class NewCall1 extends AppCompatActivity {
         e5.setText(user.getDisplayName());
 
         s1.setSelection(mPreferences.getInt("spinnerSelection",0));
-        s2.setSelection(mPreferences.getInt("spinnerSelection1",0));
+        //s2.setSelection(mPreferences.getInt("spinnerSelection1",0));
         s3.setSelection(mPreferences.getInt("spinnerSelection2",0));
         s4.setSelection(mPreferences.getInt("spinnerSelection3",0));
         // mDisplayTime.setText(time);
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        // int profile=item.getItemId();
+
+
+        //signout function
+        switch (id)
+        {
+            case R.id.signout:
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+        }
+
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+
+
+        return true;
+
+
+
+
+
+
+    }
 
    /* public void sendData(){
         //String e5Text=e1.getText().toString();

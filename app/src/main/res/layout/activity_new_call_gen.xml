@@ -20,6 +20,7 @@
         android:layout_height="71dp"
         android:layout_gravity="right"
         android:layout_marginTop="23dp"
+        android:layout_marginRight="20dp"
         android:fontFamily="@font/arial"
         android:gravity="end"
         android:text="Welcome"
@@ -205,7 +206,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Client's Address"
+                        android:text="Customer Representative Address"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -226,7 +227,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Client's Contact No"
+                        android:text="Customer Representative Contact No"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -244,7 +245,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Client's Email-ID"
+                        android:text="Customer Representative Email-ID"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -267,6 +268,21 @@
                         android:layout_gravity="center"
                         android:textAllCaps="false"
                         android:id="@+id/b1"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/arial"
+                        android:textColor="@color/colorWhite" />
+
+
+
+
+                    <Button
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ui"
+                        android:text="Clear"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:id="@+id/b2"
                         android:layout_marginTop="7dp"
                         android:fontFamily="@font/arial"
                         android:textColor="@color/colorWhite" />

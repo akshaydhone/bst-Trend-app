@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        getSupportActionBar().setTitle("Home Dashboard");
+        getSupportActionBar().setTitle("Dashboard");
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ll=(LinearLayout)findViewById(R.id.ll);
         b1=(CardView)findViewById(R.id.b1);

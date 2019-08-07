@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -68,7 +69,7 @@ public class NewCallGen extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
 
 
-    Button b1;
+    Button b1,b2;
 
   public static TextView e2,e5;
 
@@ -133,6 +134,7 @@ public static String abc;
          e6=(AutoCompleteTextView) findViewById(R.id.e6);
          e7=(AutoCompleteTextView) findViewById(R.id.e7);
          e8=(AutoCompleteTextView) findViewById(R.id.e8);
+         b2=(Button)findViewById(R.id.b2);
 
 
         username=(TextView)findViewById(R.id.username) ;
@@ -399,7 +401,7 @@ public static String abc;
                     //Save the edit text
 
                     //save the name
-                    String city = e1.getText().toString();
+                   /* String city = e1.getText().toString();
                     mEditor.putString(getString(R.string.city), city);
                     mEditor.commit();
 
@@ -450,7 +452,7 @@ public static String abc;
 
                     String installation = c3.getText().toString();
                     mEditor.putString(getString(R.string.installation), installation);
-                    mEditor.commit();
+                    mEditor.commit();*/
 
 
 
@@ -470,6 +472,36 @@ public static String abc;
             }
         }
         );
+
+
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
+
+                e1.setText("");
+
+                e3.setText("");
+                e4.setText("");
+                e6.setText("");
+
+                e7.setText("");
+                e8.setText("");
+
+
+
+
+            }
+        });
+
+
+
+
+
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
@@ -555,8 +587,7 @@ public static String abc;
                                                             public void onCancelled(DatabaseError databaseError) {
 
                                                             }
-                                                        }
-        );
+                                                        });
         AutoCompleteTextView ACTV2= (AutoCompleteTextView)findViewById(R.id.e4);
         ACTV2.setAdapter(autoComplete2);
 
@@ -774,6 +805,46 @@ public static String abc;
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        // int profile=item.getItemId();
+
+
+        //signout function
+        switch (id)
+        {
+            case R.id.signout:
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+        }
+
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+
+
+        return true;
+
+
+
+
+
+
+    }
 
 
 

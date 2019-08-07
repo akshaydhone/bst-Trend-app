@@ -8,6 +8,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -185,7 +186,7 @@ public class NewCall3 extends AppCompatActivity {
 
                 else{
 
-
+/*
                     String observation = e1.getText().toString();
                     mEditor.putString(getString(R.string.observation), observation);
                     mEditor.commit();
@@ -208,13 +209,8 @@ public class NewCall3 extends AppCompatActivity {
 
                     String details = e4.getText().toString();
                     mEditor.putString(getString(R.string.details), details);
-                    mEditor.commit();
+                    mEditor.commit();*/
 
-                   /* SharedPreferences prefs;
-                    prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    SharedPreferences.Editor prefEditor = prefs.edit();
-                    prefEditor.putString("spinner1",s1.getSelectedItem().toString());
-                    prefEditor.commit();*/
 
 
 
@@ -240,5 +236,48 @@ public class NewCall3 extends AppCompatActivity {
         e2.setText(remark);
         e3.setText(nature);
         e4.setText(details);
+    }
+
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        // int profile=item.getItemId();
+
+
+        //signout function
+        switch (id)
+        {
+            case R.id.signout:
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+        }
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+
+
+        return true;
+
+
+
+
+
+
     }
 }
