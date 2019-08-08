@@ -159,6 +159,7 @@
                         android:layout_marginRight="10dp"
                         android:inputType="text"
 
+
                         />
 
 
@@ -180,7 +181,7 @@
                         android:layout_marginRight="10dp"
                         android:inputType="text"
 
-                        />
+                      />
 
 
                     <TextView
@@ -199,7 +200,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="text" />
+                        android:inputType="text"
+                       />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -218,6 +220,8 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:inputType="text"
+
+
 
                         />
 
@@ -238,7 +242,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="text" />
+                        android:inputType="text"
+
+                       />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -256,8 +262,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
+                        android:inputType="text"
 
-                        android:inputType="text" />
+                       />
 
 
                     <Button
@@ -270,7 +277,7 @@
                         android:id="@+id/b1"
                         android:layout_marginTop="7dp"
                         android:fontFamily="@font/arial"
-                        android:textColor="@color/colorWhite" />
+                        android:textColor="@color/colorWhite"/>
 
 
 

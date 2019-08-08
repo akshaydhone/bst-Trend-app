@@ -64,7 +64,7 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Product"
+                        android:text="Product Category"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -98,7 +98,8 @@ android:background="@drawable/newbst"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                         />
 
 
                    <Spinner
@@ -123,7 +124,7 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Sub-Product"
+                        android:text="Product Description"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -261,6 +262,20 @@ android:background="@drawable/newbst"
                         android:layout_gravity="center"
                         android:fontFamily="@font/arial"
                         android:textColor="@color/colorWhite" />
+
+
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/s2"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:fontFamily="@font/arial"
+                       android:visibility="invisible" />
+
 
 
 
