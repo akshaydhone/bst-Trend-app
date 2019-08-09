@@ -467,7 +467,11 @@ public static String abc;
                         e8.setError("Client's Email not entered");
                         e8.requestFocus();
                     }
+                    else if (c1.isChecked()!=true && c2.isChecked()!=true && c3.isChecked()!=true ) {
 
+                        Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
+
+                    }
 
 
 
