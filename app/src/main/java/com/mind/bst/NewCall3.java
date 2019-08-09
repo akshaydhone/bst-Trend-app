@@ -25,8 +25,9 @@ public class NewCall3 extends AppCompatActivity {
     private static final String TAG = "NewCall3";
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
-   public static EditText e1,e2,e3,e4;
+   public static EditText e1,e2,e4;
     Button b1;
+    public static Spinner s1;
     private FirebaseAuth mAuth;
     TextView username;
    // public static Spinner s1;
@@ -42,12 +43,22 @@ public class NewCall3 extends AppCompatActivity {
         e1=(EditText)findViewById(R.id.e1);
         e2=(EditText)findViewById(R.id.e2);
 
-        e3=(EditText)findViewById(R.id.e3);
+       // e3=(EditText)findViewById(R.id.e3);
         e4=(EditText)findViewById(R.id.e4);
+        s1 = (Spinner) findViewById(R.id.s1);
+
+
 
 
 
         b1=(Button)findViewById(R.id.b1);
+
+
+
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.nature_of_comp, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s1.setAdapter(adapter);
 
         username=(TextView)findViewById(R.id.username) ;
         mAuth = FirebaseAuth.getInstance();
@@ -145,7 +156,24 @@ public class NewCall3 extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent){}
         });*/
 
+        s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+
+
+                //String spinnerValue = s1.getSelectedItem().toString();
+                //String spinnerValue = s2.getSelectedItem().toString();
+
+          /*for(int i=0;i<5;i++)
+                    if(s2.equals(s2.getItemAtPosition(i).toString())){
+                        s2.setSelection(i);
+                        break;
+                    }*/
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent){}
+        });
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,11 +194,7 @@ public class NewCall3 extends AppCompatActivity {
 
 
 
-               else if(e3.getText().toString().trim().length()==0)
-                {
-                    e3.setError("Please fill the details");
-                    e3.requestFocus();
-                }
+
 
 
                 else if(e4.getText().toString().trim().length()==0)
@@ -229,13 +253,15 @@ public class NewCall3 extends AppCompatActivity {
         String observation = mPreferences.getString(getString(R.string.observation), "");
         String remark = mPreferences.getString(getString(R.string.remark), "");
 
-        String nature = mPreferences.getString(getString(R.string.nature), "");
+       // String nature = mPreferences.getString(getString(R.string.nature), "");
         String details = mPreferences.getString(getString(R.string.details), "");
 
         e1.setText(observation);
         e2.setText(remark);
-        e3.setText(nature);
+        //e3.setText(nature);
         e4.setText(details);
+
+        s1.setSelection(mPreferences.getInt("spinnerSelection4",0));
     }
 
 

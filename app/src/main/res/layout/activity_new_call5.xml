@@ -79,8 +79,63 @@
                         android:id="@+id/s1"
                         android:drawablePadding="5dp"
                         android:ems="10"
-                        android:entries="@array/tag_arrays2"
-                        android:prompt="@string/tag_prompt2" />
+                       />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Specify Reason"
+                        android:id="@+id/t1"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e4"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+
+                        android:visibility="gone"
+                       />
+
+
+
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Next Call assign Date "
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:id="@+id/t2"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e5"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/arial"
+                        android:inputType="date"
+                        android:visibility="gone"
+                      />
+
 
 
                     <TextView
@@ -93,7 +148,7 @@
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -121,7 +176,7 @@
                            android:textSize="15sp"
                            android:hint="Select Time"
 
-                          />-->
+                          />  -->
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -160,6 +215,20 @@
                         android:textColor="#000"
                         android:textSize="14sp"
                         />
+
+
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e7"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+                        android:hint="Enter expense Charges"
+                        android:visibility="gone"/>
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -172,7 +241,16 @@
                         />
 
 
-
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e6"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+                        android:hint="Specify Reason for FOC"
+                        android:visibility="gone"/>
 
 
                     <TextView
@@ -182,6 +260,7 @@
                         android:text="Mode of Payment"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:id="@+id/t3"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
@@ -193,10 +272,19 @@
                         android:id="@+id/s2"
                         android:drawablePadding="5dp"
                         android:ems="10"
-                        android:entries="@array/tag_arrays3"
-                        android:prompt="@string/tag_prompt3" />
+                       />
 
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Acc No:3456xxxx09"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:id="@+id/t4"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
 
                     <Button
                         android:layout_width="230dp"
@@ -209,6 +297,20 @@
                         android:layout_marginTop="7dp"
                         android:fontFamily="@font/arial"
                         android:textColor="@color/colorWhite" />
+
+
+                    <Button
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ui"
+                        android:text="Submit"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:id="@+id/b2"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/arial"
+                        android:textColor="@color/colorWhite"
+                        android:visibility="gone"/>
 
 
 

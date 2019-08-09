@@ -89,14 +89,16 @@
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
-                    <EditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/e3"
-                        android:inputType="text" />
-
+                        android:id="@+id/s1"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:fontFamily="@font/arial"
+                        />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

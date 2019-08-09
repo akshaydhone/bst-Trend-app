@@ -137,7 +137,7 @@
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -145,7 +145,8 @@
                         android:id="@+id/e5"
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
-                        android:hint="Select Date" />
+                        android:inputType="date"
+                        android:hint="Enter Date" />
 
 
                     <!--<TextView

@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 
@@ -352,41 +353,120 @@ public static String abc;
         databaseReference=db.getReference("Calls Generated");
 
 
+
+
+
+        c1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                                          @Override
+                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+
+                                              if(c1.isChecked()){
+                                                 Toast.makeText(NewCallGen.this, "Service selected", Toast.LENGTH_SHORT).show();
+                                              }
+                                              else{
+
+                                                 // Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
+                                              }
+
+
+
+                                          }
+                                      }
+        );
+
+
+
+
+
+        c2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                                          @Override
+                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+
+                                              if(c2.isChecked()){
+                                                  Toast.makeText(NewCallGen.this, "Repair ", Toast.LENGTH_SHORT).show();
+
+                                              }
+                                              else{
+
+                                                  //Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
+
+
+
+                                              }
+
+
+
+                                          }
+                                      }
+        );
+
+
+
+
+
+        c3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                                          @Override
+                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+
+                                              if(c3.isChecked()){
+                                                  Toast.makeText(NewCallGen.this, "Installation commissioning ", Toast.LENGTH_SHORT).show();
+
+                                              }
+                                              else{
+
+                                                 // Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
+
+
+
+                                              }
+
+
+
+                                          }
+                                      });
+
+
+
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (e1.getText().toString().trim().length() == 0) {
-                    e1.setError("City not entered");
-                    e1.requestFocus();
-                }
-
-                else if (e2.getText().toString().trim().length() == 0) {
-                    e2.setError("Name not entered");
-                    e2.requestFocus();
-                }
-                else if (e3.getText().toString().trim().length() == 0) {
-                    e3.setError("Client's Name not entered");
-                    e3.requestFocus();
-                } else if (e4.getText().toString().trim().length() == 0) {
-                    e4.setError("Address not entered");
-                    e4.requestFocus();
-                }
 
 
 
-
-                else if (e6.getText().toString().trim().length() == 0) {
-                    e6.setError("Customer Name not entered");
-                    e6.requestFocus();
-                } else if (e7.getText().toString().trim().length() == 0) {
-                    e7.setError("Client's Contact No not entered");
-                    e7.requestFocus();
-                } else if (e8.getText().toString().trim().length() == 0) {
-                    e8.setError("Client's Email not entered");
-                    e8.requestFocus();
-                }
+                    //String checkboxvalue1 = c1.getText().toString();
+                   //String checkboxvalue2 = c2.getText().toString();
+                    //String checkboxvalue3 = c3.getText().toString();
 
 
+                    if (e1.getText().toString().trim().length() == 0) {
+                        e1.setError("City not entered");
+                        e1.requestFocus();
+                    } else if (e2.getText().toString().trim().length() == 0) {
+                        e2.setError("Name not entered");
+                        e2.requestFocus();
+                    } else if (e3.getText().toString().trim().length() == 0) {
+                        e3.setError("Client's Name not entered");
+                        e3.requestFocus();
+                    } else if (e4.getText().toString().trim().length() == 0) {
+                        e4.setError("Address not entered");
+                        e4.requestFocus();
+                    } else if (e6.getText().toString().trim().length() == 0) {
+                        e6.setError("Customer Name not entered");
+                        e6.requestFocus();
+                    } else if (e7.getText().toString().trim().length() == 0) {
+                        e7.setError("Client's Contact No not entered");
+                        e7.requestFocus();
+                    } else if (e8.getText().toString().trim().length() == 0) {
+                        e8.setError("Client's Email not entered");
+                        e8.requestFocus();
+                    }
 
 
 
@@ -395,12 +475,17 @@ public static String abc;
 
 
 
-                else {
-                    //sendData();
-                    //displayNotification();
-                    //Save the edit text
 
-                    //save the name
+
+
+
+
+                    else {
+                        //sendData();
+                        //displayNotification();
+                        //Save the edit text
+
+                        //save the name
                    /* String city = e1.getText().toString();
                     mEditor.putString(getString(R.string.city), city);
                     mEditor.commit();
@@ -455,9 +540,8 @@ public static String abc;
                     mEditor.commit();*/
 
 
-
-                    Intent i=new Intent(NewCallGen.this,NewCall1.class);
-                    startActivity(i);
+                        Intent i = new Intent(NewCallGen.this, NewCall1.class);
+                        startActivity(i);
                    /* AttemptLogin attemptLogin= new AttemptLogin();
                     attemptLogin.execute(
                             e1.getText().toString(),
@@ -467,15 +551,15 @@ public static String abc;
                             "");*/
 
 
+                    }
+
                 }
 
-            }
         }
         );
 
 
-
-        b2.setOnClickListener(new View.OnClickListener() {
+    b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

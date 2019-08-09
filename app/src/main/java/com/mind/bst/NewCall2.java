@@ -49,7 +49,7 @@ public class NewCall2 extends AppCompatActivity {
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
 
-    public static TextView mDisplayDate;
+    public static EditText mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
 
@@ -137,7 +137,7 @@ public class NewCall2 extends AppCompatActivity {
        // e2=(EditText)findViewById(R.id.e2);
         //e3=(EditText)findViewById(R.id.e3);
         mDisplayTime = (TextView) findViewById(R.id.e4);
-        mDisplayDate = (TextView) findViewById(R.id.e5);
+        mDisplayDate = (EditText) findViewById(R.id.e5);
         b1=(Button)findViewById(R.id.b1);
          //step2
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -238,7 +238,7 @@ public class NewCall2 extends AppCompatActivity {
 
 
 
-        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+       /* mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar cal = Calendar.getInstance();
@@ -267,7 +267,7 @@ public class NewCall2 extends AppCompatActivity {
                 String date = day + "/" + month + "/" + year;
                 mDisplayDate.setText(date);
             }
-        };
+        };*/
 
  mDisplayTime.setOnClickListener(new View.OnClickListener() {
                 @Override

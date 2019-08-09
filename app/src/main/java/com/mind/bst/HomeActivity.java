@@ -19,7 +19,7 @@ import com.onesignal.OneSignal;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
-    CardView b1,b2,b3,b4;
+    CardView b1,b2,b3,b4,b5,b6;
     LinearLayout ll;
     TextView username;
     List<UserInformation> clients;
@@ -44,6 +44,8 @@ public class HomeActivity extends AppCompatActivity {
         b2=(CardView)findViewById(R.id.b2);
         b3=(CardView)findViewById(R.id.b3);
         b4=(CardView)findViewById(R.id.b4);
+        b5=(CardView)findViewById(R.id.b5);
+        b6=(CardView)findViewById(R.id.b6);
 
         username=(TextView)findViewById(R.id.username) ;
 
@@ -127,6 +129,49 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //For getting the next activity
+                // Intent i=new Intent(HomeActivity.this,ViewProfile.class);
+                // startActivity(i);
+
+                //UserInformation data = clients.get(position);
+
+
+
+
+            }
+        });
+
+
+
+
+
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent j=new Intent(getApplicationContext(),ViewProfile.class);
+                startActivity(j);
+
+                //For getting the next activity
+                // Intent i=new Intent(HomeActivity.this,ViewProfile.class);
+                // startActivity(i);
+
+                //UserInformation data = clients.get(position);
+
+
+
+
+            }
+        });
 
 //initializing the onesignal for notification
         OneSignal.startInit(this)

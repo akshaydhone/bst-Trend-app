@@ -48,9 +48,11 @@ public class NewCall1 extends AppCompatActivity {
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
 
+
     //private static final String TAG = "SecondActivity";
     //public static EditText e1, e2;
     public static TextView e5;
+    public static EditText mVisitDate;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
@@ -84,6 +86,7 @@ public class NewCall1 extends AppCompatActivity {
         //  e1 = (EditText) findViewById(R.id.e1);
         // e2 = (EditText) findViewById(R.id.e2);
         mDisplayDate = (TextView) findViewById(R.id.e3);
+        mVisitDate=(EditText)findViewById(R.id.e6);
         // mDisplayTime = (TextView) findViewById(R.id.e4);
         e5=(TextView)findViewById(R.id.e5);
 
@@ -465,6 +468,9 @@ public class NewCall1 extends AppCompatActivity {
         }
 
         checkSharedPreferences();
+
+
+
 
 
 

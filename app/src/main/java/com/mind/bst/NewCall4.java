@@ -892,7 +892,7 @@ public class NewCall4 extends AppCompatActivity {
         String e12Text=NewCall3.e1.getText().toString();
         String e13Text=NewCall3.e2.getText().toString();
 
-        String e14Text=NewCall3.e3.getText().toString();
+        String e14Text=NewCall3.s1.getSelectedItem().toString();
 
         String e15Text=NewCall3.e4.getText().toString();
        // String e16Text=NewCall4.s1.getSelectedItem().toString();

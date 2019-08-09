@@ -819,6 +819,19 @@
 
 
 
+
+    <string-array name="nature_of_comp">
+
+       <item>  Service Call</item>
+        <item> Service Under Warranty</item>
+        <item> Installation / Commissioning</item>
+
+
+    </string-array>
+
+
+
+
     <string-array name="web_tension_plus_prodname">
         <item>Cable / Cork Tape / Timing Belt</item>
 
@@ -1144,7 +1157,7 @@
         <item>Cheque Payment</item>
         <item>Bank Transfer:NEFT,RTGS,IMPS</item>
 
-        <item>Other/FOC Specify</item>
+
 
 
     </string-array>

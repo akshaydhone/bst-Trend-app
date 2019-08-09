@@ -43,7 +43,7 @@ import static com.mind.bst.OpenCamera.RequestPermissionCode;
 
 public class HiddenActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private EditText email,password,name,eregion,eadd,econt;
+private EditText email,password,name,eregion,eadd,econt;
     private Button  signup,select_image;
     FirebaseUser user;
     public static ImageView user_image;
