@@ -173,15 +173,16 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/e6"
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/searchable_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="text"
 
-                      />
+
+                        />
+
 
 
                     <TextView
@@ -189,7 +190,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Representative Name"
+                        android:text="Customer EmailID"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -201,14 +202,14 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:inputType="text"
-                       />
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Representative Address"
+                        android:text="Customer Address"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -231,7 +232,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Representative Contact No"
+                        android:text="Customer City"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -242,16 +243,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="text"
 
-                       />
+
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Representative Email-ID"
+                        android:text="Customer Country"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -264,7 +265,7 @@
                         android:layout_marginRight="10dp"
                         android:inputType="text"
 
-                       />
+                        />
 
 
                     <Button

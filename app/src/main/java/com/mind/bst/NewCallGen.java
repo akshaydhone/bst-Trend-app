@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -46,6 +47,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.mind.bst.Interface.IFirebaseLoadDone;
+import com.mind.bst.Model.Clients;
+import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -57,11 +61,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import javax.xml.transform.Result;
 
-public class NewCallGen extends AppCompatActivity {
+public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
 
 
     private static final String TAG = "NewCallGen";
@@ -72,21 +77,28 @@ public class NewCallGen extends AppCompatActivity {
 
     Button b1,b2;
 
-  public static TextView e2,e5;
+    public static TextView e2,e5;
 
-   public static EditText e1;
-   public static AutoCompleteTextView e6,e3,e4,e7,e8;
+    public static EditText e1;
+    public static AutoCompleteTextView e3,e4,e7,e8;
+   public static SearchableSpinner searchableSpinner;
 
-   public static CheckBox c1,c2,c3;
 
-private Long suggestion;
+    public static CheckBox c1,c2,c3;
+
+    private Long suggestion;
     static String LoggedIn_User_Email;
     TextView username;
     private FirebaseAuth mAuth;
     public static String id;
+    DatabaseReference clientsRef;
+    IFirebaseLoadDone iFirebaseLoadDone;
+    boolean isFirstTimeClick=true;
+    List<Clients>clients;
 
-public static String abc;
+    public static String abc;
     public SharedPreferences savedData;
+    //public static String suggestion;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
@@ -123,19 +135,20 @@ public static String abc;
         setContentView(R.layout.activity_new_call_gen);
         getSupportActionBar().setTitle("New  Call Generation");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       e1=(EditText) findViewById(R.id.e1);
+        e1=(EditText) findViewById(R.id.e1);
         e2 = (TextView) findViewById(R.id.e2);
         e3 = (AutoCompleteTextView)findViewById(R.id.e3);
-         e4 = (AutoCompleteTextView) findViewById(R.id.e4);
-         c1=(CheckBox)findViewById(R.id.c1);
-         c2=(CheckBox)findViewById(R.id.c2);
-         c3=(CheckBox)findViewById(R.id.c3);
-         e5=(TextView)findViewById(R.id.e5);
+        e4 = (AutoCompleteTextView) findViewById(R.id.e4);
+        c1=(CheckBox)findViewById(R.id.c1);
+        c2=(CheckBox)findViewById(R.id.c2);
+        c3=(CheckBox)findViewById(R.id.c3);
+        e5=(TextView)findViewById(R.id.e5);
+        searchableSpinner=(SearchableSpinner)findViewById(R.id.searchable_spinner);
 
-         e6=(AutoCompleteTextView) findViewById(R.id.e6);
-         e7=(AutoCompleteTextView) findViewById(R.id.e7);
-         e8=(AutoCompleteTextView) findViewById(R.id.e8);
-         b2=(Button)findViewById(R.id.b2);
+
+        e7=(AutoCompleteTextView) findViewById(R.id.e7);
+        e8=(AutoCompleteTextView) findViewById(R.id.e8);
+        b2=(Button)findViewById(R.id.b2);
 
 
         username=(TextView)findViewById(R.id.username) ;
@@ -158,11 +171,7 @@ public static String abc;
         if (user != null) {
             username.setText("" + user.getDisplayName());
 
-
-
             LoginActivity.LoggedIn_User_Email =user.getDisplayName();
-
-
 
 
         }
@@ -203,6 +212,59 @@ public static String abc;
 
 
 
+        clientsRef=FirebaseDatabase.getInstance().getReference("Clients");
+
+        iFirebaseLoadDone=this;
+
+
+
+
+        clientsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List<Clients>clients=new ArrayList<>();
+                for(DataSnapshot clientSnapshot:dataSnapshot.getChildren())
+                {
+                    clients.add(clientSnapshot.getValue(Clients.class));
+                }
+                iFirebaseLoadDone.onFirebaseLoadSuccess(clients);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                iFirebaseLoadDone.onFirebaseLoadFail(databaseError.getMessage());
+
+            }
+        });
+
+
+
+searchableSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+        if(!isFirstTimeClick){
+            Clients client=clients.get(position);
+            e3.setText(client.getEmailID());
+        e4.setText(client.getAddress());
+        e7.setText(client.getCity());
+        e8.setText(client.getCountry());
+
+
+        }
+        else
+            isFirstTimeClick=false;
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+});
+
 
 
          /*if (user != null) {
@@ -233,19 +295,19 @@ public static String abc;
         final ArrayAdapter<String> a3 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
         final ArrayAdapter<String> a4 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);*/
         //database.child("Engineers").addValueEventListener(new ValueEventListener() {
-            //@Override
-           // public void onDataChange(DataSnapshot dataSnapshot) {
-                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
-                //for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
-                    //Get the suggestion by childing the key of the string you want to get.
-                   // String region = suggestionSnapshot.child("region").getValue(String.class);
-                    //Add the retrieved string to the list
-                    //autoComplete.add(region);
+        //@Override
+        // public void onDataChange(DataSnapshot dataSnapshot) {
+        //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+        //for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+        //Get the suggestion by childing the key of the string you want to get.
+        // String region = suggestionSnapshot.child("region").getValue(String.class);
+        //Add the retrieved string to the list
+        //autoComplete.add(region);
 
 
-                   // String name = suggestionSnapshot.child("name").getValue(String.class);
-                    //Add the retrieved string to the list
-                   // a1.add(name);
+        // String name = suggestionSnapshot.child("name").getValue(String.class);
+        //Add the retrieved string to the list
+        // a1.add(name);
 
                     /*String client = suggestionSnapshot.child("client").getValue(String.class);
                     //Add the retrieved string to the list
@@ -255,14 +317,14 @@ public static String abc;
                     //Add the retrieved string to the list
                     a4.add(add);*/
 
-               // }
-            //}
+        // }
+        //}
 
-           // @Override
-            //public void onCancelled(DatabaseError databaseError) {
+        // @Override
+        //public void onCancelled(DatabaseError databaseError) {
 
-          //  }
-       // });
+        //  }
+        // });
 
 
 
@@ -271,21 +333,21 @@ public static String abc;
 
 
         //final ArrayAdapter<String> a3 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
-       // final ArrayAdapter<String> a4 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
-       // database.child("Clients").addValueEventListener(new ValueEventListener() {
-          //  @Override
-           // public void onDataChange(DataSnapshot dataSnapshot) {
-                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
-                //for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
-                    //Get the suggestion by childing the key of the string you want to get.
-                    //String name = suggestionSnapshot.child("name").getValue(String.class);
-                    //Add the retrieved string to the list
-                    //a3.add(name);
+        // final ArrayAdapter<String> a4 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        // database.child("Clients").addValueEventListener(new ValueEventListener() {
+        //  @Override
+        // public void onDataChange(DataSnapshot dataSnapshot) {
+        //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+        //for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+        //Get the suggestion by childing the key of the string you want to get.
+        //String name = suggestionSnapshot.child("name").getValue(String.class);
+        //Add the retrieved string to the list
+        //a3.add(name);
 
 
-                   // String region = suggestionSnapshot.child("region").getValue(String.class);
-                    //Add the retrieved string to the list
-                   // a4.add(region);
+        // String region = suggestionSnapshot.child("region").getValue(String.class);
+        //Add the retrieved string to the list
+        // a4.add(region);
 
                     /*String client = suggestionSnapshot.child("client").getValue(String.class);
                     //Add the retrieved string to the list
@@ -295,40 +357,40 @@ public static String abc;
                     //Add the retrieved string to the list
                     a4.add(add);*/
 
-               // }
-            //}
+        // }
+        //}
 
-           // @Override
-            //public void onCancelled(DatabaseError databaseError) {
+        // @Override
+        //public void onCancelled(DatabaseError databaseError) {
 
-           // }
+        // }
         //});
 
-       //final AutoCompleteTextView e1= (AutoCompleteTextView) findViewById(R.id.e1);
-       // e1.setAdapter(autoComplete);
+        //final AutoCompleteTextView e1= (AutoCompleteTextView) findViewById(R.id.e1);
+        // e1.setAdapter(autoComplete);
 
-       // AutoCompleteTextView ACTV= (AutoCompleteTextView) findViewById(R.id.actv);
+        // AutoCompleteTextView ACTV= (AutoCompleteTextView) findViewById(R.id.actv);
         //ACTV.setAdapter(autoComplete);
 
-  //final AutoCompleteTextView     e2 = (AutoCompleteTextView) findViewById(R.id.e2);
-   //e2.setAdapter(a1);
+        //final AutoCompleteTextView     e2 = (AutoCompleteTextView) findViewById(R.id.e2);
+        //e2.setAdapter(a1);
 
-       //final AutoCompleteTextView     e2 = (AutoCompleteTextView) findViewById(R.id.e2);
+        //final AutoCompleteTextView     e2 = (AutoCompleteTextView) findViewById(R.id.e2);
         //e2.setAdapter(a2);
 
 
-     // final  AutoCompleteTextView     e3 = (AutoCompleteTextView) findViewById(R.id.e3);
-       // e3.setAdapter(a3);
+        // final  AutoCompleteTextView     e3 = (AutoCompleteTextView) findViewById(R.id.e3);
+        // e3.setAdapter(a3);
 
 
-    // final    AutoCompleteTextView     e4 = (AutoCompleteTextView) findViewById(R.id.e4);
-       // e4.setAdapter(a4);
+        // final    AutoCompleteTextView     e4 = (AutoCompleteTextView) findViewById(R.id.e4);
+        // e4.setAdapter(a4);
 
 
 
         //e2 = (EditText) findViewById(R.id.e2);
-    //e3 = (AutoCompleteTextView) findViewById(R.id.e3);
-       // e4 = (AutoCompleteTextView) findViewById(R.id.e4);
+        //e3 = (AutoCompleteTextView) findViewById(R.id.e3);
+        // e4 = (AutoCompleteTextView) findViewById(R.id.e4);
 
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -363,11 +425,11 @@ public static String abc;
 
 
                                               if(c1.isChecked()){
-                                                 Toast.makeText(NewCallGen.this, "Service selected", Toast.LENGTH_SHORT).show();
+                                                  Toast.makeText(NewCallGen.this, "Service selected", Toast.LENGTH_SHORT).show();
                                               }
                                               else{
 
-                                                 // Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
+                                                  // Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
                                               }
 
 
@@ -410,68 +472,65 @@ public static String abc;
 
         c3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-                                          @Override
-                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
 
 
-                                              if(c3.isChecked()){
-                                                  Toast.makeText(NewCallGen.this, "Installation commissioning ", Toast.LENGTH_SHORT).show();
+                if(c3.isChecked()){
+                    Toast.makeText(NewCallGen.this, "Installation commissioning ", Toast.LENGTH_SHORT).show();
 
-                                              }
-                                              else{
+                }
+                else{
 
-                                                 // Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
-
-
-
-                                              }
+                    // Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
 
 
 
-                                          }
-                                      });
+                }
+
+
+
+            }
+        });
 
 
 
 
         b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                                  @Override
+                                  public void onClick(View v) {
 
 
 
-                    //String checkboxvalue1 = c1.getText().toString();
-                   //String checkboxvalue2 = c2.getText().toString();
-                    //String checkboxvalue3 = c3.getText().toString();
+                                      //String checkboxvalue1 = c1.getText().toString();
+                                      //String checkboxvalue2 = c2.getText().toString();
+                                      //String checkboxvalue3 = c3.getText().toString();
 
 
-                    if (e1.getText().toString().trim().length() == 0) {
-                        e1.setError("City not entered");
-                        e1.requestFocus();
-                    } else if (e2.getText().toString().trim().length() == 0) {
-                        e2.setError("Name not entered");
-                        e2.requestFocus();
-                    } else if (e3.getText().toString().trim().length() == 0) {
-                        e3.setError("Client's Name not entered");
-                        e3.requestFocus();
-                    } else if (e4.getText().toString().trim().length() == 0) {
-                        e4.setError("Address not entered");
-                        e4.requestFocus();
-                    } else if (e6.getText().toString().trim().length() == 0) {
-                        e6.setError("Customer Name not entered");
-                        e6.requestFocus();
-                    } else if (e7.getText().toString().trim().length() == 0) {
-                        e7.setError("Client's Contact No not entered");
-                        e7.requestFocus();
-                    } else if (e8.getText().toString().trim().length() == 0) {
-                        e8.setError("Client's Email not entered");
-                        e8.requestFocus();
-                    }
-                    else if (c1.isChecked()!=true && c2.isChecked()!=true && c3.isChecked()!=true ) {
+                                      if (e1.getText().toString().trim().length() == 0) {
+                                          e1.setError("City not entered");
+                                          e1.requestFocus();
+                                      } else if (e2.getText().toString().trim().length() == 0) {
+                                          e2.setError("Name not entered");
+                                          e2.requestFocus();
+                                      } else if (e3.getText().toString().trim().length() == 0) {
+                                          e3.setError("Client's Name not entered");
+                                          e3.requestFocus();
+                                      } else if (e4.getText().toString().trim().length() == 0) {
+                                          e4.setError("Address not entered");
+                                          e4.requestFocus();
+                                      } else if (e7.getText().toString().trim().length() == 0) {
+                                          e7.setError("Client's Contact No not entered");
+                                          e7.requestFocus();
+                                      } else if (e8.getText().toString().trim().length() == 0) {
+                                          e8.setError("Client's Email not entered");
+                                          e8.requestFocus();
+                                      }
+                                      else if (c1.isChecked()!=true && c2.isChecked()!=true && c3.isChecked()!=true ) {
 
-                        Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
+                                          Toast.makeText(NewCallGen.this, "Select atleast one type of service call", Toast.LENGTH_SHORT).show();
 
-                    }
+                                      }
 
 
 
@@ -484,12 +543,12 @@ public static String abc;
 
 
 
-                    else {
-                        //sendData();
-                        //displayNotification();
-                        //Save the edit text
+                                      else {
+                                          //sendData();
+                                          //displayNotification();
+                                          //Save the edit text
 
-                        //save the name
+                                          //save the name
                    /* String city = e1.getText().toString();
                     mEditor.putString(getString(R.string.city), city);
                     mEditor.commit();
@@ -544,8 +603,8 @@ public static String abc;
                     mEditor.commit();*/
 
 
-                        Intent i = new Intent(NewCallGen.this, NewCall1.class);
-                        startActivity(i);
+                                          Intent i = new Intent(NewCallGen.this, NewCall1.class);
+                                          startActivity(i);
                    /* AttemptLogin attemptLogin= new AttemptLogin();
                     attemptLogin.execute(
                             e1.getText().toString(),
@@ -555,15 +614,15 @@ public static String abc;
                             "");*/
 
 
-                    }
+                                      }
 
-                }
+                                  }
 
-        }
+                              }
         );
 
 
-    b2.setOnClickListener(new View.OnClickListener() {
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -575,7 +634,7 @@ public static String abc;
 
                 e3.setText("");
                 e4.setText("");
-                e6.setText("");
+                //e6.setText("");
 
                 e7.setText("");
                 e8.setText("");
@@ -591,19 +650,46 @@ public static String abc;
 
 
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+       /* DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
         final ArrayAdapter<String> autoComplete = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        final ArrayAdapter<String> autoComplete2 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+
+
         //Child the root before all the push() keys are found and add a ValueEventListener()
+        // Query database = reference.child("issue").orderByChild("id").equalTo(0);
         database.child("Clients").addValueEventListener(new ValueEventListener() {
                                                             @Override
                                                             public void onDataChange(DataSnapshot dataSnapshot) {
                                                                 //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
                                                                 for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                    String child=suggestionSnapshot.getKey();
+
                                                                     //Get the suggestion by childing the key of the string you want to get.
-                                                                    String suggestion = suggestionSnapshot.child("PartyName").getValue(String.class);
+                                                                    String suggestion = suggestionSnapshot.child("PartyName").getValue(String.class) ;
                                                                     //Add the retrieved string to the list
+
                                                                     autoComplete.add(suggestion);
+
+
+                                                                    AutoCompleteTextView ACTV= (AutoCompleteTextView)findViewById(R.id.e6);
+
+
+                                                                    ACTV.setAdapter(autoComplete);
+                                                                    //String child=suggestionSnapshot.getKey();
+                                                                    //e3.setText();
+
+                                                                   //AutoCompleteTextView ACTV2= (AutoCompleteTextView)findViewById(R.id.e4);
+                                                                    //ACTV2.setText(suggestionSnapshot.child("Address").getValue(String.class));
+
+                                                                    //String suggestion1 = suggestionSnapshot.child("Address").getValue(String.class);
+                                                                    //autoComplete2.add(suggestion1);
+                                                                    //AutoCompleteTextView ACTV2= (AutoCompleteTextView)findViewById(R.id.e4);
+                                                                    //ACTV2.setAdapter(autoComplete2);
+
+
+
+
                                                                 }
                                                             }
 
@@ -612,40 +698,13 @@ public static String abc;
 
                                                             }
                                                         }
-        );
-        AutoCompleteTextView ACTV= (AutoCompleteTextView)findViewById(R.id.e6);
-        ACTV.setAdapter(autoComplete);
+        );*/
 
 
 
 
 
-
-
-        DatabaseReference database1 = FirebaseDatabase.getInstance().getReference();
-        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
-        final ArrayAdapter<String> autoComplete1 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
-        //Child the root before all the push() keys are found and add a ValueEventListener()
-        database1.child("Clients").addValueEventListener(new ValueEventListener() {
-                                                            @Override
-                                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
-                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
-                                                                    //Get the suggestion by childing the key of the string you want to get.
-                                                                    String suggestion = suggestionSnapshot.child("PersonName").getValue(String.class);
-                                                                    //Add the retrieved string to the list
-                                                                    autoComplete1.add(suggestion);
-                                                                }
-                                                            }
-
-                                                            @Override
-                                                            public void onCancelled(DatabaseError databaseError) {
-
-                                                            }
-                                                        }
-        );
-        AutoCompleteTextView ACTV1= (AutoCompleteTextView)findViewById(R.id.e3);
-        ACTV1.setAdapter(autoComplete1);
+        // String key = mAuth.getUid();
 
 
 
@@ -654,28 +713,33 @@ public static String abc;
 
 
 
-        DatabaseReference database2 = FirebaseDatabase.getInstance().getReference();
+
+
+
+
+
+/*DatabaseReference database2 = FirebaseDatabase.getInstance().getReference();
 
         //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
         final ArrayAdapter<String> autoComplete2 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
         //Child the root before all the push() keys are found and add a ValueEventListener()
         database2.child("Clients").addValueEventListener(new ValueEventListener() {
-                                                            @Override
-                                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
-                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
-                                                                    //Get the suggestion by childing the key of the string you want to get.
-                                                                    String suggestion = suggestionSnapshot.child("Address").getValue(String.class);
-                                                                    //Add the retrieved string to the list
-                                                                    autoComplete2.add(suggestion);
-                                                                }
-                                                            }
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                    //Get the suggestion by childing the key of the string you want to get.
+                    String suggestion = suggestionSnapshot.child("Address").getValue(String.class);
+                    //Add the retrieved string to the list
+                    autoComplete2.add(suggestion);
+                }
+            }
 
-                                                            @Override
-                                                            public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-                                                            }
-                                                        });
+            }
+        });
         AutoCompleteTextView ACTV2= (AutoCompleteTextView)findViewById(R.id.e4);
         ACTV2.setAdapter(autoComplete2);
 
@@ -684,7 +748,71 @@ public static String abc;
 
 
 
-   /* DatabaseReference database3 = FirebaseDatabase.getInstance().getReference();
+
+
+DatabaseReference database1 = FirebaseDatabase.getInstance().getReference();
+        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
+        final ArrayAdapter<String> autoComplete1 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        //Child the root before all the push() keys are found and add a ValueEventListener()
+        database1.child("Clients").addValueEventListener(new ValueEventListener() {
+                                                             @Override
+                                                             public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                 //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                                                                 for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                     //Get the suggestion by childing the key of the string you want to get.
+                                                                     String suggestion = suggestionSnapshot.child("PersonName").getValue(String.class);
+                                                                     //Add the retrieved string to the list
+                                                                     autoComplete1.add(suggestion);
+                                                                 }
+                                                             }
+
+                                                             @Override
+                                                             public void onCancelled(DatabaseError databaseError) {
+
+                                                             }
+                                                         }
+        );
+        AutoCompleteTextView ACTV1= (AutoCompleteTextView)findViewById(R.id.e3);
+        ACTV1.setAdapter(autoComplete1);
+
+
+
+
+        DatabaseReference database4 = FirebaseDatabase.getInstance().getReference();
+        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
+        final ArrayAdapter<String> autoComplete4 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
+        //Child the root before all the push() keys are found and add a ValueEventListener()
+        database4.child("Clients").addValueEventListener(new ValueEventListener() {
+                                                             @Override
+                                                             public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                 //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
+                                                                 for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
+                                                                     //Get the suggestion by childing the key of the string you want to get.
+
+                                                                     String suggestion = suggestionSnapshot.child("EmailID").getValue(String.class);
+                                                                     //Add the retrieved string to the list
+                                                                     autoComplete4.add(suggestion);
+                                                                 }
+                                                             }
+
+                                                             @Override
+                                                             public void onCancelled(DatabaseError databaseError) {
+
+                                                             }
+                                                         }
+        );
+        AutoCompleteTextView ACTV4= (AutoCompleteTextView)findViewById(R.id.e8);
+        ACTV4.setAdapter(autoComplete4);*/
+
+
+
+
+
+
+
+
+
+        /* DatabaseReference database3 = FirebaseDatabase.getInstance().getReference();
         //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
         final ArrayAdapter<String> autoComplete3 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
         //Child the root before all the push() keys are found and add a ValueEventListener()
@@ -714,35 +842,6 @@ public static String abc;
 
 
 
-
-    DatabaseReference database4 = FirebaseDatabase.getInstance().getReference();
-        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
-        final ArrayAdapter<String> autoComplete4 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
-        //Child the root before all the push() keys are found and add a ValueEventListener()
-        database4.child("Clients").addValueEventListener(new ValueEventListener() {
-                                                            @Override
-                                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
-                                                                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
-                                                                    //Get the suggestion by childing the key of the string you want to get.
-
-                                                             String suggestion = suggestionSnapshot.child("EmailID").getValue(String.class);
-                                                                    //Add the retrieved string to the list
-                                                                    autoComplete4.add(suggestion);
-                                                                }
-                                                            }
-
-                                                            @Override
-                                                            public void onCancelled(DatabaseError databaseError) {
-
-                                                            }
-                                                        }
-        );
-        AutoCompleteTextView ACTV4= (AutoCompleteTextView)findViewById(R.id.e8);
-        ACTV4.setAdapter(autoComplete4);
-
-
-
     }
 
     private void checkSharedPreferences() {
@@ -767,7 +866,7 @@ public static String abc;
         e2.setText(user.getDisplayName());
         e3.setText(client);
         e4.setText(add);
-        e6.setText(cust_name);
+        //e6.setText(cust_name);
         e7.setText(cust_cont);
         e8.setText(cust_email);
         c1.setChecked(Boolean.parseBoolean(service.toString()));
@@ -873,7 +972,7 @@ public static String abc;
 
 
 
-     String id=databaseReference.push().getKey();
+        String id=databaseReference.push().getKey();
 
         if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) && (!TextUtils.isEmpty(e3Text))   && (!TextUtils.isEmpty(e4Text)))
         {
@@ -935,7 +1034,29 @@ public static String abc;
     }
 
 
+    @Override
+    public void onFirebaseLoadSuccess(List<Clients> clientsList) {
 
+
+        clients=clientsList;
+        List<String>names_list=new ArrayList<>();
+
+
+        for(Clients clients:clientsList)
+            names_list.add(clients.getPartyName());
+
+
+
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,names_list);
+        searchableSpinner.setAdapter(adapter);
+
+
+    }
+
+    @Override
+    public void onFirebaseLoadFail(String message) {
+
+    }
 }
 
 

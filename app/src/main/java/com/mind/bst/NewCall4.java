@@ -871,7 +871,7 @@ public class NewCall4 extends AppCompatActivity {
         String e4Text=NewCallGen.e4.getText().toString();
 
 
-        String e18Text=NewCallGen.e6.getText().toString();
+        String e18Text=NewCallGen.searchableSpinner.toString();
         String e19Text=NewCallGen.e7.getText().toString();
         String e20Text=NewCallGen.e8.getText().toString();
 
