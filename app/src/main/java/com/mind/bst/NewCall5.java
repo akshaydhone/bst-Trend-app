@@ -252,7 +252,10 @@ public class NewCall5 extends AppCompatActivity {
                     }*/
             }
             @Override
-            public void onNothingSelected(AdapterView<?> parent){}
+            public void onNothingSelected(AdapterView<?> parent){
+
+
+            }
         });
 
 
@@ -384,10 +387,11 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
                 startActivity(i);
                 break;
 
-            case R.id.visits:
-                Intent j=new Intent(getApplicationContext(),ViewProfile.class);
-                startActivity(j);
-                break;
+
+                  /*  case R.id.visits:
+                        Intent j=new Intent(getApplicationContext(),ViewProfile.class);
+                        startActivity(j);
+                        break;*/
         }
 
         return true;

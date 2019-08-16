@@ -80,7 +80,7 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
     public static TextView e2,e5;
 
     public static EditText e1;
-    public static AutoCompleteTextView e3,e4,e7,e8;
+    public static AutoCompleteTextView e3,e4,e7,e8,e9,e10,e11;
    public static SearchableSpinner searchableSpinner;
 
 
@@ -148,6 +148,12 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
 
         e7=(AutoCompleteTextView) findViewById(R.id.e7);
         e8=(AutoCompleteTextView) findViewById(R.id.e8);
+
+        e9=(AutoCompleteTextView) findViewById(R.id.e9);
+        e10=(AutoCompleteTextView) findViewById(R.id.e10);
+        e11=(AutoCompleteTextView) findViewById(R.id.e11);
+
+
         b2=(Button)findViewById(R.id.b2);
 
 
@@ -192,10 +198,10 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
 
 
 
-                    case R.id.visits:
+                  /*  case R.id.visits:
                         Intent j=new Intent(getApplicationContext(),ViewProfile.class);
                         startActivity(j);
-                        break;
+                        break;*/
                 }
                 return true;
             }
@@ -251,6 +257,9 @@ searchableSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListen
         e4.setText(client.getAddress());
         e7.setText(client.getCity());
         e8.setText(client.getCountry());
+        e9.setText(client.getGSTINNo());
+            e10.setText(client.getPersonName());
+            e11.setText(client.getState());
 
 
         }

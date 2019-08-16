@@ -111,10 +111,11 @@ public class NewCall2 extends AppCompatActivity {
                         startActivity(i);
                         break;
 
-                    case R.id.visits:
+
+                  /*  case R.id.visits:
                         Intent j=new Intent(getApplicationContext(),ViewProfile.class);
                         startActivity(j);
-                        break;
+                        break;*/
                 }
                 return true;
             }

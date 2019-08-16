@@ -158,8 +158,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent j=new Intent(getApplicationContext(),ViewProfile.class);
-                startActivity(j);
+              //  Intent j=new Intent(getApplicationContext(),ViewProfile.class);
+               // startActivity(j);
 
                 //For getting the next activity
                 // Intent i=new Intent(HomeActivity.this,ViewProfile.class);

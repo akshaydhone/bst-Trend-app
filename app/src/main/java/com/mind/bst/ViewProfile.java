@@ -1,11 +1,15 @@
 package com.mind.bst;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -14,22 +18,29 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ViewProfile extends AppCompatActivity {
 
-    public static final String CLIENT_NAME = "com.mind.bst.clientname";
-    public static final String CLIENT_ID = "com.mind.bst.clientid";
-    ListView listViewClients;
-
-    //here data is a java class name
+    private Activity context;
     List<UserInformation> clients;
-    //selecting a database ref
-    DatabaseReference databaseClients;
     FirebaseUser user;
+
+
+    ImageView t2;
+    String key;
+    ImageView profile;
+    TextView profile_name, profile_email, profile_phone, profile_address, profile_region;
+
+
+    DatabaseReference databaseClients;
+    private FirebaseAuth mAuth;
     String uid;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+
 
 
     @Override
@@ -38,68 +49,49 @@ public class ViewProfile extends AppCompatActivity {
         setContentView(R.layout.activity_view_profile);
         getSupportActionBar().setTitle("View Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Intent intent = getIntent();
 
-        //getting the root name database table
-        databaseClients = FirebaseDatabase.getInstance().getReference("Users");
-        //listViewClients = (ListView) findViewById(R.id.listViewClients);
-        listViewClients=(ListView)findViewById(R.id.listViewClients);
-        user= FirebaseAuth.getInstance().getCurrentUser();
+
+        user=FirebaseAuth.getInstance().getCurrentUser();
         uid=user.getUid();
 
 
-//storing clients in array list
+        databaseClients = FirebaseDatabase.getInstance().getReference("Users");
+
+
+        profile = (ImageView) findViewById(R.id.profile);
+        profile_name = (TextView) findViewById(R.id.profile_name);
+        profile_email = (TextView) findViewById(R.id.profile_email);
+        profile_phone = (TextView) findViewById(R.id.profile_phone);
+        profile_address = (TextView)findViewById(R.id.profile_address);
+        profile_region = (TextView) findViewById(R.id.profile_region);
+
+
+
+        profile_name.setText(intent.getStringExtra(Retrievedatasample.custcont));
+        profile_email.setText(intent.getStringExtra(Retrievedatasample.custcont));
+        profile_phone.setText(intent.getStringExtra(Retrievedatasample.custcont));
+        profile_address.setText(intent.getStringExtra(Retrievedatasample.custcont));
+        profile_region.setText(intent.getStringExtra(Retrievedatasample.custcont));
+        //Picasso.with(context).load(data.getImage_Url().toString()).into(profile);
+
+
+
         clients = new ArrayList<>();
 
 
-        listViewClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        mAuth = FirebaseAuth.getInstance(); // important Call
+        //Again check if the user is Already Logged in or Not
 
-            }
-        });
-
-
-
-
-    }
+        if(mAuth.getCurrentUser() == null)
+        {
+            //User NOT logged In
+            this.finish();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        //attaching value event listener
-        databaseClients.addValueEventListener(new ValueEventListener() {
-            @Override
 
-
-            //when a data is changed reflect it into the database
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                //clearing the previous artist list
-                clients.clear();
-
-                //iterating through all the nodes
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    //gettingclients
-                    UserInformation data = postSnapshot.getValue(UserInformation.class);
-                    //adding clients to the list
-                    clients.add(data);
-
-                }
-
-                //creating adapter
-                ProfileActivity artistAdapter = new ProfileActivity(ViewProfile.this, clients);
-                //attaching adapter to the listview
-                listViewClients.setAdapter(artistAdapter);
-            }
-
-
-            //providing error if data not matched or database error
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
 
 }

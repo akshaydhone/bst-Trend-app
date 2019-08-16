@@ -189,10 +189,11 @@ public class NewCall4 extends AppCompatActivity {
                         break;
 
 
-                    case R.id.visits:
+
+                  /*  case R.id.visits:
                         Intent j=new Intent(getApplicationContext(),ViewProfile.class);
                         startActivity(j);
-                        break;
+                        break;*/
                 }
                 return true;
             }
@@ -218,6 +219,10 @@ public class NewCall4 extends AppCompatActivity {
         EnableRuntimePermission();
 
 
+
+
+
+
    // s1 = (Spinner) findViewById(R.id.s1);
 
 
@@ -234,7 +239,6 @@ public class NewCall4 extends AppCompatActivity {
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         //mPreferences = getSharedPreferences("tabian.com.sharedpreferencestest", Context.MODE_PRIVATE);
         mEditor = mPreferences.edit();
-
         checkSharedPreferences();
 
         //String UserID=user.getDisplayName().replace("@","").replace(".","");
@@ -325,14 +329,25 @@ public class NewCall4 extends AppCompatActivity {
                 SharedPreferences.Editor prefEditor = prefs.edit();
 
                 prefEditor.commit();*/
+                if(user_image.getDrawable() == null ){
+
+                    Toast.makeText(NewCall4.this, "No image uploaded", Toast.LENGTH_SHORT).show();
+                }
+                else{
+
+                    Intent i=new Intent(NewCall4.this,NewCall5.class);
+                    startActivity(i);
+                }
 
 
 
 
-                Intent i=new Intent(NewCall4.this,NewCall5.class);
-                startActivity(i);
+
+
+
             }
-        });
+        }
+        );
 
 
        /* b2.setOnClickListener(new View.OnClickListener() {
@@ -1266,6 +1281,10 @@ public class NewCall4 extends AppCompatActivity {
 
 
         }*/
+
+
+
+
     }
 
 
@@ -1339,6 +1358,9 @@ public class NewCall4 extends AppCompatActivity {
 
         //Toast.makeText(getApplicationContext(), "...", Toast.LENGTH_SHORT).show();
     }
+
+
+
 
 
 
