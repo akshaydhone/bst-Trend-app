@@ -980,9 +980,9 @@ public class NewCall1 extends AppCompatActivity {
         String email = mPreferences.getString(getString(R.string.email), "");
 
 
-        String date = mPreferences.getString(getString(R.string.date), "");
+       // String date = mPreferences.getString(getString(R.string.date), "");
 
-        String date1 = mPreferences.getString(getString(R.string.date1), "");
+       // String date1 = mPreferences.getString(getString(R.string.date1), "");
         String time = mPreferences.getString(getString(R.string.time), "");
         String spinner = mPreferences.getString(getString(R.string.spinner), "");
 
@@ -995,8 +995,8 @@ public class NewCall1 extends AppCompatActivity {
         Log.d("LOGGED", "FirebaseUser: " + user);
         // e1.setText(cont);
         // e2.setText(email);
-        mDisplayDate.setText(date);
-        mVisitDate.setText(date1);
+       // mDisplayDate.setText(date);
+       // mVisitDate.setText(date1);
         e5.setText(user.getDisplayName());
 
         s1.setSelection(mPreferences.getInt("spinnerSelection",0));

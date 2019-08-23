@@ -39,7 +39,8 @@ public class NewCall2 extends AppCompatActivity {
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
 
-    public static EditText e1,e4,e5;
+    public static EditText e1,e5;
+    public static TextView e4;
     public static Spinner s4;
     Button b1;
     TimePickerDialog picker;
@@ -204,7 +205,9 @@ public class NewCall2 extends AppCompatActivity {
 
 
                 String spinnerValue1 = s4.getSelectedItem().toString();
+                String displayDate=mDisplayDate.getText().toString();
 
+                String displayTime=mDisplayTime.getText().toString();
 
 
                 if(e1.getText().toString().trim().length()==0)
@@ -213,15 +216,21 @@ public class NewCall2 extends AppCompatActivity {
                     e1.requestFocus();
                 }
 
-                else if (spinnerValue1.equals("Select"))
+               /* else if (spinnerValue1.equals("Select"))
 
                 {
                     Toast.makeText(NewCall2.this, "Select at least one product name", Toast.LENGTH_SHORT).show();
                     //NewCall2.s4.setAdapter(adapter2);
+                }*/
+
+
+                else if (displayTime.equals("Select Time"))
+
+                {
+
+                    Toast.makeText(NewCall2.this, "Select Engineer's In-Time", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
                 }
-
-
-
                 else{
 
                       //save the pserial

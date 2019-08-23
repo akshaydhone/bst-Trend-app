@@ -204,7 +204,7 @@ android:background="@drawable/newbst"
                         android:id="@+id/e3"
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
-                        android:hint="Select Date" />
+                        android:text="Select Date" />
 
 
                     <View style="@style/Divider"
@@ -280,7 +280,7 @@ android:background="@drawable/newbst"
                         android:id="@+id/e6"
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
-                        android:hint="Select Date" />
+                        android:text="Select Date" />
 
 
 
