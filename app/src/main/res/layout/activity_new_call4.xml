@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Product's Photo"
+                        android:text="@string/name25"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -132,6 +132,16 @@
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name11"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
 
                     <!--  <TextView

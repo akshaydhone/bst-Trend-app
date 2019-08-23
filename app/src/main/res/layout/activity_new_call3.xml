@@ -83,7 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Nature of Complaint"
+                        android:text="@string/name21"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -99,14 +99,15 @@
                         android:ems="10"
                         android:fontFamily="@font/arial"
                         />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Details of Complaint"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name22"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <EditText
@@ -122,10 +123,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Engineer's Observation/Action Taken"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name23"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <EditText
@@ -137,16 +138,14 @@
                         android:inputType="text" />
 
 
-
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Client's Remark"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name24"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <EditText
@@ -161,6 +160,15 @@
 
 
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name11"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
 
 

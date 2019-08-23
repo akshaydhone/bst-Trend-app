@@ -83,7 +83,37 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Product Serial No"
+                        android:text="@string/name17"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
+
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/s4"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:fontFamily="@font/arial"
+                        />
+
+
+
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/name18"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -98,16 +128,11 @@
                         android:inputType="text" />
 
 
-
-
-
-
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Engineer's In-Time"
+                        android:text="@string/name19"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -131,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Call attending Date"
+                        android:text="@string/name20"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -147,6 +172,18 @@
                         android:fontFamily="@font/arial"
                         android:inputType="date"
                         android:hint="Enter Date" />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name11"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
 
                     <!--<TextView

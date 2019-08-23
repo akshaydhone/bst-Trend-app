@@ -64,7 +64,7 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Product Category"
+                        android:text="@string/name12"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -124,7 +124,7 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Product Description"
+                        android:text="@string/name13"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -152,6 +152,7 @@ android:background="@drawable/newbst"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
+                        android:visibility="gone"
                         android:textStyle="bold" />
 
 
@@ -163,12 +164,15 @@ android:background="@drawable/newbst"
                         android:id="@+id/s4"
                         android:drawablePadding="5dp"
                         android:ems="10"
+                        android:visibility="gone"
                         android:fontFamily="@font/arial"
+
                         />
 
 
 
                     <View style="@style/Divider"
+                        android:visibility="gone"
                         android:layout_marginTop="5dp"/>
 
 
@@ -178,7 +182,7 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Call Scheduled Date"
+                        android:text="@string/name14"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -232,7 +236,7 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Call Assigned to"
+                        android:text="@string/name15"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -262,22 +266,34 @@ android:background="@drawable/newbst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Call Visit Date "
+                        android:text="@string/name16"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
-                    <EditText
+
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:id="@+id/e6"
-
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
-                        android:inputType="date"
-                        android:hint="Visit Date" />
+                        android:hint="Select Date" />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name11"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
 
 
 

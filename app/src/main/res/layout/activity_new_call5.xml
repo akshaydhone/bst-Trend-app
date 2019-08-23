@@ -65,7 +65,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Status of Complaint"
+                        android:text="@string/name26"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -182,7 +182,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Applicable Charges"
+                        android:text="@string/name27"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
@@ -257,7 +257,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Mode of Payment"
+                        android:text="@string/name28"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:id="@+id/t3"
@@ -273,6 +273,8 @@
                         android:drawablePadding="5dp"
                         android:ems="10"
                        />
+
+
 
                     <TextView
                         android:layout_width="wrap_content"

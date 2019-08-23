@@ -12,6 +12,7 @@
     <string name="cont">com.mind.bst.cont</string>
     <string name="email">com.mind.bst.email</string>
     <string name="date">com.mind.bst.date</string>
+    <string name="date1">com.mind.bst.date1</string>
     <string name="attenddate">com.mind.bst.attenddate</string>
     <string name="time">com.mind.bst.time</string>
 
@@ -50,7 +51,7 @@
 
 
     <string-array name="print_inspection_plus_proddesc">
-
+        <item>Select</item>
         <item>EagleEye – 100% Web Viewing System </item>
         <item>Inline color measurement</item>
         <item>iPQ_Check - 100% Print Inspection System</item>
@@ -70,7 +71,7 @@
 
 
     <string-array name="print_inspection_plus_prodname">
-
+        <item>Select</item>
         <item>Area-Scan Camera</item>
         <item>Cable / Cork Tape / Timing Belt</item>
         <item>Camera Lens Assembly</item>
@@ -118,7 +119,7 @@
 
 
     <string-array name="automation_plus_proddesc">
-
+        <item>Select</item>
         <item>2 DRIVE SYSTEM</item>
         <item>Adhesive Mixer </item>
         <item>Adhesive Sensor</item>
@@ -136,7 +137,7 @@
 
     <string-array name="automation_plus_prodname">
 
-
+        <item>Select</item>
         <item>Cable / Cork Tape / Timing Belt</item>
 
         <item>Control Panel </item>
@@ -186,7 +187,7 @@
 
 
     <string-array name="defect_detection_plus_proddesc">
-
+        <item>Select</item>
         <item>SHARK 4000 LEX - 100% Print Defect Detection System</item>
         <item>TubeScan Digital Strobe- Print Inspection System </item>
         <item>TubeScan Eagle View - Print Inspection System</item>
@@ -202,7 +203,7 @@
 
 
     <string-array name="defect_detection_plus_prodname">
-
+        <item>Select</item>
         <item>Area-Scan Camera</item>
         <item>Cable / Cork Tape / Timing Belt</item>
         <item>Camera Lens Assembly</item>
@@ -254,7 +255,7 @@
 
 
     <string-array name="density_thickness_plus_proddesc">
-
+        <item>Select</item>
         <item>BST ProControl Basis Weight Measurement System</item>
 
 
@@ -266,7 +267,7 @@
 
     <string-array name="density_thickness_plus_prodname">
 
-
+        <item>Select</item>
         <item>Cable / Cork Tape / Timing Belt</item>
 
         <item>Control Panel </item>
@@ -315,7 +316,7 @@
 
 
     <string-array name="mirror_image_plus_proddesc">
-
+        <item>Select</item>
         <item>Mirror Image Registration</item>
 
 
@@ -329,7 +330,7 @@
 
 
     <string-array name="mirror_image_plus_prodname">
-
+        <item>Select</item>
         <item>Cable / Cork Tape / Timing Belt</item>
 
         <item>Control Panel </item>
@@ -376,7 +377,7 @@
 
 
     <string-array name="register_viscocity_plus_proddesc">
-
+        <item>Select</item>
         <item>CRS10K "EYE TOUCH" - Register Control System</item>
         <item>SELECUT 9000 - Cutoff Control System</item>
         <item>SELECUT 9001 - Cutoff Control System</item>
@@ -393,7 +394,7 @@
 
 
     <string-array name="register_viscocity_plus_prodname">
-
+        <item>Select</item>
         <item>Cable / Cork Tape / Timing Belt</item>
 
         <item>Control Panel </item>
@@ -441,7 +442,7 @@
 
 
     <string-array name="register_control_plus_proddesc">
-
+        <item>Select</item>
         <item>AR 4000 - Register Control System</item>
         <item>ARC_18 - Register Control System_ELS</item>
         <item>ARC_18 - Register Control System_MLS</item>
@@ -451,8 +452,6 @@
         <item>Sincon_Star</item>
 
 
-
-
     </string-array>
 
 
@@ -460,7 +459,7 @@
 
     <string-array name="register_control_plus_prodname">
 
-
+        <item>Select</item>
         <item>Cable / Cork Tape / Timing Belt</item>
 
         <item>Control Panel </item>
@@ -518,7 +517,7 @@
 
 
     <string-array name="special_purpose_plus_proddesc">
-
+        <item>Select</item>
         <item>Splice Master</item>
         <item>SPM - Special Purpose Machinery</item>
 
@@ -531,7 +530,7 @@
 
 
     <string-array name="special_purpose_plus_prodname">
-
+        <item>Select</item>
         <item>Area-Scan Camera</item>
         <item>Cable / Cork Tape / Timing Belt</item>
         <item>Camera Lens Assembly</item>
@@ -579,7 +578,7 @@
 
 
     <string-array name="surface_inspection_plus_proddesc">
-
+        <item>Select</item>
         <item>WINTRISS - Web Ranger - Surface Inspection System</item>
 
 
@@ -591,7 +590,7 @@
 
     <string-array name="surface_inspection_plus_prodname">
 
-
+        <item>Select</item>
         <item>Area-Scan Camera</item>
         <item>Cable / Cork Tape / Timing Belt</item>
         <item>Camera Lens Assembly</item>
@@ -649,7 +648,7 @@
 
 
     <string-array name="web_guiding_plus_proddesc">
-
+        <item>Select</item>
         <item>4 Roll Opto Electronic Web Guide Frame</item>
 
         <item>DF Top and Bottom Frame Guide</item>
@@ -673,7 +672,7 @@
 
     <string-array name="web_guiding_plus_prodname">
 
-
+        <item>Select</item>
 
         <item>Cable / Cork Tape / Timing Belt</item>
 
@@ -798,7 +797,7 @@
 
 
     <string-array name="web_tension_plus_proddesc">
-
+        <item>Select</item>
         <item>Digital Tension Controller</item>
 
         <item>Dynaspede Tension Control System</item>
@@ -821,7 +820,7 @@
 
 
     <string-array name="nature_of_comp">
-
+        <item>Select</item>
        <item>  Service Call</item>
         <item> Service Under Warranty</item>
         <item> Installation / Commissioning</item>
@@ -833,6 +832,7 @@
 
 
     <string-array name="web_tension_plus_prodname">
+        <item>Select</item>
         <item>Cable / Cork Tape / Timing Belt</item>
 
         <item>Control Panel </item>
@@ -911,7 +911,7 @@
 
 
     <string-array name="web_video_proddesc">
-
+        <item>Select</item>
         <item>POWERScope 3000</item>
 
         <item>POWERScope 4000</item>
@@ -929,6 +929,7 @@
 
 
     <string-array name="web_video_prodname">
+        <item>Select</item>
         <item>Area-Scan Camera</item>
         <item>Cable / Cork Tape / Timing Belt</item>
         <item>Camera Lens Assembly</item>
@@ -956,7 +957,6 @@
         <item>Other Spare Parts </item>
         <item>PCB Board </item>
 
-
         <item>Power Supply</item>
         <item>Register Mark Sensor</item>
         <item>Roller</item>
@@ -968,7 +968,6 @@
         <item>Ultrasonic Sensor</item>
         <item>X-Rite Sensor</item>
         <item>Sensor</item>
-
 
 
 
@@ -984,16 +983,11 @@
         <item>Smart Register for SHS4000</item>
         <item>Smart Register for SHS4100</item>
 
-
         <item>SuperHandy Scan 4000 5x4</item>
         <item>SuperHandy Scan 4000 9x7</item>
         <item>SuperHandy Scan 4100 5x4</item>
         <item>SuperHandy Scan 4100 9x7</item>
         <item>SuperHandy Scan 4100_Dual Camera </item>
-
-
-
-
 
     </string-array>
 
@@ -1044,7 +1038,12 @@
 
 
     </string-array>
+    <string-array name="tag_arraysup0">
+        <item>Select</item>
 
+
+
+    </string-array>
 
     <string-array name="tag_arraysup2">
         <item>Select</item>
@@ -1166,5 +1165,61 @@
     <string name="tv_recycler_item_1">Swipe down to refresh</string>
     <string name="tv_recycler_item_2">Swipe left</string>
     <string name="tv_recycler_item_3">Drag up or down to move it</string>
+
+    <string name="name0">Type of service call <font color='#ff0000'>*</font></string>
+
+    <string name="name1">Region of Service Engineer <font color='#ff0000'>*</font></string>
+    <string name="name2">City of Service<font color='#ff0000'>*</font></string>
+
+    <string name="name3">Customer Name<font color='#ff0000'>*</font></string>
+
+    <string name="name4">Customer Representative Name <font color='#ff0000'>*</font></string>
+    <string name="name5">Customer EmailId<font color='#ff0000'>*</font></string>
+
+
+
+
+    <string name="name6">Customer Address <font color='#ff0000'>*</font></string>
+    <string name="name7">Customer GSTINNO<font color='#ff0000'>*</font></string>
+    <string name="name8">Customer City<font color='#ff0000'>*</font></string>
+    <string name="name9">Customer State<font color='#ff0000'>*</font></string>
+    <string name="name10">Customer Country<font color='#ff0000'>*</font></string>
+    <string name="name11">Note:Fields marked with ( <font color='#ff0000'>*</font> ) are mandatory</string>
+
+
+
+
+
+
+    <string name="name12">Product Category<font color='#ff0000'>*</font></string>
+    <string name="name13">Product Description<font color='#ff0000'>*</font></string>
+    <string name="name14">Call Log Date <font color='#ff0000'>*</font></string>
+    <string name="name15">Call Assigned to <font color='#ff0000'>*</font></string>
+    <string name="name16">Call Visit Date<font color='#ff0000'>*</font></string>
+
+
+
+    <string name="name17">Product Name<font color='#ff0000'>*</font></string>
+    <string name="name18">Product Serial No<font color='#ff0000'>*</font></string>
+    <string name="name19">Engineer\'s In-Time<font color='#ff0000'>*</font></string>
+    <string name="name20">Call attending Date <font color='#ff0000'>*</font></string>
+
+
+
+
+    <string name="name21">Nature of Complaint<font color='#ff0000'>*</font></string>
+    <string name="name22">Details of Complaint<font color='#ff0000'>*</font></string>
+    <string name="name23">Engineer\'s Observation/Action Taken<font color='#ff0000'>*</font></string>
+    <string name="name24">Client\'s Remark <font color='#ff0000'>*</font></string>
+
+
+
+    <string name="name25">Product\'s Photo <font color='#ff0000'>*</font></string>
+
+
+    <string name="name26">Status of Complaint <font color='#ff0000'>*</font></string>
+    <string name="name27">Applicable Charges <font color='#ff0000'>*</font></string>
+    <string name="name28">Mode of Payment <font color='#ff0000'>*</font></string>
+
 
 </resources>

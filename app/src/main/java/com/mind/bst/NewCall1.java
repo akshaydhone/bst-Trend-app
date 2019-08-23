@@ -52,7 +52,8 @@ public class NewCall1 extends AppCompatActivity {
     //private static final String TAG = "SecondActivity";
     //public static EditText e1, e2;
     public static TextView e5;
-    public static EditText mVisitDate;
+   // public static EditText mVisitDate;
+    public static String spinnerValue;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
@@ -70,9 +71,9 @@ public class NewCall1 extends AppCompatActivity {
     public static Spinner s1,s2,s3,s4;
     TimePickerDialog picker;
 
-    public static TextView mDisplayDate;
+    public static TextView mDisplayDate,mVisitDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-
+    private DatePickerDialog.OnDateSetListener mDateSetListener1;
 //public static TextView mDisplayTime;
     //private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
@@ -86,7 +87,7 @@ public class NewCall1 extends AppCompatActivity {
         //  e1 = (EditText) findViewById(R.id.e1);
         // e2 = (EditText) findViewById(R.id.e2);
         mDisplayDate = (TextView) findViewById(R.id.e3);
-        mVisitDate=(EditText)findViewById(R.id.e6);
+        mVisitDate=(TextView)findViewById(R.id.e6);
         // mDisplayTime = (TextView) findViewById(R.id.e4);
         e5=(TextView)findViewById(R.id.e5);
 
@@ -157,6 +158,14 @@ public class NewCall1 extends AppCompatActivity {
                 this, R.array.tag_arraysup1, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s1.setAdapter(adapter);
+
+
+
+        final ArrayAdapter<CharSequence> adapter0 = ArrayAdapter.createFromResource(
+                this, R.array.tag_arraysup0, android.R.layout.simple_spinner_item);
+        adapter0.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s3.setAdapter(adapter0);
+
 
 
         final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
@@ -488,11 +497,9 @@ public class NewCall1 extends AppCompatActivity {
                 if (spinnerValue.equals("100% Print Inspection"))
 
                 {
-
                     s3.setAdapter(adapter1);
                     s4.setAdapter(adapter2);
-
-
+                    //NewCall2.s4.setAdapter(adapter2);
                 }
 
                 else if (spinnerValue.equals("Automation"))
@@ -500,7 +507,7 @@ public class NewCall1 extends AppCompatActivity {
 
                     s3.setAdapter(adapter3);
                     s4.setAdapter(adapter4);
-
+                    //NewCall2.s4.setAdapter(adapter4);
                 }
 
 
@@ -509,7 +516,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter5);
                     s4.setAdapter(adapter6);
-
+                    //NewCall2.s4.setAdapter(adapter6);
 
                 }
 
@@ -521,6 +528,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter7);
                     s4.setAdapter(adapter8);
+                    //NewCall2.s4.setAdapter(adapter8);
 
                 }
 
@@ -530,6 +538,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter9);
                     s4.setAdapter(adapter10);
+                    //NewCall2.s4.setAdapter(adapter10);
 
                 }
 
@@ -540,6 +549,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter11);
                     s4.setAdapter(adapter12);
+                    //NewCall2.s4.setAdapter(adapter12);
 
                 }
 
@@ -549,6 +559,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter13);
                     s4.setAdapter(adapter14);
+                    //NewCall2.s4.setAdapter(adapter14);
 
                 }
 
@@ -558,6 +569,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter15);
                     s4.setAdapter(adapter16);
+                    //NewCall2.s4.setAdapter(adapter16);
 
                 }
 
@@ -566,6 +578,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter17);
                     s4.setAdapter(adapter18);
+                    //NewCall2.s4.setAdapter(adapter18);
 
                 }
 
@@ -574,6 +587,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter19);
                     s4.setAdapter(adapter20);
+                    //NewCall2.s4.setAdapter(adapter20);
 
                 }
 
@@ -583,6 +597,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter21);
                     s4.setAdapter(adapter22);
+                    //NewCall2.s4.setAdapter(adapter22);
 
                 }
 
@@ -590,6 +605,7 @@ public class NewCall1 extends AppCompatActivity {
                 {
                     s3.setAdapter(adapter23);
                     s4.setAdapter(adapter24);
+                    //NewCall2.s4.setAdapter(adapter24);
                 }
 
 
@@ -714,6 +730,7 @@ public class NewCall1 extends AppCompatActivity {
         String client = mPreferences.getString(getString(R.string.client), "");
         String add = mPreferences.getString(getString(R.string.add), "");
         final String date = mDisplayDate.getText().toString();
+        final String date1 = mVisitDate.getText().toString();
         //final String time = mDisplayTime.getText().toString();
 
 
@@ -724,8 +741,53 @@ public class NewCall1 extends AppCompatActivity {
             boolean valid = true;
             @Override
             public void onClick(View v) {
+                String spinnerValue = s1.getSelectedItem().toString();
+                String spinnerValue1 = s3.getSelectedItem().toString();
+                String displayDate=mDisplayDate.getText().toString();
+
+                String visitDate=mVisitDate.getText().toString();
+
+                if (spinnerValue.equals("Select"))
+
+                {
+                    Toast.makeText(NewCall1.this, "Select at least one product category", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+
+                else if (spinnerValue1.equals("Select"))
+
+                {
+
+                    Toast.makeText(NewCall1.this, "Select at least one product Description", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+
+                else if (displayDate.equals("Select Date"))
+
+                {
+
+                    Toast.makeText(NewCall1.this, "Select Call Log Date", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+                else if (visitDate.equals("Select Date"))
+
+                {
+
+                    Toast.makeText(NewCall1.this, "Select Call visit Date", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
 
 
+                     else{
+                         String date = mDisplayDate.getText().toString( );
+                    String date1 = mVisitDate.getText().toString();
+
+                       // mEditor.putString(getString(R.string.date), date);
+                        //mEditor.putString(getString(R.string.date1), date1);
+                        //mEditor.commit();
+                    Intent i = new Intent(NewCall1.this, NewCall2.class);
+                    startActivity(i);
+                    }
                /* if (e1.getText().toString().trim().length() == 0) {
                     e1.setError("Contact not entered");
                     e1.requestFocus();
@@ -771,9 +833,9 @@ public class NewCall1 extends AppCompatActivity {
                 // mEditor.commit();
 
                 //save date
-                String date = mDisplayDate.getText().toString();
-                mEditor.putString(getString(R.string.date), date);
-                mEditor.commit();
+                //String date = mDisplayDate.getText().toString();
+               // mEditor.putString(getString(R.string.date), date);
+               // mEditor.commit();
 
 
 
@@ -809,8 +871,7 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-                Intent i = new Intent(NewCall1.this, NewCall2.class);
-                startActivity(i);
+
 
 
             }
@@ -848,6 +909,43 @@ public class NewCall1 extends AppCompatActivity {
         };
 
 
+
+        mVisitDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        NewCall1.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener1,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener1 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
+
+                String date = day + "/" + month + "/" + year;
+                mVisitDate.setText(date);
+            }
+        };
+
+
+
+
+
+
+
+
            /* mDisplayTime.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -883,6 +981,8 @@ public class NewCall1 extends AppCompatActivity {
 
 
         String date = mPreferences.getString(getString(R.string.date), "");
+
+        String date1 = mPreferences.getString(getString(R.string.date1), "");
         String time = mPreferences.getString(getString(R.string.time), "");
         String spinner = mPreferences.getString(getString(R.string.spinner), "");
 
@@ -896,6 +996,7 @@ public class NewCall1 extends AppCompatActivity {
         // e1.setText(cont);
         // e2.setText(email);
         mDisplayDate.setText(date);
+        mVisitDate.setText(date1);
         e5.setText(user.getDisplayName());
 
         s1.setSelection(mPreferences.getInt("spinnerSelection",0));

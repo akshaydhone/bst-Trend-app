@@ -64,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Type of service Call"
+                        android:text="@string/name0"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -130,9 +130,10 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Region of Service Engineer"
+                        android:text="@string/name1"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+
                         android:textStyle="bold" />
 
                     <TextView
@@ -149,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="City of Service"
+                        android:text="@string/name2"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -171,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Name"
+                        android:text="@string/name3"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -194,7 +195,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Representative Name"
+                        android:text="@string/name4"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -216,7 +217,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer EmailID"
+                        android:text="@string/name5"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -235,7 +236,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Address"
+                        android:text="@string/name6"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -261,7 +262,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer GSTINNO"
+                        android:text="@string/name7"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -282,7 +283,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer City"
+                        android:text="@string/name8"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -306,7 +307,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer State"
+                        android:text="@string/name9"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -326,7 +327,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Customer Country"
+                        android:text="@string/name10"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -338,14 +339,21 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:inputType="text"
-
                         />
 
 
 
 
 
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name11"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
 
 

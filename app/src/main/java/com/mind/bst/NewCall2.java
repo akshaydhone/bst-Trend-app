@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,7 +40,7 @@ public class NewCall2 extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
 
     public static EditText e1,e4,e5;
-    //public static Spinner s1;
+    public static Spinner s4;
     Button b1;
     TimePickerDialog picker;
     private FirebaseAuth mAuth;
@@ -60,6 +61,7 @@ public class NewCall2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_call2);
+        s4 = (Spinner) findViewById(R.id.s4);
 
 
       getSupportActionBar().setTitle("Call Attend");
@@ -86,14 +88,7 @@ public class NewCall2 extends AppCompatActivity {
 
         if (user != null) {
             username.setText("" + user.getDisplayName());
-
-
-
             LoginActivity.LoggedIn_User_Email =user.getDisplayName();
-
-
-
-
         }
 
 
@@ -119,6 +114,25 @@ public class NewCall2 extends AppCompatActivity {
                 }
                 return true;
             }
+        }
+        );
+
+
+        final ArrayAdapter<CharSequence> adapter0 = ArrayAdapter.createFromResource(
+                this, R.array.tag_arraysup0, android.R.layout.simple_spinner_item);
+        adapter0.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(adapter0);
+
+        s4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent){}
         });
 
   //s1 = (Spinner) findViewById(R.id.s1);
@@ -189,12 +203,22 @@ public class NewCall2 extends AppCompatActivity {
             public void onClick(View v) {
 
 
+                String spinnerValue1 = s4.getSelectedItem().toString();
+
+
+
                 if(e1.getText().toString().trim().length()==0)
                 {
                     e1.setError("Please fill the details");
                     e1.requestFocus();
                 }
 
+                else if (spinnerValue1.equals("Select"))
+
+                {
+                    Toast.makeText(NewCall2.this, "Select at least one product name", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
 
 
 
@@ -309,7 +333,7 @@ public class NewCall2 extends AppCompatActivity {
         String date = mPreferences.getString(getString(R.string.attenddate), "");
         mDisplayTime.setText(time);
         mDisplayDate.setText(date);
-
+        s4.setSelection(mPreferences.getInt("spinnerSelection4",0));
 
 
 

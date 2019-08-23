@@ -115,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/arial"
-                    android:text="Calls Completed"
+                    android:text="Calls to attend"
                     android:textColor="#fff"
                     android:textStyle="bold" />
 
