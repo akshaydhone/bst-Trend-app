@@ -98,11 +98,11 @@ public class PrevImg extends ArrayAdapter<Total> {
 
 
         textViewCont.setText(data.getCust_cont());
-        textViewEmail.setText(data.getCust_email());
-        textViewRegion.setText(data.getCity());
+        textViewEmail.setText(data.getCustomer_name());
+        textViewRegion.setText(data.getName_of_service_engineer());
 
-        textViewName.setText(data.getClient());
-        textViewAdd.setText(data.getClient_add());
+        textViewName.setText(data.getCustomer_rep_name());
+        textViewAdd.setText(data.getCustomer_Email_Id());
 //        textViewDate.setText(data.getDate());
         //textViewTime.setText(data.getTime());
         textViewProductSrNo.setText(data.getProduct_serial_no());
@@ -113,9 +113,9 @@ public class PrevImg extends ArrayAdapter<Total> {
        // textViewProductName.setText(data.getProduct_name());
        // textViewStatus.setText(data.getStatus_of_complaint());
         //textViewPayment.setText(data.getPayment_via());
-        textViewEnggName.setText(data.getEngineer());
+        textViewEnggName.setText(data.getRegion_of_service_engineer());
         // textViewUrl.setText(data.getClient_image_url());
-        Picasso.with(context).load(data.getClient_image_url().toString()).into(textViewUrl);
+        Picasso.with(context).load(data.getNature_of_comp().toString()).into(textViewUrl);
 
 
 

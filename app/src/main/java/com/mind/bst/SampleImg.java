@@ -169,11 +169,11 @@ public class SampleImg extends ArrayAdapter<Total> {
 
         Total data = clients.get(position);
         //UserInformation data1=clients1.get(position);
-        textViewName.setText(data.getClient());
+        textViewName.setText(data.getCustomer_rep_name());
         // textViewAdd.setText(data.getAddress());
         //textViewCont.setText(data.getContact());
-        textViewRegion.setText(data.getDate());
-        Picasso.with(context).load(data.getClient_image_url().toString()).into(imageView);
+        textViewRegion.setText(data.getCall_log_date());
+        Picasso.with(context).load(data.getNature_of_comp().toString()).into(imageView);
         // imageView.setImageBitmap(bitmap);
 
 

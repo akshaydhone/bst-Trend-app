@@ -116,21 +116,21 @@ public ArrayAdapter mAdapter;
                 Intent intent = new Intent(getApplicationContext(), ActualPrevCall.class);
 
                 //putting artist name and id to intent
-                intent.putExtra(Region, data.getCity());
-                intent.putExtra(clientname, data.getClient());
-                intent.putExtra(clientaddress, data.getClient_add());
+                intent.putExtra(Region, data.getName_of_service_engineer());
+                intent.putExtra(clientname, data.getCustomer_rep_name());
+                intent.putExtra(clientaddress, data.getCustomer_Email_Id());
                 intent.putExtra(custcont, data.getCust_cont());
-               intent.putExtra(custemail, data.getCust_email());
+               intent.putExtra(custemail, data.getCustomer_name());
 
 
 
-                intent.putExtra(clienturl, data.getClient_image_url());
+                intent.putExtra(clienturl, data.getNature_of_comp());
                 intent.putExtra(clientremark, data.getClient_remark());
-                intent.putExtra(date, data.getDate());
+                intent.putExtra(date, data.getCall_log_date());
                // intent.putExtra(detailofcomplaint, data.getDetails_of_complaint());
 
 
-                intent.putExtra(enggname, data.getEngineer());
+                intent.putExtra(enggname, data.getRegion_of_service_engineer());
                 intent.putExtra(enggobs, data.getEngineer_observation());
                 //intent.putExtra(natureofcomplaint, data.getNature_of_complaint());
                // intent.putExtra(payment, data.getPayment_via());
@@ -252,7 +252,7 @@ public ArrayAdapter mAdapter;
         List<Total> myclients=new ArrayList<>();
         for(Total object:clients)
         {
-            if(object.getClient().toLowerCase().contains(str.toLowerCase()))
+            if(object.getCustomer_rep_name().toLowerCase().contains(str.toLowerCase()))
 
             {
                 myclients.add(object);

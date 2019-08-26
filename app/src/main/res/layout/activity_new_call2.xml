@@ -59,25 +59,25 @@
                     android:focusableInTouchMode="true">
                     <requestFocus />
 
-                   <!-- <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="Select Product"
-                        android:textColor="@color/colorPurple"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                    <!-- <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_margin="10dp"
+                         android:text="Select Product"
+                         android:textColor="@color/colorPurple"
+                         android:textSize="14sp"
+                         android:textStyle="bold" />
 
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:id="@+id/s1"
-                        android:drawablePadding="5dp"
-                        android:ems="10"
-                        android:entries="@array/tag_arrays1"
-                        android:prompt="@string/tag_prompt1" />-->
+                     <Spinner
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:id="@+id/s1"
+                         android:drawablePadding="5dp"
+                         android:ems="10"
+                         android:entries="@array/tag_arrays1"
+                         android:prompt="@string/tag_prompt1" />-->
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -150,7 +150,6 @@
                         />
 
 
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -161,7 +160,7 @@
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

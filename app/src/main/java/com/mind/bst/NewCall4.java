@@ -93,7 +93,7 @@ public class NewCall4 extends AppCompatActivity {
     private static final String TAG = "NewCall4";
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
-   // public static Spinner s1;
+    // public static Spinner s1;
 
 
 
@@ -223,7 +223,7 @@ public class NewCall4 extends AppCompatActivity {
 
 
 
-   // s1 = (Spinner) findViewById(R.id.s1);
+        // s1 = (Spinner) findViewById(R.id.s1);
 
 
 
@@ -322,31 +322,31 @@ public class NewCall4 extends AppCompatActivity {
 
 
         b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                                  @Override
+                                  public void onClick(View v) {
                /* SharedPreferences prefs;
                 prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor prefEditor = prefs.edit();
 
                 prefEditor.commit();*/
-                if(user_image.getDrawable() == null ){
+                                      if(user_image.getDrawable() == null ){
 
-                    Toast.makeText(NewCall4.this, "No image uploaded", Toast.LENGTH_SHORT).show();
-                }
-                else{
-
-                    Intent i=new Intent(NewCall4.this,NewCall5.class);
-                    startActivity(i);
-                }
-
-
+                                          Toast.makeText(NewCall4.this, "No image uploaded", Toast.LENGTH_SHORT).show();
+                                      }
+                                      else{
+                                          sendData();
+                                          Intent i=new Intent(NewCall4.this,NewCall5.class);
+                                          startActivity(i);
+                                      }
 
 
 
 
 
-            }
-        }
+
+
+                                  }
+                              }
         );
 
 
@@ -836,7 +836,7 @@ public class NewCall4 extends AppCompatActivity {
 
                         FirebaseUser user = mAuth.getCurrentUser();
                         Log.d("LOGGED", "FirebaseUser: " + user);
-                       String mesaage_user= user.getDisplayName();
+                        String mesaage_user= user.getDisplayName();
                         String strJsonBody = "{"
                                 + "\"app_id\": \"ba781941-0da4-4b18-95f7-cd4fe988bf54\","
 
@@ -880,29 +880,58 @@ public class NewCall4 extends AppCompatActivity {
 
     private void sendData() {
 
-        String e1Text=NewCallGen.e1.getText().toString();
-        String e2Text=NewCallGen.e2.getText().toString();
-        String e3Text=NewCallGen.e3.getText().toString();
-        String e4Text=NewCallGen.e4.getText().toString();
+        String e1Text=NewCallGen.e2.getText().toString();
+        String e2Text=NewCallGen.e5.getText().toString();
+        String e3Text=NewCallGen.e10.getText().toString();
+        String e4Text=NewCallGen.e3.getText().toString();
 
 
-        String e18Text=NewCallGen.searchableSpinner.toString();
-        String e19Text=NewCallGen.e7.getText().toString();
-        String e20Text=NewCallGen.e8.getText().toString();
+        String e18Text=NewCallGen.searchableSpinner.getSelectedItem().toString();
+        String e19Text=NewCallGen.e4.getText().toString();
+        String e20Text=NewCallGen.e9.getText().toString();
 
 
         String e21Text=NewCall1.s1.getSelectedItem().toString();
 
-          //String e5Text=NewCall1.e1.getText().toString();
-         // String e6Text=NewCall1.e2.getText().toString();
-          String e7Text=NewCall1.mDisplayDate.getText().toString();
-         // String e8Text=NewCall1.mDisplayTime.getText().toString();
+        String e22Text=NewCallGen.e1.getText().toString();
+        String e23Text=NewCallGen.e7.getText().toString();
+
+
+
+        String e24Text=NewCallGen.e11.getText().toString();
+        String e25Text=NewCallGen.e8.getText().toString();
+
+        String e26Text=NewCall1.s3.getSelectedItem().toString();
+
+        String e27Text=NewCall1.e5.getText().toString();
+        String e28Text=NewCall1.mVisitDate.getText().toString();
+        String e29Text=NewCall2.s4.getSelectedItem().toString();
+        String e30Text=NewCall2.mDisplayTime.getText().toString();
+
+        String e31Text=NewCall2.mDisplayDate.getText().toString();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //String e5Text=NewCall1.e1.getText().toString();
+        // String e6Text=NewCall1.e2.getText().toString();
+        String e7Text=NewCall1.mDisplayDate.getText().toString();
+        // String e8Text=NewCall1.mDisplayTime.getText().toString();
 
 
         String e9Text=NewCall2.e1.getText().toString();
-       // String e10Text=NewCall2.e2.getText().toString();
+        // String e10Text=NewCall2.e2.getText().toString();
         //String e11Text=NewCall2.e3.getText().toString();
-
 
         String e12Text=NewCall3.e1.getText().toString();
         String e13Text=NewCall3.e2.getText().toString();
@@ -910,21 +939,21 @@ public class NewCall4 extends AppCompatActivity {
         String e14Text=NewCall3.s1.getSelectedItem().toString();
 
         String e15Text=NewCall3.e4.getText().toString();
-       // String e16Text=NewCall4.s1.getSelectedItem().toString();
+        // String e16Text=NewCall4.s1.getSelectedItem().toString();
         String e17Text=NewCall4.url.getText().toString();
-       // String e14Text=NewCall2.s1.getSelectedItem().toString();
+        // String e14Text=NewCall2.s1.getSelectedItem().toString();
 
 
 
-       // FirebaseUser user = mAuth.getCurrentUser();
+        // FirebaseUser user = mAuth.getCurrentUser();
         //Log.d("LOGGED", "FirebaseUser: " + user);
-       // String id=user.getDisplayName();
+        // String id=user.getDisplayName();
         String id=databaseReference.push().getKey();
 
 
-        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text)))
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text))&& (!TextUtils.isEmpty(e22Text))&& (!TextUtils.isEmpty(e23Text))&& (!TextUtils.isEmpty(e24Text))&& (!TextUtils.isEmpty(e25Text))&& (!TextUtils.isEmpty(e26Text))&& (!TextUtils.isEmpty(e27Text))&& (!TextUtils.isEmpty(e28Text))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text)))
         {
-           Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text);
+            Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text,e22Text,e23Text,e24Text,e25Text,e26Text,e27Text,e28Text,e29Text,e30Text,e31Text);
             databaseReference.child(id).setValue(data);
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 
@@ -1010,27 +1039,27 @@ public class NewCall4 extends AppCompatActivity {
 
 
             filePath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                                                 @Override
+                                                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                    Uri downloadUri = taskSnapshot.getDownloadUrl();  //Ignore This error
+                                                                     Uri downloadUri = taskSnapshot.getDownloadUrl();  //Ignore This error
 
-                    //mRoofRef.child("Image_URL").setValue(downloadUri.toString());
+                                                                     //mRoofRef.child("Image_URL").setValue(downloadUri.toString());
 
-                    Glide.with(getApplicationContext())
-                            .load(downloadUri)
-                            .crossFade()
-                            .placeholder(R.drawable.loading)
-                            .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                            .into(user_image);
+                                                                     Glide.with(getApplicationContext())
+                                                                             .load(downloadUri)
+                                                                             .crossFade()
+                                                                             .placeholder(R.drawable.loading)
+                                                                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                                                                             .into(user_image);
 
-                    Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
-                    progressDialog.dismiss();
-                    //String abc= taskSnapshot.getDownloadUrl().toString();
-                    //url.setText(abc);
+                                                                     Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
+                                                                     progressDialog.dismiss();
+                                                                     //String abc= taskSnapshot.getDownloadUrl().toString();
+                                                                     //url.setText(abc);
 
-                }
-            }
+                                                                 }
+                                                             }
             );
 
 

@@ -80,13 +80,13 @@ public class GeneratedList extends ArrayAdapter<Total> {
         FirebaseUser user = mAuth.getCurrentUser();
         Log.d("LOGGED", "FirebaseUser: " + user);
 
-        textViewRegion.setText(data.getCity());
-        textViewEnggName.setText(data.getEngineer());
-        textViewName.setText(data.getClient());
-        textViewAdd.setText(data.getClient_add());
+        textViewRegion.setText(data.getName_of_service_engineer());
+        textViewEnggName.setText(data.getRegion_of_service_engineer());
+        textViewName.setText(data.getCustomer_rep_name());
+        textViewAdd.setText(data.getCustomer_Email_Id());
         textViewCont.setText(data.getCust_cont());
-        textViewEmail.setText(data.getCust_email());
-        textViewDate.setText(data.getDate());
+        textViewEmail.setText(data.getCustomer_name());
+        textViewDate.setText(data.getCall_log_date());
        // textViewTime.setText(data.getTime());
         textViewProductSrNo.setText(data.getProduct_serial_no());
         //textViewNatureOfComp.setText(data.getNature_of_complaint());
@@ -97,7 +97,7 @@ public class GeneratedList extends ArrayAdapter<Total> {
        // textViewStatus.setText(data.getStatus_of_complaint());
         //textViewPayment.setText(data.getPayment_via());
        // textViewUrl.setText(data.getClient_image_url());
-        Picasso.with(context).load(data.getClient_image_url().toString()).into(textViewUrl);
+        Picasso.with(context).load(data.getNature_of_comp().toString()).into(textViewUrl);
 
 
 

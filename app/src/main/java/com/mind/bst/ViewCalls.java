@@ -76,11 +76,11 @@ public class ViewCalls extends ArrayAdapter<Total> {
 
         Total data = clients.get(position);
         //UserInformation data1=clients1.get(position);
-        textViewName.setText(data.getEngineer());
+        textViewName.setText(data.getRegion_of_service_engineer());
         // textViewAdd.setText(data.getAddress());
         //textViewCont.setText(data.getContact());
-        textViewRegion.setText(data.getCity());
-        Picasso.with(context).load(data.getClient_image_url().toString()).into(imageView);
+        textViewRegion.setText(data.getName_of_service_engineer());
+        Picasso.with(context).load(data.getNature_of_comp().toString()).into(imageView);
         // imageView.setImageBitmap(bitmap);
 
 

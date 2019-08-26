@@ -39,8 +39,9 @@ public class NewCall2 extends AppCompatActivity {
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
 
-    public static EditText e1,e5;
-    public static TextView e4;
+    public static EditText e1;
+
+    public static TextView e4,e5;
     public static Spinner s4;
     Button b1;
     TimePickerDialog picker;
@@ -51,7 +52,7 @@ public class NewCall2 extends AppCompatActivity {
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
 
-    public static EditText mDisplayDate;
+    public static TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
 
@@ -153,7 +154,7 @@ public class NewCall2 extends AppCompatActivity {
        // e2=(EditText)findViewById(R.id.e2);
         //e3=(EditText)findViewById(R.id.e3);
         mDisplayTime = (TextView) findViewById(R.id.e4);
-        mDisplayDate = (EditText) findViewById(R.id.e5);
+        mDisplayDate = (TextView) findViewById(R.id.e5);
         b1=(Button)findViewById(R.id.b1);
          //step2
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -222,7 +223,13 @@ public class NewCall2 extends AppCompatActivity {
                     Toast.makeText(NewCall2.this, "Select at least one product name", Toast.LENGTH_SHORT).show();
                     //NewCall2.s4.setAdapter(adapter2);
                 }*/
+                else if (displayDate.equals("Select Date"))
 
+                {
+
+                    Toast.makeText(NewCall2.this, "Select Call attending Date", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
 
                 else if (displayTime.equals("Select Time"))
 
@@ -256,7 +263,7 @@ public class NewCall2 extends AppCompatActivity {
 
 
 
-
+                    String date = mDisplayDate.getText().toString( );
 
 
                     Intent i=new Intent(NewCall2.this,NewCall3.class);
@@ -268,6 +275,35 @@ public class NewCall2 extends AppCompatActivity {
 
         );
 
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        NewCall2.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
+
+                String date = day + "/" + month + "/" + year;
+                mDisplayDate.setText(date);
+            }
+        };
 
 
 
