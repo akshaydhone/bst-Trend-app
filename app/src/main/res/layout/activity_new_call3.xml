@@ -78,7 +78,26 @@
                         android:entries="@array/tag_arrays2"
 
                         android:prompt="@string/tag_prompt2" />-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Invoice No of BST ELtromat(Optional)"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
 
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e3"
+
+                        android:textSize="15sp"
+                        android:hint="R3567Y890"
+                        android:inputType="text"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -160,19 +179,17 @@
 
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <Button
+                        android:layout_width="230dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_ui"
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:id="@+id/b1"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
                         android:fontFamily="@font/arial"
-                        android:text="@string/name11"
-                        android:textColor="@color/colorPurple"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-
-
-
+                        android:textColor="@color/colorWhite" />
 
 
                 </LinearLayout>
@@ -189,15 +206,7 @@
                 android:layout_marginRight="35dp"
                 android:elevation="10dp">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_ui"
-                    android:text="Save"
-                    android:textAllCaps="false"
-                    android:id="@+id/b1"
-                    android:fontFamily="@font/arial"
-                    android:textColor="@color/colorWhite" />
+
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>

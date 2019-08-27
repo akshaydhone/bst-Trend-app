@@ -95,8 +95,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i=new Intent(HomeActivity.this,PrevActual.class);
-                startActivity(i);
+               // Intent i=new Intent(HomeActivity.this,PrevActual.class);
+                //startActivity(i);
                 //starting the intent for next activity
                 // Intent i=new Intent(HomeActivity.this,PreviousCallGen.class);
                 //startActivity(i);
@@ -123,7 +123,8 @@ public class HomeActivity extends AppCompatActivity {
 
                 //UserInformation data = clients.get(position);
 
-
+                Intent i=new Intent(HomeActivity.this,PrevActual.class);
+                startActivity(i);
 
 
             }

@@ -41,7 +41,7 @@ public class NewCall2 extends AppCompatActivity {
 
     public static EditText e1;
 
-    public static TextView e4,e5;
+    public static TextView e4,e5,e6;
     public static Spinner s4;
     Button b1;
     TimePickerDialog picker;
@@ -52,8 +52,8 @@ public class NewCall2 extends AppCompatActivity {
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
 
-    public static TextView mDisplayDate;
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    public static TextView mDisplayDate,mReschdeuledDate;
+    private DatePickerDialog.OnDateSetListener mDateSetListener,mDateSetListener1;
 
 
     ArrayAdapter<String>adapter;
@@ -154,7 +154,10 @@ public class NewCall2 extends AppCompatActivity {
        // e2=(EditText)findViewById(R.id.e2);
         //e3=(EditText)findViewById(R.id.e3);
         mDisplayTime = (TextView) findViewById(R.id.e4);
+        mDisplayTime.setText("Select Time");
         mDisplayDate = (TextView) findViewById(R.id.e5);
+        mDisplayDate.setText("Select Date");
+        mReschdeuledDate = (TextView) findViewById(R.id.e6);
         b1=(Button)findViewById(R.id.b1);
          //step2
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -166,6 +169,9 @@ public class NewCall2 extends AppCompatActivity {
      // String check= s1.getText().toString();
         final String time = mDisplayTime.getText().toString();
         final String date = mDisplayDate.getText().toString();
+
+
+        final String rdate = mReschdeuledDate.getText().toString();
 
 
 
@@ -207,7 +213,7 @@ public class NewCall2 extends AppCompatActivity {
 
                 String spinnerValue1 = s4.getSelectedItem().toString();
                 String displayDate=mDisplayDate.getText().toString();
-
+                String displayRDate=mReschdeuledDate.getText().toString();
                 String displayTime=mDisplayTime.getText().toString();
 
 
@@ -223,11 +229,20 @@ public class NewCall2 extends AppCompatActivity {
                     Toast.makeText(NewCall2.this, "Select at least one product name", Toast.LENGTH_SHORT).show();
                     //NewCall2.s4.setAdapter(adapter2);
                 }*/
-                else if (displayDate.equals("Select Date"))
+                else if (displayDate.equals("Enter Date"))
 
                 {
 
                     Toast.makeText(NewCall2.this, "Select Call attending Date", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+
+
+                else if (displayRDate.equals("Enter Date"))
+
+                {
+
+                    Toast.makeText(NewCall2.this, "Select Call Rescheduled Date", Toast.LENGTH_SHORT).show();
                     //NewCall2.s4.setAdapter(adapter2);
                 }
 
@@ -264,6 +279,7 @@ public class NewCall2 extends AppCompatActivity {
 
 
                     String date = mDisplayDate.getText().toString( );
+                    String rdate = mReschdeuledDate.getText().toString( );
 
 
                     Intent i=new Intent(NewCall2.this,NewCall3.class);
@@ -289,6 +305,7 @@ public class NewCall2 extends AppCompatActivity {
                         mDateSetListener,
                         year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 dialog.show();
             }
         });
@@ -307,6 +324,38 @@ public class NewCall2 extends AppCompatActivity {
 
 
 
+
+
+        mReschdeuledDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        NewCall2.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener1,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                dialog.show();
+            }
+        });
+
+
+        mDateSetListener1 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
+
+                String date = day + "/" + month + "/" + year;
+                mReschdeuledDate.setText(date);
+            }
+        };
 
        /* mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override

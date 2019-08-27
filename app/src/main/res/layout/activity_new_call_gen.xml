@@ -200,7 +200,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
+                    <EditText
                         android:id="@+id/e10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
+                    <EditText
                         android:id="@+id/e3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -241,7 +241,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
+                    <EditText
                         android:id="@+id/e4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -267,7 +267,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
+                    <EditText
                         android:id="@+id/e9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -288,12 +288,13 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
+                    <EditText
                         android:id="@+id/e7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
+                        android:inputType="text"
                         />
 
 
@@ -312,13 +313,13 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
+                    <EditText
                         android:id="@+id/e11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-
+                        android:inputType="text"
 
                         />
 
@@ -332,7 +333,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <AutoCompleteTextView
+                    <EditText
                         android:id="@+id/e8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

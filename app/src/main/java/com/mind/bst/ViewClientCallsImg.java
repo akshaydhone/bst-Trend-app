@@ -167,10 +167,10 @@ public class ViewClientCallsImg extends ArrayAdapter<Total> {
 //        TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
 
 
-        Total data = clients.get(position );
+        Total data = clients.get(position);
 
         //UserInformation data1=clients1.get(position);
-        textViewName.setText(data.getCustomer_rep_name());
+        textViewName.setText(data.getCustomer_name());
         // textViewAdd.setText(data.getAddress());
         //textViewCont.setText(data.getContact());
         textViewRegion.setText(data.getCall_log_date());

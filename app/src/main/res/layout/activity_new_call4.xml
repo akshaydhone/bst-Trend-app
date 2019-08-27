@@ -78,48 +78,49 @@
 
                     <ImageView
                         android:id="@+id/user_image"
-                        android:layout_width="200dp"
+                        android:layout_width="125dp"
                         android:layout_height="120dp"
                         android:layout_below="@+id/select_image"
-                        android:layout_marginLeft="-23dp"
+                        android:layout_marginLeft="16dp"
 
                         android:layout_marginRight="5dp"
-                        app:srcCompat="@drawable/caml" />
+
+                        android:background="@drawable/caml" />
 
                     <ImageView
                         android:id="@+id/user_image1"
-                        android:layout_width="200dp"
+                        android:layout_width="125dp"
                         android:layout_height="120dp"
                         android:layout_gravity="end"
-                        android:layout_marginLeft="150dp"
+                        android:layout_marginLeft="100dp"
                         android:layout_marginTop="-120dp"
-                        android:layout_marginRight="-15dp"
+                        android:layout_marginRight="15dp"
 
-                        app:srcCompat="@drawable/caml" />
+                        android:background="@drawable/caml"/>
 
 
                     <ImageView
                         android:id="@+id/user_image2"
-                        android:layout_width="200dp"
+                        android:layout_width="125dp"
                         android:layout_height="120dp"
-                        android:layout_marginLeft="-23dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
 
-                        app:srcCompat="@drawable/caml" />
+                        android:background="@drawable/caml"/>
 
 
 
                     <ImageView
                         android:id="@+id/user_image3"
-                        android:layout_width="200dp"
+                        android:layout_width="125dp"
                         android:layout_height="120dp"
                         android:layout_gravity="end"
-                        android:layout_marginLeft="150dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="-120dp"
-                        android:layout_marginRight="-15dp"
+                        android:layout_marginRight="15dp"
 
-                        app:srcCompat="@drawable/caml" />
+                        android:background="@drawable/caml"/>
 
 
                     <TextView
@@ -138,7 +139,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="@string/name11"
+                        android:text="Note:Each image size max 2.5MB"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />

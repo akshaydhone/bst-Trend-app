@@ -147,6 +147,7 @@
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
                         android:hint="Select Time"
+
                         />
 
 
@@ -168,8 +169,9 @@
                         android:id="@+id/e5"
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
-                        android:inputType="date"
+
                         android:hint="Enter Date" />
+
 
 
 
@@ -177,12 +179,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:fontFamily="@font/arial"
-                        android:text="@string/name11"
+                        android:text="@string/name30"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e6"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/arial"
+
+                        android:text="Enter Date" />
 
                     <!--<TextView
                         android:layout_width="wrap_content"

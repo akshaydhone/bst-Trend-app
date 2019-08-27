@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -179,7 +180,7 @@ public class NewCall3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                String spinnerValue1 = s1.getSelectedItem().toString();
 
                 if(e1.getText().toString().trim().length()==0)
                 {
@@ -207,7 +208,13 @@ public class NewCall3 extends AppCompatActivity {
 
 
 
+                else if (spinnerValue1.equals("Select"))
 
+                {
+
+                    Toast.makeText(NewCall3.this, "Select Nature of Complaint", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
 
                 else{
 

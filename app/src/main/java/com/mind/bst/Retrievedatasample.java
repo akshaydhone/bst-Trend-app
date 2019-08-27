@@ -44,14 +44,14 @@ public class Retrievedatasample extends AppCompatActivity {
     public static final String custcont = "com.mind.bst.contact";
     public static final String custemail = "com.mind.bst.email";
     public static final String clienturl = "com.mind.bst.url";
-    public static final String clientremark = "com.mind.bst.remark";
+
     public static final String date = "com.mind.bst.date";
 
 
-    public static final String detailofcomplaint = "com.mind.bst.detailofcomplaint";
+
     public static final String enggname = "com.mind.bst.enggname";
     public static final String enggobs = "com.mind.bst.enggobs";
-    public static final String natureofcomplaint = "com.mind.bst.natureofcomplaint";
+
 
 
 
@@ -61,6 +61,31 @@ public class Retrievedatasample extends AppCompatActivity {
     public static final String statusofcomplaint = "com.mind.bst.statusofcomplaint";
     public static final String time = "com.mind.bst.time";
 
+    public static final String nameofserviceengineer = "com.mind.bst.nameofserviceengineer";
+    public static final String regionofserviceengineer = "com.mind.bst.regionofserviceengineer";
+    public static final String customerrepname = "com.mind.bst.customerrepname";
+    public static final String customeremailid = "com.mind.bst.customeremailid";
+    public static final String calllogdate = "com.mind.bst.calllogdate";
+    public static final String cityofservice = "com.mind.bst.cityofservice";
+    public static final String productserialno = "com.mind.bst.productserialno";
+    public static final String gstin = "com.mind.bst.gstin";
+    public static final String productcategory = "com.mind.bst.productcategory";
+    public static final String engineerobservation = "com.mind.bst.engineerobservation";
+    public static final String clientremark = "com.mind.bst.remark";
+    public static final String natureofcomplaint = "com.mind.bst.natureofcomplaint";
+    public static final String detailofcomplaint = "com.mind.bst.detailofcomplaint";
+    public static final String customername = "com.mind.bst.customername";
+    public static final String customeraddress = "com.mind.bst.customeraddress";
+    public static final String customercity = "com.mind.bst.customercity";
+    public static final String customerstate = "com.mind.bst.customerstate";
+    public static final String customercountry = "com.mind.bst.customercountry";
+    public static final String productdescription = "com.mind.bst.productdescription";
+
+    public static final String callassignedto = "com.mind.bst.callassignedto";
+    public static final String callvisitingdate = "com.mind.bst.callvisitingdate";
+    public static final String productname = "com.mind.bst.productname";
+    public static final String engineerintime = "com.mind.bst.engineerintime";
+    public static final String callattendingdate = "com.mind.bst.callattendingdate";
 
 
     @Override
@@ -130,7 +155,30 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(prosrno, data.getProduct_serial_no());
                // intent.putExtra(time, data.getTime());
 
-
+                intent.putExtra(nameofserviceengineer, data.getName_of_service_engineer());
+                intent.putExtra(regionofserviceengineer, data.getRegion_of_service_engineer());
+                intent.putExtra(customerrepname, data.getCustomer_rep_name());
+                intent.putExtra(customeremailid, data.getCustomer_Email_Id());
+                intent.putExtra(calllogdate, data.getCall_log_date());
+                intent.putExtra(cityofservice, data.getCity_of_service());
+                intent.putExtra(productserialno, data.getProduct_serial_no());
+                intent.putExtra(gstin, data.getGstin());
+                intent.putExtra(productcategory, data.getProduct_category());
+                intent.putExtra(engineerobservation, data.getEngineer_observation());
+                intent.putExtra(clientremark, data.getClient_remark());
+                intent.putExtra(natureofcomplaint, data.getNature_of_comp());
+                intent.putExtra(detailofcomplaint, data.getDetails_of_comp());
+                intent.putExtra(customername, data.getCustomer_name());
+                intent.putExtra(customeraddress, data.getCustomer_address());
+                intent.putExtra(customercity, data.getCustomer_city());
+                intent.putExtra(customerstate, data.getCustomer_state());
+                intent.putExtra(customercountry, data.getCustomer_country());
+                intent.putExtra(productdescription, data.getProduct_description());
+                intent.putExtra(callassignedto, data.getCall_assigned_to());
+                intent.putExtra(callvisitingdate, data.getCall_visiting_date());
+                intent.putExtra(productname, data.getProduct_name());
+                intent.putExtra(engineerintime, data.getEngineer_in_time());
+                intent.putExtra(callattendingdate, data.getCall_attending_date());
 
                 //starting the activity with intent
                 startActivity(intent);

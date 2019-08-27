@@ -329,12 +329,12 @@ public class NewCall4 extends AppCompatActivity {
                 SharedPreferences.Editor prefEditor = prefs.edit();
 
                 prefEditor.commit();*/
-                                      if(user_image.getDrawable() == null ){
+                                      if(user_image.getDrawable() == null && user_image1.getDrawable() == null && user_image2.getDrawable() == null && user_image3.getDrawable() == null ){
 
-                                          Toast.makeText(NewCall4.this, "No image uploaded", Toast.LENGTH_SHORT).show();
+                                          Toast.makeText(NewCall4.this, "Upload Atleast one Image", Toast.LENGTH_SHORT).show();
                                       }
                                       else{
-                                          sendData();
+                                          //sendData();
                                           Intent i=new Intent(NewCall4.this,NewCall5.class);
                                           startActivity(i);
                                       }

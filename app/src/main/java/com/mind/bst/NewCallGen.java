@@ -79,8 +79,8 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
 
     public static TextView e2,e5;
 
-    public static EditText e1;
-    public static AutoCompleteTextView e3,e4,e7,e8,e9,e10,e11;
+    public static EditText e1,e10,e3;
+    public static EditText e4,e7,e8,e9,e11;
    public static SearchableSpinner searchableSpinner;
 
 
@@ -137,8 +137,8 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         e1=(EditText) findViewById(R.id.e1);
         e2 = (TextView) findViewById(R.id.e2);
-        e3 = (AutoCompleteTextView)findViewById(R.id.e3);
-        e4 = (AutoCompleteTextView) findViewById(R.id.e4);
+        e3 = (EditText)findViewById(R.id.e3);
+        e4 = (EditText) findViewById(R.id.e4);
         c1=(CheckBox)findViewById(R.id.c1);
         c2=(CheckBox)findViewById(R.id.c2);
         c3=(CheckBox)findViewById(R.id.c3);
@@ -146,12 +146,12 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
         searchableSpinner=(SearchableSpinner)findViewById(R.id.searchable_spinner);
 
 
-        e7=(AutoCompleteTextView) findViewById(R.id.e7);
-        e8=(AutoCompleteTextView) findViewById(R.id.e8);
+        e7=(EditText) findViewById(R.id.e7);
+        e8=(EditText) findViewById(R.id.e8);
 
-        e9=(AutoCompleteTextView) findViewById(R.id.e9);
-        e10=(AutoCompleteTextView) findViewById(R.id.e10);
-        e11=(AutoCompleteTextView) findViewById(R.id.e11);
+        e9=(EditText) findViewById(R.id.e9);
+        e10=(EditText) findViewById(R.id.e10);
+        e11=(EditText) findViewById(R.id.e11);
 
 
         b2=(Button)findViewById(R.id.b2);

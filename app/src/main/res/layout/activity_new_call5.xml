@@ -146,7 +146,8 @@
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -156,7 +157,8 @@
                         android:id="@+id/e3"
                         android:fontFamily="@font/arial"
                         android:textSize="15sp"
-                        android:hint="R3567Y890" />
+                        android:hint="R3567Y890"
+                        android:visibility="gone"/>
 
                     <!--   <TextView
                            android:layout_width="wrap_content"

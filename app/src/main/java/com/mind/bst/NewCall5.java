@@ -8,7 +8,9 @@ import android.support.design.internal.BottomNavigationMenu;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.v7.app.AppCompatActivity;
+import com.google.firebase.database.DatabaseReference;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,12 +23,18 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class NewCall5 extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    FirebaseUser user;
+
+    FirebaseDatabase db=FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference;
     TextView username,t1,t2,t3,t4;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
@@ -65,7 +73,7 @@ public class NewCall5 extends AppCompatActivity {
 
 
 
-
+        databaseReference = db.getReference("Calls Generated");
 
 
 
@@ -259,7 +267,21 @@ public class NewCall5 extends AppCompatActivity {
         });
 
 
+b2.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        sendData();
+        //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
+        Intent i=new Intent(NewCall5.this,HomeActivity.class);
+        startActivity(i);
+    }
 
+
+
+
+
+
+});
 
 
 
@@ -387,7 +409,6 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
                 startActivity(i);
                 break;
 
-
                   /*  case R.id.visits:
                         Intent j=new Intent(getApplicationContext(),ViewProfile.class);
                         startActivity(j);
@@ -412,6 +433,88 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
 
 
+    private void sendData() {
+
+        String e1Text=NewCallGen.e2.getText().toString();
+        String e2Text=NewCallGen.e5.getText().toString();
+        String e3Text=NewCallGen.e10.getText().toString();
+        String e4Text=NewCallGen.e3.getText().toString();
+
+
+        String e18Text=NewCallGen.searchableSpinner.getSelectedItem().toString();
+        String e19Text=NewCallGen.e4.getText().toString();
+        String e20Text=NewCallGen.e9.getText().toString();
+
+
+        String e21Text=NewCall1.s1.getSelectedItem().toString();
+
+        String e22Text=NewCallGen.e1.getText().toString();
+        String e23Text=NewCallGen.e7.getText().toString();
+
+
+
+        String e24Text=NewCallGen.e11.getText().toString();
+        String e25Text=NewCallGen.e8.getText().toString();
+
+        String e26Text=NewCall1.s3.getSelectedItem().toString();
+
+        String e27Text=NewCall1.e5.getText().toString();
+        String e28Text=NewCall1.mVisitDate.getText().toString();
+        String e29Text=NewCall2.s4.getSelectedItem().toString();
+        String e30Text=NewCall2.mDisplayTime.getText().toString();
+
+        String e31Text=NewCall2.mDisplayDate.getText().toString();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //String e5Text=NewCall1.e1.getText().toString();
+        // String e6Text=NewCall1.e2.getText().toString();
+        String e7Text=NewCall1.mDisplayDate.getText().toString();
+        // String e8Text=NewCall1.mDisplayTime.getText().toString();
+
+
+        String e9Text=NewCall2.e1.getText().toString();
+        // String e10Text=NewCall2.e2.getText().toString();
+        //String e11Text=NewCall2.e3.getText().toString();
+
+        String e12Text=NewCall3.e1.getText().toString();
+        String e13Text=NewCall3.e2.getText().toString();
+
+        String e14Text=NewCall3.s1.getSelectedItem().toString();
+
+        String e15Text=NewCall3.e4.getText().toString();
+        // String e16Text=NewCall4.s1.getSelectedItem().toString();
+        String e17Text=NewCall4.url.getText().toString();
+        // String e14Text=NewCall2.s1.getSelectedItem().toString();
+
+
+
+        // FirebaseUser user = mAuth.getCurrentUser();
+        //Log.d("LOGGED", "FirebaseUser: " + user);
+        // String id=user.getDisplayName();
+        String id=databaseReference.push().getKey();
+
+
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text))&& (!TextUtils.isEmpty(e22Text))&& (!TextUtils.isEmpty(e23Text))&& (!TextUtils.isEmpty(e24Text))&& (!TextUtils.isEmpty(e25Text))&& (!TextUtils.isEmpty(e26Text))&& (!TextUtils.isEmpty(e27Text))&& (!TextUtils.isEmpty(e28Text))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text)))
+        {
+            Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text,e22Text,e23Text,e24Text,e25Text,e26Text,e27Text,e28Text,e29Text,e30Text,e31Text);
+            databaseReference.child(id).setValue(data);
+            Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
 
 
         @Override

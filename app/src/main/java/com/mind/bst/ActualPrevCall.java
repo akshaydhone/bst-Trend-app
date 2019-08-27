@@ -98,31 +98,58 @@ public class ActualPrevCall extends AppCompatActivity {
 
         TextView textViewTime = (TextView) findViewById(R.id.time);
 
+        TextView textViewCallAssignedTo = (TextView) findViewById(R.id.textcallassignedto);
+
+        TextView textViewCallVisitDate = (TextView) findViewById(R.id.textcallvisitdate);
+
+
+        TextView textViewProName = (TextView) findViewById(R.id.productname);
+        TextView textViewProSerialNo= (TextView) findViewById(R.id.proserialno);
+        TextView textViewInTimeEngineer = (TextView) findViewById(R.id.intimeofengineer);
+        TextView textViewCallAttendDate = (TextView) findViewById(R.id.callattendingdate);
+
+
+        TextView textViewNop = (TextView) findViewById(R.id.nop);
+        TextView textViewDop= (TextView) findViewById(R.id.dop);
+        TextView textViewObsEngg = (TextView) findViewById(R.id.observationengg);
+        TextView textViewRemarkClient = (TextView) findViewById(R.id.remarkclient);
 
 
 
+        textViewCont.setText(intent.getStringExtra(Retrievedatasample.customername));
+        textViewEmail.setText(intent.getStringExtra(Retrievedatasample.customerrepname));
+        textViewRegion.setText(intent.getStringExtra(Retrievedatasample.regionofserviceengineer));
 
-
-
-
-        textViewCont.setText(intent.getStringExtra(Retrievedatasample.custcont));
-        textViewEmail.setText(intent.getStringExtra(Retrievedatasample.custemail));
-        textViewRegion.setText(intent.getStringExtra(Retrievedatasample.Region));
-
-        textViewName.setText(intent.getStringExtra(Retrievedatasample.clientname));
-        textViewAdd.setText(intent.getStringExtra(Retrievedatasample.clientaddress));
+        textViewName.setText(intent.getStringExtra(Retrievedatasample.customername));
+        textViewAdd.setText(intent.getStringExtra(Retrievedatasample.cityofservice));
 //        textViewDate.setText(data.getDate());
-        textViewTime.setText(intent.getStringExtra(Retrievedatasample.time));
-        textViewProductSrNo.setText(intent.getStringExtra(Retrievedatasample.prosrno));
-        textViewNatureOfComp.setText(intent.getStringExtra(Retrievedatasample.natureofcomplaint));
-        textViewComplaint.setText(intent.getStringExtra(Retrievedatasample.detailofcomplaint));
-        textViewEnggObs.setText(intent.getStringExtra(Retrievedatasample.enggobs));
-        textViewRemark.setText(intent.getStringExtra(Retrievedatasample.clientremark));
-        textViewProductName.setText(intent.getStringExtra(Retrievedatasample.proname));
-        textViewStatus.setText(intent.getStringExtra(Retrievedatasample.statusofcomplaint));
-        textViewPayment.setText(intent.getStringExtra(Retrievedatasample.payment));
-        textViewEnggName.setText(intent.getStringExtra(Retrievedatasample.enggname));
+        textViewTime.setText(intent.getStringExtra(Retrievedatasample.customeremailid));
+        textViewProductSrNo.setText(intent.getStringExtra(Retrievedatasample.gstin));
+        textViewNatureOfComp.setText(intent.getStringExtra(Retrievedatasample.customercity));
+        textViewComplaint.setText(intent.getStringExtra(Retrievedatasample.customerstate));
+        textViewEnggObs.setText(intent.getStringExtra(Retrievedatasample.productcategory));
+        textViewRemark.setText(intent.getStringExtra(Retrievedatasample.productdescription));
+        textViewProductName.setText(intent.getStringExtra(Retrievedatasample.customeraddress));
+        textViewStatus.setText(intent.getStringExtra(Retrievedatasample.customercountry));
+        textViewPayment.setText(intent.getStringExtra(Retrievedatasample.calllogdate));
+        textViewEnggName.setText(intent.getStringExtra(Retrievedatasample.nameofserviceengineer));
         // textViewUrl.setText(data.getClient_image_url());
+        textViewCallAssignedTo.setText(intent.getStringExtra(Retrievedatasample.callassignedto));
+        textViewCallVisitDate.setText(intent.getStringExtra(Retrievedatasample.callvisitingdate));
+
+
+
+        textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
+        textViewProSerialNo.setText(intent.getStringExtra(Retrievedatasample.productserialno));
+        textViewInTimeEngineer.setText(intent.getStringExtra(Retrievedatasample.engineerintime));
+        textViewCallAttendDate.setText(intent.getStringExtra(Retrievedatasample.callattendingdate));
+
+
+
+        textViewNop.setText(intent.getStringExtra(Retrievedatasample.natureofcomplaint));
+        textViewDop.setText(intent.getStringExtra(Retrievedatasample.detailofcomplaint));
+        textViewObsEngg.setText(intent.getStringExtra(Retrievedatasample.engineerobservation));
+        textViewRemarkClient.setText(intent.getStringExtra(Retrievedatasample.clientremark));
         Picasso.with(context).load(intent.getStringExtra(Retrievedatasample.clienturl).toString()).into(t2);
 
 

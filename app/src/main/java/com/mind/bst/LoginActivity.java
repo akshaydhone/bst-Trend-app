@@ -1,6 +1,9 @@
 package com.mind.bst;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -83,6 +86,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
     private void callsignin(final String email, String password) {
 
         mAuth.signInWithEmailAndPassword(email, password)
@@ -96,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w("TESTING", "signInWithEmail:failed", task.getException());
-                            Toast.makeText(LoginActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Wrong Credentials/Check Network Settings", Toast.LENGTH_SHORT).show();
                         }
 
 
@@ -125,6 +132,12 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
     }
+
+
+
+
+
+
 
 
 

@@ -51,7 +51,7 @@ public class NewCall1 extends AppCompatActivity {
 
     //private static final String TAG = "SecondActivity";
     //public static EditText e1, e2;
-    public static TextView e5;
+    public static TextView e5,e7;
    // public static EditText mVisitDate;
     public static String spinnerValue;
 
@@ -90,6 +90,7 @@ public class NewCall1 extends AppCompatActivity {
         mVisitDate=(TextView)findViewById(R.id.e6);
         // mDisplayTime = (TextView) findViewById(R.id.e4);
         e5=(TextView)findViewById(R.id.e5);
+        e7=(TextView)findViewById(R.id.e7);
 
         username=(TextView)findViewById(R.id.username) ;
         mAuth = FirebaseAuth.getInstance();
@@ -892,7 +893,10 @@ public class NewCall1 extends AppCompatActivity {
                         mDateSetListener,
                         year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 dialog.show();
+
+
             }
         });
 
@@ -924,6 +928,7 @@ public class NewCall1 extends AppCompatActivity {
                         mDateSetListener1,
                         year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 dialog.show();
             }
         });

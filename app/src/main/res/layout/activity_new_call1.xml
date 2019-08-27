@@ -257,8 +257,30 @@ android:background="@drawable/newbst"
 
 
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/name29"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e7"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/arial"
+                        android:hint="Engg name and admin"
+                        android:text="Ramesh Kamble">
+                    </TextView>
 
+                    <View style="@style/Divider"
+                        android:layout_marginTop="5dp"/>
 
 
 
@@ -284,15 +306,6 @@ android:background="@drawable/newbst"
 
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:fontFamily="@font/arial"
-                        android:text="@string/name11"
-                        android:textColor="@color/colorPurple"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
 
 
 

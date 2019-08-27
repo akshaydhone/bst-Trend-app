@@ -1195,6 +1195,7 @@
     <string name="name13">Product Description<font color='#ff0000'>*</font></string>
     <string name="name14">Call Log Date <font color='#ff0000'>*</font></string>
     <string name="name15">Call Assigned to <font color='#ff0000'>*</font></string>
+
     <string name="name16">Call Visit Date<font color='#ff0000'>*</font></string>
 
 
@@ -1214,12 +1215,13 @@
 
 
 
-    <string name="name25">Product\'s Photo <font color='#ff0000'>*</font></string>
+    <string name="name25">Images to be Uploaded <font color='#ff0000'>*</font></string>
 
 
     <string name="name26">Status of Complaint <font color='#ff0000'>*</font></string>
     <string name="name27">Applicable Charges <font color='#ff0000'>*</font></string>
     <string name="name28">Mode of Payment <font color='#ff0000'>*</font></string>
-
+    <string name="name29">Call Assigned by <font color='#ff0000'>*</font></string>
+    <string name="name30">Call Rescheduled Date <font color='#ff0000'>*</font></string>
 
 </resources>
