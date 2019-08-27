@@ -120,7 +120,7 @@ public class ActualPrevCall extends AppCompatActivity {
         textViewEmail.setText(intent.getStringExtra(Retrievedatasample.customerrepname));
         textViewRegion.setText(intent.getStringExtra(Retrievedatasample.regionofserviceengineer));
 
-        textViewName.setText(intent.getStringExtra(Retrievedatasample.customername));
+//        textViewName.setText(intent.getStringExtra(Retrievedatasample.customername));
         textViewAdd.setText(intent.getStringExtra(Retrievedatasample.cityofservice));
 //        textViewDate.setText(data.getDate());
         textViewTime.setText(intent.getStringExtra(Retrievedatasample.customeremailid));
@@ -138,8 +138,7 @@ public class ActualPrevCall extends AppCompatActivity {
         textViewCallVisitDate.setText(intent.getStringExtra(Retrievedatasample.callvisitingdate));
 
 
-
-        textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
+textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
         textViewProSerialNo.setText(intent.getStringExtra(Retrievedatasample.productserialno));
         textViewInTimeEngineer.setText(intent.getStringExtra(Retrievedatasample.engineerintime));
         textViewCallAttendDate.setText(intent.getStringExtra(Retrievedatasample.callattendingdate));
@@ -150,8 +149,10 @@ public class ActualPrevCall extends AppCompatActivity {
         textViewDop.setText(intent.getStringExtra(Retrievedatasample.detailofcomplaint));
         textViewObsEngg.setText(intent.getStringExtra(Retrievedatasample.engineerobservation));
         textViewRemarkClient.setText(intent.getStringExtra(Retrievedatasample.clientremark));
-        Picasso.with(context).load(intent.getStringExtra(Retrievedatasample.clienturl).toString()).into(t2);
+       // Picasso.with(context).load(intent.getStringExtra(Retrievedatasample.clienturl).toString()).into(t2);
 
+//textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
+//textViewProSerialNo.setText(intent.getStringExtra(Retrievedatasample.productserialno));
 
 
         clients = new ArrayList<>();

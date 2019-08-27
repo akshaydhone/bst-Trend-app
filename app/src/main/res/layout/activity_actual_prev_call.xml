@@ -8,38 +8,8 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp">
+        android:layout_height="70dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:background="@drawable/yellowback"
-            android:orientation="vertical">
-
-            <ImageView
-                android:clickable="true"
-
-                android:id="@+id/textclientimgurl"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ron" />
-
-            <TextView
-                android:id="@+id/textName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="Ganesh Patil"
-                android:textColor="#fff"
-                android:textSize="21sp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
 
     </RelativeLayout>
 
@@ -83,6 +53,7 @@
                         android:text="Name of service engineer"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
                     <EditText
@@ -93,6 +64,7 @@
                         android:id="@+id/textenggname"
                         android:editable="false"
                         android:text="Rahul Kumar"
+                        android:fontFamily="@font/arial"
                         />
 
                     <TextView
@@ -102,6 +74,7 @@
                         android:text="Region of service engineer"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:fontFamily="@font/arial"
                         android:textStyle="bold"
                         />
 
@@ -113,6 +86,7 @@
                         android:id="@+id/textRegion"
                         android:editable="false"
                         android:text="Chennai"
+                        android:fontFamily="@font/arial"
 
                         />
 
@@ -125,7 +99,8 @@
                         android:text="City of Service"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -135,6 +110,7 @@
                         android:id="@+id/textAdd"
                         android:text="MG Road"
                         android:editable="false"
+                        android:fontFamily="@font/arial"
 
                         />
 
@@ -145,7 +121,8 @@
                         android:text="Customer Name"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -155,6 +132,7 @@
                         android:id="@+id/textCont"
                         android:editable="false"
                         android:text="9898765432"
+                        android:fontFamily="@font/arial"
 
                         />
 
@@ -167,7 +145,8 @@
                         android:text="Customer Rep. Name"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -177,6 +156,7 @@
                         android:id="@+id/textEmail"
                         android:text="rj13@gmail.com"
                         android:editable="false"
+                        android:fontFamily="@font/arial"
                         />
 
                     <TextView
@@ -186,7 +166,8 @@
                         android:text="Customer Email-Id"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -196,6 +177,7 @@
                         android:id="@+id/time"
                         android:editable="false"
                         android:text="10:09"
+                        android:fontFamily="@font/arial"
                         />
 
 
@@ -207,7 +189,8 @@
                         android:text="Customer Address"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -217,6 +200,7 @@
                         android:id="@+id/textproductname"
                         android:text="MotherBoard"
                         android:editable="false"
+                        android:fontFamily="@font/arial"
 
                         />
 
@@ -229,7 +213,8 @@
                         android:text="Customer GSTINNO"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -239,6 +224,7 @@
                         android:id="@+id/productserialno"
                         android:editable="false"
                         android:text="36576523"
+                        android:fontFamily="@font/arial"
 
                         />
 
@@ -252,7 +238,8 @@
                         android:text="Customer City"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -261,7 +248,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/textnatureofcomplaint"
                         android:editable="false"
-                        android:text="Internal Damage" />
+                        android:text="Internal Damage"
+                        android:fontFamily="@font/arial"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -270,7 +258,8 @@
                         android:text="Customer State"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -280,6 +269,7 @@
                         android:id="@+id/textdetailofcomplaint"
                         android:editable="false"
                         android:text="Parts inside the product heavily damaged"
+                        android:fontFamily="@font/arial"
                         />
 
 
@@ -290,7 +280,8 @@
                         android:text="Customer Country"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -300,6 +291,7 @@
                         android:id="@+id/statusofcomplaint"
                         android:editable="false"
                         android:text="Need to send to Factory"
+                        android:fontFamily="@font/arial"
 
                         />
 
@@ -311,7 +303,8 @@
                         android:text="Product Category"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -321,6 +314,7 @@
                         android:id="@+id/textenggobservation"
                         android:editable="false"
                         android:text="Internal damage,need to be sent to factory"
+                        android:fontFamily="@font/arial"
                         />
 
 
@@ -333,7 +327,8 @@
                         android:text="Product Description"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -343,6 +338,7 @@
                         android:id="@+id/textclientremark"
                         android:editable="false"
                         android:text="Quality Service Provided "
+                        android:fontFamily="@font/arial"
 
                         />
 
@@ -356,7 +352,8 @@
                         android:text="Call Log date"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -365,7 +362,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/textpaymentvia"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 
@@ -376,7 +374,8 @@
                         android:text="Call assigned to"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -385,7 +384,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/textcallassignedto"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
                     <TextView
@@ -395,7 +395,8 @@
                         android:text="Call Visit date"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -404,7 +405,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/textcallvisitdate"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 
@@ -419,7 +421,8 @@
                         android:text="Product Name"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -428,7 +431,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/productname"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 
@@ -441,7 +445,8 @@
                         android:text="Product Serial No"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -450,7 +455,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/proserialno"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 
@@ -462,7 +468,8 @@
                         android:text="Engineer's In Time"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -471,7 +478,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/intimeofengineer"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 
@@ -485,7 +493,8 @@
                         android:text="Call attending date"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -494,7 +503,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/callattendingdate"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 
@@ -506,7 +516,8 @@
                         android:text="Nature of Complaint"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -515,7 +526,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/nop"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 
@@ -526,7 +538,8 @@
                         android:text="Details of Complaint"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -535,7 +548,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/dop"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -544,7 +558,8 @@
                         android:text="Engineer Observation"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -553,7 +568,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/observationengg"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
                     <TextView
@@ -563,7 +579,8 @@
                         android:text="Client's Remark"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -572,7 +589,8 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/remarkclient"
                         android:editable="false"
-                        android:text="Cheque Payment " />
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </RelativeLayout>

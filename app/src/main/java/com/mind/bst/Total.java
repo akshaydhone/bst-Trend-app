@@ -52,6 +52,13 @@ public class Total {
 String call_attending_date;
 
 
+String call_assigned_by;
+
+String call_rescheduled_date;
+
+String invoice_no;
+
+
 
  //private String Image;
 
@@ -69,6 +76,30 @@ String call_attending_date;
 
     public String getCall_attending_date() {
         return call_attending_date;
+    }
+
+    public String getInvoice_no() {
+        return invoice_no;
+    }
+
+    public void setInvoice_no(String invoice_no) {
+        this.invoice_no = invoice_no;
+    }
+
+    public String getCall_rescheduled_date() {
+        return call_rescheduled_date;
+    }
+
+    public void setCall_rescheduled_date(String call_rescheduled_date) {
+        this.call_rescheduled_date = call_rescheduled_date;
+    }
+
+    public String getCall_assigned_by() {
+        return call_assigned_by;
+    }
+
+    public void setCall_assigned_by(String call_assigned_by) {
+        this.call_assigned_by = call_assigned_by;
     }
 
     public void setCall_attending_date(String call_attending_date) {
@@ -254,7 +285,7 @@ String call_attending_date;
 
 
 
-    public Total(String data, String name_of_service_engineer,String region_of_service_engineer,String customer_rep_name,String customer_Email_Id,String call_log_date,String product_serial_no,String engineer_observation,String client_remark,String nature_of_comp,String details_of_comp,String cust_cont,String customer_name,String customer_address,String gstin,String product_category,String city_of_service,String customer_city,String customer_state,String customer_country,String product_description,String call_assigned_to,String call_visiting_date,String product_name,String engineer_in_time,String call_attending_date ) {
+    public Total(String data, String name_of_service_engineer,String region_of_service_engineer,String customer_rep_name,String customer_Email_Id,String call_log_date,String product_serial_no,String engineer_observation,String client_remark,String nature_of_comp,String details_of_comp,String cust_cont,String customer_name,String customer_address,String gstin,String product_category,String city_of_service,String customer_city,String customer_state,String customer_country,String product_description,String call_assigned_to,String call_visiting_date,String product_name,String engineer_in_time,String call_attending_date,String call_assigned_by,String call_rescheduled_date,String invoice_no ) {
         //this.data = data;
 
         this.name_of_service_engineer = name_of_service_engineer;
@@ -289,6 +320,9 @@ String call_attending_date;
        this.product_name=product_name;
        this.engineer_in_time=engineer_in_time;
        this.call_attending_date=call_attending_date;
+       this.call_assigned_by=call_assigned_by;
+       this.call_rescheduled_date=call_rescheduled_date;
+       this.invoice_no=invoice_no;
 
    // Image=Iamge;
    // this.client_image=client_image;

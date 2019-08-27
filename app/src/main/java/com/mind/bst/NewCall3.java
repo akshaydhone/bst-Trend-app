@@ -26,7 +26,7 @@ public class NewCall3 extends AppCompatActivity {
     private static final String TAG = "NewCall3";
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
-   public static EditText e1,e2,e4;
+   public static EditText e1,e2,e4,e3;
     Button b1;
     public static Spinner s1;
     private FirebaseAuth mAuth;
@@ -43,6 +43,7 @@ public class NewCall3 extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         e1=(EditText)findViewById(R.id.e1);
         e2=(EditText)findViewById(R.id.e2);
+        e3=(EditText)findViewById(R.id.e3);
 
        // e3=(EditText)findViewById(R.id.e3);
         e4=(EditText)findViewById(R.id.e4);

@@ -878,7 +878,7 @@ public class NewCall4 extends AppCompatActivity {
         });
     }
 
-    private void sendData() {
+    /*private void sendData() {
 
         String e1Text=NewCallGen.e2.getText().toString();
         String e2Text=NewCallGen.e5.getText().toString();
@@ -959,7 +959,7 @@ public class NewCall4 extends AppCompatActivity {
 
         }
 
-    }
+    }*/
 
     private void checkSharedPreferences() {
     }
