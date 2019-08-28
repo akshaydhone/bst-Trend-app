@@ -15,9 +15,9 @@
 
     <supports-screens
         android:largeScreens="true"
-        android:smallScreens="true"
         android:normalScreens="true"
-        android:xlargeScreens="true"/>
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -26,8 +26,11 @@
         android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewCallsToAttendImg"
-            android:parentActivityName=".HomeActivity"></activity>
+        <activity android:name=".ViewPendingAttendImg"></activity>
+        <activity android:name=".PendingCallAttend" />
+        <activity
+            android:name=".ViewCallsToAttendImg"
+            android:parentActivityName=".HomeActivity" />
         <activity android:name=".CallsToAttend" />
         <activity android:name=".FirebaseAutoComplete" />
         <activity

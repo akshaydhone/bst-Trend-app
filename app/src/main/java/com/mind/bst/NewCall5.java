@@ -35,6 +35,7 @@ public class NewCall5 extends AppCompatActivity {
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
+    DatabaseReference databasependingReference;
     TextView username,t1,t2,t3,t4;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
@@ -75,6 +76,7 @@ public class NewCall5 extends AppCompatActivity {
 
 
         databaseReference = db.getReference("Calls Generated");
+        databasependingReference = db.getReference("Calls Pending");
 
 
 
@@ -288,7 +290,9 @@ b2.setOnClickListener(new View.OnClickListener() {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // sendData();
+                 sendPendingData();
+                Intent i=new Intent(NewCall5.this,HomeActivity.class);
+                startActivity(i);
                 //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
                 //Intent i=new Intent(NewCall5.this,HomeActivity.class);
                 //startActivity(i);
@@ -572,11 +576,101 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
     }
 
 
+    private void sendPendingData() {
+
+        String e1Text=NewCallGen.e2.getText().toString();
+        String e2Text=NewCallGen.e5.getText().toString();
+        String e3Text=NewCallGen.e10.getText().toString();
+        String e4Text=NewCallGen.e3.getText().toString();
+
+
+        String e18Text=NewCallGen.searchableSpinner.getSelectedItem().toString();
+        String e19Text=NewCallGen.e4.getText().toString();
+        String e20Text=NewCallGen.e9.getText().toString();
+
+
+        String e21Text=NewCall1.s1.getSelectedItem().toString();
+
+        String e22Text=NewCallGen.e1.getText().toString();
+        String e23Text=NewCallGen.e7.getText().toString();
+
+
+
+        String e24Text=NewCallGen.e11.getText().toString();
+        String e25Text=NewCallGen.e8.getText().toString();
+
+        String e26Text=NewCall1.s3.getSelectedItem().toString();
+
+        String e27Text=NewCall1.e5.getText().toString();
+        String e28Text=NewCall1.mVisitDate.getText().toString();
+        String e29Text=NewCall2.s4.getSelectedItem().toString();
+        String e30Text=NewCall2.mDisplayTime.getText().toString();
+
+        String e31Text=NewCall2.mDisplayDate.getText().toString();
+        String e32Text=NewCall1.e7.getText().toString();
+
+        String e33Text=NewCall2.mReschdeuledDate.getText().toString();
+
+        String e34Text=NewCall3.e3.getText().toString();
+        String e35Text=NewCall5.s1.getSelectedItem().toString();
+
+
+
+        //String e36Text=NewCall5.e6.getText().toString();
+        //String e37Text=NewCall5.e5.getText().toString();
+
+
+
+
+
+
+
+
+
+
+
+
+        //String e5Text=NewCall1.e1.getText().toString();
+        // String e6Text=NewCall1.e2.getText().toString();
+        String e7Text=NewCall1.mDisplayDate.getText().toString();
+        // String e8Text=NewCall1.mDisplayTime.getText().toString();
+
+
+        String e9Text=NewCall2.e1.getText().toString();
+        // String e10Text=NewCall2.e2.getText().toString();
+        //String e11Text=NewCall2.e3.getText().toString();
+
+        String e12Text=NewCall3.e1.getText().toString();
+        String e13Text=NewCall3.e2.getText().toString();
+
+        String e14Text=NewCall3.s1.getSelectedItem().toString();
+
+        String e15Text=NewCall3.e4.getText().toString();
+        // String e16Text=NewCall4.s1.getSelectedItem().toString();
+        String e17Text=NewCall4.url.getText().toString();
+        // String e14Text=NewCall2.s1.getSelectedItem().toString();
+
+
+
+        // FirebaseUser user = mAuth.getCurrentUser();
+        //Log.d("LOGGED", "FirebaseUser: " + user);
+        // String id=user.getDisplayName();
+        String id=databasependingReference.push().getKey();
+
+
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text))&& (!TextUtils.isEmpty(e22Text))&& (!TextUtils.isEmpty(e23Text))&& (!TextUtils.isEmpty(e24Text))&& (!TextUtils.isEmpty(e25Text))&& (!TextUtils.isEmpty(e26Text))&& (!TextUtils.isEmpty(e27Text))&& (!TextUtils.isEmpty(e28Text))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(e32Text))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))
+        {
+            Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text,e22Text,e23Text,e24Text,e25Text,e26Text,e27Text,e28Text,e29Text,e30Text,e31Text,e32Text,e33Text,e34Text,e35Text);
+            databasependingReference.child(id).setValue(data);
+            Toast.makeText(this, "Call Saved in Pending List", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mymenu,menu);
         return true;
-
     }
 
     @Override

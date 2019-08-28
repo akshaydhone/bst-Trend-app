@@ -24,13 +24,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-public class ViewClientCallsImg extends ArrayAdapter<Total> {
+public class ViewPendingAttendImg extends ArrayAdapter<Total> {
     private Activity context;
     HttpURLConnection client = null;
     List<Total> clients;
 
     ImageView imageView;
-     Button b1;
+    Button b1;
 
 
 
@@ -71,8 +71,8 @@ public class ViewClientCallsImg extends ArrayAdapter<Total> {
 
 
 
-    public ViewClientCallsImg(Activity context, List<Total> clients) {
-        super(context, R.layout.activity_view_client_calls_img, clients);
+    public ViewPendingAttendImg(Activity context, List<Total> clients) {
+        super(context, R.layout.activity_view_pending_attend_img, clients);
         this.context = context;
         this.clients = clients;
     }
@@ -81,7 +81,7 @@ public class ViewClientCallsImg extends ArrayAdapter<Total> {
     @Override
     public View getView(int position , View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View listViewItem = inflater.inflate(R.layout.activity_view_client_calls_img, null, true);
+        View listViewItem = inflater.inflate(R.layout.activity_view_pending_attend_img, null, true);
 
         TextView textViewRegion = (TextView) listViewItem.findViewById(R.id.status);
         TextView textViewName = (TextView) listViewItem.findViewById(R.id.member_name);

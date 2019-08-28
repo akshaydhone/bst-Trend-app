@@ -388,6 +388,28 @@
                         android:fontFamily="@font/arial"/>
 
 
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Call assigned by"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/textcallassignedby"
+                        android:editable="false"
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
+
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -506,6 +528,48 @@
                         android:text="Cheque Payment "
                         android:fontFamily="@font/arial"/>
 
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Call Rescheduled date"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/callrescheduleddate"
+                        android:editable="false"
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Invoice No."
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arial"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/invoiceno"
+                        android:editable="false"
+                        android:text="Cheque Payment "
+                        android:fontFamily="@font/arial"/>
 
 
 

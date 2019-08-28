@@ -58,7 +58,7 @@ public class Retrievedatasample extends AppCompatActivity {
     public static final String payment = "com.mind.bst.payment";
     public static final String proname = "com.mind.bst.proname";
     public static final String prosrno = "com.mind.bst.prosrno";
-    public static final String statusofcomplaint = "com.mind.bst.statusofcomplaint";
+
     public static final String time = "com.mind.bst.time";
 
     public static final String nameofserviceengineer = "com.mind.bst.nameofserviceengineer";
@@ -86,6 +86,13 @@ public class Retrievedatasample extends AppCompatActivity {
     public static final String productname = "com.mind.bst.productname";
     public static final String engineerintime = "com.mind.bst.engineerintime";
     public static final String callattendingdate = "com.mind.bst.callattendingdate";
+
+
+    public static final String callassignedby = "com.mind.bst.callassignby";
+    public static final String callrescheduleddate = "com.mind.bst.callrescheduleddate";
+    public static final String invoiceno = "com.mind.bst.invoiceno";
+    public static final String statusofcomplaint = "com.mind.bst.statusofcomplaint";
+
 
 
     @Override
@@ -179,6 +186,14 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(productname, data.getProduct_name());
                 intent.putExtra(engineerintime, data.getEngineer_in_time());
                 intent.putExtra(callattendingdate, data.getCall_attending_date());
+
+
+
+                intent.putExtra(callassignedby, data.getCall_assigned_by());
+                intent.putExtra(callrescheduleddate, data.getCall_rescheduled_date());
+                intent.putExtra(invoiceno, data.getInvoice_no());
+                intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
+
 
                 //starting the activity with intent
                 startActivity(intent);

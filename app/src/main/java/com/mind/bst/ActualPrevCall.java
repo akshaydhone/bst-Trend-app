@@ -99,7 +99,7 @@ public class ActualPrevCall extends AppCompatActivity {
         TextView textViewTime = (TextView) findViewById(R.id.time);
 
         TextView textViewCallAssignedTo = (TextView) findViewById(R.id.textcallassignedto);
-
+        TextView textViewCallAssignedBy = (TextView) findViewById(R.id.textcallassignedby);
         TextView textViewCallVisitDate = (TextView) findViewById(R.id.textcallvisitdate);
 
 
@@ -114,6 +114,8 @@ public class ActualPrevCall extends AppCompatActivity {
         TextView textViewObsEngg = (TextView) findViewById(R.id.observationengg);
         TextView textViewRemarkClient = (TextView) findViewById(R.id.remarkclient);
 
+        TextView textViewCallRescheduledDate = (TextView) findViewById(R.id.callrescheduleddate);
+        TextView textViewInvoiceNo = (TextView) findViewById(R.id.invoiceno);
 
 
         textViewCont.setText(intent.getStringExtra(Retrievedatasample.customername));
@@ -153,8 +155,9 @@ public class ActualPrevCall extends AppCompatActivity {
 
 //textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
 //textViewProSerialNo.setText(intent.getStringExtra(Retrievedatasample.productserialno));
-
-
+        textViewCallAssignedBy.setText(intent.getStringExtra(Retrievedatasample.callassignedby));
+    textViewCallRescheduledDate.setText(intent.getStringExtra(Retrievedatasample.callrescheduleddate));
+        textViewInvoiceNo.setText(intent.getStringExtra(Retrievedatasample.invoiceno));
         clients = new ArrayList<>();
 
 

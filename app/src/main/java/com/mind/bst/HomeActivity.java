@@ -111,9 +111,9 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //For getting the next activity
-                //Intent i=new Intent(HomeActivity.this,PendingCall.class);
+                Intent i=new Intent(HomeActivity.this,PendingCallAttend.class);
                 //Intent i=new Intent(HomeActivity.this,SearchBase.class);
-                //startActivity(i);
+                startActivity(i);
             }
         });
 
