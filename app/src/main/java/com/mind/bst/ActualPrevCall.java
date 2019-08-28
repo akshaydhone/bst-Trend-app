@@ -138,7 +138,7 @@ public class ActualPrevCall extends AppCompatActivity {
         textViewCallVisitDate.setText(intent.getStringExtra(Retrievedatasample.callvisitingdate));
 
 
-textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
+         textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
         textViewProSerialNo.setText(intent.getStringExtra(Retrievedatasample.productserialno));
         textViewInTimeEngineer.setText(intent.getStringExtra(Retrievedatasample.engineerintime));
         textViewCallAttendDate.setText(intent.getStringExtra(Retrievedatasample.callattendingdate));

@@ -13,6 +13,12 @@
 
     <uses-feature android:name="android.hardware.camera" />
 
+    <supports-screens
+        android:largeScreens="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:xlargeScreens="true"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/appicon"
@@ -20,11 +26,14 @@
         android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirebaseAutoComplete"></activity>
+        <activity android:name=".ViewCallsToAttendImg"
+            android:parentActivityName=".HomeActivity"></activity>
+        <activity android:name=".CallsToAttend" />
+        <activity android:name=".FirebaseAutoComplete" />
         <activity
             android:name=".NewCall5"
             android:parentActivityName=".NewCall4"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".RecycleViewOnclick" />
         <activity
             android:name=".SearchBase"
@@ -73,9 +82,7 @@
             android:name=".ViewClients"
             android:parentActivityName=".AdminActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".splashscreen">
-
-        </activity>
+        <activity android:name=".splashscreen" />
         <activity android:name=".RegisterActivity" />
         <activity
             android:name=".Main2Activity"
@@ -115,21 +122,15 @@
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
-
         </activity>
-
-
-
         <activity android:name=".HomeActivity" />
         <activity android:name=".AdminActivity" />
         <activity
@@ -154,7 +155,6 @@
             android:name=".MainChatActivity"
             android:parentActivityName=".AdminActivity" />
         <activity android:name=".CallList" />
-
     </application>
 
 </manifest>

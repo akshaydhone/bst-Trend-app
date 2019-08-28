@@ -58,6 +58,9 @@ String call_rescheduled_date;
 
 String invoice_no;
 
+String status_of_complaint;
+
+
 
 
  //private String Image;
@@ -72,6 +75,16 @@ String invoice_no;
 
     public Total (){
 
+    }
+
+
+
+    public String getStatus_of_complaint() {
+        return status_of_complaint;
+    }
+
+    public void setStatus_of_complaint(String status_of_complaint) {
+        this.status_of_complaint = status_of_complaint;
     }
 
     public String getCall_attending_date() {
@@ -285,7 +298,7 @@ String invoice_no;
 
 
 
-    public Total(String data, String name_of_service_engineer,String region_of_service_engineer,String customer_rep_name,String customer_Email_Id,String call_log_date,String product_serial_no,String engineer_observation,String client_remark,String nature_of_comp,String details_of_comp,String cust_cont,String customer_name,String customer_address,String gstin,String product_category,String city_of_service,String customer_city,String customer_state,String customer_country,String product_description,String call_assigned_to,String call_visiting_date,String product_name,String engineer_in_time,String call_attending_date,String call_assigned_by,String call_rescheduled_date,String invoice_no ) {
+    public Total(String data, String name_of_service_engineer,String region_of_service_engineer,String customer_rep_name,String customer_Email_Id,String call_log_date,String product_serial_no,String engineer_observation,String client_remark,String nature_of_comp,String details_of_comp,String cust_cont,String customer_name,String customer_address,String gstin,String product_category,String city_of_service,String customer_city,String customer_state,String customer_country,String product_description,String call_assigned_to,String call_visiting_date,String product_name,String engineer_in_time,String call_attending_date,String call_assigned_by,String call_rescheduled_date,String invoice_no,String status_of_complaint ) {
         //this.data = data;
 
         this.name_of_service_engineer = name_of_service_engineer;
@@ -323,6 +336,7 @@ String invoice_no;
        this.call_assigned_by=call_assigned_by;
        this.call_rescheduled_date=call_rescheduled_date;
        this.invoice_no=invoice_no;
+       this.status_of_complaint=status_of_complaint;
 
    // Image=Iamge;
    // this.client_image=client_image;

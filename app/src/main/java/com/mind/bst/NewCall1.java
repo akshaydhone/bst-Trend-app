@@ -736,7 +736,7 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-        databaseReference = db.getReference("Calls Generated");
+        databaseReference = db.getReference("Calls to be Attended");
 
         b1.setOnClickListener(new View.OnClickListener() {
             boolean valid = true;
@@ -780,13 +780,14 @@ public class NewCall1 extends AppCompatActivity {
 
 
                      else{
-                         String date = mDisplayDate.getText().toString( );
+                         String date = mDisplayDate.getText().toString();
                     String date1 = mVisitDate.getText().toString();
+                    sendData();
 
                        // mEditor.putString(getString(R.string.date), date);
                         //mEditor.putString(getString(R.string.date1), date1);
                         //mEditor.commit();
-                    Intent i = new Intent(NewCall1.this, NewCall2.class);
+                    Intent i = new Intent(NewCall1.this, HomeActivity.class);
                     startActivity(i);
                     }
                /* if (e1.getText().toString().trim().length() == 0) {
@@ -974,6 +975,59 @@ public class NewCall1 extends AppCompatActivity {
                 }
 
             });*/
+
+
+    }
+
+
+
+
+    public void sendData(){
+
+
+
+        String e1Text=NewCallGen.e2.getText().toString();
+        String e2Text=NewCallGen.e5.getText().toString();
+        String e3Text=NewCallGen.e1.getText().toString();
+        String e4Text=NewCallGen.searchableSpinner.getSelectedItem().toString();
+        String e5Text=NewCallGen.e10.getText().toString();
+        String e6Text=NewCallGen.e3.getText().toString();
+        String e7Text=NewCallGen.e4.getText().toString();
+        String e8Text=NewCallGen.e9.getText().toString();
+        String e9Text=NewCallGen.e7.getText().toString();
+        String e10Text=NewCallGen.e11.getText().toString();
+        String e11Text=NewCallGen.e8.getText().toString();
+
+
+        String e12Text=s1.getSelectedItem().toString();
+        String e13Text=s3.getSelectedItem().toString();
+        String e14Text=mDisplayDate.getText().toString();
+        String e15Text=e5.getText().toString();
+        String e16Text=e7.getText().toString();
+        String e17Text=mVisitDate.getText().toString();
+
+
+
+
+
+
+
+        String id=databaseReference.push().getKey();
+
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) && (!TextUtils.isEmpty(e3Text))   && (!TextUtils.isEmpty(e4Text)) && (!TextUtils.isEmpty(e5Text))   && (!TextUtils.isEmpty(e6Text)) && (!TextUtils.isEmpty(e7Text))   && (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))   && (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text))   && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))   && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))   && (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)))
+        {
+            DataDetail data=new DataDetail(id,e1Text,e2Text,e3Text,e4Text,e5Text,e6Text,e7Text,e8Text,e9Text,e10Text,e11Text,e12Text,e13Text,e14Text,e15Text,e16Text,e17Text);
+            databaseReference.child(id).setValue(data);
+            Toast.makeText(this, "Call added to the List", Toast.LENGTH_SHORT).show();
+
+        }
+
+
+
+
+
+
+
 
 
     }

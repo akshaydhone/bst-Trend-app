@@ -44,10 +44,7 @@
         <item>Motherboard</item>
 
 
-
     </string-array>
-
-
 
 
     <string-array name="print_inspection_plus_proddesc">
@@ -66,8 +63,6 @@
 
 
     </string-array>
-
-
 
 
     <string-array name="print_inspection_plus_prodname">
@@ -90,7 +85,6 @@
         <item>MHRM Sensor</item>
         <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
         <item>Monitor (Touch Screen) </item>
-
 
 
         <item>Motor / BLDC Motor</item>
@@ -116,8 +110,6 @@
     </string-array>
 
 
-
-
     <string-array name="automation_plus_proddesc">
         <item>Select</item>
         <item>2 DRIVE SYSTEM</item>
@@ -128,11 +120,7 @@
         <item>RMC for Auto filling system for Alpha Mix</item>
 
 
-
     </string-array>
-
-
-
 
 
     <string-array name="automation_plus_prodname">
@@ -157,7 +145,6 @@
         <item>Monitor (Touch Screen) </item>
 
 
-
         <item>Motor / BLDC Motor</item>
         <item>Mounting Bracket</item>
         <item>Mouse / Joystick</item>
@@ -177,13 +164,7 @@
         <item>Sensor</item>
 
 
-
     </string-array>
-
-
-
-
-
 
 
     <string-array name="defect_detection_plus_proddesc">
@@ -193,13 +174,7 @@
         <item>TubeScan Eagle View - Print Inspection System</item>
 
 
-
-
-
     </string-array>
-
-
-
 
 
     <string-array name="defect_detection_plus_prodname">
@@ -224,7 +199,6 @@
         <item>Monitor (Touch Screen) </item>
 
 
-
         <item>Motor / BLDC Motor</item>
         <item>Mounting Bracket</item>
         <item>Mouse / Joystick</item>
@@ -245,21 +219,12 @@
         <item>Sensor</item>
 
 
-
     </string-array>
-
-
-
-
-
 
 
     <string-array name="density_thickness_plus_proddesc">
         <item>Select</item>
         <item>BST ProControl Basis Weight Measurement System</item>
-
-
-
 
 
     </string-array>
@@ -287,7 +252,6 @@
         <item>Monitor (Touch Screen) </item>
 
 
-
         <item>Motor / BLDC Motor</item>
         <item>Mounting Bracket</item>
         <item>Mouse / Joystick</item>
@@ -307,12 +271,7 @@
         <item>Sensor</item>
 
 
-
     </string-array>
-
-
-
-
 
 
     <string-array name="mirror_image_plus_proddesc">
@@ -320,13 +279,7 @@
         <item>Mirror Image Registration</item>
 
 
-
-
-
     </string-array>
-
-
-
 
 
     <string-array name="mirror_image_plus_prodname">
@@ -348,71 +301,6 @@
         <item>MHRM Sensor</item>
         <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
         <item>Monitor (Touch Screen) </item>
-
-
-
-        <item>Motor / BLDC Motor</item>
-        <item>Mounting Bracket</item>
-        <item>Mouse / Joystick</item>
-        <item>Other Spare Parts </item>
-        <item>PCB Board </item>
-
-
-        <item>Power Supply</item>
-<item>Register Mark Sensor</item>
-        <item>Roller</item>
-        <item>Strobe / Halogen Bulb</item>
-        <item>Transformer</item>
-
-
-        <item>Traverse</item>
-        <item>Ultrasonic Sensor</item>
-        <item>X-Rite Sensor</item>
-        <item>Sensor</item>
-
-
-
-
-    </string-array>
-
-
-    <string-array name="register_viscocity_plus_proddesc">
-        <item>Select</item>
-        <item>CRS10K "EYE TOUCH" - Register Control System</item>
-        <item>SELECUT 9000 - Cutoff Control System</item>
-        <item>SELECUT 9001 - Cutoff Control System</item>
-        <item>SELEVISCO 9000 - Viscosity Control System</item>
-
-
-
-
-    </string-array>
-
-
-
-
-
-
-    <string-array name="register_viscocity_plus_prodname">
-        <item>Select</item>
-        <item>Cable / Cork Tape / Timing Belt</item>
-
-        <item>Control Panel </item>
-        <item>Drive</item>
-
-        <item>Encoder</item>
-        <item>Flash</item>
-        <item>HMI Monitor</item>
-        <item>Infrared Sensor </item>
-        <item>Keyboard / Keypad </item>
-
-
-        <item>LED / Lights / Illumination</item>
-
-        <item>MHRM Sensor</item>
-        <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
-        <item>Monitor (Touch Screen) </item>
-
 
 
         <item>Motor / BLDC Motor</item>
@@ -438,7 +326,59 @@
     </string-array>
 
 
+    <string-array name="register_viscocity_plus_proddesc">
+        <item>Select</item>
+        <item>CRS10K "EYE TOUCH" - Register Control System</item>
+        <item>SELECUT 9000 - Cutoff Control System</item>
+        <item>SELECUT 9001 - Cutoff Control System</item>
+        <item>SELEVISCO 9000 - Viscosity Control System</item>
 
+
+    </string-array>
+
+
+    <string-array name="register_viscocity_plus_prodname">
+        <item>Select</item>
+        <item>Cable / Cork Tape / Timing Belt</item>
+
+        <item>Control Panel </item>
+        <item>Drive</item>
+
+        <item>Encoder</item>
+        <item>Flash</item>
+        <item>HMI Monitor</item>
+        <item>Infrared Sensor </item>
+        <item>Keyboard / Keypad </item>
+
+
+        <item>LED / Lights / Illumination</item>
+
+        <item>MHRM Sensor</item>
+        <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
+        <item>Monitor (Touch Screen) </item>
+
+
+        <item>Motor / BLDC Motor</item>
+        <item>Mounting Bracket</item>
+        <item>Mouse / Joystick</item>
+        <item>Other Spare Parts </item>
+        <item>PCB Board </item>
+
+
+        <item>Power Supply</item>
+        <item>Register Mark Sensor</item>
+        <item>Roller</item>
+        <item>Strobe / Halogen Bulb</item>
+        <item>Transformer</item>
+
+
+        <item>Traverse</item>
+        <item>Ultrasonic Sensor</item>
+        <item>X-Rite Sensor</item>
+        <item>Sensor</item>
+
+
+    </string-array>
 
 
     <string-array name="register_control_plus_proddesc">
@@ -453,8 +393,6 @@
 
 
     </string-array>
-
-
 
 
     <string-array name="register_control_plus_prodname">
@@ -477,7 +415,6 @@
         <item>MHRM Sensor</item>
         <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
         <item>Monitor (Touch Screen) </item>
-
 
 
         <item>Motor / BLDC Motor</item>
@@ -506,27 +443,13 @@
     </string-array>
 
 
-
-
-
-
-
-
-
-
-
-
     <string-array name="special_purpose_plus_proddesc">
         <item>Select</item>
         <item>Splice Master</item>
         <item>SPM - Special Purpose Machinery</item>
 
 
-
-
     </string-array>
-
-
 
 
     <string-array name="special_purpose_plus_prodname">
@@ -549,7 +472,6 @@
         <item>MHRM Sensor</item>
         <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
         <item>Monitor (Touch Screen) </item>
-
 
 
         <item>Motor / BLDC Motor</item>
@@ -575,17 +497,12 @@
     </string-array>
 
 
-
-
     <string-array name="surface_inspection_plus_proddesc">
         <item>Select</item>
         <item>WINTRISS - Web Ranger - Surface Inspection System</item>
 
 
-
-
     </string-array>
-
 
 
     <string-array name="surface_inspection_plus_prodname">
@@ -611,7 +528,6 @@
         <item>Monitor (Touch Screen) </item>
 
 
-
         <item>Motor / BLDC Motor</item>
         <item>Mounting Bracket</item>
         <item>Mouse / Joystick</item>
@@ -634,19 +550,6 @@
     </string-array>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     <string-array name="web_guiding_plus_proddesc">
         <item>Select</item>
         <item>4 Roll Opto Electronic Web Guide Frame</item>
@@ -661,13 +564,7 @@
         <item>Opto Electronic Web Guide System</item>
 
 
-
-
-
-
-
     </string-array>
-
 
 
     <string-array name="web_guiding_plus_prodname">
@@ -693,7 +590,6 @@
         <item>Monitor (Touch Screen) </item>
 
 
-
         <item>Motor / BLDC Motor</item>
         <item>Mounting Bracket</item>
         <item>Mouse / Joystick</item>
@@ -713,15 +609,12 @@
         <item>Sensor</item>
 
 
-
-
         <item>Accuweb Edge Guide Actuator</item>
         <item>Accuweb Edge Guide Controller</item>
         <item>Accuweb Edge Guide Sensor</item>
         <item>BST Pro Touch</item>
         <item>CCD</item>
         <item>CCD Pro</item>
-
 
 
         <item>CLS Pro600</item>
@@ -732,14 +625,12 @@
         <item>ECO EMS 22B</item>
 
 
-
         <item>EKR 1500</item>
         <item>EKR 500 Plus- DIGITAL</item>
         <item>ekr 500 Supremus</item>
         <item>EKR CON100 </item>
         <item>EKR Digicon</item>
         <item>EKR PROCOM 40</item>
-
 
 
         <item>EKR PROCOM 50</item>
@@ -750,15 +641,12 @@
         <item>EMS 19B</item>
 
 
-
         <item>EMS 21</item>
         <item>EMS 22</item>
         <item>EMS 23</item>
         <item>EMS 5 </item>
         <item>EMS CG/24</item>
         <item>IR 2002/10      </item>
-
-
 
 
         <item>IR 2005</item>
@@ -769,14 +657,12 @@
         <item>IR 2012</item>
 
 
-
         <item>IR 2012/125</item>
         <item>IR 2012/40</item>
         <item>IR 2012/40 VERSION F</item>
         <item>IR 2013B/50 </item>
         <item>Slitting Blade</item>
         <item>Turn Bar</item>
-
 
 
         <item>US 2010</item>
@@ -787,13 +673,7 @@
         <item>US 2013B/50</item>
 
 
-
-
     </string-array>
-
-
-
-
 
 
     <string-array name="web_tension_plus_proddesc">
@@ -812,23 +692,17 @@
         <item>Tension Control System</item>
 
 
-
     </string-array>
-
-
-
 
 
     <string-array name="nature_of_comp">
         <item>Select</item>
-       <item>  Service Call</item>
+        <item>  Service Call</item>
         <item> Service Under Warranty</item>
         <item> Installation / Commissioning</item>
 
 
     </string-array>
-
-
 
 
     <string-array name="web_tension_plus_prodname">
@@ -850,7 +724,6 @@
         <item>MHRM Sensor</item>
         <item>Monitor (TFT / LED / LCD / HD / UHD) </item>
         <item>Monitor (Touch Screen) </item>
-
 
 
         <item>Motor / BLDC Motor</item>
@@ -892,7 +765,6 @@
         <item>Renova Turborex Brake TS 180 </item>
 
 
-
         <item>Renova Turborex Brake TX 160.20K/STD00</item>
         <item>Renova Turborex Brake TX180.150.C/STD01</item>
         <item>Tension Control System (DTC + LC + E/P + CX BRAKE)</item>
@@ -900,14 +772,7 @@
         <item>Tension Control System (DTC + LC + E/P + TS 180) </item>
 
 
-
-
-
     </string-array>
-
-
-
-
 
 
     <string-array name="web_video_proddesc">
@@ -920,12 +785,7 @@
         <item>SuperHandy Scan 4100</item>
 
 
-
-
-
     </string-array>
-
-
 
 
     <string-array name="web_video_prodname">
@@ -950,7 +810,6 @@
         <item>Monitor (Touch Screen) </item>
 
 
-
         <item>Motor / BLDC Motor</item>
         <item>Mounting Bracket</item>
         <item>Mouse / Joystick</item>
@@ -968,7 +827,6 @@
         <item>Ultrasonic Sensor</item>
         <item>X-Rite Sensor</item>
         <item>Sensor</item>
-
 
 
         <item>Automatic Colour Monitoring for SHS</item>
@@ -992,35 +850,6 @@
     </string-array>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <string-array name="tag_arraysup1">
         <item>Select</item>
         <item>100% Print Inspection</item>
@@ -1042,7 +871,6 @@
         <item>Select</item>
 
 
-
     </string-array>
 
     <string-array name="tag_arraysup2">
@@ -1054,10 +882,6 @@
         <item>Web Video Inspection </item>
 
     </string-array>
-
-
-
-
 
 
     <string-array name="Member_names">
@@ -1157,8 +981,6 @@
         <item>Bank Transfer:NEFT,RTGS,IMPS</item>
 
 
-
-
     </string-array>
 
 
@@ -1177,18 +999,12 @@
     <string name="name5">Customer EmailId<font color='#ff0000'>*</font></string>
 
 
-
-
     <string name="name6">Customer Address <font color='#ff0000'>*</font></string>
     <string name="name7">Customer GSTINNO<font color='#ff0000'>*</font></string>
     <string name="name8">Customer City<font color='#ff0000'>*</font></string>
     <string name="name9">Customer State<font color='#ff0000'>*</font></string>
     <string name="name10">Customer Country<font color='#ff0000'>*</font></string>
     <string name="name11">Note:Fields marked with ( <font color='#ff0000'>*</font> ) are mandatory</string>
-
-
-
-
 
 
     <string name="name12">Product Category<font color='#ff0000'>*</font></string>
@@ -1199,20 +1015,16 @@
     <string name="name16">Call Visit Date<font color='#ff0000'>*</font></string>
 
 
-
     <string name="name17">Product Name<font color='#ff0000'>*</font></string>
     <string name="name18">Product Serial No<font color='#ff0000'>*</font></string>
     <string name="name19">Engineer\'s In-Time<font color='#ff0000'>*</font></string>
     <string name="name20">Call attending Date <font color='#ff0000'>*</font></string>
 
 
-
-
     <string name="name21">Nature of Complaint<font color='#ff0000'>*</font></string>
     <string name="name22">Details of Complaint<font color='#ff0000'>*</font></string>
     <string name="name23">Engineer\'s Observation/Action Taken<font color='#ff0000'>*</font></string>
     <string name="name24">Client\'s Remark <font color='#ff0000'>*</font></string>
-
 
 
     <string name="name25">Images to be Uploaded <font color='#ff0000'>*</font></string>

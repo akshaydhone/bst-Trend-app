@@ -38,7 +38,7 @@ public class NewCall5 extends AppCompatActivity {
     TextView username,t1,t2,t3,t4;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
-    EditText e3,e4,e5,e6,e7;
+    public static EditText e3,e4,e5,e6,e7,e8;
     Button b1,b2;
     public static CheckBox c1,c2,c3;
     public static Spinner s1,s2;
@@ -57,6 +57,7 @@ public class NewCall5 extends AppCompatActivity {
         e5=(EditText)findViewById(R.id.e5) ;
         e6=(EditText)findViewById(R.id.e6) ;
         e7=(EditText)findViewById(R.id.e7) ;
+        e8=(EditText)findViewById(R.id.e8) ;
         t1=(TextView)findViewById(R.id.t1);
         t2=(TextView)findViewById(R.id.t2);
         t3=(TextView)findViewById(R.id.t3);
@@ -284,6 +285,26 @@ b2.setOnClickListener(new View.OnClickListener() {
 });
 
 
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // sendData();
+                //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
+                //Intent i=new Intent(NewCall5.this,HomeActivity.class);
+                //startActivity(i);
+            }
+
+
+
+
+
+
+        });
+
+
+
+
+
 
         s2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -397,6 +418,31 @@ b2.setOnClickListener(new View.OnClickListener() {
 
 
 
+
+        c1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                                          @Override
+                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+
+                                              if(c1.isChecked()){
+                                                  e8.setVisibility(View.VISIBLE);
+                                                  c1.setChecked(true);
+                                              }
+                                              else{
+                                                  e8.setVisibility(View.GONE);
+                                              }
+
+
+
+                                          }
+                                      }
+        );
+
+
+
+
+
         BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_nav);
 bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
     @Override
@@ -469,7 +515,12 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         String e33Text=NewCall2.mReschdeuledDate.getText().toString();
 
         String e34Text=NewCall3.e3.getText().toString();
+        String e35Text=NewCall5.s1.getSelectedItem().toString();
 
+
+
+        //String e36Text=NewCall5.e6.getText().toString();
+        //String e37Text=NewCall5.e5.getText().toString();
 
 
 
@@ -510,9 +561,9 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         String id=databaseReference.push().getKey();
 
 
-        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text))&& (!TextUtils.isEmpty(e22Text))&& (!TextUtils.isEmpty(e23Text))&& (!TextUtils.isEmpty(e24Text))&& (!TextUtils.isEmpty(e25Text))&& (!TextUtils.isEmpty(e26Text))&& (!TextUtils.isEmpty(e27Text))&& (!TextUtils.isEmpty(e28Text))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(e32Text))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text)))
+        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text))&& (!TextUtils.isEmpty(e22Text))&& (!TextUtils.isEmpty(e23Text))&& (!TextUtils.isEmpty(e24Text))&& (!TextUtils.isEmpty(e25Text))&& (!TextUtils.isEmpty(e26Text))&& (!TextUtils.isEmpty(e27Text))&& (!TextUtils.isEmpty(e28Text))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(e32Text))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))
         {
-            Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text,e22Text,e23Text,e24Text,e25Text,e26Text,e27Text,e28Text,e29Text,e30Text,e31Text,e32Text,e33Text,e34Text);
+            Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text,e22Text,e23Text,e24Text,e25Text,e26Text,e27Text,e28Text,e29Text,e30Text,e31Text,e32Text,e33Text,e34Text,e35Text);
             databaseReference.child(id).setValue(data);
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 

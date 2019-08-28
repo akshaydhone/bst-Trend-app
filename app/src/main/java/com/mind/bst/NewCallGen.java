@@ -421,7 +421,7 @@ searchableSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListen
         b1 = (Button) findViewById(R.id.b1);
         savedData= PreferenceManager.getDefaultSharedPreferences(this);
 
-        databaseReference=db.getReference("Calls Generated");
+        databaseReference=db.getReference("Calls to attend");
 
 
 
@@ -964,18 +964,15 @@ DatabaseReference database1 = FirebaseDatabase.getInstance().getReference();
 
 
 
-    public void sendData(){
+
+    /*public void sendData(){
 
 
 
-        String e1Text=e1.getText().toString();
-        String e2Text=e2.getText().toString();
-        String e3Text=e3.getText().toString();
-        String e4Text=e4.getText().toString();
-
-        //String e5Text=e5.getText().toString();
-
-//String abc[]={e1Text,e2Text,e3Text,e4Text};
+        String e1Text=e2.getText().toString();
+        String e2Text=e5.getText().toString();
+        String e3Text=e1.getText().toString();
+        String e4Text=searchableSpinner.getSelectedItem().toString();
 
 
 
@@ -999,7 +996,7 @@ DatabaseReference database1 = FirebaseDatabase.getInstance().getReference();
 
 
 
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
