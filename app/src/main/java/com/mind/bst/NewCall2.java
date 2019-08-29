@@ -688,6 +688,89 @@ public class NewCall2 extends AppCompatActivity {
             //NewCall2.s4.setAdapter(adapter2);
         }
 
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("Inline color measurement"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("iPQ_Check - 100% Print Inspection System"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("iPQ_Check - 100% Surface Inspection System"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("iPQ_Check_ECO - 100% Print Inspection System"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("iPQ_View - Web Viewing System"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("iPQ_Workflow"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("iPQ_Workflow - Rewinder Control System"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("Premius"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("SHARK 4000"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("WebVideo_Star"))
+        {
+
+         s4.setItems(listinspection);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
 
 
         else if (spinnerprocat.equals("Automation")&& spinnerprodesc.equals("Adhesive Mixer"))
@@ -696,6 +779,10 @@ public class NewCall2 extends AppCompatActivity {
          s4.setItems(listautomation);
          //NewCall2.s4.setAdapter(adapter4);
         }
+
+
+
+
 
         //set items to spinner from list
         //s4.setItems(listinspection);
