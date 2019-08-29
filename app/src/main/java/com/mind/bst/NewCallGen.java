@@ -196,7 +196,15 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
                         startActivity(i);
                         break;
 
+                    case R.id.notification:
+                        Intent j=new Intent(getApplicationContext(),PendingCallAttend.class);
+                        startActivity(j);
+                        break;
 
+                    case R.id.visits:
+                        Intent k=new Intent(getApplicationContext(),CallsToAttend.class);
+                        startActivity(k);
+                        break;
 
                   /*  case R.id.visits:
                         Intent j=new Intent(getApplicationContext(),ViewProfile.class);

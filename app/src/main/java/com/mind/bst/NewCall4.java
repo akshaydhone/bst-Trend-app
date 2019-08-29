@@ -52,6 +52,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -165,12 +166,7 @@ public class NewCall4 extends AppCompatActivity {
         if (user != null) {
             username.setText("" + user.getDisplayName());
 
-
-
             LoginActivity.LoggedIn_User_Email =user.getDisplayName();
-
-
-
 
         }
 
@@ -188,6 +184,16 @@ public class NewCall4 extends AppCompatActivity {
                         startActivity(i);
                         break;
 
+
+                    case R.id.notification:
+                        Intent j=new Intent(getApplicationContext(),PendingCallAttend.class);
+                        startActivity(j);
+                        break;
+
+                    case R.id.visits:
+                        Intent k=new Intent(getApplicationContext(),CallsToAttend.class);
+                        startActivity(k);
+                        break;
 
 
                   /*  case R.id.visits:
@@ -262,6 +268,10 @@ public class NewCall4 extends AppCompatActivity {
             mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             mNotificationManager.createNotificationChannel(mChannel);
         }
+
+
+
+
 
 
 
@@ -441,7 +451,8 @@ public class NewCall4 extends AppCompatActivity {
                 alertDialog.show();
 
             }
-        });*/
+        }
+        );*/
 
 
 
@@ -1238,10 +1249,13 @@ public class NewCall4 extends AppCompatActivity {
 
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 
-            user_image.setImageBitmap(bitmap);
+                user_image.setImageBitmap(bitmap);
+
+            }
+
             //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
 
-        }
+
 
 
 

@@ -121,6 +121,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
                 //For getting the next activity
                 // Intent i=new Intent(HomeActivity.this,ViewProfile.class);
                 // startActivity(i);

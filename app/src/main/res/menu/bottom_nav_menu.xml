@@ -11,14 +11,14 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/notification"
-        android:icon="@drawable/not"
-        android:title="Notifications"
+        android:icon="@drawable/pend"
+        android:title="Pending Calls"
         android:enabled="true"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/visits"
         android:icon="@drawable/vis"
-        android:title="My Profile"
+        android:title="Calls to attend"
         android:enabled="true"
         app:showAsAction="ifRoom"/>
 </menu>

@@ -58,6 +58,8 @@ public class ViewCallsToAttendImg extends ArrayAdapter<Total> {
     public static final String statusofcomplaint = "com.mind.bst.statusofcomplaint";
     public static final String time = "com.mind.bst.time";
 
+    public static final String callvisitingdate = "com.mind.bst.callvisitingdate";
+
 
 
 
@@ -173,7 +175,7 @@ public class ViewCallsToAttendImg extends ArrayAdapter<Total> {
         textViewName.setText(data.getCustomer_name());
         // textViewAdd.setText(data.getAddress());
         //textViewCont.setText(data.getContact());
-        textViewRegion.setText(data.getCall_log_date());
+        textViewRegion.setText(data.getCustomer_city());
 //        Picasso.with(context).load(data.getNature_of_comp().toString()).into(imageView);
         // imageView.setImageBitmap(bitmap);
 
