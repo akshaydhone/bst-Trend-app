@@ -677,12 +677,28 @@ public class NewCall2 extends AppCompatActivity {
         listwebvideoinspection.add("SuperHandy Scan 4100_Dual Camera");
 
 
+        String spinnerprocat = NewCall1.s1.getSelectedItem().toString();
+        String spinnerprodesc = NewCall1.s3.getSelectedItem().toString();
+
+        if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("EagleEye – 100% Web Viewing System"))
+
+        {
+
+            s4.setItems(listinspection);
+            //NewCall2.s4.setAdapter(adapter2);
+        }
 
 
 
+        else if (spinnerprocat.equals("Automation")&& spinnerprodesc.equals("Adhesive Mixer"))
+        {
+
+         s4.setItems(listautomation);
+         //NewCall2.s4.setAdapter(adapter4);
+        }
 
         //set items to spinner from list
-        s4.setItems(listinspection);
+        //s4.setItems(listinspection);
         Toast.makeText(NewCall2.this, "Selected : " + s4.getSelectedItemsAsString() , Toast.LENGTH_SHORT).show();
 
         username=(TextView)findViewById(R.id.username) ;
