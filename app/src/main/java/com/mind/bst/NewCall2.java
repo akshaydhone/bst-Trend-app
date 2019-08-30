@@ -1228,7 +1228,7 @@ public class NewCall2 extends AppCompatActivity {
         }
         //set items to spinner from list
         //s4.setItems(listinspection);
-        Toast.makeText(NewCall2.this, "Selected : " + s4.getSelectedItemsAsString() , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(NewCall2.this, "Selected : " + s4.getSelectedItemsAsString() , Toast.LENGTH_SHORT).show();
 
         username=(TextView)findViewById(R.id.username) ;
         mAuth = FirebaseAuth.getInstance();

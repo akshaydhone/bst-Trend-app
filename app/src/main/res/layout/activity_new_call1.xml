@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/newbst"
+
     tools:context=".NewCall1">
 
 
@@ -14,6 +14,9 @@
         android:layout_height="55dp"
         android:theme="@style/ToolbarTheme"
         android:elevation="5dp"/>
+
+    <include layout="@layout/bgheader"
+        android:id="@+id/bghead"/>
 
     <TextView
         android:id="@+id/username"
