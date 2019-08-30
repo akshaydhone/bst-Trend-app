@@ -770,6 +770,12 @@ public class NewCall2 extends AppCompatActivity {
         }
 
 
+        else if (spinnerprocat.equals("Automation")&& spinnerprodesc.equals("2 DRIVE SYSTEM"))
+        {
+
+            s4.setItems(listautomation);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
 
 
 
@@ -781,9 +787,445 @@ public class NewCall2 extends AppCompatActivity {
         }
 
 
+        else if (spinnerprocat.equals("Automation")&& spinnerprodesc.equals("Adhesive Sensor"))
+        {
+
+            s4.setItems(listautomation);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("Automation")&& spinnerprodesc.equals("Automation"))
+        {
+
+            s4.setItems(listautomation);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+        else if (spinnerprocat.equals("Automation")&& spinnerprodesc.equals("MDS for Solventless Lami.M/C with Integrated Adhesive System"))
+        {
+
+            s4.setItems(listautomation);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+        else if (spinnerprocat.equals("Automation")&& spinnerprodesc.equals("RMC for Auto filling system for Alpha Mix"))
+        {
+
+            s4.setItems(listautomation);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("Defect Detection System")&& spinnerprodesc.equals("SHARK 4000 LEX - 100% Print Defect Detection System"))
+        {
+
+            s4.setItems(listdefectdetsystem);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
 
 
 
+
+        else if (spinnerprocat.equals("Defect Detection System")&& spinnerprodesc.equals("TubeScan Digital Strobe- Print Inspection System"))
+        {
+
+            s4.setItems(listdefectdetsystem);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Defect Detection System")&& spinnerprodesc.equals("TubeScan Eagle View - Print Inspection System"))
+        {
+
+            s4.setItems(listdefectdetsystem);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Density and thickness measurement")&& spinnerprodesc.equals("BST ProControl Basis Weight Measurement System"))
+        {
+
+            s4.setItems(listdensitythickness);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Mirror Image Registration")&& spinnerprodesc.equals("Mirror Image Registration"))
+        {
+
+            s4.setItems(listmirrorimagereg);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+
+        else if (spinnerprocat.equals("Register and Viscosity Control")&& spinnerprodesc.equals("CRS10K \"EYE TOUCH\" - Register Control System"))
+        {
+
+            s4.setItems(listregisterandviscocity);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Register and Viscosity Control")&& spinnerprodesc.equals("SELECUT 9000 - Cutoff Control System"))
+        {
+
+            s4.setItems(listregisterandviscocity);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Register and Viscosity Control")&& spinnerprodesc.equals("SELECUT 9001 - Cutoff Control System"))
+        {
+
+            s4.setItems(listregisterandviscocity);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Register and Viscosity Control")&& spinnerprodesc.equals("SELEVISCO 9000 - Viscosity Control System"))
+        {
+
+            s4.setItems(listregisterandviscocity);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+        else if (spinnerprocat.equals("Register Control (eltromat)")&& spinnerprodesc.equals("AR 4000 - Register Control System"))
+        {
+
+            s4.setItems(listregistercotrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+        else if (spinnerprocat.equals("Register Control (eltromat)")&& spinnerprodesc.equals("ARC_18 - Register Control System_ELS"))
+        {
+
+            s4.setItems(listregistercotrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Register Control (eltromat)")&& spinnerprodesc.equals("ARC_18 - Register Control System_MLS"))
+        {
+
+            s4.setItems(listregistercotrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Register Control (eltromat)")&& spinnerprodesc.equals("CIPCON Software"))
+        {
+
+            s4.setItems(listregistercotrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Register Control (eltromat)")&& spinnerprodesc.equals("Insetter Control"))
+        {
+
+            s4.setItems(listregistercotrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Register Control (eltromat)")&& spinnerprodesc.equals("Regi_Star 20"))
+        {
+
+            s4.setItems(listregistercotrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Register Control (eltromat)")&& spinnerprodesc.equals("Sincon_Star"))
+        {
+
+            s4.setItems(listregistercotrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("Special Purpose Machine")&& spinnerprodesc.equals("Splice Master"))
+        {
+
+            s4.setItems(listspecialpurposemachine);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("Special Purpose Machine")&& spinnerprodesc.equals("SPM - Special Purpose Machinery"))
+        {
+
+            s4.setItems(listspecialpurposemachine);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Surface Inspection")&& spinnerprodesc.equals("WINTRISS - Web Ranger - Surface Inspection System"))
+        {
+
+            s4.setItems(listsurfaceinspection);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("4 Roll Opto Electronic Web Guide Frame"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("DF Top and Bottom Frame Guide"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("Ink Temprature Stabiliser"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("Line/Edge Guide System"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("Line/Edge Web Guide Components"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("Opto Electronic Cutter Guide System"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("Opto Electronic MASTER / SLAVE Guiding System"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("Opto Electronic Web Guide Components"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Guiding")&& spinnerprodesc.equals("Opto Electronic Web Guide System"))
+        {
+
+            s4.setItems(listwebguiding);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Digital Tension Controller"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Dynaspede Tension Control System"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("ISOMATIC Seleten"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Magnetic Brake"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Powder Brake"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Renova Caliper Brake"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Renova Turborex Brake"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Roll Pusher"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Safety Chuck"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("T One Controller"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Tension Control")&& spinnerprodesc.equals("Tension Control System"))
+        {
+
+            s4.setItems(listwebtensioncontrol);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Web Video Inspection")&& spinnerprodesc.equals("POWERScope 3000"))
+        {
+
+            s4.setItems(listwebvideoinspection);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("Web Video Inspection")&& spinnerprodesc.equals("POWERScope 4000"))
+        {
+
+            s4.setItems(listwebvideoinspection);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+        else if (spinnerprocat.equals("Web Video Inspection")&& spinnerprodesc.equals("POWERScope 5000"))
+        {
+
+            s4.setItems(listwebvideoinspection);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+        else if (spinnerprocat.equals("Web Video Inspection")&& spinnerprodesc.equals("SuperHandy Scan 4000"))
+        {
+
+            s4.setItems(listwebvideoinspection);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
+
+
+
+
+        else if (spinnerprocat.equals("Web Video Inspection")&& spinnerprodesc.equals("SuperHandy Scan 4100"))
+        {
+
+            s4.setItems(listwebvideoinspection);
+            //NewCall2.s4.setAdapter(adapter4);
+        }
         //set items to spinner from list
         //s4.setItems(listinspection);
         Toast.makeText(NewCall2.this, "Selected : " + s4.getSelectedItemsAsString() , Toast.LENGTH_SHORT).show();
