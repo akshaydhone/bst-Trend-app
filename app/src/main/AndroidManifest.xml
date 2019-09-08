@@ -26,7 +26,8 @@
         android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewPendingAttendImg"></activity>
+        <activity android:name=".FilledPageData"></activity>
+        <activity android:name=".ViewPendingAttendImg" />
         <activity android:name=".PendingCallAttend" />
         <activity
             android:name=".ViewCallsToAttendImg"

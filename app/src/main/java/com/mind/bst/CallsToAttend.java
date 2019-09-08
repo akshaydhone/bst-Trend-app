@@ -105,6 +105,7 @@ public class CallsToAttend extends AppCompatActivity {
     public static final String productdescription = "com.mind.bst.productdescription";
 
     public static final String callassignedto = "com.mind.bst.callassignedto";
+    public static final String callassignedby = "com.mind.bst.callassignedby";
     public static final String callvisitingdate = "com.mind.bst.callvisitingdate";
     public static final String productname = "com.mind.bst.productname";
     public static final String engineerintime = "com.mind.bst.engineerintime";
@@ -148,7 +149,7 @@ public class CallsToAttend extends AppCompatActivity {
                                                        Total data = clients.get(position);
 
                                                        //creating an intent
-                                                       Intent intent = new Intent(getApplicationContext(), NewCall2.class);
+                                                       Intent intent = new Intent(getApplicationContext(), FilledPageData.class);
 
                                                        //putting artist name and id to intent
                                                        intent.putExtra(Region, data.getName_of_service_engineer());
@@ -203,6 +204,7 @@ public class CallsToAttend extends AppCompatActivity {
                                                        intent.putExtra(productname, data.getProduct_name());
                                                        intent.putExtra(engineerintime, data.getEngineer_in_time());
                                                        intent.putExtra(callattendingdate, data.getCall_attending_date());
+                                                       intent.putExtra(callassignedby, data.getCall_assigned_by());
 
 
                                                        //starting the activity with intent

@@ -2,10 +2,6 @@ package com.mind.bst;
 
 public class Total {
 
-
-
-
-
     //String data;
     //String city;
     //String name;
