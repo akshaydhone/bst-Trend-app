@@ -19,23 +19,16 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Retrievedatasample extends AppCompatActivity {
-
-    public static final String CLIENT_NAME = "com.mind.bst.clientname";
-    public static final String CLIENT_ID = "com.mind.bst.clientid";
+public class ExtractAttendingData extends AppCompatActivity {
     ListView listViewClients;
-
-    //here data is a java class name
-    List<Total> clients;
-    //selecting a database ref
+    List<TotalAttendedData> clients;
     DatabaseReference databaseClients;
     FirebaseUser user;
     private FirebaseAuth mAuth;
     String uid;
     TextView t1;
     public static String key;
-    // FirebaseDatabase mDatabase;
-//String key = mDatabase.child("Calls Generated").push().getKey();
+
 
 
     public static final String Region = "com.mind.bst.region";
@@ -94,36 +87,24 @@ public class Retrievedatasample extends AppCompatActivity {
     public static final String statusofcomplaint = "com.mind.bst.statusofcomplaint";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrievedatasample);
+        setContentView(R.layout.activity_extract_attending_data);
+
         getSupportActionBar().setTitle("Client Visits");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         t1=(TextView)findViewById(R.id.textView);
-        //String key = databaseClients.child("Calls Generated").push().getKey();
 
 
-       /* mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        String UserID=user.getEmail().replace("@","").replace(".","");
-        DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
 
-        DatabaseReference ref1= mRootRef.child("Calls Generated").child(UserID);*/
-
-        //getting the root name database table
-        databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated");
+        databaseClients = FirebaseDatabase.getInstance().getReference("Calls to be Attended");
         //listViewClients = (ListView) findViewById(R.id.listViewClients);
         listViewClients=(ListView)findViewById(R.id.listViewClients);
         user= FirebaseAuth.getInstance().getCurrentUser();
         uid=user.getUid();
 
-        key = databaseClients.child("Calls Generated").push().getKey();
-        //t1.setText(uid);
-//storing clients in array list
         clients = new ArrayList< >();
-
 
         listViewClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -132,7 +113,7 @@ public class Retrievedatasample extends AppCompatActivity {
 
 
 
-                Total data = clients.get(position);
+                TotalAttendedData data = clients.get(position);
 
                 //creating an intent
                 Intent intent = new Intent(getApplicationContext(), ActualPrevCall.class);
@@ -141,26 +122,27 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(Region, data.getName_of_service_engineer());
                 intent.putExtra(clientname, data.getCustomer_rep_name());
                 intent.putExtra(clientaddress, data.getCustomer_Email_Id());
-                intent.putExtra(custcont, data.getCust_cont());
+               // intent.putExtra(custcont, data.getCust_cont());
                 intent.putExtra(custemail, data.getCustomer_name());
 
-                intent.putExtra(clienturl, data.getNature_of_comp());
-                intent.putExtra(clientremark, data.getClient_remark());
+               // intent.putExtra(clienturl, data.getNature_of_comp());
+                //intent.putExtra(clientremark, data.getClient_remark());
                 intent.putExtra(date, data.getCall_log_date());
                 //intent.putExtra(detailofcomplaint, data.getDetails_of_complaint());
 
 
                 intent.putExtra(enggname, data.getRegion_of_service_engineer());
-                intent.putExtra(enggobs, data.getEngineer_observation());
+                //intent.putExtra(enggobs, data.getEngineer_observation());
                 //intent.putExtra(natureofcomplaint, data.getNature_of_complaint());
-               // intent.putExtra(payment, data.getPayment_via());
+                // intent.putExtra(payment, data.getPayment_via());
                 //intent.putExtra(proname, data.getProduct_name());
+                intent.putExtra(callassignedby, data.getCall_assigned_by());
+                intent.putExtra(gstin, data.getGstin());
 
+                //  intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
 
-              //  intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
-
-                intent.putExtra(prosrno, data.getProduct_serial_no());
-               // intent.putExtra(time, data.getTime());
+                //intent.putExtra(prosrno, data.getProduct_serial_no());
+                // intent.putExtra(time, data.getTime());
 
                 intent.putExtra(nameofserviceengineer, data.getName_of_service_engineer());
                 intent.putExtra(regionofserviceengineer, data.getRegion_of_service_engineer());
@@ -168,13 +150,13 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(customeremailid, data.getCustomer_Email_Id());
                 intent.putExtra(calllogdate, data.getCall_log_date());
                 intent.putExtra(cityofservice, data.getCity_of_service());
-                intent.putExtra(productserialno, data.getProduct_serial_no());
+               // intent.putExtra(productserialno, data.getProduct_serial_no());
                 intent.putExtra(gstin, data.getGstin());
                 intent.putExtra(productcategory, data.getProduct_category());
-                intent.putExtra(engineerobservation, data.getEngineer_observation());
-                intent.putExtra(clientremark, data.getClient_remark());
-                intent.putExtra(natureofcomplaint, data.getNature_of_comp());
-                intent.putExtra(detailofcomplaint, data.getDetails_of_comp());
+                //intent.putExtra(engineerobservation, data.getEngineer_observation());
+                //intent.putExtra(clientremark, data.getClient_remark());
+                //intent.putExtra(natureofcomplaint, data.getNature_of_comp());
+                //intent.putExtra(detailofcomplaint, data.getDetails_of_comp());
                 intent.putExtra(customername, data.getCustomer_name());
                 intent.putExtra(customeraddress, data.getCustomer_address());
                 intent.putExtra(customercity, data.getCustomer_city());
@@ -182,19 +164,14 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(customercountry, data.getCustomer_country());
                 intent.putExtra(productdescription, data.getProduct_description());
                 intent.putExtra(callassignedto, data.getCall_assigned_to());
-                //intent.putExtra(callvisitingdate, data.getCall_visiting_date());
-                intent.putExtra(productname, data.getProduct_name());
-                intent.putExtra(engineerintime, data.getEngineer_in_time());
-                intent.putExtra(callattendingdate, data.getCall_attending_date());
+                intent.putExtra(callvisitingdate, data.getCall_visiting_date());
+                //intent.putExtra(productname, data.getProduct_name());
+               // intent.putExtra(engineerintime, data.getEngineer_in_time());
+                //intent.putExtra(callattendingdate, data.getCall_attending_date());
 
 
 
                 intent.putExtra(callassignedby, data.getCall_assigned_by());
-                intent.putExtra(callrescheduleddate, data.getCall_rescheduled_date());
-                intent.putExtra(invoiceno, data.getInvoice_no());
-                intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
-                intent.putExtra(callvisitingdate,data.getCall_visiting_date());
-
 
                 //starting the activity with intent
                 startActivity(intent);
@@ -202,10 +179,6 @@ public class Retrievedatasample extends AppCompatActivity {
 
             }
         });
-
-
-
-
     }
 
 
@@ -226,16 +199,16 @@ public class Retrievedatasample extends AppCompatActivity {
                 //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //gettingclients
-                    Total data = postSnapshot.getValue(Total.class);
+                    TotalAttendedData data = postSnapshot.getValue(TotalAttendedData.class);
                     //adding clients to the list
                     clients.add(data);
 
                 }
 
                 //creating adapter
-                SampleImg artistAdapter = new SampleImg(Retrievedatasample.this, clients);
+                //SampleImg artistAdapter = new SampleImg(ExtractAttendingData.this, clients);
                 //attaching adapter to the listview
-                listViewClients.setAdapter(artistAdapter);
+                //listViewClients.setAdapter(artistAdapter);
             }
 
 

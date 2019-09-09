@@ -143,11 +143,7 @@ public class CallsToAttend extends AppCompatActivity {
                                                    @Override
                                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-
-
                                                        Total data = clients.get(position);
-
                                                        //creating an intent
                                                        Intent intent = new Intent(getApplicationContext(), FilledPageData.class);
 
@@ -169,17 +165,9 @@ public class CallsToAttend extends AppCompatActivity {
                                                        //intent.putExtra(natureofcomplaint, data.getNature_of_complaint());
                                                        // intent.putExtra(payment, data.getPayment_via());
                                                        // intent.putExtra(proname, data.getProduct_name());
-
-
                                                        //intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
-
                                                        intent.putExtra(prosrno, data.getProduct_serial_no());
                                                        //intent.putExtra(time, data.getTime());
-
-
-
-
-
                                                        intent.putExtra(nameofserviceengineer, data.getName_of_service_engineer());
                                                        intent.putExtra(regionofserviceengineer, data.getRegion_of_service_engineer());
                                                        intent.putExtra(customerrepname, data.getCustomer_rep_name());
@@ -200,13 +188,13 @@ public class CallsToAttend extends AppCompatActivity {
                                                        intent.putExtra(customercountry, data.getCustomer_country());
                                                        intent.putExtra(productdescription, data.getProduct_description());
                                                        intent.putExtra(callassignedto, data.getCall_assigned_to());
-                                                       intent.putExtra(callvisitingdate, data.getCall_visiting_date());
+                                                      // intent.putExtra(callvisitingdate, data.getCall_visiting_date());
                                                        intent.putExtra(productname, data.getProduct_name());
                                                        intent.putExtra(engineerintime, data.getEngineer_in_time());
                                                        intent.putExtra(callattendingdate, data.getCall_attending_date());
                                                        intent.putExtra(callassignedby, data.getCall_assigned_by());
-
-
+                                                       intent.putExtra(callvisitingdate,data.getCall_visiting_date());
+                                                      // intent.putExtra(gstin,data.getGstin());
                                                        //starting the activity with intent
                                                        startActivity(intent);
 

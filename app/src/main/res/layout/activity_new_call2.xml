@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/newbst"
+
     tools:context=".NewCall2">
+
+    <include layout="@layout/bgheader"
+        android:id="@+id/bghead"/>
 
 
     <android.support.v7.widget.Toolbar
@@ -186,7 +189,8 @@
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:fontFamily="@font/arial"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -197,7 +201,8 @@
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
 
-                        android:text="Enter Date" />
+                        android:text="Enter Date"
+                        android:visibility="gone"/>
 
                     <!--<TextView
                         android:layout_width="wrap_content"

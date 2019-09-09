@@ -214,7 +214,8 @@
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/arial"/>
+                        android:fontFamily="@font/arial"
+                        android:visibility="gone"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -225,6 +226,7 @@
                         android:editable="false"
                         android:text="36576523"
                         android:fontFamily="@font/arial"
+                        android:visibility="gone"
 
                         />
 
@@ -418,7 +420,8 @@
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/arial"/>
+                        android:fontFamily="@font/arial"
+                        android:visibility="gone"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -428,7 +431,8 @@
                         android:id="@+id/t17"
                         android:editable="false"
                         android:text="Cheque Payment "
-                        android:fontFamily="@font/arial"/>
+                        android:fontFamily="@font/arial"
+                        android:visibility="gone"/>
 
 
 

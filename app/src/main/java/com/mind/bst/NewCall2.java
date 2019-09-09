@@ -1407,13 +1407,13 @@ public class NewCall2 extends AppCompatActivity {
                 }
 
 
-                else if (displayRDate.equals("Enter Date"))
+               /* else if (displayRDate.equals("Enter Date"))
 
                 {
 
                     Toast.makeText(NewCall2.this, "Select Call Rescheduled Date", Toast.LENGTH_SHORT).show();
                     //NewCall2.s4.setAdapter(adapter2);
-                }
+                }*/
 
                 else if (displayTime.equals("Select Time"))
 

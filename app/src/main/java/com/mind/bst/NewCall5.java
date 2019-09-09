@@ -1,7 +1,10 @@
 package com.mind.bst;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenu;
@@ -20,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,7 +33,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+
 public class NewCall5 extends AppCompatActivity {
+    private static final String TAG = "NewCall5";
     private FirebaseAuth mAuth;
     FirebaseUser user;
 
@@ -39,8 +46,10 @@ public class NewCall5 extends AppCompatActivity {
     TextView username,t1,t2,t3,t4;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
-    public static EditText e3,e4,e5,e6,e7,e8;
+    public static EditText e3,e4,e6,e7,e8;
     Button b1,b2;
+    public static TextView mDisplayDate;
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
     public static CheckBox c1,c2,c3;
     public static Spinner s1,s2;
 
@@ -55,7 +64,7 @@ public class NewCall5 extends AppCompatActivity {
         e3=(EditText)findViewById(R.id.e3) ;
 
 
-        e5=(EditText)findViewById(R.id.e5) ;
+        mDisplayDate = (TextView) findViewById(R.id.e5);
         e6=(EditText)findViewById(R.id.e6) ;
         e7=(EditText)findViewById(R.id.e7) ;
         e8=(EditText)findViewById(R.id.e8) ;
@@ -131,7 +140,7 @@ public class NewCall5 extends AppCompatActivity {
 
         checkSharedPreferences();
 
-
+        final String date = mDisplayDate.getText().toString();
 
         s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -153,7 +162,7 @@ public class NewCall5 extends AppCompatActivity {
                     e4.setVisibility(View.GONE);
 
                     t2.setVisibility(View.GONE);
-                    e5.setVisibility(View.GONE);
+                    mDisplayDate.setVisibility(View.GONE);
 
 
 
@@ -169,7 +178,7 @@ public class NewCall5 extends AppCompatActivity {
                     e4.setVisibility(View.GONE);
 
                     t2.setVisibility(View.VISIBLE);
-                    e5.setVisibility(View.VISIBLE);
+                    mDisplayDate.setVisibility(View.VISIBLE);
 
 
 
@@ -186,7 +195,7 @@ public class NewCall5 extends AppCompatActivity {
                     e4.setVisibility(View.GONE);
 
                     t2.setVisibility(View.VISIBLE);
-                    e5.setVisibility(View.VISIBLE);
+                    mDisplayDate.setVisibility(View.VISIBLE);
 
 
                 }
@@ -201,7 +210,7 @@ public class NewCall5 extends AppCompatActivity {
                     e4.setVisibility(View.GONE);
 
                     t2.setVisibility(View.VISIBLE);
-                    e5.setVisibility(View.VISIBLE);
+                    mDisplayDate.setVisibility(View.VISIBLE);
 
                 }
 
@@ -215,7 +224,7 @@ public class NewCall5 extends AppCompatActivity {
                     e4.setVisibility(View.GONE);
 
                     t2.setVisibility(View.VISIBLE);
-                    e5.setVisibility(View.VISIBLE);
+                    mDisplayDate.setVisibility(View.VISIBLE);
 
 
                 }
@@ -242,7 +251,7 @@ public class NewCall5 extends AppCompatActivity {
                    e4.setVisibility(View.GONE);
 
                    t2.setVisibility(View.GONE);
-                   e5.setVisibility(View.GONE);
+                   mDisplayDate.setVisibility(View.GONE);
 
                    b2.setVisibility(View.GONE);
 
@@ -308,7 +317,38 @@ b2.setOnClickListener(new View.OnClickListener() {
 
 
 
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
 
+                DatePickerDialog dialog = new DatePickerDialog(
+                        NewCall5.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                dialog.show();
+
+
+            }
+        });
+
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
+
+                String date = day + "/" + month + "/" + year;
+                mDisplayDate.setText(date);
+            }
+        };
 
         s2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

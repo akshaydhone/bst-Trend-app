@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/newbst"
     tools:context=".NewCall5">
 
 
+
+    <include layout="@layout/bgheader"
+        android:id="@+id/bghead"/>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/bgHeader"
@@ -105,28 +107,21 @@
                         android:id="@+id/e4"
                         android:fontFamily="@font/arial"
                         android:textSize="15sp"
-
                         android:visibility="gone"
                        />
-
-
-
-
-
-
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Next Call assign Date "
+                        android:text="Call Rescheduled Date "
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:id="@+id/t2"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold"
                         android:visibility="gone"/>
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -136,6 +131,7 @@
                         android:fontFamily="@font/arial"
                         android:inputType="date"
                         android:visibility="gone"
+                        android:hint="Select Date"
                       />
 
 

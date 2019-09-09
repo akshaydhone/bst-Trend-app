@@ -34,6 +34,8 @@
     <string name="cust_name">com.mind.bst.custname</string>
     <string name="cust_cont">com.mind.bst.custcont</string>
     <string name="cust_email">com.mind.bst.custemail</string>
+    <string name="gst">com.mind.bst.gstin</string>
+    <string name="visitdate">com.mind.bst.callvisitingdate</string>
 
 
     <string-array name="tag_arrays1">

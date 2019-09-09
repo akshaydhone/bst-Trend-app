@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,6 +37,8 @@ public class FilledPageData extends AppCompatActivity {
     String key;
 
     Button b1;
+
+    //public static final String gstin = "com.mind.bst.gstin";
 
     DatabaseReference databaseClients;
     private FirebaseAuth mAuth;

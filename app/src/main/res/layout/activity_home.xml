@@ -8,7 +8,7 @@
     tools:context="com.mind.bst.HomeActivity"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@drawable/backdash1"
+
     android:gravity="center"
     android:id="@+id/ll">
 
@@ -16,7 +16,7 @@
     <TextView
         android:id="@+id/username"
         android:layout_width="match_parent"
-        android:layout_height="71dp"
+        android:layout_height="23dp"
         android:layout_gravity="center"
         android:layout_marginTop="-5dp"
         android:fontFamily="@font/arial"
@@ -25,6 +25,9 @@
         android:textColor="#8d7b76"
         android:textStyle="bold" />
 
+    <include layout="@layout/bgcenterheader"
+        android:id="@+id/bghead"
+       />
 
     <TextView
         android:layout_width="match_parent"

@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/newbst"
+
     tools:context=".NewCall1">
+
+    <include layout="@layout/bgheader"
+        android:id="@+id/bghead"/>
 
 
     <android.support.v7.widget.Toolbar

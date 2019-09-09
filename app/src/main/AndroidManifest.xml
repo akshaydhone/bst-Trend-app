@@ -26,7 +26,10 @@
         android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FilledPageData"></activity>
+        <activity android:name=".ExtractAttendingData"></activity>
+        <activity
+            android:name=".FilledPageData"
+            android:parentActivityName=".PrevActual" />
         <activity android:name=".ViewPendingAttendImg" />
         <activity android:name=".PendingCallAttend" />
         <activity
