@@ -6,6 +6,9 @@
 
 
     <string name="city">com.mind.bst.city</string>
+    <string name="checksaved">com.mind.bst.checksaved</string>
+    <string name="usern">com.mind.bst.usern</string>
+    <string name="userp">com.mind.bst.userp</string>
     <string name="name">com.mind.bst.name</string>
     <string name="client">com.mind.bst.client</string>
     <string name="add">com.mind.bst.add</string>

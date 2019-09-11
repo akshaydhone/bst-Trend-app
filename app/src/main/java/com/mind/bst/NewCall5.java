@@ -157,7 +157,6 @@ public class NewCall5 extends AppCompatActivity {
                 {
                     b2.setVisibility(View.VISIBLE);
 
-
                     t1.setVisibility(View.GONE);
                     e4.setVisibility(View.GONE);
 
