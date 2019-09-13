@@ -610,7 +610,7 @@ public class NewCall2 extends AppCompatActivity {
         listwebtensioncontrol.add("Tension Control System (DTC + LC + E/P + TS 170)");
         listwebtensioncontrol.add("Tension Control System (DTC + LC + E/P + TS 180)");
 
-//web video list
+        //web video list
 
         listwebvideoinspection.add("Area-Scan Camera");
         listwebvideoinspection.add("Cable / Cork Tape / Timing Belt");

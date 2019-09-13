@@ -71,23 +71,23 @@ public class FilledPageData extends AppCompatActivity {
 
 
 
-        TextView textViewName = (TextView)findViewById(R.id.t1);
-        TextView textViewRegion = (TextView)findViewById(R.id.t2);
-        TextView textViewCity = (TextView)findViewById(R.id.t3);
-        TextView textViewCustname= (TextView)findViewById(R.id.t4);
-        TextView textViewCustrepname= (TextView)findViewById(R.id.t5);
-        TextView textViewCustEmail = (TextView) findViewById(R.id.t6);
-        TextView textViewCustAdd = (TextView) findViewById(R.id.t7);
-        TextView textViewCustGST = (TextView) findViewById(R.id.t8);
-        TextView textViewCustCity = (TextView) findViewById(R.id.t9);
-        TextView textViewCustState = (TextView) findViewById(R.id.t10);
-        TextView textViewCustCountry = (TextView) findViewById(R.id.t11);
+        final TextView textViewName = (TextView)findViewById(R.id.t1);
+        final TextView textViewRegion = (TextView)findViewById(R.id.t2);
+        final TextView textViewCity = (TextView)findViewById(R.id.t3);
+        final TextView textViewCustname= (TextView)findViewById(R.id.t4);
+        final TextView textViewCustrepname= (TextView)findViewById(R.id.t5);
+        final TextView textViewCustEmail = (TextView) findViewById(R.id.t6);
+        final TextView textViewCustAdd = (TextView) findViewById(R.id.t7);
+        final TextView textViewCustGST = (TextView) findViewById(R.id.t8);
+        final TextView textViewCustCity = (TextView) findViewById(R.id.t9);
+        final TextView textViewCustState = (TextView) findViewById(R.id.t10);
+        final TextView textViewCustCountry = (TextView) findViewById(R.id.t11);
         final TextView textViewProdCat= (TextView) findViewById(R.id.t12);
         final TextView textViewProdDesc = (TextView) findViewById(R.id.t13);
         final TextView textViewCallLogDate = (TextView) findViewById(R.id.t14);
-        TextView textViewCallAssignedTo = (TextView) findViewById(R.id.t15);
-        TextView textViewCallAssignedBy = (TextView) findViewById(R.id.t16);
-        TextView textViewCallVisitDate = (TextView) findViewById(R.id.t17);
+        final TextView textViewCallAssignedTo = (TextView) findViewById(R.id.t15);
+        final TextView textViewCallAssignedBy = (TextView) findViewById(R.id.t16);
+        final TextView textViewCallVisitDate = (TextView) findViewById(R.id.t17);
 
 
 
@@ -116,10 +116,35 @@ public class FilledPageData extends AppCompatActivity {
                 i.putExtra(Retrievedatasample.productcategory,textViewProdCat.getText().toString());
                 i.putExtra(Retrievedatasample.productdescription,textViewProdDesc.getText().toString());
 
+                i.putExtra(Retrievedatasample.nameofserviceengineer,textViewName.getText().toString());
+                i.putExtra(Retrievedatasample.regionofserviceengineer,textViewRegion.getText().toString());
+
+                i.putExtra(Retrievedatasample.cityofservice,textViewCity.getText().toString());
+                i.putExtra(Retrievedatasample.customername,textViewCustname.getText().toString());
+
+                i.putExtra(Retrievedatasample.customerrepname,textViewCustrepname.getText().toString());
+                i.putExtra(Retrievedatasample.customeremailid,textViewCustEmail.getText().toString());
+
+                i.putExtra(Retrievedatasample.customeraddress,textViewCustAdd.getText().toString());
+                i.putExtra(Retrievedatasample.gstin,textViewCustGST.getText().toString());
+
+                i.putExtra(Retrievedatasample.customercity,textViewCustCity.getText().toString());
+                i.putExtra(Retrievedatasample.customerstate,textViewCustState.getText().toString());
+
+                i.putExtra(Retrievedatasample.customercountry,textViewCustCountry.getText().toString());
+                i.putExtra(Retrievedatasample.calllogdate,textViewCallLogDate.getText().toString());
+
+                i.putExtra(Retrievedatasample.callassignedto,textViewCallAssignedTo.getText().toString());
+                i.putExtra(Retrievedatasample.callassignedby,textViewCallAssignedBy.getText().toString());
+
+                i.putExtra(Retrievedatasample.callvisitingdate,textViewCallVisitDate.getText().toString());
+
+
                 startActivity(i);
 
             }
-        });
+        }
+        );
 
         clients = new ArrayList<>();
 
@@ -133,10 +158,6 @@ public class FilledPageData extends AppCompatActivity {
             this.finish();
             startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         }
-
-
-
-
 
     }
 }

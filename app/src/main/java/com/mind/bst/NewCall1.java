@@ -906,8 +906,8 @@ public class NewCall1 extends AppCompatActivity {
                         year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 dialog.show();
-
 
             }
         });

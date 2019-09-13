@@ -529,36 +529,36 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
     private void sendData() {
 
-        String e1Text=NewCallGen.e2.getText().toString();
-        String e2Text=NewCallGen.e5.getText().toString();
-        String e3Text=NewCallGen.e10.getText().toString();
-        String e4Text=NewCallGen.e3.getText().toString();
+        String e1Text=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+        String e2Text=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
+        String e3Text=getIntent().getStringExtra(Retrievedatasample.customerrepname);
+        String e4Text=getIntent().getStringExtra(Retrievedatasample.customeremailid);
 
 
-        String e18Text=NewCallGen.searchableSpinner.getSelectedItem().toString();
-        String e19Text=NewCallGen.e4.getText().toString();
-        String e20Text=NewCallGen.e9.getText().toString();
+        String e18Text=getIntent().getStringExtra(Retrievedatasample.customername);
+        String e19Text=getIntent().getStringExtra(Retrievedatasample.customeraddress);
+        String e20Text=getIntent().getStringExtra(Retrievedatasample.gstin);
 
 
-        String e21Text=NewCall1.s1.getSelectedItem().toString();
-
-        String e22Text=NewCallGen.e1.getText().toString();
-        String e23Text=NewCallGen.e7.getText().toString();
+        String e21Text=getIntent().getStringExtra(Retrievedatasample.productcategory);
 
 
+        String e22Text=getIntent().getStringExtra(Retrievedatasample.cityofservice);
+        String e23Text=getIntent().getStringExtra(Retrievedatasample.customercity);
 
-        String e24Text=NewCallGen.e11.getText().toString();
-        String e25Text=NewCallGen.e8.getText().toString();
 
-        String e26Text=NewCall1.s3.getSelectedItem().toString();
+        String e24Text=getIntent().getStringExtra(Retrievedatasample.customerstate);
+        String e25Text=getIntent().getStringExtra(Retrievedatasample.customercountry);
 
-        String e27Text=NewCall1.e5.getText().toString();
-        String e28Text=NewCall1.mVisitDate.getText().toString();
+        String e26Text=getIntent().getStringExtra(Retrievedatasample.productdescription);
+
+        String e27Text=getIntent().getStringExtra(Retrievedatasample.callassignedto);
+        String e28Text=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
         String e29Text=NewCall2.s4.getSelectedItem().toString();
         String e30Text=NewCall2.mDisplayTime.getText().toString();
 
         String e31Text=NewCall2.mDisplayDate.getText().toString();
-        String e32Text=NewCall1.e7.getText().toString();
+        String e32Text=getIntent().getStringExtra(Retrievedatasample.callassignedby);
 
         String e33Text=NewCall2.mReschdeuledDate.getText().toString();
 
@@ -583,7 +583,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
         //String e5Text=NewCall1.e1.getText().toString();
         // String e6Text=NewCall1.e2.getText().toString();
-        String e7Text=NewCall1.mDisplayDate.getText().toString();
+        String e7Text=getIntent().getStringExtra(Retrievedatasample.calllogdate);
         // String e8Text=NewCall1.mDisplayTime.getText().toString();
 
 
@@ -744,11 +744,6 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
 
         return true;
-
-
-
-
-
 
     }
 
