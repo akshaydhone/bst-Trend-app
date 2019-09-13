@@ -39,6 +39,7 @@
         android:text="My Dashboard"
         android:textColor="#8d7b76"
         android:textSize="20sp"
+        android:id="@+id/tspin"
         android:textStyle="bold"
         />
 

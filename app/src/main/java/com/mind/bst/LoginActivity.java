@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                else if(mCheckBox.isChecked()){
-                    //set a checkbox when the application starts
+                   //set a checkbox when the application starts
                     mEditor.putString(getString(R.string.checksaved), "True");
                     mEditor.commit();
 
@@ -101,14 +101,8 @@ public class LoginActivity extends AppCompatActivity {
                     String password= getpassword;
                     mEditor.putString(getString(R.string.userp), password);
                     mEditor.commit();
-
-
                     callsignin(getemail,getepassword);
-
-
-
                 }
-
 
                 else if(mCheckBox.isChecked()!=true){
                     //set a checkbox when the application starts
@@ -124,14 +118,12 @@ public class LoginActivity extends AppCompatActivity {
                     String password= getpassword;
                     mEditor.putString(getString(R.string.userp), password);
                     mEditor.commit();
-
-
                     callsignin(getemail,getepassword);
 
-
-
                 }
-                else{
+                else
+
+                    {
                     //set a checkbox when the application starts
                     mEditor.putString(getString(R.string.checksaved), "False");
                     mEditor.commit();
@@ -143,17 +135,11 @@ public class LoginActivity extends AppCompatActivity {
                     //save the password
                     mEditor.putString(getString(R.string.userp), "");
                     mEditor.commit();
+
                 }
-
-
-
 
             }
         });
-
-
-
-
 
 
     }
@@ -167,20 +153,12 @@ public class LoginActivity extends AppCompatActivity {
             String name = mPreferences.getString(getString(R.string.usern), "");
             String password1 = mPreferences.getString(getString(R.string.userp), "");
 
-
-
             email.setText(name);
             password.setText(password1);
 
 
-
-
-
-
             if(checkbox.equals("True")){
-
                 mCheckBox.setChecked(true);
-
             }
             else
             {
@@ -234,6 +212,9 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
+
 
     }
 

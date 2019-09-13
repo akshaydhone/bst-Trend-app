@@ -676,9 +676,10 @@ public class NewCall2 extends AppCompatActivity {
         listwebvideoinspection.add("SuperHandy Scan 4100 9x7");
         listwebvideoinspection.add("SuperHandy Scan 4100_Dual Camera");
 
-
-        String spinnerprocat = NewCall1.s1.getSelectedItem().toString();
-        String spinnerprodesc = NewCall1.s3.getSelectedItem().toString();
+     String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
+     String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        //String spinnerprocat = NewCall1.s1.getSelectedItem().toString();
+        //String spinnerprodesc = NewCall1.s3.getSelectedItem().toString();
 
         if (spinnerprocat.equals("100% Print Inspection")&& spinnerprodesc.equals("EagleEye – 100% Web Viewing System"))
 

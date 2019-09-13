@@ -69,14 +69,6 @@ public class FilledPageData extends AppCompatActivity {
 
           b1=(Button)findViewById(R.id.b1);
 
-          b1.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  Intent i=new Intent(FilledPageData.this,NewCall2.class);
-                  startActivity(i);
-
-              }
-          });
 
 
         TextView textViewName = (TextView)findViewById(R.id.t1);
@@ -90,9 +82,9 @@ public class FilledPageData extends AppCompatActivity {
         TextView textViewCustCity = (TextView) findViewById(R.id.t9);
         TextView textViewCustState = (TextView) findViewById(R.id.t10);
         TextView textViewCustCountry = (TextView) findViewById(R.id.t11);
-        TextView textViewProdCat= (TextView) findViewById(R.id.t12);
-        TextView textViewProdDesc = (TextView) findViewById(R.id.t13);
-        TextView textViewCallLogDate = (TextView) findViewById(R.id.t14);
+        final TextView textViewProdCat= (TextView) findViewById(R.id.t12);
+        final TextView textViewProdDesc = (TextView) findViewById(R.id.t13);
+        final TextView textViewCallLogDate = (TextView) findViewById(R.id.t14);
         TextView textViewCallAssignedTo = (TextView) findViewById(R.id.t15);
         TextView textViewCallAssignedBy = (TextView) findViewById(R.id.t16);
         TextView textViewCallVisitDate = (TextView) findViewById(R.id.t17);
@@ -116,6 +108,18 @@ public class FilledPageData extends AppCompatActivity {
         textViewCallAssignedTo.setText(intent.getStringExtra(Retrievedatasample.callassignedto));
         textViewCallAssignedBy.setText(intent.getStringExtra(Retrievedatasample.callassignedby));
         textViewCallVisitDate.setText(intent.getStringExtra(Retrievedatasample.callvisitingdate));
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(FilledPageData.this,NewCall2.class);
+                i.putExtra(Retrievedatasample.productcategory,textViewProdCat.getText().toString());
+                i.putExtra(Retrievedatasample.productdescription,textViewProdDesc.getText().toString());
+
+                startActivity(i);
+
+            }
+        });
 
         clients = new ArrayList<>();
 

@@ -21,9 +21,14 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
     CardView b1,b2,b3,b4,b5,b6;
     LinearLayout ll;
-    TextView username;
+    TextView username,tspin;
     List<UserInformation> clients;
     private FirebaseAuth mAuth;
+    //Intent intent = getIntent();
+    //String positionToShowToSpinner = intent.getStringExtra("position");
+    //String value= getIntent().getStringExtra("getData");
+
+    public static final String TAG_PRODUCT_CAT = "prodcat";
 
 
     public static final String Region = "com.mind.bst.region";
@@ -46,8 +51,12 @@ public class HomeActivity extends AppCompatActivity {
         b4=(CardView)findViewById(R.id.b4);
         b5=(CardView)findViewById(R.id.b5);
         b6=(CardView)findViewById(R.id.b6);
+        tspin=(TextView)findViewById(R.id.tspin);
+       // tspin.setText(positionToShowToSpinner);
 
         username=(TextView)findViewById(R.id.username) ;
+        String prodcat=getIntent().getStringExtra(TAG_PRODUCT_CAT);
+       // tspin.setText(prodcat);
 
         mAuth = FirebaseAuth.getInstance(); // important Call
         //Again check if the user is Already Logged in or Not
@@ -97,13 +106,11 @@ public class HomeActivity extends AppCompatActivity {
 
                 Intent i=new Intent(HomeActivity.this,CallsToAttend.class);
                 startActivity(i);
-
-
                 // Intent i=new Intent(HomeActivity.this,PrevActual.class);
                 //startActivity(i);
                 //starting the intent for next activity
                 // Intent i=new Intent(HomeActivity.this,PreviousCallGen.class);
-                //startActivity(i);
+                // startActivity(i);
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {

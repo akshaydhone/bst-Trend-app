@@ -52,7 +52,7 @@ public class NewCall1 extends AppCompatActivity {
     //private static final String TAG = "SecondActivity";
     //public static EditText e1, e2;
     public static TextView e5,e7;
-   // public static EditText mVisitDate;
+    // public static EditText mVisitDate;
     public static String spinnerValue;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
@@ -65,7 +65,7 @@ public class NewCall1 extends AppCompatActivity {
 
     // JSONParser jsonParser=new JSONParser();
     //int i=0;
-
+    public static final String TAG_PRODUCT_CAT = "prodcat";
 
     Button b1;
     public static Spinner s1,s2,s3,s4;
@@ -789,17 +789,18 @@ public class NewCall1 extends AppCompatActivity {
                 }
 
 
-                     else{
-                         String date = mDisplayDate.getText().toString();
+                else{
+                    String date = mDisplayDate.getText().toString();
                     String date1 = mVisitDate.getText().toString();
                     sendData();
 
-                       // mEditor.putString(getString(R.string.date), date);
-                        //mEditor.putString(getString(R.string.date1), date1);
-                        //mEditor.commit();
+                    // mEditor.putString(getString(R.string.date), date);
+                    //mEditor.putString(getString(R.string.date1), date1);
+                    //mEditor.commit();
                     Intent i = new Intent(NewCall1.this, HomeActivity.class);
+                    i.putExtra(TAG_PRODUCT_CAT,s1.getSelectedItem().toString());
                     startActivity(i);
-                    }
+                }
                /* if (e1.getText().toString().trim().length() == 0) {
                     e1.setError("Contact not entered");
                     e1.requestFocus();
@@ -846,8 +847,8 @@ public class NewCall1 extends AppCompatActivity {
 
                 //save date
                 //String date = mDisplayDate.getText().toString();
-               // mEditor.putString(getString(R.string.date), date);
-               // mEditor.commit();
+                // mEditor.putString(getString(R.string.date), date);
+                // mEditor.commit();
 
 
 
@@ -1049,9 +1050,9 @@ public class NewCall1 extends AppCompatActivity {
         String email = mPreferences.getString(getString(R.string.email), "");
 
 
-       // String date = mPreferences.getString(getString(R.string.date), "");
+        // String date = mPreferences.getString(getString(R.string.date), "");
 
-       // String date1 = mPreferences.getString(getString(R.string.date1), "");
+        // String date1 = mPreferences.getString(getString(R.string.date1), "");
         String time = mPreferences.getString(getString(R.string.time), "");
         String spinner = mPreferences.getString(getString(R.string.spinner), "");
 
@@ -1064,8 +1065,8 @@ public class NewCall1 extends AppCompatActivity {
         Log.d("LOGGED", "FirebaseUser: " + user);
         // e1.setText(cont);
         // e2.setText(email);
-       // mDisplayDate.setText(date);
-       // mVisitDate.setText(date1);
+        // mDisplayDate.setText(date);
+        // mVisitDate.setText(date1);
         e5.setText(user.getDisplayName());
 
         s1.setSelection(mPreferences.getInt("spinnerSelection",0));
