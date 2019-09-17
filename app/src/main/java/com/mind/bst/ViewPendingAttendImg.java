@@ -170,7 +170,7 @@ public class ViewPendingAttendImg extends ArrayAdapter<Total> {
         Total data = clients.get(position);
 
         //UserInformation data1=clients1.get(position);
-        textViewName.setText(data.getCustomer_name());
+        textViewName.setText(data.getCall_log_date());
         // textViewAdd.setText(data.getAddress());
         //textViewCont.setText(data.getContact());
         textViewRegion.setText(data.getCustomer_city());
