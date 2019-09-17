@@ -16,7 +16,7 @@ public class Total {
     String city_of_service;
    // String time;
     String product_serial_no;
-  String gstin;
+  //String gstin;
    String product_category;
     String engineer_observation;
     String client_remark;
@@ -39,7 +39,7 @@ public class Total {
 
  String call_assigned_to;
 
- String call_visiting_date;
+ //String call_visiting_date;
 
  String product_name;
 
@@ -131,13 +131,6 @@ String status_of_complaint;
         this.product_name = product_name;
     }
 
-    public String getCall_visiting_date() {
-        return call_visiting_date;
-    }
-
-    public void setCall_visiting_date(String call_visiting_date) {
-        this.call_visiting_date = call_visiting_date;
-    }
 
     public String getCall_assigned_to() {
         return call_assigned_to;
@@ -190,13 +183,7 @@ String status_of_complaint;
         this.city_of_service = city_of_service;
     }
 
-    public String getGstin() {
-        return gstin;
-    }
 
-    public void setGstin(String gstin) {
-        this.gstin = gstin;
-    }
 
     public String getProduct_category() {
         return product_category;
@@ -294,7 +281,7 @@ String status_of_complaint;
 
 
 
-    public Total(String data, String name_of_service_engineer,String region_of_service_engineer,String customer_rep_name,String customer_Email_Id,String call_log_date,String product_serial_no,String engineer_observation,String client_remark,String nature_of_comp,String details_of_comp,String cust_cont,String customer_name,String customer_address,String gstin,String product_category,String city_of_service,String customer_city,String customer_state,String customer_country,String product_description,String call_assigned_to,String call_visiting_date,String product_name,String engineer_in_time,String call_attending_date,String call_assigned_by,String call_rescheduled_date,String invoice_no,String status_of_complaint ) {
+    public Total(String data, String name_of_service_engineer,String region_of_service_engineer,String customer_rep_name,String customer_Email_Id,String call_log_date,String product_serial_no,String engineer_observation,String client_remark,String nature_of_comp,String details_of_comp,String cust_cont,String customer_name,String customer_address,String product_category,String city_of_service,String customer_city,String customer_state,String customer_country,String product_description,String call_assigned_to,String product_name,String engineer_in_time,String call_attending_date,String call_assigned_by,String call_rescheduled_date,String invoice_no,String status_of_complaint ) {
         //this.data = data;
 
         this.name_of_service_engineer = name_of_service_engineer;
@@ -316,7 +303,7 @@ String status_of_complaint;
        this.cust_cont=cust_cont;
        this.customer_name=customer_name;
        this.customer_address=customer_address;
-       this.gstin=gstin;
+
        this.product_category=product_category;
        this.city_of_service=city_of_service;
        this.customer_city=customer_city;
@@ -325,7 +312,7 @@ String status_of_complaint;
        this.product_description=product_description;
        this.call_assigned_to=call_assigned_to;
 
-       this.call_visiting_date=call_visiting_date;
+
        this.product_name=product_name;
        this.engineer_in_time=engineer_in_time;
        this.call_attending_date=call_attending_date;

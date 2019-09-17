@@ -43,7 +43,7 @@ public class NewCall5 extends AppCompatActivity {
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
     DatabaseReference databasependingReference;
-    TextView username,t1,t2,t3,t4;
+    TextView username,t1,t2,t3,t4,tinput;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
     public static EditText e3,e4,e6,e7,e8;
@@ -72,6 +72,7 @@ public class NewCall5 extends AppCompatActivity {
         t2=(TextView)findViewById(R.id.t2);
         t3=(TextView)findViewById(R.id.t3);
         t4=(TextView)findViewById(R.id.t4);
+        tinput=(TextView)findViewById(R.id.tinput);
         b1=(Button)findViewById(R.id.b1);
         b2=(Button)findViewById(R.id.b2);
 
@@ -83,9 +84,47 @@ public class NewCall5 extends AppCompatActivity {
         c3=(CheckBox)findViewById(R.id.c3);
 
 
+        final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+        final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
+        final String cityofservice=getIntent().getStringExtra(Retrievedatasample.cityofservice);
+        final String custname=getIntent().getStringExtra(Retrievedatasample.customername);
+        final String custrepname=getIntent().getStringExtra(Retrievedatasample.customerrepname);
+        final String custemail=getIntent().getStringExtra(Retrievedatasample.customeremailid);
+
+
+
+        final String custadd=getIntent().getStringExtra(Retrievedatasample.customeraddress);
+        final String gstnumber=getIntent().getStringExtra(Retrievedatasample.gstin);
+        final String custcity=getIntent().getStringExtra(Retrievedatasample.customercity);
+
+
+        final String custstate=getIntent().getStringExtra(Retrievedatasample.customerstate);
+        final String custcountry=getIntent().getStringExtra(Retrievedatasample.customercountry);
+
+
+
+        final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
+
+
+
+
+        final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        final String calllogdate=getIntent().getStringExtra(Retrievedatasample.calllogdate);
+
+
+        final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
+        final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
+        final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+//tinput.setText(callassignedby);
+
 
         databaseReference = db.getReference("Calls Generated");
         databasependingReference = db.getReference("Calls Pending");
+
+
+
+
+
 
 
 
@@ -287,25 +326,19 @@ b2.setOnClickListener(new View.OnClickListener() {
         startActivity(i);
     }
 
-
-
-
-
-
 });
 
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 sendPendingData();
+                 //sendPendingData();
                 Intent i=new Intent(NewCall5.this,HomeActivity.class);
                 startActivity(i);
                 //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
                 //Intent i=new Intent(NewCall5.this,HomeActivity.class);
                 //startActivity(i);
             }
-
         });
 
 
@@ -529,36 +562,46 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
     private void sendData() {
 
-        String e1Text=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
-        String e2Text=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
-        String e3Text=getIntent().getStringExtra(Retrievedatasample.customerrepname);
-        String e4Text=getIntent().getStringExtra(Retrievedatasample.customeremailid);
+        final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+        final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
+        final String cityofservice=getIntent().getStringExtra(Retrievedatasample.cityofservice);
+        final String custname=getIntent().getStringExtra(Retrievedatasample.customername);
+        final String custrepname=getIntent().getStringExtra(Retrievedatasample.customerrepname);
+        final String custemail=getIntent().getStringExtra(Retrievedatasample.customeremailid);
 
 
-        String e18Text=getIntent().getStringExtra(Retrievedatasample.customername);
-        String e19Text=getIntent().getStringExtra(Retrievedatasample.customeraddress);
-        String e20Text=getIntent().getStringExtra(Retrievedatasample.gstin);
+
+        final String custadd=getIntent().getStringExtra(Retrievedatasample.customeraddress);
+        //final String gstnumber=getIntent().getStringExtra(Retrievedatasample.gstin);
+        final String custcity=getIntent().getStringExtra(Retrievedatasample.customercity);
 
 
-        String e21Text=getIntent().getStringExtra(Retrievedatasample.productcategory);
+        final String custstate=getIntent().getStringExtra(Retrievedatasample.customerstate);
+        final String custcountry=getIntent().getStringExtra(Retrievedatasample.customercountry);
 
 
-        String e22Text=getIntent().getStringExtra(Retrievedatasample.cityofservice);
-        String e23Text=getIntent().getStringExtra(Retrievedatasample.customercity);
+
+        final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
 
 
-        String e24Text=getIntent().getStringExtra(Retrievedatasample.customerstate);
-        String e25Text=getIntent().getStringExtra(Retrievedatasample.customercountry);
 
-        String e26Text=getIntent().getStringExtra(Retrievedatasample.productdescription);
 
-        String e27Text=getIntent().getStringExtra(Retrievedatasample.callassignedto);
-        String e28Text=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
+        final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        final String calllogdate=getIntent().getStringExtra(Retrievedatasample.calllogdate);
+
+
+        final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
+        //final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
+        final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+
+
+
+
+
         String e29Text=NewCall2.s4.getSelectedItem().toString();
         String e30Text=NewCall2.mDisplayTime.getText().toString();
 
         String e31Text=NewCall2.mDisplayDate.getText().toString();
-        String e32Text=getIntent().getStringExtra(Retrievedatasample.callassignedby);
 
         String e33Text=NewCall2.mReschdeuledDate.getText().toString();
 
@@ -583,7 +626,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
         //String e5Text=NewCall1.e1.getText().toString();
         // String e6Text=NewCall1.e2.getText().toString();
-        String e7Text=getIntent().getStringExtra(Retrievedatasample.calllogdate);
+
         // String e8Text=NewCall1.mDisplayTime.getText().toString();
 
 
@@ -609,9 +652,9 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         String id=databaseReference.push().getKey();
 
 
-        if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) &&(!TextUtils.isEmpty(e3Text))&& (!TextUtils.isEmpty(e4Text))  &&(!TextUtils.isEmpty(e7Text)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(e18Text))&& (!TextUtils.isEmpty(e19Text))&& (!TextUtils.isEmpty(e20Text))&& (!TextUtils.isEmpty(e21Text))&& (!TextUtils.isEmpty(e22Text))&& (!TextUtils.isEmpty(e23Text))&& (!TextUtils.isEmpty(e24Text))&& (!TextUtils.isEmpty(e25Text))&& (!TextUtils.isEmpty(e26Text))&& (!TextUtils.isEmpty(e27Text))&& (!TextUtils.isEmpty(e28Text))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(e32Text))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))
+        if(!TextUtils.isEmpty(nameofservengg) && (!TextUtils.isEmpty(regionofservengg)) &&(!TextUtils.isEmpty(custrepname))&& (!TextUtils.isEmpty(custemail))  &&(!TextUtils.isEmpty(custname)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(custadd))&& (!TextUtils.isEmpty(spinnerprocat))&& (!TextUtils.isEmpty(cityofservice))&& (!TextUtils.isEmpty(custcity))&& (!TextUtils.isEmpty(custstate))&& (!TextUtils.isEmpty(custcountry))&& (!TextUtils.isEmpty(spinnerprodesc))&& (!TextUtils.isEmpty(callassignedto))&&  (!TextUtils.isEmpty(callassignedby))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(calllogdate))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))
         {
-            Total data=new Total(id,e1Text,e2Text,e3Text,e4Text,e7Text,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,e18Text,e19Text,e20Text,e21Text,e22Text,e23Text,e24Text,e25Text,e26Text,e27Text,e28Text,e29Text,e30Text,e31Text,e32Text,e33Text,e34Text,e35Text);
+            Total data=new Total(id,nameofservengg,regionofservengg,custrepname,custemail,custname,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,custadd,spinnerprocat,cityofservice,custcity,custstate,custcountry,spinnerprodesc,callassignedto,callassignedby,e29Text,e30Text,e31Text,calllogdate,e33Text,e34Text,e35Text);
             databaseReference.child(id).setValue(data);
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 
@@ -620,7 +663,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
     }
 
 
-    private void sendPendingData() {
+   /* private void sendPendingData() {
 
         String e1Text=NewCallGen.e2.getText().toString();
         String e2Text=NewCallGen.e5.getText().toString();
@@ -710,7 +753,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
         }
 
-    }
+    }*/
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mymenu,menu);
@@ -722,7 +765,6 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         int id=item.getItemId();
         // int profile=item.getItemId();
 
-
         //signout function
         switch (id)
         {
@@ -733,18 +775,13 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
 
         }
 
-
-
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 return true;
         }
 
-
-
         return true;
-
     }
 
 }

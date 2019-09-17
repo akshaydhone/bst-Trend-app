@@ -25,11 +25,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActualPrevCall extends AppCompatActivity {
-   //ListView listViewClients;
-   private Activity context;
+    //ListView listViewClients;
+    private Activity context;
     List<Total> clients;
     FirebaseUser user;
-   // TextView t1;
+    // TextView t1;
     ImageView t2;
     String key;
 
@@ -38,7 +38,7 @@ public class ActualPrevCall extends AppCompatActivity {
     String uid;
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     // FirebaseDatabase mDatabase;
-   //String key = mDatabase.child("Calls Generated").push().getKey();
+    //String key = mDatabase.child("Calls Generated").push().getKey();
 
 
 
@@ -56,8 +56,8 @@ public class ActualPrevCall extends AppCompatActivity {
 
 
         databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated");
-     // listViewClients = (ListView) findViewById(R.id.listViewClients);
-     // t1=(TextView)findViewById(R.id.textView);
+        // listViewClients = (ListView) findViewById(R.id.listViewClients);
+        // t1=(TextView)findViewById(R.id.textView);
         //t1.setText(intent.getStringExtra(Retrievedatasample.Region));
         t2=(ImageView)findViewById(R.id.textclientimgurl);
 
@@ -118,7 +118,7 @@ public class ActualPrevCall extends AppCompatActivity {
         TextView textViewInvoiceNo = (TextView) findViewById(R.id.invoiceno);
 
 
-        textViewCont.setText(intent.getStringExtra(Retrievedatasample.customername));
+        textViewCont.setText(intent.getStringExtra(Retrievedatasample.calllogdate));
         textViewEmail.setText(intent.getStringExtra(Retrievedatasample.customerrepname));
         textViewRegion.setText(intent.getStringExtra(Retrievedatasample.regionofserviceengineer));
 
@@ -127,20 +127,20 @@ public class ActualPrevCall extends AppCompatActivity {
 //        textViewDate.setText(data.getDate());
         textViewTime.setText(intent.getStringExtra(Retrievedatasample.customeremailid));
         textViewProductSrNo.setText(intent.getStringExtra(Retrievedatasample.gstin));
-        textViewNatureOfComp.setText(intent.getStringExtra(Retrievedatasample.customercity));
-        textViewComplaint.setText(intent.getStringExtra(Retrievedatasample.customerstate));
-        textViewEnggObs.setText(intent.getStringExtra(Retrievedatasample.productcategory));
-        textViewRemark.setText(intent.getStringExtra(Retrievedatasample.productdescription));
-        textViewProductName.setText(intent.getStringExtra(Retrievedatasample.customeraddress));
-        textViewStatus.setText(intent.getStringExtra(Retrievedatasample.customercountry));
-        textViewPayment.setText(intent.getStringExtra(Retrievedatasample.calllogdate));
+        textViewNatureOfComp.setText(intent.getStringExtra(Retrievedatasample.cityofservice));
+        textViewComplaint.setText(intent.getStringExtra(Retrievedatasample.customercity));
+        textViewEnggObs.setText(intent.getStringExtra(Retrievedatasample.customeraddress));
+        textViewRemark.setText(intent.getStringExtra(Retrievedatasample.customercountry));
+        textViewProductName.setText(intent.getStringExtra(Retrievedatasample.customername));
+        textViewStatus.setText(intent.getStringExtra(Retrievedatasample.customerstate));
+        textViewPayment.setText(intent.getStringExtra(Retrievedatasample.callassignedby));
         textViewEnggName.setText(intent.getStringExtra(Retrievedatasample.nameofserviceengineer));
         // textViewUrl.setText(data.getClient_image_url());
-        textViewCallAssignedTo.setText(intent.getStringExtra(Retrievedatasample.callassignedto));
-        textViewCallVisitDate.setText(intent.getStringExtra(Retrievedatasample.callvisitingdate));
+        textViewCallAssignedTo.setText(intent.getStringExtra(Retrievedatasample.productdescription));
+        textViewCallVisitDate.setText(intent.getStringExtra(Retrievedatasample.callattendingdate));
 
 
-         textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
+        textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
         textViewProSerialNo.setText(intent.getStringExtra(Retrievedatasample.productserialno));
         textViewInTimeEngineer.setText(intent.getStringExtra(Retrievedatasample.engineerintime));
         textViewCallAttendDate.setText(intent.getStringExtra(Retrievedatasample.callattendingdate));
@@ -151,12 +151,12 @@ public class ActualPrevCall extends AppCompatActivity {
         textViewDop.setText(intent.getStringExtra(Retrievedatasample.detailofcomplaint));
         textViewObsEngg.setText(intent.getStringExtra(Retrievedatasample.engineerobservation));
         textViewRemarkClient.setText(intent.getStringExtra(Retrievedatasample.clientremark));
-       // Picasso.with(context).load(intent.getStringExtra(Retrievedatasample.clienturl).toString()).into(t2);
+        // Picasso.with(context).load(intent.getStringExtra(Retrievedatasample.clienturl).toString()).into(t2);
 
 //textViewProName.setText(intent.getStringExtra(Retrievedatasample.productname));
 //textViewProSerialNo.setText(intent.getStringExtra(Retrievedatasample.productserialno));
-        textViewCallAssignedBy.setText(intent.getStringExtra(Retrievedatasample.callassignedby));
-    textViewCallRescheduledDate.setText(intent.getStringExtra(Retrievedatasample.callrescheduleddate));
+        textViewCallAssignedBy.setText(intent.getStringExtra(Retrievedatasample.callassignedto));
+        textViewCallRescheduledDate.setText(intent.getStringExtra(Retrievedatasample.callrescheduleddate));
         textViewInvoiceNo.setText(intent.getStringExtra(Retrievedatasample.invoiceno));
         clients = new ArrayList<>();
 

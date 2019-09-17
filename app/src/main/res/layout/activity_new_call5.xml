@@ -72,6 +72,7 @@
                         android:text="@string/name26"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:id="@+id/tinput"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
@@ -143,6 +144,7 @@
                         android:text="Invoice No of BST ELtromat"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+
                         android:fontFamily="@font/arial"
                         android:textStyle="bold"
                         android:visibility="gone"/>

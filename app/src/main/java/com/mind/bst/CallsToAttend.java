@@ -175,7 +175,7 @@ public class CallsToAttend extends AppCompatActivity {
                                                        intent.putExtra(calllogdate, data.getCall_log_date());
                                                        intent.putExtra(cityofservice, data.getCity_of_service());
                                                        intent.putExtra(productserialno, data.getProduct_serial_no());
-                                                       intent.putExtra(gstin, data.getGstin());
+                                                       //intent.putExtra(gstin, data.getGstin());
                                                        intent.putExtra(productcategory, data.getProduct_category());
                                                        intent.putExtra(engineerobservation, data.getEngineer_observation());
                                                        intent.putExtra(clientremark, data.getClient_remark());
@@ -193,7 +193,7 @@ public class CallsToAttend extends AppCompatActivity {
                                                        intent.putExtra(engineerintime, data.getEngineer_in_time());
                                                        intent.putExtra(callattendingdate, data.getCall_attending_date());
                                                        intent.putExtra(callassignedby, data.getCall_assigned_by());
-                                                       intent.putExtra(callvisitingdate,data.getCall_visiting_date());
+                                                       //intent.putExtra(callvisitingdate,data.getCall_visiting_date());
                                                       // intent.putExtra(gstin,data.getGstin());
                                                        //starting the activity with intent
                                                        startActivity(intent);

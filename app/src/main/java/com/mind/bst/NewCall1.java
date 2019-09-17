@@ -112,13 +112,7 @@ public class NewCall1 extends AppCompatActivity {
         if (user != null) {
             username.setText("" + user.getDisplayName());
 
-
-
             LoginActivity.LoggedIn_User_Email =user.getDisplayName();
-
-
-
-
         }
 
 
@@ -156,7 +150,8 @@ public class NewCall1 extends AppCompatActivity {
                 }
                 return true;
             }
-        });
+        }
+        );
 
         s1 = (Spinner) findViewById(R.id.s1);
         s2 = (Spinner) findViewById(R.id.s2);
@@ -921,6 +916,7 @@ public class NewCall1 extends AppCompatActivity {
 
                 String date = day + "/" + month + "/" + year;
                 mDisplayDate.setText(date);
+
             }
         };
 
@@ -1059,8 +1055,6 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-
-
         FirebaseUser user = mAuth.getCurrentUser();
         Log.d("LOGGED", "FirebaseUser: " + user);
         // e1.setText(cont);
@@ -1081,7 +1075,6 @@ public class NewCall1 extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mymenu,menu);
         return true;
-
     }
 
     @Override

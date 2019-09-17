@@ -169,7 +169,7 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(calllogdate, data.getCall_log_date());
                 intent.putExtra(cityofservice, data.getCity_of_service());
                 intent.putExtra(productserialno, data.getProduct_serial_no());
-                intent.putExtra(gstin, data.getGstin());
+             //   intent.putExtra(gstin, data.getGstin());
                 intent.putExtra(productcategory, data.getProduct_category());
                 intent.putExtra(engineerobservation, data.getEngineer_observation());
                 intent.putExtra(clientremark, data.getClient_remark());
@@ -193,7 +193,7 @@ public class Retrievedatasample extends AppCompatActivity {
                 intent.putExtra(callrescheduleddate, data.getCall_rescheduled_date());
                 intent.putExtra(invoiceno, data.getInvoice_no());
                 intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
-                intent.putExtra(callvisitingdate,data.getCall_visiting_date());
+                //intent.putExtra(callvisitingdate,data.getCall_visiting_date());
 
 
                 //starting the activity with intent

@@ -676,8 +676,39 @@ public class NewCall2 extends AppCompatActivity {
         listwebvideoinspection.add("SuperHandy Scan 4100 9x7");
         listwebvideoinspection.add("SuperHandy Scan 4100_Dual Camera");
 
-     String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
-     String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+
+
+        final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+        final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
+        String callattendingdate=getIntent().getStringExtra(Retrievedatasample.callattendingdate);
+        final String calllogdate=getIntent().getStringExtra(Retrievedatasample.calllogdate);
+        String callrescheduleddate=getIntent().getStringExtra(Retrievedatasample.callrescheduleddate);
+        final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
+        final String cityofservice=getIntent().getStringExtra(Retrievedatasample.cityofservice);
+        String clientremark=getIntent().getStringExtra(Retrievedatasample.clientremark);
+        String custcontact=getIntent().getStringExtra(Retrievedatasample.custcont);
+        final String custadd=getIntent().getStringExtra(Retrievedatasample.customeraddress);
+        final String custcity=getIntent().getStringExtra(Retrievedatasample.customercity);
+        final String custcountry=getIntent().getStringExtra(Retrievedatasample.customercountry);
+        final String custemail=getIntent().getStringExtra(Retrievedatasample.customeremailid);
+        final String custname=getIntent().getStringExtra(Retrievedatasample.customername);
+        final String custrepname=getIntent().getStringExtra(Retrievedatasample.customerrepname);
+        final String custstate=getIntent().getStringExtra(Retrievedatasample.customerstate);
+        String detailsofcomp=getIntent().getStringExtra(Retrievedatasample.detailofcomplaint);
+        String enggintime=getIntent().getStringExtra(Retrievedatasample.engineerintime);
+        String enggobservation=getIntent().getStringExtra(Retrievedatasample.enggobs);
+        final String gstnumber=getIntent().getStringExtra(Retrievedatasample.gstin);
+        String invoiceno=getIntent().getStringExtra(Retrievedatasample.invoiceno);
+        final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+        String natureofcomp=getIntent().getStringExtra(Retrievedatasample.natureofcomplaint);
+        String prodname=getIntent().getStringExtra(Retrievedatasample.productname);
+        String prodserialno=getIntent().getStringExtra(Retrievedatasample.productserialno);
+        final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
+        String statusofcomp=getIntent().getStringExtra(Retrievedatasample.statusofcomplaint);
+
+
+    final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
+     final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
         //String spinnerprocat = NewCall1.s1.getSelectedItem().toString();
         //String spinnerprodesc = NewCall1.s3.getSelectedItem().toString();
 
@@ -1453,6 +1484,24 @@ public class NewCall2 extends AppCompatActivity {
 
 
                     Intent i=new Intent(NewCall2.this,NewCall3.class);
+                    i.putExtra(Retrievedatasample.productcategory,spinnerprocat);
+                    i.putExtra(Retrievedatasample.productdescription,spinnerprodesc);
+                    i.putExtra(Retrievedatasample.nameofserviceengineer,nameofservengg);
+                    i.putExtra(Retrievedatasample.regionofserviceengineer,regionofservengg);
+                    i.putExtra(Retrievedatasample.cityofservice,cityofservice);
+                    i.putExtra(Retrievedatasample.customername,custname);
+                    i.putExtra(Retrievedatasample.customerrepname,custrepname);
+                    i.putExtra(Retrievedatasample.customeremailid,custemail);
+                    i.putExtra(Retrievedatasample.customeraddress,custadd);
+                    i.putExtra(Retrievedatasample.gstin,gstnumber);
+                    i.putExtra(Retrievedatasample.customercity,custcity);
+                    i.putExtra(Retrievedatasample.customerstate,custstate);
+                    i.putExtra(Retrievedatasample.customercountry,custcountry);
+                    i.putExtra(Retrievedatasample.calllogdate,calllogdate);
+                    i.putExtra(Retrievedatasample.callassignedto,callassignedto);
+                    i.putExtra(Retrievedatasample.callassignedby,callassignedby);
+                    i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
+
                     startActivity(i);
 
                 }

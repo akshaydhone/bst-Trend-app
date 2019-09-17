@@ -115,36 +115,26 @@ public class FilledPageData extends AppCompatActivity {
                 Intent i=new Intent(FilledPageData.this,NewCall2.class);
                 i.putExtra(Retrievedatasample.productcategory,textViewProdCat.getText().toString());
                 i.putExtra(Retrievedatasample.productdescription,textViewProdDesc.getText().toString());
-
                 i.putExtra(Retrievedatasample.nameofserviceengineer,textViewName.getText().toString());
                 i.putExtra(Retrievedatasample.regionofserviceengineer,textViewRegion.getText().toString());
-
                 i.putExtra(Retrievedatasample.cityofservice,textViewCity.getText().toString());
                 i.putExtra(Retrievedatasample.customername,textViewCustname.getText().toString());
-
                 i.putExtra(Retrievedatasample.customerrepname,textViewCustrepname.getText().toString());
                 i.putExtra(Retrievedatasample.customeremailid,textViewCustEmail.getText().toString());
-
                 i.putExtra(Retrievedatasample.customeraddress,textViewCustAdd.getText().toString());
                 i.putExtra(Retrievedatasample.gstin,textViewCustGST.getText().toString());
-
                 i.putExtra(Retrievedatasample.customercity,textViewCustCity.getText().toString());
                 i.putExtra(Retrievedatasample.customerstate,textViewCustState.getText().toString());
-
                 i.putExtra(Retrievedatasample.customercountry,textViewCustCountry.getText().toString());
                 i.putExtra(Retrievedatasample.calllogdate,textViewCallLogDate.getText().toString());
-
                 i.putExtra(Retrievedatasample.callassignedto,textViewCallAssignedTo.getText().toString());
                 i.putExtra(Retrievedatasample.callassignedby,textViewCallAssignedBy.getText().toString());
-
                 i.putExtra(Retrievedatasample.callvisitingdate,textViewCallVisitDate.getText().toString());
-
-
                 startActivity(i);
-
             }
         }
         );
+
 
         clients = new ArrayList<>();
 
