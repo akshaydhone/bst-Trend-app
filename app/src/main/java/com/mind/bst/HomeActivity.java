@@ -55,7 +55,41 @@ public class HomeActivity extends AppCompatActivity {
        // tspin.setText(positionToShowToSpinner);
 
         username=(TextView)findViewById(R.id.username) ;
-        String prodcat=getIntent().getStringExtra(TAG_PRODUCT_CAT);
+
+
+        final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+        final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
+        final String cityofservice=getIntent().getStringExtra(Retrievedatasample.cityofservice);
+        final String custname=getIntent().getStringExtra(Retrievedatasample.customername);
+        final String custrepname=getIntent().getStringExtra(Retrievedatasample.customerrepname);
+        final String custemail=getIntent().getStringExtra(Retrievedatasample.customeremailid);
+
+
+
+        final String custadd=getIntent().getStringExtra(Retrievedatasample.customeraddress);
+        final String gstnumber=getIntent().getStringExtra(Retrievedatasample.gstin);
+        final String custcity=getIntent().getStringExtra(Retrievedatasample.customercity);
+
+
+        final String custstate=getIntent().getStringExtra(Retrievedatasample.customerstate);
+        final String custcountry=getIntent().getStringExtra(Retrievedatasample.customercountry);
+
+
+
+        final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
+
+
+
+
+        final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        final String calllogdate=getIntent().getStringExtra(Retrievedatasample.calllogdate);
+
+
+        final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
+        final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
+        final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+//tinput.setText(callassignedby);
+       // String prodcat=getIntent().getStringExtra(TAG_PRODUCT_CAT);
        // tspin.setText(prodcat);
 
         mAuth = FirebaseAuth.getInstance(); // important Call
@@ -119,6 +153,23 @@ public class HomeActivity extends AppCompatActivity {
 
                 //For getting the next activity
                 Intent i=new Intent(HomeActivity.this,PendingCallAttend.class);
+                i.putExtra(Retrievedatasample.productcategory,spinnerprocat);
+                i.putExtra(Retrievedatasample.productdescription,spinnerprodesc);
+                i.putExtra(Retrievedatasample.nameofserviceengineer,nameofservengg);
+                i.putExtra(Retrievedatasample.regionofserviceengineer,regionofservengg);
+                i.putExtra(Retrievedatasample.cityofservice,cityofservice);
+                i.putExtra(Retrievedatasample.customername,custname);
+                i.putExtra(Retrievedatasample.customerrepname,custrepname);
+                i.putExtra(Retrievedatasample.customeremailid,custemail);
+                i.putExtra(Retrievedatasample.customeraddress,custadd);
+                i.putExtra(Retrievedatasample.gstin,gstnumber);
+                i.putExtra(Retrievedatasample.customercity,custcity);
+                i.putExtra(Retrievedatasample.customerstate,custstate);
+                i.putExtra(Retrievedatasample.customercountry,custcountry);
+                i.putExtra(Retrievedatasample.calllogdate,calllogdate);
+                i.putExtra(Retrievedatasample.callassignedto,callassignedto);
+                i.putExtra(Retrievedatasample.callassignedby,callassignedby);
+                i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
                 //Intent i=new Intent(HomeActivity.this,SearchBase.class);
                 startActivity(i);
             }
@@ -127,8 +178,6 @@ public class HomeActivity extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
 
                 //For getting the next activity
                 // Intent i=new Intent(HomeActivity.this,ViewProfile.class);

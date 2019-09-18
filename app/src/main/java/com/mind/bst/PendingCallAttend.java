@@ -122,6 +122,40 @@ public class PendingCallAttend extends AppCompatActivity {
         //getting the root name database table
         mEmptyView = (TextView) findViewById(R.id.emptyView);
 
+
+
+        final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+        final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
+        final String cityofservice=getIntent().getStringExtra(Retrievedatasample.cityofservice);
+        final String custname=getIntent().getStringExtra(Retrievedatasample.customername);
+        final String custrepname=getIntent().getStringExtra(Retrievedatasample.customerrepname);
+        final String custemail=getIntent().getStringExtra(Retrievedatasample.customeremailid);
+
+
+
+        final String custadd=getIntent().getStringExtra(Retrievedatasample.customeraddress);
+        final String gstnumber=getIntent().getStringExtra(Retrievedatasample.gstin);
+        final String custcity=getIntent().getStringExtra(Retrievedatasample.customercity);
+
+
+        final String custstate=getIntent().getStringExtra(Retrievedatasample.customerstate);
+        final String custcountry=getIntent().getStringExtra(Retrievedatasample.customercountry);
+
+
+
+        final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
+
+
+
+
+        final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        final String calllogdate=getIntent().getStringExtra(Retrievedatasample.calllogdate);
+
+
+        final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
+        final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
+        final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+
         databaseClients = FirebaseDatabase.getInstance().getReference("Calls Pending");
         //listViewClients = (ListView) findViewById(R.id.listViewClients);
         listViewClients=(ListView)findViewById(R.id.listViewClients);
@@ -138,7 +172,7 @@ public class PendingCallAttend extends AppCompatActivity {
 
 
 
-        /*listViewClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       listViewClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                                    @Override
                                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -186,7 +220,7 @@ public class PendingCallAttend extends AppCompatActivity {
                                                        intent.putExtra(calllogdate, data.getCall_log_date());
                                                        intent.putExtra(cityofservice, data.getCity_of_service());
                                                        intent.putExtra(productserialno, data.getProduct_serial_no());
-                                                       intent.putExtra(gstin, data.getGstin());
+                                                       //intent.putExtra(gstin, data.getGstin());
                                                        intent.putExtra(productcategory, data.getProduct_category());
                                                        intent.putExtra(engineerobservation, data.getEngineer_observation());
                                                        intent.putExtra(clientremark, data.getClient_remark());
@@ -199,7 +233,7 @@ public class PendingCallAttend extends AppCompatActivity {
                                                        intent.putExtra(customercountry, data.getCustomer_country());
                                                        intent.putExtra(productdescription, data.getProduct_description());
                                                        intent.putExtra(callassignedto, data.getCall_assigned_to());
-                                                       intent.putExtra(callvisitingdate, data.getCall_visiting_date());
+                                                       //intent.putExtra(callvisitingdate, data.getCall_visiting_date());
                                                        intent.putExtra(productname, data.getProduct_name());
                                                        intent.putExtra(engineerintime, data.getEngineer_in_time());
                                                        intent.putExtra(callattendingdate, data.getCall_attending_date());
@@ -211,7 +245,7 @@ public class PendingCallAttend extends AppCompatActivity {
 
                                                    }
                                                }
-        );*/
+        );
 
 
     }

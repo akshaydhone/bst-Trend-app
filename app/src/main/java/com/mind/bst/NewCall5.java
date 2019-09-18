@@ -48,7 +48,7 @@ public class NewCall5 extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
     public static EditText e3,e4,e6,e7,e8;
     Button b1,b2;
-    public static TextView mDisplayDate;
+    public static TextView mDisplayDate,appcharges;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     public static CheckBox c1,c2,c3;
     public static Spinner s1,s2;
@@ -75,6 +75,7 @@ public class NewCall5 extends AppCompatActivity {
         tinput=(TextView)findViewById(R.id.tinput);
         b1=(Button)findViewById(R.id.b1);
         b2=(Button)findViewById(R.id.b2);
+        appcharges=(TextView)findViewById(R.id.appcharges);
 
         e4=(EditText)findViewById(R.id.e4);
         s1 = (Spinner) findViewById(R.id.s1);
@@ -199,6 +200,13 @@ public class NewCall5 extends AppCompatActivity {
                     t1.setVisibility(View.GONE);
                     e4.setVisibility(View.GONE);
 
+                    appcharges.setVisibility(View.VISIBLE);
+                    c1.setVisibility(View.VISIBLE);
+                    c2.setVisibility(View.VISIBLE);
+                    c3.setVisibility(View.VISIBLE);
+                    t3.setVisibility(View.VISIBLE);
+                    s2.setVisibility(View.VISIBLE);
+
                     t2.setVisibility(View.GONE);
                     mDisplayDate.setVisibility(View.GONE);
 
@@ -214,6 +222,14 @@ public class NewCall5 extends AppCompatActivity {
                     b2.setVisibility(View.GONE);
                     t1.setVisibility(View.GONE);
                     e4.setVisibility(View.GONE);
+
+                    appcharges.setVisibility(View.GONE);
+                    c1.setVisibility(View.GONE);
+                    c2.setVisibility(View.GONE);
+                    c3.setVisibility(View.GONE);
+                    t3.setVisibility(View.GONE);
+                    s2.setVisibility(View.GONE);
+
 
                     t2.setVisibility(View.VISIBLE);
                     mDisplayDate.setVisibility(View.VISIBLE);
@@ -232,6 +248,13 @@ public class NewCall5 extends AppCompatActivity {
                     t1.setVisibility(View.GONE);
                     e4.setVisibility(View.GONE);
 
+                    appcharges.setVisibility(View.GONE);
+                    c1.setVisibility(View.GONE);
+                    c2.setVisibility(View.GONE);
+                    c3.setVisibility(View.GONE);
+                    t3.setVisibility(View.GONE);
+                    s2.setVisibility(View.GONE);
+
                     t2.setVisibility(View.VISIBLE);
                     mDisplayDate.setVisibility(View.VISIBLE);
 
@@ -247,6 +270,13 @@ public class NewCall5 extends AppCompatActivity {
                     t1.setVisibility(View.GONE);
                     e4.setVisibility(View.GONE);
 
+                    appcharges.setVisibility(View.GONE);
+                    c1.setVisibility(View.GONE);
+                    c2.setVisibility(View.GONE);
+                    c3.setVisibility(View.GONE);
+                    t3.setVisibility(View.GONE);
+                    s2.setVisibility(View.GONE);
+
                     t2.setVisibility(View.VISIBLE);
                     mDisplayDate.setVisibility(View.VISIBLE);
 
@@ -260,6 +290,13 @@ public class NewCall5 extends AppCompatActivity {
                     b2.setVisibility(View.GONE);
                     t1.setVisibility(View.GONE);
                     e4.setVisibility(View.GONE);
+
+                    appcharges.setVisibility(View.GONE);
+                    c1.setVisibility(View.GONE);
+                    c2.setVisibility(View.GONE);
+                    c3.setVisibility(View.GONE);
+                    t3.setVisibility(View.GONE);
+                    s2.setVisibility(View.GONE);
 
                     t2.setVisibility(View.VISIBLE);
                     mDisplayDate.setVisibility(View.VISIBLE);
@@ -332,12 +369,42 @@ b2.setOnClickListener(new View.OnClickListener() {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 sendPendingData();
-                Intent i=new Intent(NewCall5.this,HomeActivity.class);
-                startActivity(i);
-                //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
-                //Intent i=new Intent(NewCall5.this,HomeActivity.class);
-                //startActivity(i);
+                String spinnerValue = s1.getSelectedItem().toString();
+
+                if (spinnerValue.equals("Select"))
+
+                {
+                    Toast.makeText(NewCall5.this, "Select Status of Complaint", Toast.LENGTH_SHORT).show();
+
+                }
+
+                else {
+
+                    sendPendingData();
+
+                    Intent i = new Intent(NewCall5.this, HomeActivity.class);
+                    i.putExtra(Retrievedatasample.productcategory, spinnerprocat);
+                    i.putExtra(Retrievedatasample.productdescription, spinnerprodesc);
+                    i.putExtra(Retrievedatasample.nameofserviceengineer, nameofservengg);
+                    i.putExtra(Retrievedatasample.regionofserviceengineer, regionofservengg);
+                    i.putExtra(Retrievedatasample.cityofservice, cityofservice);
+                    i.putExtra(Retrievedatasample.customername, custname);
+                    i.putExtra(Retrievedatasample.customerrepname, custrepname);
+                    i.putExtra(Retrievedatasample.customeremailid, custemail);
+                    i.putExtra(Retrievedatasample.customeraddress, custadd);
+                    i.putExtra(Retrievedatasample.gstin, gstnumber);
+                    i.putExtra(Retrievedatasample.customercity, custcity);
+                    i.putExtra(Retrievedatasample.customerstate, custstate);
+                    i.putExtra(Retrievedatasample.customercountry, custcountry);
+                    i.putExtra(Retrievedatasample.calllogdate, calllogdate);
+                    i.putExtra(Retrievedatasample.callassignedto, callassignedto);
+                    i.putExtra(Retrievedatasample.callassignedby, callassignedby);
+                    i.putExtra(Retrievedatasample.callvisitingdate, callvisitingdate);
+                    startActivity(i);
+                    //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
+                    //Intent i=new Intent(NewCall5.this,HomeActivity.class);
+                    //startActivity(i);
+                }
             }
         });
 
