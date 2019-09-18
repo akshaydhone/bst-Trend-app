@@ -716,6 +716,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         // FirebaseUser user = mAuth.getCurrentUser();
         //Log.d("LOGGED", "FirebaseUser: " + user);
         // String id=user.getDisplayName();
+
         String id=databaseReference.push().getKey();
 
 

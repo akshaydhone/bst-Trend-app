@@ -249,9 +249,6 @@ private EditText email,password,name,eregion,eadd,econt;
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent, GALLERY_INTENT);
-
-
-
     }
 
 
@@ -269,7 +266,6 @@ private EditText email,password,name,eregion,eadd,econt;
 
             ActivityCompat.requestPermissions(HiddenActivity.this,new String[]{
                     Manifest.permission.CAMERA}, RequestPermissionCode);
-
         }
     }
 

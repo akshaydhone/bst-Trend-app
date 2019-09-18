@@ -1,5 +1,4 @@
 package com.mind.bst;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -89,9 +88,8 @@ public class LoginActivity extends AppCompatActivity {
 
                else if(mCheckBox.isChecked()){
                    //set a checkbox when the application starts
-                    mEditor.putString(getString(R.string.checksaved), "True");
+                    mEditor.putString(getString(R.string.checksaved),"True");
                     mEditor.commit();
-
                     //save the name
                     String name = getusername;
                     mEditor.putString(getString(R.string.usern), name);
