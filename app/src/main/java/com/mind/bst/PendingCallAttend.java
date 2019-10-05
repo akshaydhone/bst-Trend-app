@@ -182,7 +182,7 @@ public class PendingCallAttend extends AppCompatActivity {
                                                        Total data = clients.get(position);
 
                                                        //creating an intent
-                                                       Intent intent = new Intent(getApplicationContext(), NewCall2.class);
+                                                       Intent intent = new Intent(getApplicationContext(), PendingOnclick.class);
 
                                                        //putting artist name and id to intent
                                                        intent.putExtra(Region, data.getName_of_service_engineer());
@@ -237,6 +237,9 @@ public class PendingCallAttend extends AppCompatActivity {
                                                        intent.putExtra(productname, data.getProduct_name());
                                                        intent.putExtra(engineerintime, data.getEngineer_in_time());
                                                        intent.putExtra(callattendingdate, data.getCall_attending_date());
+
+
+
 
 
                                                        //starting the activity with intent

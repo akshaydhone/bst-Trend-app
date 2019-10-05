@@ -194,6 +194,7 @@ public class NewCallGen extends AppCompatActivity implements IFirebaseLoadDone {
                     case R.id.home:
                         Intent i=new Intent(getApplicationContext(),HomeActivity.class);
                         startActivity(i);
+
                         break;
 
                     case R.id.notification:

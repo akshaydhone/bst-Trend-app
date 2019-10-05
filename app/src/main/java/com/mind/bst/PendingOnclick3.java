@@ -7,9 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationMenu;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.internal.BottomNavigationMenuView;
 import android.support.v7.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import android.os.Bundle;
@@ -35,8 +33,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
-public class NewCall5 extends AppCompatActivity {
-    private static final String TAG = "NewCall5";
+
+public class PendingOnclick3 extends AppCompatActivity {
+
+
+    private static final String TAG = "PendingOnclick3";
     private FirebaseAuth mAuth;
     FirebaseUser user;
 
@@ -53,12 +54,10 @@ public class NewCall5 extends AppCompatActivity {
     public static CheckBox c1,c2,c3;
     public static Spinner s1,s2;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_call5);
+        setContentView(R.layout.activity_pending_onclick3);
         getSupportActionBar().setTitle("Status and Payment");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         e3=(EditText)findViewById(R.id.e3) ;
@@ -188,14 +187,15 @@ public class NewCall5 extends AppCompatActivity {
 
 
 
-           String spinnerValue = s1.getSelectedItem().toString();
+                String spinnerValue = s1.getSelectedItem().toString();
 
 
 
-               if (spinnerValue.equals("Completed"))
+                if (spinnerValue.equals("Completed"))
 
-                { b1.setVisibility(View.GONE);
+                {
                     b2.setVisibility(View.VISIBLE);
+                    b1.setVisibility(View.GONE);
 
                     t1.setVisibility(View.GONE);
                     e4.setVisibility(View.GONE);
@@ -219,6 +219,7 @@ public class NewCall5 extends AppCompatActivity {
                 else if (spinnerValue.equals("Needs to be visited again"))
 
                 {
+
                     b1.setVisibility(View.VISIBLE);
                     b2.setVisibility(View.GONE);
                     t1.setVisibility(View.GONE);
@@ -324,20 +325,19 @@ public class NewCall5 extends AppCompatActivity {
 
 
 
-               else if (spinnerValue.equals("Select"))
+                else if (spinnerValue.equals("Select"))
 
-               {
-                   b1.setVisibility(View.VISIBLE);
-                   t1.setVisibility(View.GONE);
-                   e4.setVisibility(View.GONE);
+                {
+                    t1.setVisibility(View.GONE);
+                    e4.setVisibility(View.GONE);
 
-                   t2.setVisibility(View.GONE);
-                   mDisplayDate.setVisibility(View.GONE);
+                    t2.setVisibility(View.GONE);
+                    mDisplayDate.setVisibility(View.GONE);
 
-                   b2.setVisibility(View.GONE);
+                    b2.setVisibility(View.GONE);
 
-
-               }
+                    b1.setVisibility(View.VISIBLE);
+                }
 
 
 
@@ -360,16 +360,16 @@ public class NewCall5 extends AppCompatActivity {
         });
 
 
-b2.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        sendData();
-        //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
-        Intent i=new Intent(NewCall5.this,HomeActivity.class);
-        startActivity(i);
-    }
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData();
+                //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(PendingOnclick3.this,HomeActivity.class);
+                startActivity(i);
+            }
 
-});
+        });
 
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -380,7 +380,7 @@ b2.setOnClickListener(new View.OnClickListener() {
                 if (spinnerValue.equals("Select"))
 
                 {
-                    Toast.makeText(NewCall5.this, "Select Status of Complaint", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PendingOnclick3.this, "Select Status of Complaint", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -388,7 +388,7 @@ b2.setOnClickListener(new View.OnClickListener() {
 
                     sendPendingData();
 
-                    Intent i = new Intent(NewCall5.this, HomeActivity.class);
+                    Intent i = new Intent(PendingOnclick3.this, HomeActivity.class);
                     i.putExtra(Retrievedatasample.productcategory, spinnerprocat);
                     i.putExtra(Retrievedatasample.productdescription, spinnerprodesc);
                     i.putExtra(Retrievedatasample.nameofserviceengineer, nameofservengg);
@@ -426,7 +426,7 @@ b2.setOnClickListener(new View.OnClickListener() {
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dialog = new DatePickerDialog(
-                        NewCall5.this,
+                        PendingOnclick3.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
                         year, month, day);
@@ -466,7 +466,7 @@ b2.setOnClickListener(new View.OnClickListener() {
 
                 }
 
-               else if (spinnerValue.equals("Bank Transfer:NEFT,RTGS,IMPS"))
+                else if (spinnerValue.equals("Bank Transfer:NEFT,RTGS,IMPS"))
 
                 {
                     t4.setVisibility(View.VISIBLE);
@@ -518,26 +518,26 @@ b2.setOnClickListener(new View.OnClickListener() {
 
         c3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-                                               @Override
-                                               public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                                          @Override
+                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
 
 
-                                                   if(c3.isChecked()){
-                                                       t3.setVisibility(View.GONE);
-                                                       s2.setVisibility(View.GONE);
-                                                       e6.setVisibility(View.VISIBLE);
-                                                       c3.setChecked(true);
-                                                   }
-                                                   else{
-                                                       t3.setVisibility(View.VISIBLE);
-                                                       s2.setVisibility(View.VISIBLE);
-                                                      e6.setVisibility(View.GONE);
-                                                   }
+                                              if(c3.isChecked()){
+                                                  t3.setVisibility(View.GONE);
+                                                  s2.setVisibility(View.GONE);
+                                                  e6.setVisibility(View.VISIBLE);
+                                                  c3.setChecked(true);
+                                              }
+                                              else{
+                                                  t3.setVisibility(View.VISIBLE);
+                                                  s2.setVisibility(View.VISIBLE);
+                                                  e6.setVisibility(View.GONE);
+                                              }
 
 
 
-                                               }
-                                           }
+                                          }
+                                      }
         );
 
         c2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -588,38 +588,38 @@ b2.setOnClickListener(new View.OnClickListener() {
 
 
         BottomNavigationView bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottom_nav);
-bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                                                                     @Override
+                                                                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch(menuItem.getItemId())
-        {
-            case R.id.home:
-                Intent i=new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(i);
-                break;
+                                                                         switch(menuItem.getItemId())
+                                                                         {
+                                                                             case R.id.home:
+                                                                                 Intent i=new Intent(getApplicationContext(),HomeActivity.class);
+                                                                                 startActivity(i);
+                                                                                 break;
 
-            case R.id.notification:
-                Intent j=new Intent(getApplicationContext(),PendingCallAttend.class);
-                startActivity(j);
-                break;
+                                                                             case R.id.notification:
+                                                                                 Intent j=new Intent(getApplicationContext(),PendingCallAttend.class);
+                                                                                 startActivity(j);
+                                                                                 break;
 
-            case R.id.visits:
-                Intent k=new Intent(getApplicationContext(),CallsToAttend.class);
-                startActivity(k);
-                break;
+                                                                             case R.id.visits:
+                                                                                 Intent k=new Intent(getApplicationContext(),CallsToAttend.class);
+                                                                                 startActivity(k);
+                                                                                 break;
 
                   /*  case R.id.visits:
                         Intent j=new Intent(getApplicationContext(),ViewProfile.class);
                         startActivity(j);
                         break;*/
-        }
+                                                                         }
 
-        return true;
+                                                                         return true;
 
-    }
-}
-);
+                                                                     }
+                                                                 }
+        );
 
     }
 
@@ -642,27 +642,16 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         final String custrepname=getIntent().getStringExtra(Retrievedatasample.customerrepname);
         final String custemail=getIntent().getStringExtra(Retrievedatasample.customeremailid);
 
-
-
         final String custadd=getIntent().getStringExtra(Retrievedatasample.customeraddress);
         //final String gstnumber=getIntent().getStringExtra(Retrievedatasample.gstin);
         final String custcity=getIntent().getStringExtra(Retrievedatasample.customercity);
 
-
         final String custstate=getIntent().getStringExtra(Retrievedatasample.customerstate);
         final String custcountry=getIntent().getStringExtra(Retrievedatasample.customercountry);
 
-
-
         final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
-
-
-
-
         final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
         final String calllogdate=getIntent().getStringExtra(Retrievedatasample.calllogdate);
-
-
         final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
         //final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
@@ -737,9 +726,9 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
     }
 
 
- private void sendPendingData() {
+    private void sendPendingData() {
 
-         final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+        final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
         final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
         final String cityofservice=getIntent().getStringExtra(Retrievedatasample.cityofservice);
         final String custname=getIntent().getStringExtra(Retrievedatasample.customername);
@@ -770,9 +759,6 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
         //final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
-
-
-
 
 
         String e29Text=NewCall2.s4.getSelectedItem().toString();
@@ -826,7 +812,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         // FirebaseUser user = mAuth.getCurrentUser();
         //Log.d("LOGGED", "FirebaseUser: " + user);
         // String id=user.getDisplayName();
-     String id=databasependingReference.push().getKey();
+        String id=databasependingReference.push().getKey();
 
 
         if(!TextUtils.isEmpty(nameofservengg) && (!TextUtils.isEmpty(regionofservengg)) &&(!TextUtils.isEmpty(custrepname))&& (!TextUtils.isEmpty(custemail))  &&(!TextUtils.isEmpty(custname)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(custadd))&& (!TextUtils.isEmpty(spinnerprocat))&& (!TextUtils.isEmpty(cityofservice))&& (!TextUtils.isEmpty(custcity))&& (!TextUtils.isEmpty(custstate))&& (!TextUtils.isEmpty(custcountry))&& (!TextUtils.isEmpty(spinnerprodesc))&& (!TextUtils.isEmpty(callassignedto))&&  (!TextUtils.isEmpty(callassignedby))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(calllogdate))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))
@@ -838,7 +824,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         }
 
     }
-        @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mymenu,menu);
         return true;

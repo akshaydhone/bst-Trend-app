@@ -65,7 +65,8 @@ import java.util.Scanner;
 
 import static com.mind.bst.NewCallGen.e1;
 
-public class NewCall4 extends AppCompatActivity {
+public class PendingOnclick2 extends AppCompatActivity {
+
 
     private FirebaseAuth mAuth;
     TextView username;
@@ -134,8 +135,8 @@ public class NewCall4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_call4);
-        getSupportActionBar().setTitle("Product Photo");
+        setContentView(R.layout.activity_pending_onclick2);
+        getSupportActionBar().setTitle("Product Photos");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         select_image = (Button)findViewById(R.id.select_image);
         user_image = (ImageView) findViewById(R.id.user_image);
@@ -252,7 +253,7 @@ public class NewCall4 extends AppCompatActivity {
         mEditor = mPreferences.edit();
 
 
-        progressDialog = new ProgressDialog(NewCall4.this);
+        progressDialog = new ProgressDialog(PendingOnclick2.this);
         EnableRuntimePermission();
 
 
@@ -372,11 +373,11 @@ public class NewCall4 extends AppCompatActivity {
                 prefEditor.commit();*/
                                       if(user_image.getDrawable() == null && user_image1.getDrawable() == null && user_image2.getDrawable() == null && user_image3.getDrawable() == null ){
 
-                                          Toast.makeText(NewCall4.this, "Upload Atleast one Image", Toast.LENGTH_SHORT).show();
+                                          Toast.makeText(PendingOnclick2.this, "Upload Atleast one Image", Toast.LENGTH_SHORT).show();
                                       }
                                       else{
                                           //sendData();
-                                          Intent i=new Intent(NewCall4.this,NewCall5.class);
+                                          Intent i=new Intent(PendingOnclick2.this,PendingOnclick3.class);
                                           i.putExtra(Retrievedatasample.productcategory,spinnerprocat);
                                           i.putExtra(Retrievedatasample.productdescription,spinnerprodesc);
                                           i.putExtra(Retrievedatasample.nameofserviceengineer,nameofservengg);
@@ -513,7 +514,7 @@ public class NewCall4 extends AppCompatActivity {
         user_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PendingOnclick2.this);
                 //builder.setMessage("Select Photo");
                 builder.setTitle("Select From");
 
@@ -586,7 +587,7 @@ public class NewCall4 extends AppCompatActivity {
         user_image1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PendingOnclick2.this);
                 //builder.setMessage("Select Photo");
                 builder.setTitle("Select From");
 
@@ -662,7 +663,7 @@ public class NewCall4 extends AppCompatActivity {
         user_image2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PendingOnclick2.this);
                 //builder.setMessage("Select Photo");
                 builder.setTitle("Select From");
 
@@ -738,7 +739,7 @@ public class NewCall4 extends AppCompatActivity {
         user_image3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(NewCall4.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PendingOnclick2.this);
                 //builder.setMessage("Select Photo");
                 builder.setTitle("Select From");
 
@@ -1067,15 +1068,15 @@ public class NewCall4 extends AppCompatActivity {
 
     public void EnableRuntimePermission(){
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(NewCall4.this,
+        if (ActivityCompat.shouldShowRequestPermissionRationale(PendingOnclick2.this,
                 Manifest.permission.CAMERA))
         {
 
-            Toast.makeText(NewCall4.this,"CAMERA permission allows us to Access CAMERA app", Toast.LENGTH_LONG).show();
+            Toast.makeText(PendingOnclick2.this,"CAMERA permission allows us to Access CAMERA app", Toast.LENGTH_LONG).show();
 
         } else {
 
-            ActivityCompat.requestPermissions(NewCall4.this,new String[]{
+            ActivityCompat.requestPermissions(PendingOnclick2.this,new String[]{
                     Manifest.permission.CAMERA}, RequestPermissionCode);
 
         }
@@ -1297,11 +1298,11 @@ public class NewCall4 extends AppCompatActivity {
 
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 
-                user_image.setImageBitmap(bitmap);
+            user_image.setImageBitmap(bitmap);
 
-            }
+        }
 
-            //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
+        //StorageReference filePath = mStorage.child("User_Images").child("gs://uidesignbsteltromat.appspot.com/");
 
 
 

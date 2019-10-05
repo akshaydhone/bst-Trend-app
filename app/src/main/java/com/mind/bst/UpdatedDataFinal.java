@@ -1,6 +1,6 @@
 package com.mind.bst;
 
-public class DataDetail {
+public class UpdatedDataFinal {
 
 
 
@@ -30,7 +30,7 @@ public class DataDetail {
     //String client_email;
     // String email;
 
-    public DataDetail (){
+    public UpdatedDataFinal (){
 
     }
 
@@ -193,7 +193,7 @@ public class DataDetail {
 
 
 
-    public DataDetail(String data, String name_of_service_engineer, String region_of_service_engineer, String city_of_service, String customer_name,String customer_rep_name, String customer_Email_Id, String customer_address, String customer_Gst_In, String customer_city, String customer_state, String customer_country, String product_category, String product_description, String call_log_date, String call_assigned_to, String call_assigned_by, String call_visit_date) {
+    public UpdatedDataFinal(String data, String name_of_service_engineer, String region_of_service_engineer, String city_of_service, String customer_name,String customer_rep_name, String customer_Email_Id, String customer_address, String customer_Gst_In, String customer_city, String customer_state, String customer_country, String product_category, String product_description, String call_log_date, String call_assigned_to, String call_assigned_by, String call_visit_date) {
         //this.data = data;
 
         this.name_of_service_engineer = name_of_service_engineer;

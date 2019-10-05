@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewCall4">
+
+    tools:context=".PendingOnclick1">
 
 
     <include layout="@layout/bgheader"
         android:id="@+id/bghead"/>
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/bgHeader"
@@ -51,168 +53,138 @@
                 app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:id="@+id/secret"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
                     android:orientation="vertical"
-                    android:paddingBottom="50dp">
+                    android:paddingBottom="50dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
                     <requestFocus />
 
+                    <!-- <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_margin="10dp"
+                         android:text="Status of Complaint"
+                         android:textColor="@color/colorPurple"
+                         android:textSize="14sp"
+                         android:textStyle="bold" />
+
+
+                     <Spinner
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:id="@+id/s1"
+
+                         android:drawablePadding="5dp"
+                         android:ems="10"
+                         android:entries="@array/tag_arrays2"
+
+                         android:prompt="@string/tag_prompt2" />-->
+
+
+
+
+
+
+
+
                     <TextView
+                        android:id="@+id/test1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="@string/name25"
+                        android:fontFamily="@font/arial"
+                        android:text="Engineer Observation/Action Taken"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
-                        android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
-                    <Button
-                        android:id="@+id/select_image"
-                        android:layout_width="218dp"
+                    <EditText
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="Select Image"
-                        android:visibility="invisible" />
+                        android:id="@+id/e11"
+
+                        android:editable="false"/>
 
 
-                    <ImageView
-                        android:id="@+id/user_image"
-                        android:layout_width="125dp"
-                        android:layout_height="120dp"
-                        android:layout_below="@+id/select_image"
-                        android:layout_marginLeft="16dp"
-
-                        android:layout_marginRight="5dp"
-
-                        android:background="@drawable/caml" />
-
-                    <ImageView
-                        android:id="@+id/user_image1"
-                        android:layout_width="125dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="end"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginTop="-120dp"
-                        android:layout_marginRight="15dp"
-
-                        android:background="@drawable/caml"/>
-
-
-                    <ImageView
-                        android:id="@+id/user_image2"
-                        android:layout_width="125dp"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="5dp"
-
-                        android:background="@drawable/caml"/>
-
-
-
-                    <ImageView
-                        android:id="@+id/user_image3"
-                        android:layout_width="125dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="end"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="-120dp"
-                        android:layout_marginRight="15dp"
-
-                        android:background="@drawable/caml"/>
-
-
-                    <TextView
-                        android:id="@+id/url"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="Unique IMG Url:"
-                        android:textColor="@color/colorPurple"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:visibility="invisible" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/arial"
-                        android:text="Note:Each image size max 2.5MB"
+                        android:text="@string/name31"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-
-                    <!--  <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="Payment To:"
-                        android:textColor="@color/colorPurple"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="Acc No:3456xxxx9087"/>
+                        android:id="@+id/e3"
+                        android:inputType="text" />
+
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Payment Via"
+                        android:fontFamily="@font/arial"
+                        android:text="Client's Remark"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <Spinner
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:id="@+id/s1"
+                        android:id="@+id/e2"
 
-                        android:drawablePadding="5dp"
-                        android:ems="10"
-                        android:entries="@array/tag_arrays3"
+                        android:editable="false"/>
 
-                        android:prompt="@string/tag_prompt3" />-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/arial"
+                        android:text="@string/name32"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e4"
+                        android:inputType="text" />
+
+
+
 
 
                     <Button
-                        android:id="@+id/b1"
-                        android:layout_width="250dp"
+                        android:layout_width="230dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
                         android:background="@drawable/bg_ui"
                         android:text="Save"
-                        android:fontFamily="@font/arial"
                         android:textAllCaps="false"
-                        android:textColor="@color/colorWhite"
-                        android:textStyle="bold" />
-
-
-                    <!--  <Button
-                        android:id="@+id/b2"
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_ui"
-                        android:text="Submit"
+                        android:id="@+id/b1"
+                        android:layout_marginTop="8dp"
                         android:layout_gravity="center"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorWhite"
-                        android:textStyle="bold" />-->
+                        android:fontFamily="@font/arial"
+                        android:textColor="@color/colorWhite" />
 
 
                 </LinearLayout>
@@ -230,16 +202,9 @@
                 android:elevation="10dp">
 
 
-
-
-
-
-
-
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
-
 
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
@@ -249,5 +214,7 @@
         app:itemTextColor="#fff"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu"/>
+
+
 
 </RelativeLayout>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PendingOnclick3">
+
+
+
+    <include layout="@layout/bgheader"
+        android:id="@+id/bghead"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/bgHeader"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:theme="@style/ToolbarTheme"
+        android:elevation="5dp" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/arial"
+        android:gravity="end"
+        android:text="Welcome"
+        android:textColor="#8d7b76"
+        android:textStyle="bold" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bgHeader"
+        android:layout_margin="20dp">
+        <RelativeLayout
+            android:id="@+id/rlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="50dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                    <requestFocus />
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/name26"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:id="@+id/tinput"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/s1"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Specify Reason"
+                        android:id="@+id/t1"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e4"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Call Rescheduled Date "
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:id="@+id/t2"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e5"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/arial"
+                        android:inputType="date"
+                        android:visibility="gone"
+                        android:hint="Select Date"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Invoice No of BST ELtromat"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e3"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+                        android:hint="R3567Y890"
+                        android:visibility="gone"/>
+
+                    <!--   <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="10dp"
+                           android:text="Engineer's In-Time"
+                           android:textColor="@color/colorPurple"
+                           android:textSize="14sp"
+                           android:textStyle="bold" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           android:id="@+id/e4"
+                           android:textSize="15sp"
+                           android:hint="Select Time"
+
+                          />  -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:id="@+id/appcharges"
+                        android:text="@string/name27"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
+
+
+
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Service Charge"
+                        android:fontFamily="@font/arial"
+                        android:id="@+id/c1"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e8"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+                        android:hint="Enter Service Charge"
+                        android:visibility="gone"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Expense Charge"
+                        android:fontFamily="@font/arial"
+                        android:id="@+id/c2"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+
+
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e7"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+                        android:hint="Enter expense Charges"
+                        android:visibility="gone"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="FOC"
+                        android:fontFamily="@font/arial"
+                        android:textColor="#000"
+                        android:id="@+id/c3"
+                        android:textSize="14sp"
+                        />
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/e6"
+                        android:fontFamily="@font/arial"
+                        android:textSize="15sp"
+                        android:hint="Specify Reason for FOC"
+                        android:visibility="gone"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/name28"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:id="@+id/t3"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/s2"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Acc No:3456xxxx09"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:id="@+id/t4"
+                        android:fontFamily="@font/arial"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ui"
+                        android:text="Save"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:id="@+id/b1"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/arial"
+                        android:textColor="@color/colorWhite" />
+
+
+                    <Button
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ui"
+                        android:text="Submit"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:id="@+id/b2"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/arial"
+                        android:textColor="@color/colorWhite"
+                        android:visibility="gone"/>
+
+
+
+
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv"
+                android:layout_alignLeft="@+id/cv"
+                android:layout_alignRight="@+id/cv"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="-30dp"
+                android:layout_marginRight="35dp"
+                android:elevation="10dp">
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_nav"
+        app:itemBackground="@color/colorBlue"
+        app:itemTextColor="#fff"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</RelativeLayout>

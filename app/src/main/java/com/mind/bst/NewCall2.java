@@ -676,7 +676,7 @@ public class NewCall2 extends AppCompatActivity {
         listwebvideoinspection.add("SuperHandy Scan 4100 9x7");
         listwebvideoinspection.add("SuperHandy Scan 4100_Dual Camera");
 
-
+     final String productserialno=getIntent().getStringExtra(Retrievedatasample.productserialno);
 
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
         final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
@@ -702,7 +702,7 @@ public class NewCall2 extends AppCompatActivity {
         final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
         String natureofcomp=getIntent().getStringExtra(Retrievedatasample.natureofcomplaint);
         String prodname=getIntent().getStringExtra(Retrievedatasample.productname);
-        String prodserialno=getIntent().getStringExtra(Retrievedatasample.productserialno);
+       // String prodserialno=getIntent().getStringExtra(Retrievedatasample.productserialno);
         final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
         String statusofcomp=getIntent().getStringExtra(Retrievedatasample.statusofcomplaint);
 
@@ -1222,7 +1222,8 @@ public class NewCall2 extends AppCompatActivity {
         else if (spinnerprocat.equals("Web Video Inspection")&& spinnerprodesc.equals("POWERScope 3000"))
         {
 
-            s4.setItems(listwebvideoinspection);
+         s4.setItems(listwebvideoinspection);
+           // PendingOnclick.s4.setItems(listwebvideoinspection);
             //NewCall2.s4.setAdapter(adapter4);
         }
 
@@ -1501,7 +1502,7 @@ public class NewCall2 extends AppCompatActivity {
                     i.putExtra(Retrievedatasample.callassignedto,callassignedto);
                     i.putExtra(Retrievedatasample.callassignedby,callassignedby);
                     i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
-
+                 i.putExtra(Retrievedatasample.productserialno,productserialno);
                     startActivity(i);
 
                 }
