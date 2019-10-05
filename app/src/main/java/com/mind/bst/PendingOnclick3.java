@@ -117,7 +117,7 @@ public class PendingOnclick3 extends AppCompatActivity {
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
 //tinput.setText(callassignedby);
 
-
+//t3.setText(custcountry);
         databaseReference = db.getReference("Calls Generated");
         databasependingReference = db.getReference("Calls Pending");
 
@@ -657,18 +657,15 @@ public class PendingOnclick3 extends AppCompatActivity {
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
 
 
+        String e29Text=PendingOnclick.s1.getText().toString();
+        //String e30Text=NewCall2.mDisplayTime.getText().toString();
 
+        //String e31Text=NewCall2.mDisplayDate.getText().toString();
 
+        //String e33Text=NewCall2.mReschdeuledDate.getText().toString();
 
-        String e29Text=NewCall2.s4.getSelectedItem().toString();
-        String e30Text=NewCall2.mDisplayTime.getText().toString();
-
-        String e31Text=NewCall2.mDisplayDate.getText().toString();
-
-        String e33Text=NewCall2.mReschdeuledDate.getText().toString();
-
-        String e34Text=NewCall3.e3.getText().toString();
-        String e35Text=NewCall5.s1.getSelectedItem().toString();
+        //String e34Text=NewCall3.e3.getText().toString();
+        //String e35Text=NewCall5.s1.getSelectedItem().toString();
 
 
 
@@ -692,18 +689,18 @@ public class PendingOnclick3 extends AppCompatActivity {
         // String e8Text=NewCall1.mDisplayTime.getText().toString();
 
 
-        String e9Text=NewCall2.e1.getText().toString();
+       // String e9Text=NewCall2.e1.getText().toString();
         // String e10Text=NewCall2.e2.getText().toString();
         //String e11Text=NewCall2.e3.getText().toString();
 
-        String e12Text=NewCall3.e1.getText().toString();
-        String e13Text=NewCall3.e2.getText().toString();
+        //String e12Text=NewCall3.e1.getText().toString();
+        //String e13Text=NewCall3.e2.getText().toString();
 
-        String e14Text=NewCall3.s1.getSelectedItem().toString();
+        //String e14Text=NewCall3.s1.getSelectedItem().toString();
 
-        String e15Text=NewCall3.e4.getText().toString();
+        //String e15Text=NewCall3.e4.getText().toString();
         // String e16Text=NewCall4.s1.getSelectedItem().toString();
-        String e17Text=NewCall4.url.getText().toString();
+       // String e17Text=NewCall4.url.getText().toString();
         // String e14Text=NewCall2.s1.getSelectedItem().toString();
 
 
@@ -715,9 +712,9 @@ public class PendingOnclick3 extends AppCompatActivity {
         String id=databaseReference.push().getKey();
 
 
-        if(!TextUtils.isEmpty(nameofservengg) && (!TextUtils.isEmpty(regionofservengg)) &&(!TextUtils.isEmpty(custrepname))&& (!TextUtils.isEmpty(custemail))  &&(!TextUtils.isEmpty(custname)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(custadd))&& (!TextUtils.isEmpty(spinnerprocat))&& (!TextUtils.isEmpty(cityofservice))&& (!TextUtils.isEmpty(custcity))&& (!TextUtils.isEmpty(custstate))&& (!TextUtils.isEmpty(custcountry))&& (!TextUtils.isEmpty(spinnerprodesc))&& (!TextUtils.isEmpty(callassignedto))&&  (!TextUtils.isEmpty(callassignedby))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(calllogdate))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))
+        if(!TextUtils.isEmpty(nameofservengg) && (!TextUtils.isEmpty(regionofservengg)) &&(!TextUtils.isEmpty(custrepname))&& (!TextUtils.isEmpty(custemail))  &&(!TextUtils.isEmpty(custname)) &&    (!TextUtils.isEmpty(custadd))&&  (!TextUtils.isEmpty(custcity))&& (!TextUtils.isEmpty(custstate))&& (!TextUtils.isEmpty(custcountry)))
         {
-            Total data=new Total(id,nameofservengg,regionofservengg,custrepname,custemail,custname,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,custadd,spinnerprocat,cityofservice,custcity,custstate,custcountry,spinnerprodesc,callassignedto,callassignedby,e29Text,e30Text,e31Text,calllogdate,e33Text,e34Text,e35Text);
+            TotalPending data=new TotalPending(id,nameofservengg,regionofservengg,custrepname,custemail,custname,custadd,custcity,custstate,custcountry);
             databaseReference.child(id).setValue(data);
             Toast.makeText(this, "Call generated Successfully", Toast.LENGTH_SHORT).show();
 
@@ -801,7 +798,7 @@ public class PendingOnclick3 extends AppCompatActivity {
         String e13Text=NewCall3.e2.getText().toString();
 
         String e14Text=NewCall3.s1.getSelectedItem().toString();
-
+        
         String e15Text=NewCall3.e4.getText().toString();
         // String e16Text=NewCall4.s1.getSelectedItem().toString();
         String e17Text=NewCall4.url.getText().toString();
