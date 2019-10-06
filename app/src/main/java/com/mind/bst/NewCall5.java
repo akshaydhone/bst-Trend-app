@@ -43,6 +43,7 @@ public class NewCall5 extends AppCompatActivity {
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
     DatabaseReference databasependingReference;
+    DatabaseReference databaseattendingReference;
     TextView username,t1,t2,t3,t4,tinput;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
@@ -123,6 +124,7 @@ public class NewCall5 extends AppCompatActivity {
 //t3.setText(pushkey);
         databaseReference = db.getReference("Calls Generated");
         databasependingReference = db.getReference("Calls Pending");
+        databaseattendingReference=db.getReference("Calls to be Attended");
 
 
 
@@ -365,7 +367,10 @@ public class NewCall5 extends AppCompatActivity {
 b2.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        
+
+        databaseattendingReference = db.getReference("Calls to be Attended").child(pushkey);
+        databaseattendingReference.removeValue();
+
         sendData();
         //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
         Intent i=new Intent(NewCall5.this,HomeActivity.class);
