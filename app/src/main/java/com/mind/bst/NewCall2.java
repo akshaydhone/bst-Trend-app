@@ -37,6 +37,7 @@ import java.util.List;
 public class NewCall2 extends AppCompatActivity {
 
     private static final String TAG = "NewCall2";
+ public static final String PUSHKEY = "pushkey";
 //step1
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
@@ -709,6 +710,7 @@ public class NewCall2 extends AppCompatActivity {
 
     final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
      final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+     final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
         //String spinnerprocat = NewCall1.s1.getSelectedItem().toString();
         //String spinnerprodesc = NewCall1.s3.getSelectedItem().toString();
 
@@ -1503,6 +1505,7 @@ public class NewCall2 extends AppCompatActivity {
                     i.putExtra(Retrievedatasample.callassignedby,callassignedby);
                     i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
                  i.putExtra(Retrievedatasample.productserialno,productserialno);
+                 i.putExtra(PUSHKEY,pushkey);
                     startActivity(i);
 
                 }

@@ -70,6 +70,7 @@ public class NewCall4 extends AppCompatActivity {
     private FirebaseAuth mAuth;
     TextView username;
     FirebaseUser user;
+    public static final String PUSHKEY = "pushkey";
 
 
 
@@ -180,6 +181,7 @@ public class NewCall4 extends AppCompatActivity {
         String statusofcomp=getIntent().getStringExtra(Retrievedatasample.statusofcomplaint);
         final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
         final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser() == null)
@@ -394,6 +396,7 @@ public class NewCall4 extends AppCompatActivity {
                                           i.putExtra(Retrievedatasample.callassignedto,callassignedto);
                                           i.putExtra(Retrievedatasample.callassignedby,callassignedby);
                                           i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
+                                          i.putExtra(PUSHKEY,pushkey);
                                           startActivity(i);
                                       }
 

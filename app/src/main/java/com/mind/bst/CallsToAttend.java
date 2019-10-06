@@ -110,7 +110,7 @@ public class CallsToAttend extends AppCompatActivity {
     public static final String productname = "com.mind.bst.productname";
     public static final String engineerintime = "com.mind.bst.engineerintime";
     public static final String callattendingdate = "com.mind.bst.callattendingdate";
-
+    public static final String PUSHKEY = "pushkey";
 
 
     @Override
@@ -126,6 +126,8 @@ public class CallsToAttend extends AppCompatActivity {
         databaseClients = FirebaseDatabase.getInstance().getReference("Calls to be Attended");
         //listViewClients = (ListView) findViewById(R.id.listViewClients);
         listViewClients=(ListView)findViewById(R.id.listViewClients);
+
+        final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
 
         // mToolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(mToolbar);
@@ -188,14 +190,15 @@ public class CallsToAttend extends AppCompatActivity {
                                                        intent.putExtra(customercountry, data.getCustomer_country());
                                                        intent.putExtra(productdescription, data.getProduct_description());
                                                        intent.putExtra(callassignedto, data.getCall_assigned_to());
-                                                      // intent.putExtra(callvisitingdate, data.getCall_visiting_date());
+                                                       // intent.putExtra(callvisitingdate, data.getCall_visiting_date());
                                                        intent.putExtra(productname, data.getProduct_name());
                                                        intent.putExtra(engineerintime, data.getEngineer_in_time());
                                                        intent.putExtra(callattendingdate, data.getCall_attending_date());
                                                        intent.putExtra(callassignedby, data.getCall_assigned_by());
                                                        //intent.putExtra(callvisitingdate,data.getCall_visiting_date());
-                                                      // intent.putExtra(gstin,data.getGstin());
+                                                       // intent.putExtra(gstin,data.getGstin());
                                                        //starting the activity with intent
+                                                       intent.putExtra(PUSHKEY,pushkey);
                                                        startActivity(intent);
 
 

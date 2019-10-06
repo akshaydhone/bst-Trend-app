@@ -10,8 +10,10 @@
         android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PendingOnclick2"></activity>
-        <activity android:name=".PendingOnclick3" />
+        <activity android:name=".PendingOnclick2"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".PendingOnclick3"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".PendingOnclick1"
             android:windowSoftInputMode="adjustPan" />

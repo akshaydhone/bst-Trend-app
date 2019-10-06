@@ -256,6 +256,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/arial"
                     android:text="Reports"
+                    android:id="@+id/reports"
                     android:textColor="#fff"
                     android:textStyle="bold" />
 

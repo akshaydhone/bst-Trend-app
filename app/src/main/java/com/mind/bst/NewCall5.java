@@ -52,6 +52,7 @@ public class NewCall5 extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     public static CheckBox c1,c2,c3;
     public static Spinner s1,s2;
+    public static final String PUSHKEY = "pushkey";
 
 
 
@@ -116,9 +117,10 @@ public class NewCall5 extends AppCompatActivity {
         final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
         final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+        final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
 //tinput.setText(callassignedby);
 
-
+//t3.setText(pushkey);
         databaseReference = db.getReference("Calls Generated");
         databasependingReference = db.getReference("Calls Pending");
 
@@ -363,6 +365,7 @@ public class NewCall5 extends AppCompatActivity {
 b2.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+        
         sendData();
         //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
         Intent i=new Intent(NewCall5.this,HomeActivity.class);

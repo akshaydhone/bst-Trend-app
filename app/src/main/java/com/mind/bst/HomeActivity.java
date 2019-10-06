@@ -21,7 +21,7 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
     CardView b1,b2,b3,b4,b5,b6;
     LinearLayout ll;
-    TextView username,tspin;
+    TextView username,tspin,reports;
     List<UserInformation> clients;
     private FirebaseAuth mAuth;
     //Intent intent = getIntent();
@@ -37,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
     public static final String Contact = "com.mind.bst.contact";
     public static final String Email = "com.mind.bst.email";
     public static final String Image_Url = "com.mind.bst.image_url";
+    public static final String PUSHKEY = "pushkey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         b5=(CardView)findViewById(R.id.b5);
         b6=(CardView)findViewById(R.id.b6);
         tspin=(TextView)findViewById(R.id.tspin);
+        reports=(TextView)findViewById(R.id.reports);
        // tspin.setText(positionToShowToSpinner);
 
         username=(TextView)findViewById(R.id.username) ;
@@ -88,6 +90,9 @@ public class HomeActivity extends AppCompatActivity {
         final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
         final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+
+        final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
+        //reports.setText(pushkey);
 //tinput.setText(callassignedby);
        // String prodcat=getIntent().getStringExtra(TAG_PRODUCT_CAT);
        // tspin.setText(prodcat);
@@ -139,6 +144,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i=new Intent(HomeActivity.this,CallsToAttend.class);
+                i.putExtra(PUSHKEY,pushkey);
                 startActivity(i);
                 // Intent i=new Intent(HomeActivity.this,PrevActual.class);
                 //startActivity(i);

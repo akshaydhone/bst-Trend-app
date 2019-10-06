@@ -32,6 +32,7 @@ public class FilledPageData extends AppCompatActivity {
     private Activity context;
     List<TotalAttendedData> clients;
     FirebaseUser user;
+    TextView coun;
     // TextView t1;
     ImageView t2;
     String key;
@@ -44,6 +45,7 @@ public class FilledPageData extends AppCompatActivity {
     private FirebaseAuth mAuth;
     String uid;
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    public static final String PUSHKEY = "pushkey";
     // FirebaseDatabase mDatabase;
     //String key = mDatabase.child("Calls Generated").push().getKey();
 
@@ -58,7 +60,7 @@ public class FilledPageData extends AppCompatActivity {
         uid=user.getUid();
 // key = databaseClients.child("Calls Generated").push().getKey();
 
-
+        final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
         databaseClients = FirebaseDatabase.getInstance().getReference("Calls to be Attended");
         // listViewClients = (ListView) findViewById(R.id.listViewClients);
         // t1=(TextView)findViewById(R.id.textView);
@@ -68,6 +70,8 @@ public class FilledPageData extends AppCompatActivity {
        // t2=(ImageView)findViewById(R.id.textclientimgurl);
 
           b1=(Button)findViewById(R.id.b1);
+          coun=(TextView)findViewById(R.id.coun);
+          //coun.setText(pushkey);
 
 
 
@@ -130,6 +134,7 @@ public class FilledPageData extends AppCompatActivity {
                 i.putExtra(Retrievedatasample.callassignedto,textViewCallAssignedTo.getText().toString());
                 i.putExtra(Retrievedatasample.callassignedby,textViewCallAssignedBy.getText().toString());
                 i.putExtra(Retrievedatasample.callvisitingdate,textViewCallVisitDate.getText().toString());
+                i.putExtra(PUSHKEY,pushkey);
                 startActivity(i);
             }
         }

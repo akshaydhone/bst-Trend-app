@@ -182,8 +182,8 @@
                         android:id="@+id/e5"
                         android:textSize="15sp"
                         android:fontFamily="@font/arial"
-
-                        android:hint="Enter Date" />
+                        android:hint="Enter Date"
+                         />
 
 
 

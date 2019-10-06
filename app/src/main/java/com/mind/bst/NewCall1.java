@@ -66,6 +66,7 @@ public class NewCall1 extends AppCompatActivity {
     // JSONParser jsonParser=new JSONParser();
     //int i=0;
     public static final String TAG_PRODUCT_CAT = "prodcat";
+    public static final String PUSHKEY = "pushkey";
 
     Button b1;
     public static Spinner s1,s2,s3,s4;
@@ -743,147 +744,7 @@ public class NewCall1 extends AppCompatActivity {
 
         databaseReference = db.getReference("Calls to be Attended");
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            boolean valid = true;
-            @Override
-            public void onClick(View v) {
-                String spinnerValue = s1.getSelectedItem().toString();
-                String spinnerValue1 = s3.getSelectedItem().toString();
-                String displayDate=mDisplayDate.getText().toString();
 
-                String visitDate=mVisitDate.getText().toString();
-
-                if (spinnerValue.equals("Select"))
-
-                {
-                    Toast.makeText(NewCall1.this, "Select at least one product category", Toast.LENGTH_SHORT).show();
-                    //NewCall2.s4.setAdapter(adapter2);
-                }
-
-                else if (spinnerValue1.equals("Select"))
-
-                {
-
-                    Toast.makeText(NewCall1.this, "Select at least one product Description", Toast.LENGTH_SHORT).show();
-                    //NewCall2.s4.setAdapter(adapter2);
-                }
-
-                else if (displayDate.equals("Select Date"))
-
-                {
-
-                    Toast.makeText(NewCall1.this, "Select Call Log Date", Toast.LENGTH_SHORT).show();
-                    //NewCall2.s4.setAdapter(adapter2);
-                }
-                else if (visitDate.equals("Select Date"))
-
-                {
-
-                    Toast.makeText(NewCall1.this, "Select Call visit Date", Toast.LENGTH_SHORT).show();
-                    //NewCall2.s4.setAdapter(adapter2);
-                }
-
-
-                else{
-                    String date = mDisplayDate.getText().toString();
-                    String date1 = mVisitDate.getText().toString();
-                    sendData();
-
-                    // mEditor.putString(getString(R.string.date), date);
-                    //mEditor.putString(getString(R.string.date1), date1);
-                    //mEditor.commit();
-                    Intent i = new Intent(NewCall1.this, HomeActivity.class);
-                    i.putExtra(TAG_PRODUCT_CAT,s1.getSelectedItem().toString());
-                    startActivity(i);
-                }
-               /* if (e1.getText().toString().trim().length() == 0) {
-                    e1.setError("Contact not entered");
-                    e1.requestFocus();
-                }
-
-                else if (e2.getText().toString().trim().length() == 0) {
-                    e2.setError("Email not Generated");
-                    e2.requestFocus();
-                }
-
-
-                else if (date.isEmpty() ) {
-                    mDisplayDate.setError("Set date");
-                    valid = false;
-                }
-
-
-                else if (time.isEmpty() ) {
-                    mDisplayTime.setError("Set time");
-                    valid = false;
-                }*/
-
-
-
-
-
-                //sendData();
-                   /* AttemptLogin attemptLogin= new AttemptLogin();
-                    attemptLogin.execute(
-                            e1.getText().toString(),
-                            e2.getText().toString(),
-
-                            "");*/
-                //save contact
-                //String cont = e1.getText().toString();
-                //mEditor.putString(getString(R.string.cont), cont);
-                // mEditor.commit();
-
-
-                //save email
-                // String email = e2.getText().toString();
-                // mEditor.putString(getString(R.string.email), email);
-                // mEditor.commit();
-
-                //save date
-                //String date = mDisplayDate.getText().toString();
-                // mEditor.putString(getString(R.string.date), date);
-                // mEditor.commit();
-
-
-
-                /*int selectedPosition = s1.getSelectedItemPosition();
-                mEditor.putInt("spinnerSelection", selectedPosition);
-                mEditor.apply();
-
-
-
-                int selectedPosition1 = s2.getSelectedItemPosition();
-                mEditor.putInt("spinnerSelection1", selectedPosition1);
-                mEditor.apply();
-
-
-                int selectedPosition2 = s3.getSelectedItemPosition();
-                mEditor.putInt("spinnerSelection2", selectedPosition2);
-                mEditor.apply();
-
-
-                int selectedPosition3 = s4.getSelectedItemPosition();
-                mEditor.putInt("spinnerSelection3", selectedPosition3);
-                mEditor.apply();*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-        });
 
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -984,6 +845,196 @@ public class NewCall1 extends AppCompatActivity {
             });*/
 
 
+        b1.setOnClickListener(new View.OnClickListener() {
+            boolean valid = true;
+            @Override
+            public void onClick(View v) {
+                String spinnerValue = s1.getSelectedItem().toString();
+                String spinnerValue1 = s3.getSelectedItem().toString();
+                String displayDate=mDisplayDate.getText().toString();
+
+                String visitDate=mVisitDate.getText().toString();
+
+                if (spinnerValue.equals("Select"))
+
+                {
+                    Toast.makeText(NewCall1.this, "Select at least one product category", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+
+                else if (spinnerValue1.equals("Select"))
+
+                {
+
+                    Toast.makeText(NewCall1.this, "Select at least one product Description", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+
+                else if (displayDate.equals("Select Date"))
+
+                {
+
+                    Toast.makeText(NewCall1.this, "Select Call Log Date", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+                else if (visitDate.equals("Select Date"))
+
+                {
+
+                    Toast.makeText(NewCall1.this, "Select Call visit Date", Toast.LENGTH_SHORT).show();
+                    //NewCall2.s4.setAdapter(adapter2);
+                }
+
+
+                else{
+                    String date = mDisplayDate.getText().toString();
+                    String date1 = mVisitDate.getText().toString();
+
+
+
+
+
+                    String e1Text=NewCallGen.e2.getText().toString();
+                    String e2Text=NewCallGen.e5.getText().toString();
+                    String e3Text=NewCallGen.e1.getText().toString();
+                    String e4Text=NewCallGen.searchableSpinner.getSelectedItem().toString();
+                    String e5Text=NewCallGen.e10.getText().toString();
+                    String e6Text=NewCallGen.e3.getText().toString();
+                    String e7Text=NewCallGen.e4.getText().toString();
+                    String e8Text=NewCallGen.e9.getText().toString();
+                    String e9Text=NewCallGen.e7.getText().toString();
+                    String e10Text=NewCallGen.e11.getText().toString();
+                    String e11Text=NewCallGen.e8.getText().toString();
+
+
+                    String e12Text=s1.getSelectedItem().toString();
+                    String e13Text=s3.getSelectedItem().toString();
+                    String e14Text=mDisplayDate.getText().toString();
+                    String e15Text=e5.getText().toString();
+                    String e16Text=e7.getText().toString();
+                    String e17Text=mVisitDate.getText().toString();
+
+
+
+
+
+
+
+                    final String id=databaseReference.push().getKey();
+
+                    final String keypush=(id);
+
+                    if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) && (!TextUtils.isEmpty(e3Text))   && (!TextUtils.isEmpty(e4Text)) && (!TextUtils.isEmpty(e5Text))   && (!TextUtils.isEmpty(e6Text)) && (!TextUtils.isEmpty(e7Text))   && (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))   && (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text))   && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))   && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))   && (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)))
+                    {
+                        DataDetail data=new DataDetail(id,e1Text,e2Text,e3Text,e4Text,e5Text,e6Text,e7Text,e8Text,e9Text,e10Text,e11Text,e12Text,e13Text,e14Text,e15Text,e16Text,e17Text);
+                        databaseReference.child(id).setValue(data);
+                        Toast.makeText(getApplicationContext(), "Call added to the List", Toast.LENGTH_SHORT).show();
+
+                    }
+                    //sendData();
+
+                    // mEditor.putString(getString(R.string.date), date);
+                    //mEditor.putString(getString(R.string.date1), date1);
+                    //mEditor.commit();
+                    Intent i = new Intent(NewCall1.this, HomeActivity.class);
+                    i.putExtra(TAG_PRODUCT_CAT,s1.getSelectedItem().toString());
+                    i.putExtra(PUSHKEY,keypush);
+                    startActivity(i);
+                }
+               /* if (e1.getText().toString().trim().length() == 0) {
+                    e1.setError("Contact not entered");
+                    e1.requestFocus();
+                }
+
+                else if (e2.getText().toString().trim().length() == 0) {
+                    e2.setError("Email not Generated");
+                    e2.requestFocus();
+                }
+
+
+                else if (date.isEmpty() ) {
+                    mDisplayDate.setError("Set date");
+                    valid = false;
+                }
+
+
+                else if (time.isEmpty() ) {
+                    mDisplayTime.setError("Set time");
+                    valid = false;
+                }*/
+
+
+
+
+
+                //sendData();
+                   /* AttemptLogin attemptLogin= new AttemptLogin();
+                    attemptLogin.execute(
+                            e1.getText().toString(),
+                            e2.getText().toString(),
+
+                            "");*/
+                //save contact
+                //String cont = e1.getText().toString();
+                //mEditor.putString(getString(R.string.cont), cont);
+                // mEditor.commit();
+
+
+                //save email
+                // String email = e2.getText().toString();
+                // mEditor.putString(getString(R.string.email), email);
+                // mEditor.commit();
+
+                //save date
+                //String date = mDisplayDate.getText().toString();
+                // mEditor.putString(getString(R.string.date), date);
+                // mEditor.commit();
+
+
+
+                /*int selectedPosition = s1.getSelectedItemPosition();
+                mEditor.putInt("spinnerSelection", selectedPosition);
+                mEditor.apply();
+
+
+
+                int selectedPosition1 = s2.getSelectedItemPosition();
+                mEditor.putInt("spinnerSelection1", selectedPosition1);
+                mEditor.apply();
+
+
+                int selectedPosition2 = s3.getSelectedItemPosition();
+                mEditor.putInt("spinnerSelection2", selectedPosition2);
+                mEditor.apply();
+
+
+                int selectedPosition3 = s4.getSelectedItemPosition();
+                mEditor.putInt("spinnerSelection3", selectedPosition3);
+                mEditor.apply();*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+        });
+
+
+
+
+
+
     }
 
 
@@ -1019,7 +1070,9 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-        String id=databaseReference.push().getKey();
+         final String id=databaseReference.push().getKey();
+
+       final String keypush=(id);
 
         if(!TextUtils.isEmpty(e1Text) && (!TextUtils.isEmpty(e2Text)) && (!TextUtils.isEmpty(e3Text))   && (!TextUtils.isEmpty(e4Text)) && (!TextUtils.isEmpty(e5Text))   && (!TextUtils.isEmpty(e6Text)) && (!TextUtils.isEmpty(e7Text))   && (!TextUtils.isEmpty(e8Text)) && (!TextUtils.isEmpty(e9Text))   && (!TextUtils.isEmpty(e10Text)) && (!TextUtils.isEmpty(e11Text))   && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text))   && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))   && (!TextUtils.isEmpty(e16Text))&& (!TextUtils.isEmpty(e17Text)))
         {
@@ -1036,8 +1089,13 @@ public class NewCall1 extends AppCompatActivity {
 
 
 
-
     }
+
+
+
+
+
+
 
     private void checkSharedPreferences() {
 

@@ -36,7 +36,7 @@ public class PrevActual extends AppCompatActivity {
     public static final String CLIENT_NAME = "com.mind.bst.clientname";
     public static final String CLIENT_ID = "com.mind.bst.clientid";
     ListView listViewClients;
-public ArrayAdapter mAdapter;
+    public ArrayAdapter mAdapter;
 
     Intent intent = getIntent();
     //Toolbar mToolbar;
@@ -93,7 +93,7 @@ public ArrayAdapter mAdapter;
     public static final String productcategory = "com.mind.bst.productcategory";
     public static final String engineerobservation = "com.mind.bst.engineerobservation";
     //public static final String clientremark = "com.mind.bst.remark";
-   // public static final String natureofcomplaint = "com.mind.bst.natureofcomplaint";
+    // public static final String natureofcomplaint = "com.mind.bst.natureofcomplaint";
     //public static final String detailofcomplaint = "com.mind.bst.detailofcomplaint";
     public static final String customername = "com.mind.bst.customername";
     public static final String customeraddress = "com.mind.bst.customeraddress";
@@ -138,83 +138,83 @@ public ArrayAdapter mAdapter;
 
 
         listViewClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                   @Override
+                                                   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
 
 
-                Total data = clients.get(position);
+                                                       Total data = clients.get(position);
 
-                //creating an intent
-                Intent intent = new Intent(getApplicationContext(), ActualPrevCall.class);
+                                                       //creating an intent
+                                                       Intent intent = new Intent(getApplicationContext(), ActualPrevCall.class);
 
-                //putting artist name and id to intent
-                intent.putExtra(Region, data.getName_of_service_engineer());
-                intent.putExtra(clientname, data.getCustomer_rep_name());
-                intent.putExtra(clientaddress, data.getCustomer_Email_Id());
-                intent.putExtra(custcont, data.getCust_cont());
-               intent.putExtra(custemail, data.getCustomer_name());
-
-
-
-                intent.putExtra(clienturl, data.getNature_of_comp());
-                intent.putExtra(clientremark, data.getClient_remark());
-                intent.putExtra(date, data.getCall_log_date());
-               // intent.putExtra(detailofcomplaint, data.getDetails_of_complaint());
-                intent.putExtra(enggname, data.getRegion_of_service_engineer());
-                intent.putExtra(enggobs, data.getEngineer_observation());
-                //intent.putExtra(natureofcomplaint, data.getNature_of_complaint());
-               // intent.putExtra(payment, data.getPayment_via());
-               // intent.putExtra(proname, data.getProduct_name());
-
-
-                //intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
-
-                intent.putExtra(prosrno, data.getProduct_serial_no());
-                //intent.putExtra(time, data.getTime());
+                                                       //putting artist name and id to intent
+                                                       intent.putExtra(Region, data.getName_of_service_engineer());
+                                                       intent.putExtra(clientname, data.getCustomer_rep_name());
+                                                       intent.putExtra(clientaddress, data.getCustomer_Email_Id());
+                                                       intent.putExtra(custcont, data.getCust_cont());
+                                                       intent.putExtra(custemail, data.getCustomer_name());
 
 
 
+                                                       intent.putExtra(clienturl, data.getNature_of_comp());
+                                                       intent.putExtra(clientremark, data.getClient_remark());
+                                                       intent.putExtra(date, data.getCall_log_date());
+                                                       // intent.putExtra(detailofcomplaint, data.getDetails_of_complaint());
+                                                       intent.putExtra(enggname, data.getRegion_of_service_engineer());
+                                                       intent.putExtra(enggobs, data.getEngineer_observation());
+                                                       //intent.putExtra(natureofcomplaint, data.getNature_of_complaint());
+                                                       // intent.putExtra(payment, data.getPayment_via());
+                                                       // intent.putExtra(proname, data.getProduct_name());
 
 
-                intent.putExtra(nameofserviceengineer, data.getName_of_service_engineer());
-                intent.putExtra(regionofserviceengineer, data.getRegion_of_service_engineer());
-                intent.putExtra(customerrepname, data.getCustomer_rep_name());
-                intent.putExtra(customeremailid, data.getCustomer_Email_Id());
-                intent.putExtra(calllogdate, data.getCall_log_date());
-                intent.putExtra(cityofservice, data.getCity_of_service());
-                intent.putExtra(productserialno, data.getProduct_serial_no());
-               // intent.putExtra(gstin, data.getGstin());
-                intent.putExtra(productcategory, data.getProduct_category());
-                intent.putExtra(engineerobservation, data.getEngineer_observation());
-                intent.putExtra(clientremark, data.getClient_remark());
-                intent.putExtra(natureofcomplaint, data.getNature_of_comp());
-                intent.putExtra(detailofcomplaint, data.getDetails_of_comp());
-                intent.putExtra(customername, data.getCustomer_name());
-                intent.putExtra(customeraddress, data.getCustomer_address());
-                intent.putExtra(customercity, data.getCustomer_city());
-                intent.putExtra(customerstate, data.getCustomer_state());
-                intent.putExtra(customercountry, data.getCustomer_country());
-                intent.putExtra(productdescription, data.getProduct_description());
-                intent.putExtra(callassignedto, data.getCall_assigned_to());
-                //intent.putExtra(callvisitingdate, data.getCall_visiting_date());
-                intent.putExtra(productname, data.getProduct_name());
-                intent.putExtra(engineerintime, data.getEngineer_in_time());
-                intent.putExtra(callattendingdate, data.getCall_attending_date());
+                                                       //intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
 
-                intent.putExtra(callassignedby, data.getCall_assigned_by());
-                intent.putExtra(callrescheduleddate, data.getCall_rescheduled_date());
-                intent.putExtra(invoiceno, data.getInvoice_no());
-                intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
+                                                       intent.putExtra(prosrno, data.getProduct_serial_no());
+                                                       //intent.putExtra(time, data.getTime());
 
 
-                //starting the activity with intent
-                startActivity(intent);
 
 
-            }
-        }
+
+                                                       intent.putExtra(nameofserviceengineer, data.getName_of_service_engineer());
+                                                       intent.putExtra(regionofserviceengineer, data.getRegion_of_service_engineer());
+                                                       intent.putExtra(customerrepname, data.getCustomer_rep_name());
+                                                       intent.putExtra(customeremailid, data.getCustomer_Email_Id());
+                                                       intent.putExtra(calllogdate, data.getCall_log_date());
+                                                       intent.putExtra(cityofservice, data.getCity_of_service());
+                                                       intent.putExtra(productserialno, data.getProduct_serial_no());
+                                                       // intent.putExtra(gstin, data.getGstin());
+                                                       intent.putExtra(productcategory, data.getProduct_category());
+                                                       intent.putExtra(engineerobservation, data.getEngineer_observation());
+                                                       intent.putExtra(clientremark, data.getClient_remark());
+                                                       intent.putExtra(natureofcomplaint, data.getNature_of_comp());
+                                                       intent.putExtra(detailofcomplaint, data.getDetails_of_comp());
+                                                       intent.putExtra(customername, data.getCustomer_name());
+                                                       intent.putExtra(customeraddress, data.getCustomer_address());
+                                                       intent.putExtra(customercity, data.getCustomer_city());
+                                                       intent.putExtra(customerstate, data.getCustomer_state());
+                                                       intent.putExtra(customercountry, data.getCustomer_country());
+                                                       intent.putExtra(productdescription, data.getProduct_description());
+                                                       intent.putExtra(callassignedto, data.getCall_assigned_to());
+                                                       //intent.putExtra(callvisitingdate, data.getCall_visiting_date());
+                                                       intent.putExtra(productname, data.getProduct_name());
+                                                       intent.putExtra(engineerintime, data.getEngineer_in_time());
+                                                       intent.putExtra(callattendingdate, data.getCall_attending_date());
+
+                                                       intent.putExtra(callassignedby, data.getCall_assigned_by());
+                                                       intent.putExtra(callrescheduleddate, data.getCall_rescheduled_date());
+                                                       intent.putExtra(invoiceno, data.getInvoice_no());
+                                                       intent.putExtra(statusofcomplaint, data.getStatus_of_complaint());
+
+
+                                                       //starting the activity with intent
+                                                       startActivity(intent);
+
+
+                                                   }
+                                               }
         );
 
 
@@ -291,8 +291,8 @@ public ArrayAdapter mAdapter;
 
                 // databaseClients = FirebaseDatabase.getInstance().getReference("Calls Generated").child("client");
                 //Query queryfilter = FirebaseDatabase.getInstance()
-                        //.getReference("Calls Generated")
-                        //.child("client").startAt(s).endAt(s+"\uf8ff");
+                //.getReference("Calls Generated")
+                //.child("client").startAt(s).endAt(s+"\uf8ff");
 
 
                 return false;
@@ -300,7 +300,7 @@ public ArrayAdapter mAdapter;
 
             @Override
             public boolean onQueryTextChange(String s) {
-          //databaseClients=FirebaseDatabase.getInstance().getReference("");
+                //databaseClients=FirebaseDatabase.getInstance().getReference("");
 
                /*mAdapter.getFilter().filter(s);
                 mAdapter.notifyDataSetChanged();*/

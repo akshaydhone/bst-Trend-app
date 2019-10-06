@@ -30,7 +30,7 @@ public class ViewClientCallsImg extends ArrayAdapter<Total> {
     List<Total> clients;
 
     ImageView imageView;
-     Button b1;
+    Button b1;
 
 
 

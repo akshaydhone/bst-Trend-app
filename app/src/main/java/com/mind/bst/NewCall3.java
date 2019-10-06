@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class NewCall3 extends AppCompatActivity {
     private static final String TAG = "NewCall3";
+    public static final String PUSHKEY = "pushkey";
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
    public static EditText e1,e2,e4,e3;
@@ -88,6 +89,7 @@ public class NewCall3 extends AppCompatActivity {
 
         final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
         final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
 
 
 
@@ -308,6 +310,7 @@ public class NewCall3 extends AppCompatActivity {
                     i.putExtra(Retrievedatasample.callassignedto,callassignedto);
                     i.putExtra(Retrievedatasample.callassignedby,callassignedby);
                     i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
+                    i.putExtra(PUSHKEY,pushkey);
                     startActivity(i);
 
                 }

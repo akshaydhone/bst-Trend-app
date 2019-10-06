@@ -283,6 +283,7 @@
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold"
+                        android:id="@+id/coun"
                         android:fontFamily="@font/arial"/>
 
                     <EditText

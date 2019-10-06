@@ -34,7 +34,7 @@ public class PendingOnclick extends AppCompatActivity {
 
     public static EditText e7;
 
-    public static TextView e4,e5,e6;
+    public static TextView e6;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
 
@@ -157,9 +157,9 @@ s1.setText(prodname);
 
 
         mDisplayTime = (TextView) findViewById(R.id.e4);
-        mDisplayTime.setText("Select Time");
+        //mDisplayTime.setText("Select Time");
         mDisplayDate = (TextView) findViewById(R.id.e5);
-        mDisplayDate.setText("Select Date");
+       // mDisplayDate.setText("Select Date");
         mReschdeuledDate = (TextView) findViewById(R.id.e6);
         b1=(Button)findViewById(R.id.b1);
         //step2
