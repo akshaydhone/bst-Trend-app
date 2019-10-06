@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class PendingOnclick1 extends AppCompatActivity {
     private static final String TAG = "PendingOnclick1";
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
     public static EditText e2,e4,e3,e11;
@@ -82,6 +83,7 @@ public class PendingOnclick1 extends AppCompatActivity {
         final String prodserialno=getIntent().getStringExtra(Retrievedatasample.productserialno);
         final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
         String statusofcomp=getIntent().getStringExtra(Retrievedatasample.statusofcomplaint);
+        final String pushpendingkey=getIntent().getStringExtra(NewCall5.PUSHPENDINGKEY);
 
 
         final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
@@ -245,6 +247,7 @@ public class PendingOnclick1 extends AppCompatActivity {
                     i.putExtra(Retrievedatasample.productserialno,prodserialno);
                     i.putExtra(Retrievedatasample.enggobs,enggobservation);
                     i.putExtra(Retrievedatasample.clientremark,clientremark);
+                    i.putExtra(PUSHPENDINGKEY,pushpendingkey);
                     startActivity(i);
 
                 }

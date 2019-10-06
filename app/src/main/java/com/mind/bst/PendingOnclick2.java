@@ -71,14 +71,14 @@ public class PendingOnclick2 extends AppCompatActivity {
     private FirebaseAuth mAuth;
     TextView username;
     FirebaseUser user;
-
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
 
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
     Button select_image,b1,b2;
     ImageView user_image,user_image1,user_image2,user_image3;
-    public static TextView url;
+    public static TextView url,testuid;
     public static final int READ_EXTERNAL_STORAGE = 0;
     private static final int GALLERY_INTENT = 2;
     private static final int GALLERY_INTENT1 = 3;
@@ -143,6 +143,7 @@ public class PendingOnclick2 extends AppCompatActivity {
         user_image1 = (ImageView) findViewById(R.id.user_image1);
         user_image2 = (ImageView) findViewById(R.id.user_image2);
         user_image3 = (ImageView) findViewById(R.id.user_image3);
+        testuid=(TextView)findViewById(R.id.testuid);
         b1=(Button)findViewById(R.id.b1);
         b2=(Button)findViewById(R.id.b2);
         url=(TextView)findViewById(R.id.url) ;
@@ -181,6 +182,8 @@ public class PendingOnclick2 extends AppCompatActivity {
         String statusofcomp=getIntent().getStringExtra(Retrievedatasample.statusofcomplaint);
         final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
         final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+        final String pushpendingkey=getIntent().getStringExtra(NewCall5.PUSHPENDINGKEY);
+       // testuid.setText(pushpendingkey);
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser() == null)
@@ -395,6 +398,7 @@ public class PendingOnclick2 extends AppCompatActivity {
                                           i.putExtra(Retrievedatasample.callassignedto,callassignedto);
                                           i.putExtra(Retrievedatasample.callassignedby,callassignedby);
                                           i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
+                                          i.putExtra(PUSHPENDINGKEY,pushpendingkey);
                                           startActivity(i);
                                       }
 

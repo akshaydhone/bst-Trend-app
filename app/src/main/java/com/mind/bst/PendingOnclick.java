@@ -34,7 +34,7 @@ public class PendingOnclick extends AppCompatActivity {
 
     public static EditText e7;
 
-    public static TextView e6;
+    public static TextView e6,testuids;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
 
@@ -48,6 +48,8 @@ public class PendingOnclick extends AppCompatActivity {
 
     public static TextView mDisplayDate,mReschdeuledDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener,mDateSetListener1;
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
+
 
    // public static MultiSelectPendingSpinner s1;
 
@@ -63,6 +65,7 @@ public class PendingOnclick extends AppCompatActivity {
 
 
         s1 = (TextView)findViewById(R.id.s1);
+        testuids = (TextView)findViewById(R.id.testuids);
 
 
 
@@ -94,8 +97,9 @@ public class PendingOnclick extends AppCompatActivity {
         final String prodserialno=getIntent().getStringExtra(Retrievedatasample.productserialno);
         final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
         String statusofcomp=getIntent().getStringExtra(Retrievedatasample.statusofcomplaint);
+        final String pushpendingkey=getIntent().getStringExtra(NewCall5.PUSHPENDINGKEY);
 
-
+//testuids.setText(pushpendingkey);
 e7.setText(prodserialno);
 s1.setText(prodname);
 
@@ -277,7 +281,7 @@ s1.setText(prodname);
                                           i.putExtra(Retrievedatasample.productserialno,prodserialno);
                                           i.putExtra(Retrievedatasample.enggobs,enggobservation);
                                           i.putExtra(Retrievedatasample.clientremark,clientremark);
-
+                                          i.putExtra(PUSHPENDINGKEY,pushpendingkey);
                                           startActivity(i);
 
                                       }

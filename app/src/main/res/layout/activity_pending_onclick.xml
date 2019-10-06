@@ -92,6 +92,7 @@
                         android:text="@string/name17"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:id="@+id/testuids"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 

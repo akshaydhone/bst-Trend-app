@@ -54,6 +54,7 @@ public class NewCall5 extends AppCompatActivity {
     public static CheckBox c1,c2,c3;
     public static Spinner s1,s2;
     public static final String PUSHKEY = "pushkey";
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
 
 
 
@@ -394,7 +395,112 @@ b2.setOnClickListener(new View.OnClickListener() {
 
                 else {
 
-                    sendPendingData();
+                   // sendPendingData();
+
+
+
+
+
+
+                    final String nameofservengg=getIntent().getStringExtra(Retrievedatasample.nameofserviceengineer);
+                    final String regionofservengg=getIntent().getStringExtra(Retrievedatasample.regionofserviceengineer);
+                    final String cityofservice=getIntent().getStringExtra(Retrievedatasample.cityofservice);
+                    final String custname=getIntent().getStringExtra(Retrievedatasample.customername);
+                    final String custrepname=getIntent().getStringExtra(Retrievedatasample.customerrepname);
+                    final String custemail=getIntent().getStringExtra(Retrievedatasample.customeremailid);
+
+
+
+                    final String custadd=getIntent().getStringExtra(Retrievedatasample.customeraddress);
+                    //final String gstnumber=getIntent().getStringExtra(Retrievedatasample.gstin);
+                    final String custcity=getIntent().getStringExtra(Retrievedatasample.customercity);
+
+
+                    final String custstate=getIntent().getStringExtra(Retrievedatasample.customerstate);
+                    final String custcountry=getIntent().getStringExtra(Retrievedatasample.customercountry);
+
+
+
+                    final String spinnerprocat=getIntent().getStringExtra(Retrievedatasample.productcategory);
+
+
+
+
+                    final String spinnerprodesc=getIntent().getStringExtra(Retrievedatasample.productdescription);
+                    final String calllogdate=getIntent().getStringExtra(Retrievedatasample.calllogdate);
+
+
+                    final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
+                    //final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
+                    final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+
+
+
+
+
+                    String e29Text=NewCall2.s4.getSelectedItem().toString();
+                    String e30Text=NewCall2.mDisplayTime.getText().toString();
+
+                    String e31Text=NewCall2.mDisplayDate.getText().toString();
+
+                    String e33Text=NewCall2.mReschdeuledDate.getText().toString();
+
+                    String e34Text=NewCall3.e3.getText().toString();
+                    String e35Text=NewCall5.s1.getSelectedItem().toString();
+
+
+
+                    //String e36Text=NewCall5.e6.getText().toString();
+                    //String e37Text=NewCall5.e5.getText().toString();
+
+
+
+
+
+
+
+
+
+
+
+
+                    //String e5Text=NewCall1.e1.getText().toString();
+                    // String e6Text=NewCall1.e2.getText().toString();
+
+                    // String e8Text=NewCall1.mDisplayTime.getText().toString();
+
+
+                    String e9Text=NewCall2.e1.getText().toString();
+                    // String e10Text=NewCall2.e2.getText().toString();
+                    //String e11Text=NewCall2.e3.getText().toString();
+
+                    String e12Text=NewCall3.e1.getText().toString();
+                    String e13Text=NewCall3.e2.getText().toString();
+
+                    String e14Text=NewCall3.s1.getSelectedItem().toString();
+
+                    String e15Text=NewCall3.e4.getText().toString();
+                    // String e16Text=NewCall4.s1.getSelectedItem().toString();
+                    String e17Text=NewCall4.url.getText().toString();
+                    // String e14Text=NewCall2.s1.getSelectedItem().toString();
+
+
+
+                    // FirebaseUser user = mAuth.getCurrentUser();
+                    //Log.d("LOGGED", "FirebaseUser: " + user);
+                    // String id=user.getDisplayName();
+                   final String id=databasependingReference.push().getKey();
+                  final  String pendingpushkey=id;
+
+
+                    if(!TextUtils.isEmpty(nameofservengg) && (!TextUtils.isEmpty(regionofservengg)) &&(!TextUtils.isEmpty(custrepname))&& (!TextUtils.isEmpty(custemail))  &&(!TextUtils.isEmpty(custname)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(custadd))&& (!TextUtils.isEmpty(spinnerprocat))&& (!TextUtils.isEmpty(cityofservice))&& (!TextUtils.isEmpty(custcity))&& (!TextUtils.isEmpty(custstate))&& (!TextUtils.isEmpty(custcountry))&& (!TextUtils.isEmpty(spinnerprodesc))&& (!TextUtils.isEmpty(callassignedto))&&  (!TextUtils.isEmpty(callassignedby))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(calllogdate))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))
+                    {
+                        Total data=new Total(id,nameofservengg,regionofservengg,custrepname,custemail,custname,e9Text,e12Text,e13Text,e14Text,e15Text,e17Text,custadd,spinnerprocat,cityofservice,custcity,custstate,custcountry,spinnerprodesc,callassignedto,callassignedby,e29Text,e30Text,e31Text,calllogdate,e33Text,e34Text,e35Text);
+                        databasependingReference.child(id).setValue(data);
+                        Toast.makeText(getApplicationContext(), "Call Saved to Pending List", Toast.LENGTH_SHORT).show();
+
+                    }
+
 
                     Intent i = new Intent(NewCall5.this, HomeActivity.class);
                     i.putExtra(Retrievedatasample.productcategory, spinnerprocat);
@@ -414,6 +520,7 @@ b2.setOnClickListener(new View.OnClickListener() {
                     i.putExtra(Retrievedatasample.callassignedto, callassignedto);
                     i.putExtra(Retrievedatasample.callassignedby, callassignedby);
                     i.putExtra(Retrievedatasample.callvisitingdate, callvisitingdate);
+                    i.putExtra(PUSHPENDINGKEY,pendingpushkey);
                     startActivity(i);
                     //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
                     //Intent i=new Intent(NewCall5.this,HomeActivity.class);
@@ -835,6 +942,7 @@ bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationVie
         //Log.d("LOGGED", "FirebaseUser: " + user);
         // String id=user.getDisplayName();
      String id=databasependingReference.push().getKey();
+     String pendingpushkey=id;
 
 
         if(!TextUtils.isEmpty(nameofservengg) && (!TextUtils.isEmpty(regionofservengg)) &&(!TextUtils.isEmpty(custrepname))&& (!TextUtils.isEmpty(custemail))  &&(!TextUtils.isEmpty(custname)) && (!TextUtils.isEmpty(e9Text)) && (!TextUtils.isEmpty(e12Text)) && (!TextUtils.isEmpty(e13Text)) && (!TextUtils.isEmpty(e14Text)) && (!TextUtils.isEmpty(e15Text))&& (!TextUtils.isEmpty(e17Text)) && (!TextUtils.isEmpty(custadd))&& (!TextUtils.isEmpty(spinnerprocat))&& (!TextUtils.isEmpty(cityofservice))&& (!TextUtils.isEmpty(custcity))&& (!TextUtils.isEmpty(custstate))&& (!TextUtils.isEmpty(custcountry))&& (!TextUtils.isEmpty(spinnerprodesc))&& (!TextUtils.isEmpty(callassignedto))&&  (!TextUtils.isEmpty(callassignedby))&& (!TextUtils.isEmpty(e29Text))&& (!TextUtils.isEmpty(e30Text))&& (!TextUtils.isEmpty(e31Text))&& (!TextUtils.isEmpty(calllogdate))&& (!TextUtils.isEmpty(e33Text))&& (!TextUtils.isEmpty(e34Text))&& (!TextUtils.isEmpty(e35Text)))

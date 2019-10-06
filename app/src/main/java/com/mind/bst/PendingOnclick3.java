@@ -38,12 +38,14 @@ public class PendingOnclick3 extends AppCompatActivity {
 
 
     private static final String TAG = "PendingOnclick3";
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
     private FirebaseAuth mAuth;
     FirebaseUser user;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
     DatabaseReference databasependingReference;
+    DatabaseReference databasedeletependingReference;
     TextView username,t1,t2,t3,t4,tinput;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
@@ -115,12 +117,14 @@ public class PendingOnclick3 extends AppCompatActivity {
         final String callassignedto=getIntent().getStringExtra(Retrievedatasample.callassignedto);
         final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
+        final String pushpendingkey=getIntent().getStringExtra(PendingOnclick2.PUSHPENDINGKEY);
+       // t3.setText(pushpendingkey);
 //tinput.setText(callassignedby);
 
 //t3.setText(custcountry);
         databaseReference = db.getReference("Calls Generated");
         databasependingReference = db.getReference("Calls Pending");
-
+databasedeletependingReference=db.getReference("Calls Pending");
 
 
 
@@ -363,10 +367,16 @@ public class PendingOnclick3 extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 sendData();
+                //databasedeletependingReference = db.getReference("Calls Pending").child(pushpendingkey);
+                //databasedeletependingReference.removeValue();
                 //Toast.makeText(NewCall5.this, "Call Generated Successfully", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(PendingOnclick3.this,HomeActivity.class);
                 startActivity(i);
+                //databasedeletependingReference = db.getReference("Calls Pending").child(pushpendingkey);
+                //databasedeletependingReference.removeValue();
+                //Toast.makeText(getApplicationContext(), "Success..!", Toast.LENGTH_SHORT).show();
             }
 
         });

@@ -33,7 +33,7 @@ public class ViewPendingAttendImg extends ArrayAdapter<Total> {
     Button b1;
 
 
-
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
 
     public static final String Region = "com.mind.bst.region";
     public static final String clientname = "com.mind.bst.clientname";

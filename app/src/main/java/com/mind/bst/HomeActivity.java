@@ -38,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     public static final String Email = "com.mind.bst.email";
     public static final String Image_Url = "com.mind.bst.image_url";
     public static final String PUSHKEY = "pushkey";
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +93,8 @@ public class HomeActivity extends AppCompatActivity {
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
 
         final String pushkey=getIntent().getStringExtra(NewCall1.PUSHKEY);
-        //reports.setText(pushkey);
+        final String pushpendingkey=getIntent().getStringExtra(NewCall5.PUSHPENDINGKEY);
+       // reports.setText(pushpendingkey);
 //tinput.setText(callassignedby);
        // String prodcat=getIntent().getStringExtra(TAG_PRODUCT_CAT);
        // tspin.setText(prodcat);
@@ -176,6 +178,7 @@ public class HomeActivity extends AppCompatActivity {
                 i.putExtra(Retrievedatasample.callassignedto,callassignedto);
                 i.putExtra(Retrievedatasample.callassignedby,callassignedby);
                 i.putExtra(Retrievedatasample.callvisitingdate,callvisitingdate);
+                i.putExtra(PUSHPENDINGKEY,pushpendingkey);
                 //Intent i=new Intent(HomeActivity.this,SearchBase.class);
                 startActivity(i);
             }

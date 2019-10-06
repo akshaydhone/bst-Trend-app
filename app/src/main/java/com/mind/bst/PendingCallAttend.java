@@ -44,7 +44,7 @@ public class PendingCallAttend extends AppCompatActivity {
     //here data is a java class name
     List<Total> clients;
     // ArrayAdapter<Total> artistAdapter;
-    TextView mEmptyView;
+    TextView mEmptyView,textView;
 
     //selecting a database ref
     DatabaseReference databaseClients;
@@ -110,6 +110,8 @@ public class PendingCallAttend extends AppCompatActivity {
     public static final String engineerintime = "com.mind.bst.engineerintime";
     public static final String callattendingdate = "com.mind.bst.callattendingdate";
 
+    public static final String PUSHPENDINGKEY = "pushpendingkey";
+
 
 
     @Override
@@ -121,6 +123,7 @@ public class PendingCallAttend extends AppCompatActivity {
 
         //getting the root name database table
         mEmptyView = (TextView) findViewById(R.id.emptyView);
+        textView=(TextView)findViewById(R.id.textView);
 
 
 
@@ -156,6 +159,8 @@ public class PendingCallAttend extends AppCompatActivity {
         final String callvisitingdate=getIntent().getStringExtra(Retrievedatasample.callvisitingdate);
         final String callassignedby=getIntent().getStringExtra(Retrievedatasample.callassignedby);
 
+        final String pushpendingkey=getIntent().getStringExtra(NewCall5.PUSHPENDINGKEY);
+//textView.setText(pushpendingkey);
         databaseClients = FirebaseDatabase.getInstance().getReference("Calls Pending");
         //listViewClients = (ListView) findViewById(R.id.listViewClients);
         listViewClients=(ListView)findViewById(R.id.listViewClients);
@@ -237,7 +242,7 @@ public class PendingCallAttend extends AppCompatActivity {
                                                        intent.putExtra(productname, data.getProduct_name());
                                                        intent.putExtra(engineerintime, data.getEngineer_in_time());
                                                        intent.putExtra(callattendingdate, data.getCall_attending_date());
-
+                                                       intent.putExtra(PUSHPENDINGKEY,pushpendingkey);
 
 
 

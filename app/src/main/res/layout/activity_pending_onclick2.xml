@@ -67,6 +67,7 @@
                         android:text="@string/name25"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
+                        android:id="@+id/testuid"
                         android:fontFamily="@font/arial"
                         android:textStyle="bold" />
 
